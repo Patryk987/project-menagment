@@ -444,6 +444,18 @@ ModuleManager\DataBinder::set_binder(
     ]
 );
 
+function insert_svg($path)
+{
+    return file_get_contents(__DIR__ . "/../../" . $path[0]);
+}
+
+ModuleManager\DataBinder::set_binder(
+    [
+        "key" => "insert_svg",
+        "function" => "insert_svg"
+    ]
+);
+
 $nonce = uniqid();
 function nonce_id()
 {

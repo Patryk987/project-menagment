@@ -86,6 +86,32 @@ class News
         \ModuleManager\Pages::set_child_modules($first_page);
 
         $first_page = [
+            "name" => "Dodaj nową 2",
+            "link" => "add_news2",
+            "parent_link" => "news",
+            "function" => [$this, "add_news"],
+            "permission" => [1],
+            "status" => true,
+            "show" => true,
+            "icon" => basename(__DIR__) . "/assets/img/test.svg"
+        ];
+
+        \ModuleManager\Pages::set_child_modules($first_page);
+
+        $first_page = [
+            "name" => "Dodaj nową 3",
+            "link" => "add_news3",
+            "parent_link" => "news",
+            "function" => [$this, "add_news"],
+            "permission" => [1],
+            "status" => true,
+            "show" => true,
+            "icon" => basename(__DIR__) . "/assets/img/test.svg"
+        ];
+
+        \ModuleManager\Pages::set_child_modules($first_page);
+
+        $first_page = [
             "name" => "Edytuj",
             "link" => "edit_news",
             "parent_link" => "news",

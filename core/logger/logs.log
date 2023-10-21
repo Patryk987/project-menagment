@@ -13026,3 +13026,27 @@
 [2023-10-21 11:56:46] [WARNING] Unexpected warning: in_array(): Argument #2 ($haystack) must be of type array, string given
 [2023-10-21 11:56:53] [ERROR] Unauthorized client: 10.89.11.3,PostmanRuntime/7.33.0
 [2023-10-21 11:57:59] [ERROR] Unauthorized client: 10.89.11.3,PostmanRuntime/7.33.0
+[2023-10-21 16:20:51] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:20:52] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:20:53] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:20:54] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:20:55] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:20:55] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:20:56] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:20:57] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:20:58] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:20:59] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:21:00] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:21:00] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:21:01] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:21:01] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:21:03] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:21:03] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:21:06] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:21:07] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-10-21 16:39:04] [ERROR] Unexpected error: file_get_contents(/panel-template/img/plus-icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,449
+[2023-10-21 16:39:35] [ERROR] Unexpected error: file_get_contents(/panel-template/img/plus-icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,449
+[2023-10-21 16:39:45] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/panel-template/img/plus-icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,449
+[2023-10-21 16:40:05] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../panel-template/img/plus-icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,449
+[2023-10-21 16:40:30] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/function/function.php,449
+[2023-10-21 16:40:30] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../Array): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,449
