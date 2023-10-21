@@ -1,0 +1,41 @@
+/* 404 */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    background-image: url('../img/image.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.container .box {
+    background: rgba(40, 40, 41, 0.70);
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+
+    padding: 5%;
+    border-radius: 10px;
+}
+
+.error_code {
+    font-size: 25vh;
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    line-height: 100%;
+    margin: 20px 0;
+}
+
+.description {
+    font-size: 3vh;
+    text-align: center;
+    width: 100%;
+    line-height: 100%;
+    margin: 0;
+
+}

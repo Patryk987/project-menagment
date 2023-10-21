@@ -1,0 +1,34 @@
+# Włącz moduł RewriteEngine
+RewriteEngine On
+
+# Przekierowanie z HTTP na HTTPS, jeśli HTTP jest wyłączone
+RewriteCond %{HTTP} off
+RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Ustaw limity PHP
+php_value post_max_size 400M
+php_value upload_max_filesize 400M
+php_value memory_limit 400M
+
+# Ograniczenie dostępu do plików "database.json" i "config.json"
+<Files "database.json">
+    Require all denied
+</Files>
+
+<Files "config.json">
+    Require all denied
+</Files>
+
+# Ograniczenie dostępu do katalogu "system"
+# <Directory "system">
+#     Require all denied
+# </Directory>
+
+# Przesyłanie żądań do index.php w przypadku braku istniejącego pliku lub katalogu
+<IfModule mod_rewrite.c>
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
+</IfModule>

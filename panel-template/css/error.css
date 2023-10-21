@@ -1,0 +1,14 @@
+.container .box {
+    width: 500px;
+    height: 100px;
+    overflow-y: auto;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .box .error_code {
+    font-size: 20pt;
+    text-align: center;
+}

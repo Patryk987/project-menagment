@@ -1,0 +1,693 @@
+{
+    "cms": {
+        "table": {
+            "Users": {
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true,
+                    "foreign": {
+                        "Tokens": {
+                            "column": "user_id"
+                        },
+                        "LoginHistory": {
+                            "column": "user_id"
+                        },
+                        "UserData": {
+                            "column": "user_id"
+                        }
+                    }
+                },
+                "nick": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "password": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "password",
+                    "valid_type": "password",
+                    "NULL": false,
+                    "unique": false
+                },
+                "email": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "email",
+                    "NULL": false,
+                    "unique": true
+                },
+                "phone_number": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "simple",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "permission": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "null",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "status": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "null",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                }
+            },
+            "UploadedFile": {
+                "file_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "path": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "name": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "date": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                }
+            },
+            "Tokens": {
+                "token_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "expire_time": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "status": {
+                    "type": "int",
+                    "length": "1",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "email",
+                    "NULL": false,
+                    "unique": false
+                }
+            },
+            "LoginHistory": {
+                "history_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "login_time": {
+                    "type": "varchar",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "ip": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "status": {
+                    "type": "int",
+                    "length": "1",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                }
+            },
+            "UserData": {
+                "user_data_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "field_key": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "field_description": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "value": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                }
+            },
+            "NotificationTokens": {
+                "notification_token_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true,
+                    "foreign": {
+                        "Notifications": {
+                            "column": "notification_token_id"
+                        }
+                    }
+                },
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "create_time": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "token": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                }
+            },
+            "Notifications": {
+                "notifications_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "title": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "description": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "send_time": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "live_time": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "status": {
+                    "type": "int",
+                    "length": "1",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "typ": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                }
+            },
+            "SendNotifications": {
+                "send_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "notifications_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "receipt_time": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "status": {
+                    "type": "int",
+                    "length": "1",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                }
+            },
+            "RecipientsNotification": {
+                "recipients_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "notifications_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                }
+            },
+            "NotificationConsents": {
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "own": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "system": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "marketing": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                }
+            },
+            "News": {
+                "news_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "title": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "short_description": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "key_words": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "article": {
+                    "type": "longblob",
+                    "length": "",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "distinctive_image": {
+                    "type": "longblob",
+                    "length": "",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "type": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "update_date": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "add_date": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* index */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-image: url("../img/image.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.left {
+    width: 70%;
+    height: 100%;
+    /* background-color: rgba(34, 40, 49, 0.9); */
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(40, 40, 41, 0.70);
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+}
+
+.left>div {
+    max-width: 600px;
+}
+
+.left>div>h1 {
+    font-size: 7vh;
+}
+
+.left>div>p {
+    font-size: 2vh;
+}
+
+.right {
+    width: 30%;
+}

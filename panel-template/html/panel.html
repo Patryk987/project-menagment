@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{page_description}}">
+
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="theme-color" content="#282829" />
+
+    <meta http-equiv="Content-Security-Policy" content="script-src 'nonce-{{nonce}}'">
+
+    <title>Panel - {{page_name}}</title>
+
+    <link rel="icon" type="image/x-icon" href="/panel-template/img/favicon.ico">
+    <link rel="manifest" href="/panel-template/manifest.json">
+
+    <link rel="stylesheet" href="/panel-template/css/style.css">
+    <link rel="stylesheet" href="/panel-template/css/content.css">
+    <link rel="stylesheet" href="/panel-template/css/table.css">
+    <link rel="stylesheet" href="/panel-template/css/panel-form.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container hidden">
+
+        <div class="additional">
+            <div>
+                <div class="menu_hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                {{module_patch}}
+            </div>
+            <div>
+                <a href="edit_your_account">
+                    <!-- {{profile}} -->
+                </a>
+            </div>
+        </div>
+        <div class="data">
+            <div class="menu_hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="logo">
+            </div>
+        </div>
+
+        <nav>
+            {{module_list}}
+        </nav>
+
+        <article>
+            {{info_box}}
+            {{module_content}}
+        </article>
+
+        <footer style="display: flex; justify-content: center;">
+            <!-- {{logout}} -->
+        </footer>
+
+    </div>
+
+    <script nonce="{{nonce}}" src="/panel-template/js/toggle.js"></script>
+    <script nonce="{{nonce}}" src="/panel-template/js/form.js"></script>
+
+    <script nonce="{{nonce}}">
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/panel-template/js/sw.js', { scope: '/' });
+        }
+    </script>
+
+</body>
+
+</html>

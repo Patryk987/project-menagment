@@ -1,0 +1,154 @@
+.form {
+    width: 50%;
+    margin: auto;
+}
+
+.form input,
+.form select,
+.form textarea,
+.form button {
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #BDC0CE;
+    background-color: rgba(255, 255, 255, 0);
+    /* color: #BDC0CE; */
+    outline: none;
+}
+
+.form input,
+.form textarea {
+    width: calc(100% - 20px);
+}
+
+.form select {
+    width: 100%;
+}
+
+
+.form input::placeholder {
+    color: var(--secondary);
+}
+
+.form p {
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.form h2 {
+    font-size: 20pt;
+    font-weight: bold;
+    color: var(--selected);
+}
+
+.form input[type="submit"],
+.form button {
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+.form input[type="submit"]:hover,
+.form button:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--secondary);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.form button {
+    max-width: 200px;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0 !important;
+    width: 20px !important;
+    height: 20px !important;
+    border: 1px solid var(--secondary);
+    border-radius: 5px !important;
+}
+
+
+input[type="checkbox"]::before {
+    content: "";
+    display: block;
+    margin: 0;
+    width: 10px !important;
+    height: 10px !important;
+    transform: scale(0);
+    background-color: var(--secondary);
+    border-radius: 2.5px !important;
+}
+
+
+.multi-list .object {
+    border: 1px solid #BDC0CE;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.multi-list .object_header {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.multi-list .object_header button {
+    margin: 0;
+
+}
+
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+/* Scrollbar */
+
+nav::-webkit-scrollbar {
+    width: 5px;
+    padding: 2px;
+}
+
+nav::-webkit-scrollbar-track {
+    background: var(--secondary);
+}
+
+nav::-webkit-scrollbar-thumb {
+    background: var(--selected);
+    opacity: 0.8;
+}
+
+nav::-webkit-scrollbar-thumb:hover {
+    opacity: 1;
+}
+
+/* .check_field {
+    width: auto;
+} */
+
+.icon_field {
+    margin: 0;
+}
+
+.icon_field a {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.icon_field a:hover {
+    stroke: var(--selected) !important
+}
+
+.icon_field a {
+    stroke: var(--secondary) !important
+}

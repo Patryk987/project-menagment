@@ -1,0 +1,16 @@
+{
+    "name": "Panel",
+    "description": "Occaecat do sunt ut occaecat est voluptate consectetur culpa adipisicing aute.",
+    "debug": true,
+    "active_template": "default",
+    "link": "http://192.168.0.117:8000",
+    "Anti-clickjacking": true,
+    "pages": {
+        "panel": "panel",
+        "login": "login",
+        "delete": "delete",
+        "registration": "registration",
+        "logout": "logout",
+        "api": "api"
+    }
+}
