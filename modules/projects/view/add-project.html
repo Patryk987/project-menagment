@@ -1,0 +1,117 @@
+<style>
+    article {
+        overflow: hidden !important;
+    }
+
+    .steps {
+        height: 95vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 400px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+<section class="form">
+    <form method="post" enctype="multipart/form-data">
+
+        <!-- project details -->
+        <div class="steps" id="steps-1">
+            <div>
+                <h3>Project details</h3>
+                <label>
+                    <p>Name</p>
+                    <input type="text" name="name">
+                </label>
+                <label>
+                    <p>Photo</p>
+                    <input type="file" name="photo" id="photo">
+                </label>
+                <label>
+                    <p>Description</p>
+                    <input type="text" name="description">
+                </label>
+            </div>
+
+            <div class="buttons">
+                <a href="#steps-2" class="button"> Next </a>
+            </div>
+
+        </div>
+
+        <!-- project ftp -->
+        <div class="steps" id="steps-2">
+            <div>
+                <h3>FTP details</h3>
+                <label>
+                    <p>serwer</p>
+                    <input type="text" name="serwer">
+                </label>
+                <label>
+                    <p>Port</p>
+                    <input type="text" name="port">
+                </label>
+                <label>
+                    <p>user</p>
+                    <input type="text" name="user">
+                </label>
+                <label>
+                    <p>password</p>
+                    <input type="text" name="password">
+                </label>
+            </div>
+
+            <div class="buttons">
+                <a href="#steps-1" class="button"> Prev </a>
+                <a href="#steps-3" class="button"> Next </a>
+            </div>
+
+        </div>
+
+        <!-- project collaborators -->
+        <div class="steps" id="steps-3">
+            <div>
+                <h3>Collaborators</h3>
+                <label>
+                    <p>Search</p>
+                    <input type="text">
+                </label>
+
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>E-mail</th>
+                    </tr>
+                    <tr>
+                        <td>Andrzej nowak</td>
+                        <td>andrzej@nowak.pl</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="buttons">
+                <a href="#steps-2" class="button"> Prev </a>
+                <a href="#steps-4" class="button"> Next </a>
+            </div>
+        </div>
+
+        <!-- project summary -->
+        <div class="steps" id="steps-4">
+            <div>
+                <h3></h3>
+
+            </div>
+
+            <div class="buttons">
+                <a href="#steps-3" class="button"> Prev </a>
+                <input type="submit" name="create" value="Zapisz">
+            </div>
+        </div>
+    </form>
+</section>

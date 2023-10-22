@@ -4,7 +4,7 @@
     display: grid;
 
     grid-template-columns: [col-1] 100px [col-2] 20% [col-3] auto [col-4] 5% [col-end];
-    grid-template-rows: [row-1] 7.5% [row-2] 92.5% [row-end];
+    grid-template-rows: [row-1] 5vh [row-2] 95vh [row-end];
 }
 
 
@@ -156,8 +156,8 @@
 }
 
 .container nav ul li.active .toggle svg {
-    stroke: var(--selected);
-    fill: var(--selected)
+    /* stroke: var(--selected);
+    fill: var(--selected) */
 }
 
 .container nav ul li .icon svg {
@@ -179,8 +179,8 @@
 }
 
 .container nav ul li.active .icon svg {
-    fill: var(--selected);
-    stroke: var(--selected)
+    /* fill: var(--selected);
+    stroke: var(--selected) */
 }
 
 li.active .toggle_nav>ul {
@@ -241,13 +241,21 @@ li.active .toggle_nav>ul {
 .projects .projects_list .project_box {
     width: 70px;
     height: 70px;
-    border: 5px solid rgba(255, 255, 255, 0);
+    border: 5px solid var(--selected);
     margin: 10px;
     background-color: var(--third);
     border-radius: 20px;
-    background-image: url("/panel-template//img/user-default-icon.png");
-    background-size: cover;
+    /* background-image: url("/panel-template//img/user-default-icon.png");
+    background-size: cover; */
     cursor: pointer;
+}
+
+.projects .projects_list .project_box img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 20px;
 }
 
 .projects .projects_list .project_box:hover {

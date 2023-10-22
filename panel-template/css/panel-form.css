@@ -10,7 +10,7 @@
     max-width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #BDC0CE;
+    border: 1px solid var(--third);
     background-color: rgba(255, 255, 255, 0);
     /* color: #BDC0CE; */
     outline: none;
@@ -32,7 +32,7 @@
 
 .form p {
     font-weight: bold;
-    color: var(--secondary);
+    color: var(--third);
 }
 
 .form h2 {
@@ -45,7 +45,7 @@
 .form button {
     width: 100%;
     margin-top: 20px;
-    background-color: var(--secondary);
+    background-color: var(--third);
     color: var(--primary);
     transition: 0.5s;
     font-weight: bold;
@@ -54,7 +54,7 @@
 .form input[type="submit"]:hover,
 .form button:hover {
     background-color: rgba(255, 255, 255, 0);
-    color: var(--secondary);
+    color: var(--third);
     cursor: pointer;
     transition: 0.5s;
 }

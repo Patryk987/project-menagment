@@ -63,13 +63,13 @@
 
         <div class="projects">
             <div class="projects_list">
-                <div class="project_box"></div>
-                <div class="project_box"></div>
-                <div class="project_box"></div>
+                {{project_list}}
             </div>
-            <div class="add_project">
-                {{insert_svg panel-template/img/plus-icon.svg}}
-            </div>
+            <a href="/panel/add_project">
+                <div class="add_project">
+                    {{insert_svg panel-template/img/plus-icon.svg}}
+                </div>
+            </a>
         </div>
 
         <nav>

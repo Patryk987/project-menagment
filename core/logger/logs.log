@@ -13050,3 +13050,105 @@
 [2023-10-21 16:40:05] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../panel-template/img/plus-icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,449
 [2023-10-21 16:40:30] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/function/function.php,449
 [2023-10-21 16:40:30] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../Array): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,449
+[2023-10-22 12:11:52] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules/service/assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,215
+[2023-10-22 12:11:52] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules/service/assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,215
+[2023-10-22 12:11:53] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules/service/assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,215
+[2023-10-22 12:11:53] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules/service/assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,215
+[2023-10-22 12:12:06] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules/service/../assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,215
+[2023-10-22 12:12:07] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules/service/../assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,215
+[2023-10-22 12:12:46] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules/service/../assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,215
+[2023-10-22 12:12:47] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules/service/../assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,215
+[2023-10-22 12:12:47] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules/service/../assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,215
+[2023-10-22 12:22:02] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/projects/service/../projects/view/add-project.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2023-10-22 12:22:03] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/projects/service/../projects/view/add-project.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2023-10-22 17:44:32] [ERROR] Unexpected error: Undefined array key "owner_id",/var/www/html/modules/projects/service/add-project.php,32
+[2023-10-22 17:44:32] [ERROR] Unexpected error: Undefined array key "name",/var/www/html/modules/projects/service/add-project.php,33
+[2023-10-22 17:44:32] [ERROR] Unexpected error: Undefined array key "description",/var/www/html/modules/projects/service/add-project.php,34
+[2023-10-22 17:44:32] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/modules/projects/service/add-project.php,35
+[2023-10-22 17:44:32] [ERROR] Unexpected error: Undefined array key "serwer",/var/www/html/modules/projects/service/add-project.php,36
+[2023-10-22 17:44:32] [ERROR] Unexpected error: Undefined array key "user",/var/www/html/modules/projects/service/add-project.php,37
+[2023-10-22 17:44:32] [ERROR] Unexpected error: Undefined array key "password",/var/www/html/modules/projects/service/add-project.php,38
+[2023-10-22 17:44:32] [ERROR] Unexpected error: Undefined array key "port",/var/www/html/modules/projects/service/add-project.php,39
+[2023-10-22 17:44:32] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:44:32] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:44:32] [ERROR] Incorrect function: Unknown column 'photo' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 17:46:03] [ERROR] Incorrect function: Class "Projects\Main" not found,0,/var/www/html/modules/projects/service/add-project.php,49
+[2023-10-22 17:47:15] [ERROR] Unexpected error: Undefined array key "name",/var/www/html/modules/projects/service/add-project.php,33
+[2023-10-22 17:47:15] [ERROR] Unexpected error: Undefined array key "description",/var/www/html/modules/projects/service/add-project.php,34
+[2023-10-22 17:47:15] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/modules/projects/service/add-project.php,35
+[2023-10-22 17:47:15] [ERROR] Unexpected error: Undefined array key "serwer",/var/www/html/modules/projects/service/add-project.php,36
+[2023-10-22 17:47:15] [ERROR] Unexpected error: Undefined array key "user",/var/www/html/modules/projects/service/add-project.php,37
+[2023-10-22 17:47:15] [ERROR] Unexpected error: Undefined array key "password",/var/www/html/modules/projects/service/add-project.php,38
+[2023-10-22 17:47:15] [ERROR] Unexpected error: Undefined array key "port",/var/www/html/modules/projects/service/add-project.php,39
+[2023-10-22 17:47:15] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:47:15] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:47:15] [ERROR] Incorrect function: Unknown column 'photo' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 17:47:20] [ERROR] Unexpected error: Undefined array key "name",/var/www/html/modules/projects/service/add-project.php,33
+[2023-10-22 17:47:20] [ERROR] Unexpected error: Undefined array key "description",/var/www/html/modules/projects/service/add-project.php,34
+[2023-10-22 17:47:20] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/modules/projects/service/add-project.php,35
+[2023-10-22 17:47:20] [ERROR] Unexpected error: Undefined array key "serwer",/var/www/html/modules/projects/service/add-project.php,36
+[2023-10-22 17:47:20] [ERROR] Unexpected error: Undefined array key "user",/var/www/html/modules/projects/service/add-project.php,37
+[2023-10-22 17:47:20] [ERROR] Unexpected error: Undefined array key "password",/var/www/html/modules/projects/service/add-project.php,38
+[2023-10-22 17:47:20] [ERROR] Unexpected error: Undefined array key "port",/var/www/html/modules/projects/service/add-project.php,39
+[2023-10-22 17:47:20] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:47:20] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:47:20] [ERROR] Incorrect function: Unknown column 'photo' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 17:47:44] [ERROR] Unexpected error: Undefined array key "name",/var/www/html/modules/projects/service/add-project.php,33
+[2023-10-22 17:47:44] [ERROR] Unexpected error: Undefined array key "description",/var/www/html/modules/projects/service/add-project.php,34
+[2023-10-22 17:47:44] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/modules/projects/service/add-project.php,35
+[2023-10-22 17:47:44] [ERROR] Unexpected error: Undefined array key "serwer",/var/www/html/modules/projects/service/add-project.php,36
+[2023-10-22 17:47:44] [ERROR] Unexpected error: Undefined array key "user",/var/www/html/modules/projects/service/add-project.php,37
+[2023-10-22 17:47:44] [ERROR] Unexpected error: Undefined array key "password",/var/www/html/modules/projects/service/add-project.php,38
+[2023-10-22 17:47:44] [ERROR] Unexpected error: Undefined array key "port",/var/www/html/modules/projects/service/add-project.php,39
+[2023-10-22 17:47:44] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:47:44] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:47:44] [ERROR] Incorrect function: Unknown column 'photo' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 17:47:50] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:47:50] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:47:50] [ERROR] Incorrect function: Unknown column 'photo' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 17:47:54] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:47:54] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:47:54] [ERROR] Incorrect function: Unknown column 'photo' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 17:48:55] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:48:55] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:48:55] [ERROR] Incorrect function: Unknown column 'photo' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 17:49:40] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/modules/projects/service/add-project.php,35
+[2023-10-22 17:49:40] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:49:40] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:49:40] [ERROR] Incorrect function: Unknown column 'photo' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 17:50:21] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/modules/projects/service/add-project.php,45
+[2023-10-22 17:50:30] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/modules/projects/service/add-project.php,45
+[2023-10-22 17:50:46] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/modules/projects/service/add-project.php,45
+[2023-10-22 17:51:45] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:51:45] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:51:45] [ERROR] Incorrect function: htmlspecialchars(): Argument #1 ($string) must be of type string, array given,0,/var/www/html/core/class/class-sedjm.php,93
+[2023-10-22 17:52:03] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:52:03] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:52:03] [ERROR] Incorrect function: htmlspecialchars(): Argument #1 ($string) must be of type string, array given,0,/var/www/html/core/class/class-sedjm.php,93
+[2023-10-22 17:52:53] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:52:53] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:52:53] [ERROR] Incorrect function: Unknown column 'photo' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 17:53:52] [ERROR] Incorrect function: Cannot assign null to property Projects\Model\InsertModel::$id of type int,0,/var/www/html/modules/projects/model/insert-model.php,17
+[2023-10-22 17:54:24] [ERROR] Incorrect function: Cannot assign null to property Projects\Model\InsertModel::$id of type int,0,/var/www/html/modules/projects/model/insert-model.php,17
+[2023-10-22 17:54:30] [ERROR] Incorrect function: Cannot assign null to property Projects\Model\InsertModel::$id of type int,0,/var/www/html/modules/projects/model/insert-model.php,17
+[2023-10-22 17:55:43] [ERROR] Incorrect function: Cannot assign null to property Projects\Model\InsertModel::$id of type int,0,/var/www/html/modules/projects/model/insert-model.php,17
+[2023-10-22 17:55:47] [ERROR] Incorrect function: Cannot assign null to property Projects\Model\InsertModel::$id of type int,0,/var/www/html/modules/projects/model/insert-model.php,17
+[2023-10-22 17:56:26] [ERROR] Unexpected error: Undefined variable $output,/var/www/html/modules/projects/repository/repository-projects.php,73
+[2023-10-22 17:56:26] [ERROR] Incorrect function: Projects\ProjectsRepository::create_new_project(): Return value must be of type Projects\Model\InsertModel, null returned,0,/var/www/html/modules/projects/repository/repository-projects.php,73
+[2023-10-22 17:58:12] [ERROR] Unexpected error: Undefined array key "photo",/var/www/html/core/class/class-sedjm.php,40
+[2023-10-22 17:58:12] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-10-22 17:58:12] [ERROR] Incorrect function: Unknown column 'photo' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 17:59:02] [ERROR] Incorrect function: Unknown column 'create_time' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,536
+[2023-10-22 18:11:42] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, function "project_list" not found or invalid function name,0,/var/www/html/core/class/load-file.php,79
+[2023-10-22 18:11:44] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, function "project_list" not found or invalid function name,0,/var/www/html/core/class/load-file.php,79
+[2023-10-22 18:12:59] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, function "project_list" not found or invalid function name,0,/var/www/html/core/class/load-file.php,79
+[2023-10-22 18:13:00] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, function "project_list" not found or invalid function name,0,/var/www/html/core/class/load-file.php,79
+[2023-10-22 18:13:08] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, function "project_list" not found or invalid function name,0,/var/www/html/core/class/load-file.php,79
+[2023-10-22 18:13:10] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, function "project_list" not found or invalid function name,0,/var/www/html/core/class/load-file.php,79
+[2023-10-22 18:13:10] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, function "project_list" not found or invalid function name,0,/var/www/html/core/class/load-file.php,79
+[2023-10-22 18:13:57] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
+[2023-10-22 18:14:05] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
+[2023-10-22 18:14:11] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
+[2023-10-22 18:14:12] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
+[2023-10-22 18:14:26] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
+[2023-10-22 18:14:26] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410

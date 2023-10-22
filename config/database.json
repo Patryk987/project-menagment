@@ -687,6 +687,229 @@
                     "NULL": false,
                     "unique": false
                 }
+            },
+            "Projects": {
+                "project_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true,
+                    "foreign": {
+                        "Collaborators": {
+                            "column": "project_id"
+                        },
+                        "FTP": {
+                            "column": "project_id"
+                        }
+                    }
+                },
+                "owner_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "name": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "description": {
+                    "type": "text",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "photo_url": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": true,
+                    "unique": false
+                },
+                "status": {
+                    "type": "int",
+                    "length": "1",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "create_time": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                }
+            },
+            "Collaborators": {
+                "collaborator_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "project_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "user_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "role": {
+                    "type": "int",
+                    "length": "5",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "status": {
+                    "type": "int",
+                    "length": "5",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "joining_date": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                }
+            },
+            "FTP": {
+                "ftp_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": true,
+                    "AUTO_INCREMENT": true,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": true
+                },
+                "project_id": {
+                    "type": "int",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": false,
+                    "encrypt_type": "NULL",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "serwer": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "user": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "password": {
+                    "type": "varchar",
+                    "length": "255",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                },
+                "port": {
+                    "type": "varchar",
+                    "length": "11",
+                    "PRIMARY_KEY": false,
+                    "AUTO_INCREMENT": false,
+                    "encrypt": true,
+                    "encrypt_type": "SIMPLE",
+                    "valid_type": "NULL",
+                    "NULL": false,
+                    "unique": false
+                }
             }
         }
     }

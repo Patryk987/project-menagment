@@ -491,3 +491,26 @@ ModuleManager\DataBinder::set_binder(
         "function" => "inject_style"
     ]
 );
+
+function project_list()
+{
+    global $main;
+
+    $project_repository = new \Projects\ProjectsRepository;
+    $projects = $project_repository->get_project_list_by_id($main::$token['payload']->user_id);
+    $output = "";
+    if (!empty($projects)) {
+        foreach ($projects as $project) {
+            $output .= '<div class="project_box"><img src="/' . $project['photo_url'] . '" alt="' . $project['name'] . '"/></div>';
+        }
+    }
+
+    return $output;
+}
+
+\ModuleManager\DataBinder::set_binder(
+    [
+        "key" => "project_list",
+        "function" => "project_list"
+    ]
+);

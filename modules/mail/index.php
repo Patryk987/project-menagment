@@ -37,9 +37,8 @@ class TestMail
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat.
                 <br><br>
-                Dziękujemy,
-                Zespół Rotenso",
-            "title" => "Witamy w Aplikacji Rotenso!"
+                Dziękujemy",
+            "title" => "Witamy w Aplikacji!"
         ];
         $x = new \ModuleManager\MailSender("web@foxstudio.eu", "TEST", $data);
         $send = $x->send_mail();
@@ -53,12 +52,10 @@ class TestMail
         $data = [
             "content" => "Witaj,
                 <br><br>
-                Dziękujemy za zarejestrowanie się w aplikacji Rotenso!
-                Wkrótce nasz serwisant potwierdzi twoje konto abyś mógł rozpocząć pierwszą instalację 
+                Dziękujemy za zarejestrowanie się w aplikacji!
                 <br><br>
-                Dziękujemy,
-                Zespół Rotenso",
-            "title" => "Witamy w Aplikacji Rotenso!"
+                Dziękujemy",
+            "title" => "Witamy w Aplikacji"
         ];
         $x = new \ModuleManager\MailSender($user_email, "Witaj!", $data);
         $send = $x->send_mail();
