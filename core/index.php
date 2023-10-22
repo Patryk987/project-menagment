@@ -3,6 +3,8 @@
 namespace ModuleManager;
 
 define("DB_NAME", "cms");
+define("NONCE", uniqid());
+
 
 require_once("./core/class/class-read-env.php");
 
@@ -30,6 +32,9 @@ require_once("./core/class/async-select.php");
 require_once("./core/class/notification.php");
 require_once("./core/class/class-get-csv.php");
 require_once("./core/class/logger.php");
+
+require_once("./core/class/class-inject-java-script.php");
+require_once("./core/class/class-inject-style.php");
 
 require_once("./core/function/function.php");
 

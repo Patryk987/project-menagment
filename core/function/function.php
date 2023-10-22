@@ -456,16 +456,38 @@ ModuleManager\DataBinder::set_binder(
     ]
 );
 
-$nonce = uniqid();
 function nonce_id()
 {
-    global $nonce;
-    return $nonce;
+    return \NONCE;
 }
 
 ModuleManager\DataBinder::set_binder(
     [
         "key" => "nonce",
         "function" => "nonce_id"
+    ]
+);
+
+function inject_javascript()
+{
+    return \InjectJavaScript::inject_script();
+}
+
+ModuleManager\DataBinder::set_binder(
+    [
+        "key" => "inject_javascript",
+        "function" => "inject_javascript"
+    ]
+);
+
+function inject_style()
+{
+    return \InjectStyles::inject_style();
+}
+
+ModuleManager\DataBinder::set_binder(
+    [
+        "key" => "inject_style",
+        "function" => "inject_style"
     ]
 );
