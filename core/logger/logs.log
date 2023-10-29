@@ -13152,3 +13152,12 @@
 [2023-10-22 18:14:12] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
 [2023-10-22 18:14:26] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
 [2023-10-22 18:14:26] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
+[2023-10-26 16:07:29] [WARNING] Unexpected warning: in_array(): Argument #2 ($haystack) must be of type array, string given
+[2023-10-26 16:31:31] [WARNING] Unexpected warning: Call to private method ModuleManager\MenagePanel::panel() from scope ModuleManager\Pages
+[2023-10-26 16:31:51] [WARNING] Unexpected warning: Access to undeclared static property ModuleManager\MenagePanel::$token
+[2023-10-26 16:56:13] [ERROR] Unexpected error: Undefined variable $last_page,/var/www/html/core/class/class-pages.php,114
+[2023-10-26 16:56:13] [ERROR] Unexpected error: Undefined variable $last_page,/var/www/html/core/class/class-pages.php,119
+[2023-10-26 17:02:56] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/panel-template/html/no-permission.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2023-10-26 17:03:10] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../panel-template/html/no-permission.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2023-10-26 17:03:11] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../panel-template/html/no-permission.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2023-10-26 17:03:11] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../panel-template/html/no-permission.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96

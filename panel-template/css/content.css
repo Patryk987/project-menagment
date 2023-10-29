@@ -244,7 +244,7 @@ li.active .toggle_nav>ul {
     border: 5px solid var(--selected);
     margin: 10px;
     background-color: var(--third);
-    border-radius: 20px;
+    border-radius: 15px;
     /* background-image: url("/panel-template//img/user-default-icon.png");
     background-size: cover; */
     cursor: pointer;
@@ -255,7 +255,7 @@ li.active .toggle_nav>ul {
     width: 100%;
     height: 100%;
     z-index: -1;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .projects .projects_list .project_box:hover {

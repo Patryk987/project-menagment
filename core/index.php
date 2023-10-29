@@ -96,7 +96,8 @@ class Main
 
         static::$token = $this->check_token($token);
 
-        $this->pages = new Pages();
+        // Pages
+        $this->pages = new Pages(static::$token, $this->config);
 
         $this->page_name = $this->pages->get_last_page();
 

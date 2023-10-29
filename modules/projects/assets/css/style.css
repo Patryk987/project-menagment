@@ -1,0 +1,17 @@
+article {
+    overflow: hidden !important;
+}
+
+.steps {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 400px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}

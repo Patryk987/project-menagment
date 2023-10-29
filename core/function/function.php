@@ -183,7 +183,7 @@ function module_content()
 {
     global $main;
 
-    return $main->pages->get_module($main->page_name);
+    return $main->pages::$module;
 
 }
 
