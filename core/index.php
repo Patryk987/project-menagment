@@ -5,6 +5,21 @@ namespace ModuleManager;
 define("DB_NAME", "cms");
 define("NONCE", uniqid());
 
+// Models
+require_once("./core/models/model-projects.php");
+
+
+// Interface
+require_once("./core/interface/interface-repository.php");
+
+// Enums
+require_once("./core/enums/enums-collaborators.php");
+require_once("./core/enums/enums-project-status.php");
+
+// Repository
+require_once("./core/repository/repository-projects.php");
+
+require_once("core/class/class-projects.php");
 
 require_once("./core/class/class-read-env.php");
 
@@ -39,6 +54,7 @@ require_once("./core/class/class-inject-style.php");
 require_once("./core/function/function.php");
 
 require_once("./core/class/class-swaf.php");
+
 
 class Main
 {

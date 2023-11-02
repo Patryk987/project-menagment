@@ -115,6 +115,7 @@ class ProjectsRepository
         global $main;
 
         $data = [
+            'project_id',
             'name',
             'description',
             'photo_url',

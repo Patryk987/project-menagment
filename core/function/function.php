@@ -237,7 +237,7 @@ function module_list()
                     if (!empty($child_value['show']) || $child_value['show'] == true) {
 
                         $child .= "<li class='" . $sub_active . "'>";
-                        $child .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->panel . "/" . $value['link'] . "/" . $child_value['link'] . "'>";
+                        $child .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->panel . "/" . \ModuleManager\Pages::$project->get_project_id() . "/" . $value['link'] . "/" . $child_value['link'] . "'>";
                         $child .= "<span class='icon'></span>";
                         $child .= "<span>" . $child_value['name'] . "</span>";
 
@@ -253,7 +253,7 @@ function module_list()
 
         $html .= "<li class='" . $active . "'>";
         $html .= "<div class='parent'>";
-        $html .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->panel . "/" . $value['link'] . "'>";
+        $html .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->panel . "/" . \ModuleManager\Pages::$project->get_project_id() . "/" . $value['link'] . "'>";
         $html .= "<span class='border'></span>";
         $html .= "<span class='icon'>" . $icon . "</span>";
         $html .= "<span class='name'>" . $value['name'] . "</span>";
@@ -495,14 +495,31 @@ ModuleManager\DataBinder::set_binder(
 function project_list()
 {
     global $main;
+    $project = new ProjectsRepository;
+    $projects_id = $project->get_user_projects(ModuleManager\Main::$token['payload']->user_id);
 
-    $project_repository = new \Projects\ProjectsRepository;
-    $projects = $project_repository->get_project_list_by_id($main::$token['payload']->user_id);
     $output = "";
-    if (!empty($projects)) {
-        foreach ($projects as $project) {
-            $output .= '<div class="project_box"><img src="/' . $project['photo_url'] . '" alt="' . $project['name'] . '"/></div>';
+
+    foreach ($projects_id as $project_id) {
+
+        try {
+            $project_data = $project->get_by_id($project_id);
+            if (!empty($project) && $project_data[0]['status'] == \ProjectStatus::ACTIVE->value) {
+
+                $img_src = '/' . $project_data[0]['photo_url'] . '" alt="' . $project_data[0]['name'] . '';
+                $link = '/' . ModuleManager\Config::get_config()["pages"]->panel . "/" . $project_data[0]['project_id'] . '/home';
+
+                $output .= '
+                <a href="' . $link . '">
+                    <div class="project_box"><img src="' . $img_src . '"/></div>
+                </a>
+                ';
+
+            }
+        } catch (\Throwable $th) {
+            var_dump($th->__toString());
         }
+
     }
 
     return $output;

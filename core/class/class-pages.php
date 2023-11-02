@@ -153,7 +153,6 @@ trait MenagePanel
 
     private function get_panel($sub_page_list): string
     {
-
         $last_page = end($sub_page_list);
         switch ($last_page) {
 
@@ -171,7 +170,23 @@ trait MenagePanel
                 break;
 
             default:
-                return $this->load_module($last_page);
+                if (!empty($sub_page_list[1])) {
+
+                    $project = new \Projects(static::$token['payload']->user_id, $sub_page_list[1]);
+                    self::$project = $project->get_project_data();
+                    if (
+                        self::$project->get_status() == \ProjectStatus::ACTIVE
+                        || self::$project->get_status() == \ProjectStatus::ARCHIVE
+                    ) {
+                        return $this->load_module($last_page);
+                    } else {
+                        return $this->load_empty_panel_page();
+                    }
+                } else {
+                    // TODO: load default project page
+                    return $this->load_empty_panel_page();
+                }
+
         }
 
         return "";
@@ -179,6 +194,7 @@ trait MenagePanel
     }
 
 }
+
 
 class Pages
 {
@@ -188,6 +204,7 @@ class Pages
     private string $base_link;
     private string $actual_link;
     public static array $token;
+    public static \ProjectModel $project;
     public static $module;
 
     public function __construct($token, &$config)
@@ -250,6 +267,7 @@ class Pages
             $type = 'page';
 
         }
+
 
         switch ($type) {
             case 'page':
