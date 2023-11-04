@@ -58,7 +58,7 @@ require_once("./core/class/class-swaf.php");
 
 class Main
 {
-    use Debug, DatabaseConnect, JWT;
+    use Debug, DatabaseConnect;
 
     public array $config;
     public array $sub_pages;
@@ -69,6 +69,7 @@ class Main
     public Popups $popups;
     public string $page_name;
     public static $token;
+    public static $jwt;
 
     public function __construct()
     {
@@ -77,13 +78,16 @@ class Main
         $load_env = new LoadEnv(__DIR__ . "/../config/");
         $load_env->initEnv();
 
+
+        // Error Trigger 
+        set_exception_handler([$this, 'exceptionHandler']);
+        set_error_handler([$this, 'errorHandler']);
+
         // Set config
         $this->config = Config::get_config();
         $debug = $this->config['debug'];
 
         $this->start_debug($debug);
-
-        // header("Content-Security-Policy: default-src 'self'; script-src 'self'", FALSE);
 
         // Anti-clickjacking
         if ($this->config['Anti-clickjacking'])
@@ -93,24 +97,20 @@ class Main
 
         // connect to database
         $this->database = $this->get_db_connect(DB_NAME);
-
         $this->sedjm = new SEDJM($this->connect, $this->database);
-
         $this->accounts = new Accounts($this->sedjm);
 
+        // Set JWT
+        static::$jwt = new JWT($_ENV['JWT_TOKEN']);
+
+        // Set tokens
         $token = LocalStorage::get_data("token", 'session', true);
         if (empty($token)) {
             $token = LocalStorage::get_data("token", 'cookie', true);
             LocalStorage::set_data("token", $token, 'session', true);
         }
 
-        // Error Trigger 
-        set_exception_handler([$this, 'exceptionHandler']);
-        set_error_handler([$this, 'errorHandler']);
-
-        // Tokens
-
-        static::$token = $this->check_token($token);
+        static::$token = static::$jwt->check_token($token);
 
         // Pages
         $this->pages = new Pages(static::$token, $this->config);

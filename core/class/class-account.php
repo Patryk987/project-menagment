@@ -7,7 +7,7 @@ namespace ModuleManager;
  */
 class Accounts
 {
-    use DataValidation, JWT;
+    use DataValidation;
     private SEDJM $sedjm;
     public function __construct($sedjm)
     {
@@ -381,7 +381,7 @@ class Accounts
                         "expire_time" => $expire_time
                     ];
 
-                    $token = $this->get_token($payload);
+                    $token = \ModuleManager\Main::$jwt->get_token($payload);
                     $nick = $nick_in_db[0]['nick'];
 
                     $status = true;
@@ -418,7 +418,7 @@ class Accounts
 
         $token = $input["token"];
 
-        $valid = $this->check_token($token);
+        $valid = \ModuleManager\Main::$jwt->check_token($token);
 
         return ["status" => $valid['status'], "data" => $valid['payload']];
 

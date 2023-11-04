@@ -15,7 +15,7 @@ require_once __DIR__ . "/traits/trait-news-api.php";
 class News
 {
 
-    use TNewsPages, TNewsApi, \ModuleManager\LoadFile, \ModuleManager\JWT;
+    use TNewsPages, TNewsApi, \ModuleManager\LoadFile;
 
     private int $user_id = 0;
 
@@ -25,7 +25,7 @@ class News
         if (empty($token)) {
             $token = \ModuleManager\LocalStorage::get_data("token", 'cookie', true);
         } else {
-            $this->user_id = $this->check_token($token)['payload']->user_id;
+            $this->user_id = \ModuleManager\Main::$jwt->check_token($token)['payload']->user_id;
         }
 
     }

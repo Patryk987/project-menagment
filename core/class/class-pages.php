@@ -198,7 +198,7 @@ trait MenagePanel
 
 class Pages
 {
-    use JWT, LoadFile, MenagePage, MenagePanel, API, Modules;
+    use LoadFile, MenagePage, MenagePanel, API, Modules;
 
     private array $config;
     private string $base_link;

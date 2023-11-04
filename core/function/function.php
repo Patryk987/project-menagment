@@ -496,7 +496,7 @@ function project_list()
 {
     global $main;
     $project = new ProjectsRepository;
-    $projects_id = $project->get_user_projects(ModuleManager\Main::$token['payload']->user_id);
+    $projects_id = $project->get_user_projects(\ModuleManager\Main::$token['payload']->user_id);
 
     $output = "";
 

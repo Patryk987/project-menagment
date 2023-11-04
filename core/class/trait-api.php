@@ -202,7 +202,7 @@ trait API
         }
 
         // Token
-        $token_data = $this->get_token_data();
+        $token_data = Main::$jwt->get_token_data();
         $payload = (array) $token_data['payload'];
 
         $input = array_merge($json, $get);
@@ -221,7 +221,7 @@ trait API
     private function get_token_data(): array
     {
         $token = !empty(getallheaders()['user_key']) ? getallheaders()['user_key'] : "";
-        $token_data = $this->check_token($token);
+        $token_data = Main::$jwt->check_token($token);
         return $token_data;
 
     }
@@ -264,7 +264,7 @@ trait API
 
         }
 
-        $token_data = $this->get_token_data();
+        $token_data = Main::$jwt->get_token_data();
         $api_permission = !empty($token_data['payload']->permission) ? in_array($token_data['payload']->permission, static::$endpoints[$method][$name]['access_permission']) : false;
 
         if ($api_permission || in_array(0, static::$endpoints[$method][$name]['access_permission'])) {

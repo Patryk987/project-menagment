@@ -2,16 +2,13 @@
 
 namespace ModuleManager;
 
-trait JWT
+class JWT
 {
-    private string $secret = "MIIC7jCCAlegAwIBAgIBATANBgkqhkiG9w0BAQQFADCBqTELMAkGA1UEBhMCWFkxFTATBgNVBAgTDFNuYWtlIERlc2VydDETMBEGA1UEBxMKU25ha2UgVG93bjEXMBUGcml0eTEVMBMGA1UEAxMMU25ha2UgT2lsIENBMR4wHAYJKoZIhvcNAQkBFg9jYUBzcnZlciBUZWFtMRkwFwYDVQQDExB3d3cuc25ha2VvaWwuZG9tMR8wHQYJKoZIhvcNlWoANFlAzlSdbxeGVHoT0K+gT5w3UxwZKv2DLbCTzLZyPwIDAQABoyYwJDAPBgNV";
-    private function base64_url_encode($text)
+    private string $secret;
+
+    public function __construct(string $secret)
     {
-        return str_replace(
-            ['+', '/', '='],
-            ['-', '_', ''],
-            base64_encode($text)
-        );
+        $this->secret = $secret;
     }
 
     public function get_token($payload)
@@ -109,7 +106,15 @@ trait JWT
             return ["status" => false, "data" => ""];
         }
 
-
-
     }
+
+    private function base64_url_encode($text)
+    {
+        return str_replace(
+            ['+', '/', '='],
+            ['-', '_', ''],
+            base64_encode($text)
+        );
+    }
+
 }
