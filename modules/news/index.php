@@ -42,7 +42,8 @@ class News
             "permission" => [11],
             "position" => 6,
             "status" => true,
-            "icon" => basename(__DIR__) . "/assets/img/test.svg"
+            "icon" => basename(__DIR__) . "/assets/img/test.svg",
+            "belongs_to_project" => true
         ];
 
         \ModuleManager\Pages::set_modules($first_page);

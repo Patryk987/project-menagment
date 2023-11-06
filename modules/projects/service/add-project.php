@@ -16,7 +16,8 @@ class AddProjects
             "permission" => [11],
             "status" => true,
             "icon" => basename(__DIR__) . "/../projects/assets/img/icon.svg",
-            "position" => 1
+            "position" => 1,
+            "belongs_to_project" => false
         ];
         \ModuleManager\Pages::set_modules($main_page);
     }

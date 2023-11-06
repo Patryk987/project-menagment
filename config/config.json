@@ -7,6 +7,7 @@
     "Anti-clickjacking": false,
     "pages": {
         "panel": "panel",
+        "project": "project",
         "login": "login",
         "delete": "delete",
         "registration": "registration",

@@ -107,48 +107,101 @@ trait MenagePanel
 
     }
 
-    private function load_module($last_page)
+    private function load_lower_module($project): string
     {
-        global $main;
-        if (static::$token["status"]) {
+        $user_permission = static::$token['payload']->permission;
 
-            $actual_module = $this->get_modules_data($last_page);
-
-            $user_permission = static::$token['payload']->permission;
-            $module_permission = $actual_module['access_permission'];
-
-
-
-            if (empty($module_permission) && $last_page != $this->config["pages"]->panel) {
-                return $this->load_empty_panel_page();
-            }
+        $lower = "";
+        foreach (static::$modules as $key => $value) {
 
             if (
-                (empty($module_permission) && $last_page == $this->config["pages"]->panel)
-                || in_array($user_permission, $module_permission)
-                || in_array(0, $module_permission)
+                in_array($user_permission, $value['access_permission'])
+                && (isset($value["belongs_to_project"]) && $value["belongs_to_project"] == $project)
             ) {
-                static::$module = $this->get_module($last_page);
-                return $this->load_panel_page();
-            }
+                if ($value['type'] == "parent" && (!isset($lower_position) || $value['position'] < $lower_position)) {
+                    $lower = $key;
+                    $lower_position = $value['position'];
+                }
 
-
-            $full_link = __DIR__ . "/../../panel-template/html/no-permission.html";
-            return $this->get_page($full_link);
-
-        } else {
-
-            $actual_module = $this->get_modules_data($last_page);
-            $module_permission = $actual_module['access_permission'];
-
-            if (in_array(0, $module_permission)) {
-                static::$module = $this->get_module($last_page);
-                return $this->load_panel_page();
-            } else {
-                $this->redirect("/" . $this->config["pages"]->login);
             }
 
         }
+
+        if (!empty($lower)) {
+            return $this->load_module($lower, $project);
+        } else {
+            return $this->load_empty_panel_page();
+        }
+    }
+
+    private function load_module($last_page, $project = false)
+    {
+        global $main;
+
+        try {
+
+            $actual_module = $this->get_modules_data($last_page);
+            $module_permission = $actual_module['access_permission'];
+            $user_permission = static::$token['payload']->permission;
+
+            if (isset($actual_module["belongs_to_project"]) && $actual_module["belongs_to_project"] == $project) {
+
+                if (static::$token["status"]) {
+
+                    if (
+                        empty($module_permission)
+                        && $last_page != $this->config["pages"]->panel
+                    ) {
+                        return $this->load_empty_panel_page();
+                    }
+
+                    if (
+                        (empty($module_permission) && $last_page == $this->config["pages"]->panel)
+                        || in_array($user_permission, $module_permission)
+                        || in_array(0, $module_permission)
+                    ) {
+                        static::$module = $this->get_module($last_page);
+
+                        if ($project) {
+                            return $this->load_project_page();
+                        } else {
+                            return $this->load_panel_page();
+                        }
+                    }
+
+                    $full_link = __DIR__ . "/../../panel-template/html/no-permission.html";
+                    return $this->get_page($full_link);
+
+                } else if (in_array(0, $module_permission)) {
+
+                    static::$module = $this->get_module($last_page);
+
+                    if ($project) {
+                        return $this->load_project_page();
+                    } else {
+                        return $this->load_panel_page();
+                    }
+
+                } else {
+
+                    $this->redirect("/" . $this->config["pages"]->login);
+
+                }
+
+            } else {
+                return $this->load_lower_module($project);
+            }
+
+        } catch (\Throwable $th) {
+            $details = [
+                "message" => $th->getMessage(),
+                "code" => $th->getCode(),
+                "file" => $th->getFile(),
+                "line" => $th->getLine()
+            ];
+            \ModuleManager\Main::set_error('Load module', 'ERROR', $details);
+        }
+
     }
 
     private function get_panel($sub_page_list): string
@@ -172,19 +225,14 @@ trait MenagePanel
             default:
                 if (!empty($sub_page_list[1])) {
 
-                    $project = new \Projects(static::$token['payload']->user_id, $sub_page_list[1]);
-                    self::$project = $project->get_project_data();
-                    if (
-                        self::$project->get_status() == \ProjectStatus::ACTIVE
-                        || self::$project->get_status() == \ProjectStatus::ARCHIVE
-                    ) {
-                        return $this->load_module($last_page);
-                    } else {
-                        return $this->load_empty_panel_page();
-                    }
+                    return $this->load_module($last_page, false);
+
                 } else {
                     // TODO: load default project page
-                    return $this->load_empty_panel_page();
+                    // return $this->load_empty_panel_page();
+                    return $this->load_lower_module(false);
+
+
                 }
 
         }
@@ -195,10 +243,47 @@ trait MenagePanel
 
 }
 
+trait MenageProject
+{
+
+    private function load_project_page()
+    {
+
+        $full_link = __DIR__ . "/../../panel-template/html/project.html";
+        return $this->get_page($full_link);
+
+    }
+
+    private function get_project($sub_page_list)
+    {
+        $last_page = end($sub_page_list);
+        if (!empty($sub_page_list[1])) {
+
+            $project = new \Projects(static::$token['payload']->user_id, $sub_page_list[1]);
+            self::$project = $project->get_project_data();
+            if (
+                self::$project->get_status() == \ProjectStatus::ACTIVE
+                || self::$project->get_status() == \ProjectStatus::ARCHIVE
+            ) {
+                return $this->load_module($last_page, true);
+            } else {
+                return $this->load_empty_panel_page();
+            }
+
+        } else {
+            // TODO: load default project page
+            return $this->load_empty_panel_page();
+
+
+        }
+
+    }
+}
+
 
 class Pages
 {
-    use LoadFile, MenagePage, MenagePanel, API, Modules;
+    use LoadFile, MenagePage, MenagePanel, API, Modules, MenageProject;
 
     private array $config;
     private string $base_link;
@@ -232,6 +317,11 @@ class Pages
     {
 
         $sub_pages = str_replace($this->base_link, "", $this->actual_link);
+
+        while (str_contains($sub_pages, "//")) {
+            $sub_pages = str_replace("//", "/", $sub_pages);
+        }
+
         $sub_pages = explode("?", $sub_pages)[0];
         $sub_pages = explode("/", $sub_pages);
 
@@ -262,9 +352,24 @@ class Pages
 
             $type = $sub_page_list[0];
 
+            if (!empty($sub_page_list[1]))
+                $project = $sub_page_list[1];
+
+            if (!empty($sub_page_list[2]))
+                $module = $sub_page_list[2];
+
+            if (!empty($sub_page_list[3]))
+                $sub_module = $sub_page_list[3];
+
         } else {
 
             $type = 'page';
+
+            if (!empty($sub_page_list[1]))
+                $page = $sub_page_list[1];
+
+            if (!empty($sub_page_list[2]))
+                $sub_page = $sub_page_list[2];
 
         }
 
@@ -275,6 +380,9 @@ class Pages
                 break;
             case $this->config["pages"]->panel:
                 echo $this->get_panel($sub_page_list);
+                break;
+            case $this->config["pages"]->project:
+                echo $this->get_project($sub_page_list);
                 break;
             case $this->config["pages"]->api:
                 echo $this->api($last_sub_page);

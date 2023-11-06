@@ -30,13 +30,6 @@
     <!-- Injected styles -->
     {{inject_style}}
 
-    <style>
-        .container .additional,
-        .container article {
-            grid-column: col-2 / col-end;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -78,6 +71,10 @@
                 </div>
             </a>
         </div>
+
+        <nav>
+            {{module_list}}
+        </nav>
 
         <article>
             {{info_box}}

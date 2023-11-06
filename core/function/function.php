@@ -198,9 +198,7 @@ ModuleManager\DataBinder::set_binder(
 function module_list()
 {
     global $main;
-    $module_list = $main->pages->get_modules_list();
-
-
+    $module_list = $main->pages->get_modules_list(true);
 
     $toggle_icon = file_get_contents(__DIR__ . "/../../panel-template/img/toggle_icon.svg");
     $html = "<ul>";
@@ -219,11 +217,14 @@ function module_list()
 
         $child = "";
         if (!empty($value['child'])) {
+
             $visible_child = false;
+
             foreach ($value['child'] as $key => $child_value) {
                 if ($child_value['show'] == true)
                     $visible_child = true;
             }
+
             if ($visible_child) {
                 $child .= "<ul>";
                 foreach ($value['child'] as $key => $child_value) {
@@ -237,7 +238,7 @@ function module_list()
                     if (!empty($child_value['show']) || $child_value['show'] == true) {
 
                         $child .= "<li class='" . $sub_active . "'>";
-                        $child .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->panel . "/" . \ModuleManager\Pages::$project->get_project_id() . "/" . $value['link'] . "/" . $child_value['link'] . "'>";
+                        $child .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->project . "/" . \ModuleManager\Pages::$project->get_project_id() . "/" . $value['link'] . "/" . $child_value['link'] . "'>";
                         $child .= "<span class='icon'></span>";
                         $child .= "<span>" . $child_value['name'] . "</span>";
 
@@ -253,7 +254,7 @@ function module_list()
 
         $html .= "<li class='" . $active . "'>";
         $html .= "<div class='parent'>";
-        $html .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->panel . "/" . \ModuleManager\Pages::$project->get_project_id() . "/" . $value['link'] . "'>";
+        $html .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->project . "/" . \ModuleManager\Pages::$project->get_project_id() . "/" . $value['link'] . "'>";
         $html .= "<span class='border'></span>";
         $html .= "<span class='icon'>" . $icon . "</span>";
         $html .= "<span class='name'>" . $value['name'] . "</span>";
@@ -507,7 +508,7 @@ function project_list()
             if (!empty($project) && $project_data[0]['status'] == \ProjectStatus::ACTIVE->value) {
 
                 $img_src = '/' . $project_data[0]['photo_url'] . '" alt="' . $project_data[0]['name'] . '';
-                $link = '/' . ModuleManager\Config::get_config()["pages"]->panel . "/" . $project_data[0]['project_id'] . '/home';
+                $link = '/' . ModuleManager\Config::get_config()["pages"]->project . "/" . $project_data[0]['project_id'];
 
                 $output .= '
                 <a href="' . $link . '">

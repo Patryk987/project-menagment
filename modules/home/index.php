@@ -21,7 +21,20 @@ class Home
             "permission" => [11],
             "status" => true,
             "icon" => basename(__DIR__) . "/assets/img/icon.svg",
-            "position" => 1
+            "position" => 1,
+            "belongs_to_project" => false
+        ];
+        \ModuleManager\Pages::set_modules($main_page);
+
+        $main_page = [
+            "name" => "Home",
+            "link" => "homeasdf",
+            "function" => [$this, "home"],
+            "permission" => [11],
+            "status" => true,
+            "icon" => basename(__DIR__) . "/assets/img/icon.svg",
+            "position" => 1,
+            "belongs_to_project" => true
         ];
         \ModuleManager\Pages::set_modules($main_page);
 

@@ -25,7 +25,8 @@ trait Modules
                 "access_permission" => $module["permission"],
                 "icon" => $module["icon"],
                 "position" => !empty($module["position"]) ? $module["position"] : 99,
-                "type" => "parent"
+                "type" => "parent",
+                "belongs_to_project" => isset($module["belongs_to_project"]) ? $module["belongs_to_project"] : false
             ];
 
         }
@@ -53,15 +54,9 @@ trait Modules
                 "type" => "child",
                 "parent" => $parent_link,
                 "show" => isset($module["show"]) ? $module["show"] : true,
+                "belongs_to_project" => static::$modules[$parent_link]["belongs_to_project"],
                 "position" => 999
             ];
-            // static::$modules[$parent_link]['child'][] = [
-            //     "link" => $module["link"],
-            //     "name" => $module["name"],
-            //     "function" => $module["function"],
-            //     "access_permission" => static::$modules[$parent_link]["access_permission"],
-            //     "icon" => ""
-            // ];
 
         }
 
@@ -96,7 +91,7 @@ trait Modules
         }
     }
 
-    public function get_modules_list()
+    public function get_modules_list($for_project = false)
     {
         $list = [];
 
@@ -110,11 +105,12 @@ trait Modules
 
         }
 
-        // sort_array(static::$modules, $key, $type = "ASC")
-
         foreach (static::$modules as $key => $value) {
 
-            if (in_array($user_permission, $value['access_permission'])) {
+            if (
+                in_array($user_permission, $value['access_permission'])
+                && (isset($value['belongs_to_project']) && $value['belongs_to_project'] == $for_project)
+            ) {
 
                 if ($value['type'] == "parent") {
 
@@ -135,7 +131,6 @@ trait Modules
 
         foreach (static::$modules as $key => $value) {
 
-
             if (in_array($user_permission, $value['access_permission'])) {
 
                 if ($value['type'] == "child") {
@@ -148,8 +143,8 @@ trait Modules
                             "show" => $value['show']
                         ];
                     }
-
-                    $list[$value['parent']]["child"][] = $data;
+                    if (isset($list[$value['parent']]))
+                        $list[$value['parent']]["child"][] = $data;
                 }
 
 
@@ -165,20 +160,17 @@ trait Modules
 
     public function get_modules_data($link)
     {
+
         if (!empty(static::$modules[$link])) {
 
             return static::$modules[$link];
 
         } else {
-            if ($link == $this->config["pages"]->panel) {
+
+            if ($link == $this->config["pages"]->panel || $link == $this->config["pages"]->project) {
                 header("LOCATION: /panel/home");
-                // return [
-                //     "link" => "",
-                //     "name" => "",
-                //     "function" => "home",
-                //     "access_permission" => [1]
-                // ];
             }
+
             return [
                 "link" => "",
                 "name" => "",
@@ -191,11 +183,13 @@ trait Modules
 
     public function get_module($name)
     {
+
         if (!empty($this->get_modules_data($name)["function"])) {
             $output = call_user_func($this->get_modules_data($name)["function"]);
         } else {
             $output = "";
         }
+
         return $output;
 
     }
