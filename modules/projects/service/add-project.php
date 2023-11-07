@@ -13,7 +13,7 @@ class AddProjects
             "name" => "Add project",
             "link" => "add_project",
             "function" => [$this, "add_project"],
-            "permission" => [11],
+            "permission" => [1, 11],
             "status" => true,
             "icon" => basename(__DIR__) . "/../projects/assets/img/icon.svg",
             "position" => 1,

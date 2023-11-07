@@ -13351,3 +13351,54 @@
 [2023-11-04 13:52:52] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
 [2023-11-04 13:52:52] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
 [2023-11-04 13:52:54] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-11-06 20:52:09] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-06 20:52:09] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-06 20:52:09] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-06 21:18:23] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-06 21:18:23] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-06 21:18:23] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-06 21:18:25] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-06 21:18:25] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-06 21:18:25] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-06 21:18:27] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-06 21:18:27] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-06 21:18:27] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-06 21:20:10] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-06 21:20:10] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-06 21:20:10] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-06 21:28:10] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-06 21:28:10] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-06 21:28:10] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-06 21:47:38] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-06 21:47:38] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-06 21:47:38] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-06 21:48:59] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-06 21:48:59] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-06 21:48:59] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-07 17:05:10] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-07 17:05:10] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-07 17:05:10] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-07 20:19:30] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-07 20:19:30] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-07 20:19:30] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-07 20:21:53] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-07 20:21:53] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-07 20:21:53] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-07 20:29:47] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-07 20:29:47] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-07 20:29:47] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-07 20:32:45] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-07 20:32:45] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-07 20:32:45] [ERROR] Load module: Unknown column 'News.project_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-11-07 20:41:32] [ERROR] Unexpected error: require_once(/var/www/html/modules/notes/model/insert-model.php): Failed to open stream: No such file or directory,/var/www/html/modules/notes/index.php,7
+[2023-11-07 20:41:32] [ERROR] Include module: Failed opening required '/var/www/html/modules/notes/model/insert-model.php' (include_path='.:/usr/local/lib/php'),0,/var/www/html/modules/notes/index.php,7
+[2023-11-07 20:41:48] [ERROR] Unexpected error: require_once(/var/www/html/modules/notes/model/insert-model.php): Failed to open stream: No such file or directory,/var/www/html/modules/notes/index.php,7
+[2023-11-07 20:41:48] [ERROR] Include module: Failed opening required '/var/www/html/modules/notes/model/insert-model.php' (include_path='.:/usr/local/lib/php'),0,/var/www/html/modules/notes/index.php,7
+[2023-11-07 20:44:29] [ERROR] Load module: call_user_func(): Argument #1 ($callback) must be a valid callback, class Notes\Service\NotesService does not have a method "notes",0,/var/www/html/core/class/trait-module.php,188
+[2023-11-07 20:44:45] [ERROR] Load module: call_user_func(): Argument #1 ($callback) must be a valid callback, class Notes\Service\NotesService does not have a method "notes",0,/var/www/html/core/class/trait-module.php,188
+[2023-11-07 20:44:52] [ERROR] Load module: call_user_func(): Argument #1 ($callback) must be a valid callback, class Notes\Service\NotesService does not have a method "notes",0,/var/www/html/core/class/trait-module.php,188
+[2023-11-07 20:44:58] [ERROR] Load module: call_user_func(): Argument #1 ($callback) must be a valid callback, class Notes\Service\NotesService does not have a method "notes",0,/var/www/html/core/class/trait-module.php,188
+[2023-11-07 20:45:03] [ERROR] Load module: call_user_func(): Argument #1 ($callback) must be a valid callback, class Notes\Service\NotesService does not have a method "notes",0,/var/www/html/core/class/trait-module.php,188
+[2023-11-07 20:46:00] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/notes/service/../view/add-project.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2023-11-07 20:56:16] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules//var/www/html/modules/notes/controller/../notes/assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,213
+[2023-11-07 20:56:32] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules//var/www/html/modules/notes/controller/../assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,213
