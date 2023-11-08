@@ -13685,3 +13685,7 @@
 [2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
 [2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
 [2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 21:53:10] [ERROR] Unexpected error: require_once(/var/www/html/modules/notes/model/notes-model.php): Failed to open stream: No such file or directory,/var/www/html/modules/notes/index.php,6
+[2023-11-08 21:53:10] [ERROR] Include module: Failed opening required '/var/www/html/modules/notes/model/notes-model.php' (include_path='.:/usr/local/lib/php'),0,/var/www/html/modules/notes/index.php,6
+[2023-11-08 21:53:12] [ERROR] Unexpected error: require_once(/var/www/html/modules/notes/model/notes-model.php): Failed to open stream: No such file or directory,/var/www/html/modules/notes/index.php,6
+[2023-11-08 21:53:12] [ERROR] Include module: Failed opening required '/var/www/html/modules/notes/model/notes-model.php' (include_path='.:/usr/local/lib/php'),0,/var/www/html/modules/notes/index.php,6
