@@ -33,7 +33,7 @@ require_once("./core/class/class-file-upload.php");
 require_once("./core/class/class-config.php");
 require_once("./core/class/trait-debug.php");
 require_once("./core/class/class-send-mail.php");
-require_once("./core/class/trait-db-connect.php");
+require_once("./core/class/class-db-connect.php");
 require_once('./core/class/trait-data-validation.php');
 require_once('./core/class/trait-jwt.php');
 require_once("./core/class/class-sedjm.php");
@@ -58,7 +58,7 @@ require_once("./core/class/class-swaf.php");
 
 class Main
 {
-    use Debug, DatabaseConnect;
+    use Debug;
 
     public array $config;
     public array $sub_pages;
@@ -71,8 +71,18 @@ class Main
     public static $token;
     public static $jwt;
 
+    public DatabaseConnect $db_connect;
+
     public function __construct()
     {
+
+
+
+        $database_core_table = file_get_contents('./config/database.json');
+        $database_core_table = html_entity_decode($database_core_table);
+        $database_core_table = json_decode($database_core_table, true);
+        DatabaseConnect::set_database_fragment($database_core_table[DB_NAME]);
+
 
         // Set Env
         $load_env = new LoadEnv(__DIR__ . "/../config/");
@@ -89,16 +99,12 @@ class Main
 
         $this->start_debug($debug);
 
+
         // Anti-clickjacking
         if ($this->config['Anti-clickjacking'])
             header('X-Frame-Options: SAMEORIGIN');
         else
             header('X-Frame-Options: DENY');
-
-        // connect to database
-        $this->database = $this->get_db_connect(DB_NAME);
-        $this->sedjm = new SEDJM($this->connect, $this->database);
-        $this->accounts = new Accounts($this->sedjm);
 
         // Set JWT
         static::$jwt = new JWT($_ENV['JWT_TOKEN']);
@@ -114,6 +120,15 @@ class Main
 
         // Pages
         $this->pages = new Pages(static::$token, $this->config);
+
+        // connect to database
+        $this->db_connect = new DatabaseConnect();
+        $this->database = $this->db_connect->get_db_connect(DB_NAME);
+        $this->sedjm = new SEDJM($this->db_connect->connect, $this->database);
+        $this->accounts = new Accounts($this->sedjm);
+
+
+
 
         $this->page_name = $this->pages->get_last_page();
 

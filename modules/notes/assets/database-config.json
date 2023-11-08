@@ -1,0 +1,459 @@
+{
+    "note": {
+        "Views": {
+            "view_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": true,
+                "AUTO_INCREMENT": true,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true
+            },
+            "user_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false,
+                "foreign": {
+                    "Notepad": {
+                        "column": "notepad_id"
+                    }
+                }
+            },
+            "notepad_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false,
+                "foreign": {
+                    "Notepad": {
+                        "column": "notepad_id"
+                    }
+                }
+            },
+            "view": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true
+            }
+        },
+        "Notepad": {
+            "notepad_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": true,
+                "AUTO_INCREMENT": true,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true
+            },
+            "project_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false,
+                "foreign": {
+                    "Fields": {
+                        "column": "project_id"
+                    },
+                    "Notes": {
+                        "column": "notepad_id"
+                    }
+                }
+            },
+            "author_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "name": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "icon_url": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "background": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "default_view": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "create_time": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "update_time": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            }
+        },
+        "Fields": {
+            "filed_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": true,
+                "AUTO_INCREMENT": true,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true,
+                "foreign": {
+                    "FieldsData": {
+                        "column": "filed_id"
+                    }
+                }
+            },
+            "project_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "field_name": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "type": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            }
+        },
+        "Notes": {
+            "note_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": true,
+                "AUTO_INCREMENT": true,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true,
+                "foreign": {
+                    "FieldsData": {
+                        "column": "note_id"
+                    },
+                    "Assignments": {
+                        "column": "note_id"
+                    },
+                    "Comments": {
+                        "column": "note_id"
+                    }
+                }
+            },
+            "notepad_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "author_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "title": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": true,
+                "unique": false
+            },
+            "note": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": true,
+                "unique": false
+            },
+            "create_time": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": true,
+                "unique": false
+            },
+            "update_time": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": true,
+                "unique": false
+            }
+        },
+        "FieldsData": {
+            "filed_data_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": true,
+                "AUTO_INCREMENT": true,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true
+            },
+            "filed_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "note_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "field_key": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "value": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": true,
+                "unique": false
+            }
+        },
+        "Assignments": {
+            "assignments_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": true,
+                "AUTO_INCREMENT": true,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true
+            },
+            "user_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "note_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            }
+        },
+        "Comments": {
+            "comment_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": true,
+                "AUTO_INCREMENT": true,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true
+            },
+            "user_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "note_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "comment": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": true,
+                "unique": false
+            },
+            "create_time": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": true,
+                "unique": false
+            }
+        }
+    }
+}

@@ -35,9 +35,9 @@ class SEDJM
         $prepare_data = '';
 
         // TODO: sprawdzić dlaczego nie działa warunek poprawności
-        // if(array_key_exists($field, $this->database['table'][$table])) {
+        // if(array_key_exists($field, $this->database[$table])) {
 
-        $info_about_column = $this->database['table'][$table][$field];
+        $info_about_column = $this->database[$table][$field];
 
         if ($info_about_column['encrypt'] != false) {
 
@@ -559,7 +559,7 @@ class SEDJM
         $querys = [];
         $foreign_key = [];
 
-        foreach ($this->database['table'] as $table_name => $table_column) {
+        foreach ($this->database as $table_name => $table_column) {
             $columns = [];
             $pk_f = '';
 
@@ -633,7 +633,7 @@ class SEDJM
                     $prepare_column .= ",";
             }
 
-            $querys[] = "CREATE TABLE $table_name ($prepare_column);";
+            $querys[] = "CREATE TABLE IF NOT EXISTS $table_name ($prepare_column);";
         }
 
         if ($save) {

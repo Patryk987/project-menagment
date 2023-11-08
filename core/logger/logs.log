@@ -13402,3 +13402,286 @@
 [2023-11-07 20:46:00] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/notes/service/../view/add-project.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
 [2023-11-07 20:56:16] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules//var/www/html/modules/notes/controller/../notes/assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,213
 [2023-11-07 20:56:32] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../modules//var/www/html/modules/notes/controller/../assets/img/icon.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,213
+[2023-11-07 21:20:25] [ERROR] Unexpected error: Attempt to read property "user_id" on array,/var/www/html/core/class/class-pages.php,262
+[2023-11-07 21:20:25] [WARNING] Unexpected warning: Projects::__construct(): Argument #1 ($user_id) must be of type int, null given, called in /var/www/html/core/class/class-pages.php on line 262
+[2023-11-07 21:20:33] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-11-08 19:49:23] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:17),/var/www/html/core/index.php,107
+[2023-11-08 19:49:23] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:17),/var/www/html/core/index.php,107
+[2023-11-08 19:49:23] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:17),/var/www/html/core/class/class-pages.php,39
+[2023-11-08 19:52:15] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/notes/modules/notes/assets/database-confige.json): Failed to open stream: No such file or directory,/var/www/html/modules/notes/index.php,15
+[2023-11-08 19:52:15] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/notes/modules/notes/assets/database-confige.json): Failed to open stream: No such file or directory,/var/www/html/modules/notes/index.php,15
+[2023-11-08 19:52:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,39
+[2023-11-08 19:52:28] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/index.php:19),/var/www/html/core/class/class-pages.php,39
+[2023-11-08 19:53:09] [ERROR] Include module: Class "Notes\DatabaseConnect" not found,0,/var/www/html/modules/notes/index.php,20
+[2023-11-08 19:53:43] [ERROR] Include module: Class "Notes\DatabaseConnect" not found,0,/var/www/html/modules/notes/index.php,20
+[2023-11-08 19:53:43] [WARNING] Unexpected warning: Call to undefined method ModuleManager\JWT::get_token_data()
+[2023-11-08 19:53:47] [ERROR] Include module: Class "Notes\DatabaseConnect" not found,0,/var/www/html/modules/notes/index.php,20
+[2023-11-08 19:53:49] [ERROR] Include module: Class "Notes\DatabaseConnect" not found,0,/var/www/html/modules/notes/index.php,20
+[2023-11-08 19:53:49] [ERROR] Include module: Class "Notes\DatabaseConnect" not found,0,/var/www/html/modules/notes/index.php,20
+[2023-11-08 19:53:57] [WARNING] Unexpected warning: Call to undefined method ModuleManager\JWT::get_token_data()
+[2023-11-08 19:54:21] [WARNING] Unexpected warning: Call to undefined method ModuleManager\JWT::get_token_data()
+[2023-11-08 19:56:24] [WARNING] Unexpected warning: Cannot use object of type ModuleManager\JWT as array
+[2023-11-08 20:03:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:03:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:03:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:03:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/index.php,107
+[2023-11-08 20:03:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:03:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:03:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:03:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/index.php,107
+[2023-11-08 20:04:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/index.php:18),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:04:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/index.php:18),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:04:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/index.php:18),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:04:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/index.php:18),/var/www/html/core/index.php,107
+[2023-11-08 20:04:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/index.php:18),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:04:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/index.php:18),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:04:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/index.php:18),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:04:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/index.php:18),/var/www/html/core/index.php,107
+[2023-11-08 20:05:41] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:05:41] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:05:41] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:05:41] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/index.php,107
+[2023-11-08 20:05:41] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:05:41] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:05:41] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:05:41] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:22),/var/www/html/core/index.php,107
+[2023-11-08 20:08:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:08:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:08:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:08:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/index.php,107
+[2023-11-08 20:08:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:08:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:08:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:08:01] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/index.php,107
+[2023-11-08 20:09:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:09:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:09:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:09:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/index.php,107
+[2023-11-08 20:09:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:09:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:09:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:09:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/index.php,107
+[2023-11-08 20:11:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:11:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:11:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:11:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/index.php,107
+[2023-11-08 20:11:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:11:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:11:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:11:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/index.php,107
+[2023-11-08 20:11:30] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:11:30] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:11:30] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:11:30] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/index.php,107
+[2023-11-08 20:11:30] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,224
+[2023-11-08 20:11:30] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,225
+[2023-11-08 20:11:30] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/class/trait-api.php,162
+[2023-11-08 20:11:30] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-db-connect.php:26),/var/www/html/core/index.php,107
+[2023-11-08 20:12:11] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-sedjm.php,364
+[2023-11-08 20:12:11] [WARNING] Unexpected warning: Unknown column 'Array.project_id' in 'field list'
+[2023-11-08 20:12:21] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-sedjm.php,364
+[2023-11-08 20:12:21] [WARNING] Unexpected warning: Unknown column 'Array.project_id' in 'field list'
+[2023-11-08 20:12:22] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-sedjm.php,364
+[2023-11-08 20:12:22] [WARNING] Unexpected warning: Unknown column 'Array.project_id' in 'field list'
+[2023-11-08 20:12:22] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-sedjm.php,364
+[2023-11-08 20:12:22] [WARNING] Unexpected warning: Unknown column 'Array.project_id' in 'field list'
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:13] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Undefined array key "table",/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,40
+[2023-11-08 20:13:14] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
