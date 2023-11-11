@@ -22,6 +22,6 @@ $database_notes_table = html_entity_decode($database_notes_table);
 $database_notes_table = json_decode($database_notes_table, true);
 
 \ModuleManager\DatabaseConnect::set_database_fragment($database_notes_table["note"]);
-// Init
 
+// Init
 new Controller\NotesController();

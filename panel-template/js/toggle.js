@@ -64,9 +64,6 @@ close_popup.forEach(item => {
     item.addEventListener("click", () => {
         item.closest('.popup').style.display = "none";
     });
-    setTimeout(() => {
-        item.closest('.popup').style.display = "none";
-    }, 10000)
 })
 
 // toggle menu

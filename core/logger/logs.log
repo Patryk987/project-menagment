@@ -13689,3 +13689,4 @@
 [2023-11-08 21:53:10] [ERROR] Include module: Failed opening required '/var/www/html/modules/notes/model/notes-model.php' (include_path='.:/usr/local/lib/php'),0,/var/www/html/modules/notes/index.php,6
 [2023-11-08 21:53:12] [ERROR] Unexpected error: require_once(/var/www/html/modules/notes/model/notes-model.php): Failed to open stream: No such file or directory,/var/www/html/modules/notes/index.php,6
 [2023-11-08 21:53:12] [ERROR] Include module: Failed opening required '/var/www/html/modules/notes/model/notes-model.php' (include_path='.:/usr/local/lib/php'),0,/var/www/html/modules/notes/index.php,6
+[2023-11-11 16:01:18] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/function/../../notes/assets/img/spin.svg): Failed to open stream: No such file or directory,/var/www/html/core/function/function.php,450
