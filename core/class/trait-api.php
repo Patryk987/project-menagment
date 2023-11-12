@@ -202,7 +202,7 @@ trait API
         }
 
         // Token
-        $token_data = Main::$token;
+        $token_data = $this->get_token_data();
         $payload = (array) $token_data['payload'];
 
         $input = array_merge($json, $get);
@@ -255,7 +255,7 @@ trait API
 
         }
 
-        $token_data = Main::$token;
+        $token_data = $this->get_token_data();
         $api_permission = !empty($token_data['payload']->permission) ? in_array($token_data['payload']->permission, static::$endpoints[$method][$name]['access_permission']) : false;
 
         if ($api_permission || in_array(0, static::$endpoints[$method][$name]['access_permission'])) {
@@ -294,13 +294,20 @@ trait API
             }
 
         } else {
-
             $output = new \Models\ApiModel(\ApiStatus::ERROR, [], ["Unauthorized"]);
             $output->set_code(401);
 
             $this->return_data($output);
 
         }
+
+    }
+
+    private function get_token_data(): array
+    {
+        $token = !empty(getallheaders()['user_key']) ? getallheaders()['user_key'] : "";
+        $token_data = Main::$jwt->check_token($token);
+        return $token_data;
 
     }
 

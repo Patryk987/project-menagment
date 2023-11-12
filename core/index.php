@@ -78,29 +78,20 @@ class Main
     public function __construct()
     {
 
-
-
         $database_core_table = file_get_contents('./config/database.json');
         $database_core_table = html_entity_decode($database_core_table);
         $database_core_table = json_decode($database_core_table, true);
         DatabaseConnect::set_database_fragment($database_core_table[DB_NAME]);
 
 
-        // Set Env
-        $load_env = new LoadEnv(__DIR__ . "/../config/");
-        $load_env->initEnv();
-
-
         // Error Trigger 
         set_exception_handler([$this, 'exceptionHandler']);
         set_error_handler([$this, 'errorHandler']);
 
-        // Set config
         $this->config = Config::get_config();
         $debug = $this->config['debug'];
 
         $this->start_debug($debug);
-
 
         // Anti-clickjacking
         if ($this->config['Anti-clickjacking'])
@@ -108,10 +99,23 @@ class Main
         else
             header('X-Frame-Options: DENY');
 
+    }
+
+    // Set Env
+    public function set_env()
+    {
+        $load_env = new LoadEnv(__DIR__ . "/../config/");
+        $load_env->initEnv();
+    }
+
+    // Set tokens
+    public function set_token()
+    {
+
         // Set JWT
         static::$jwt = new JWT($_ENV['JWT_TOKEN']);
 
-        // Set tokens
+
         $token = LocalStorage::get_data("token", 'session', true);
         if (empty($token)) {
             $token = LocalStorage::get_data("token", 'cookie', true);
@@ -120,23 +124,29 @@ class Main
 
         static::$token = static::$jwt->check_token($token);
 
-        // Pages
-        $this->pages = new Pages(static::$token, $this->config);
+    }
 
-        // connect to database
+    // connect to database
+    public function set_database_connect()
+    {
+
         $this->db_connect = new DatabaseConnect();
         $this->database = $this->db_connect->get_db_connect(DB_NAME);
         $this->sedjm = new SEDJM($this->db_connect->connect, $this->database);
         $this->accounts = new Accounts($this->sedjm);
+    }
 
+    // Pages
+    public function set_pages()
+    {
 
-
-
+        $this->pages = new Pages(static::$token, $this->config);
         $this->page_name = $this->pages->get_last_page();
 
         $this->popups = new Popups;
 
     }
+
 
     public function __destruct()
     {
