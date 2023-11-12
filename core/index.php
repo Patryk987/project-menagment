@@ -6,6 +6,7 @@ define("DB_NAME", "cms");
 define("NONCE", uniqid());
 
 // Models
+require_once("./core/models/model-api.php");
 require_once("./core/models/model-projects.php");
 
 
@@ -15,6 +16,7 @@ require_once("./core/interface/interface-repository.php");
 // Enums
 require_once("./core/enums/enums-collaborators.php");
 require_once("./core/enums/enums-project-status.php");
+require_once("./core/enums/enums-api-status.php");
 
 // Repository
 require_once("./core/repository/repository-projects.php");

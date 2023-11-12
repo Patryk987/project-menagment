@@ -61,7 +61,7 @@ class Accounts
             "user_id" => $user_id,
             "login_time" => time(),
             "ip" => $_SERVER['REMOTE_ADDR'],
-            "status" => $status ? 1 : 0
+            "status" => \ApiStatus::CORRECT->get_bool_status()
         ];
         $this->sedjm->insert($data, $table);
 
@@ -90,9 +90,9 @@ class Accounts
     /**
      * Register new user
      * @param array $input
-     * @return array [$status bool, $id int, $error string]
+     * @return array \Models\ApiModel
      */
-    public function create_account($input): array
+    public function create_account($input): \Models\ApiModel
     {
 
         $input_nick = !empty($input['nick']) ? trim($input['nick']) : "";
@@ -157,7 +157,7 @@ class Accounts
             $error_details['telephone_error'] = [];
         }
 
-        $return = [];
+        $return = new \Models\ApiModel(\ApiStatus::ERROR);
 
         if (!$errors) {
 
@@ -206,15 +206,19 @@ class Accounts
 
             }
 
-            $return["status"] = $registration_state["status"];
-            $return["data"]["id"] = $registration_state["id"];
-            $return["errors"] = null;
+            // $return["status"] = $registration_state["status"];
+            $return->set_status(\ApiStatus::from($registration_state["status"]));
+            // $return["data"]["id"] = $registration_state["id"];
+            $return->set_message(["id" => $registration_state["id"]]);
+            // $return["errors"] = null;
 
         } else {
 
-            $return["status"] = false;
-            $return["data"]["id"] = null;
-            $return["errors"] = $error_details;
+            // $return["status"] = false;
+            $return->set_status(\ApiStatus::ERROR);
+            // $return["data"]["id"] = null;
+            $return->set_error($error_details);
+            // $return["errors"] = $error_details;
 
         }
 
@@ -337,11 +341,11 @@ class Accounts
      * @param array $input [$nick, $password]
      * @return array [$status bool, $token string, $error string]
      */
-    public function login_to_account($input): array
+    public function login_to_account($input): \Models\ApiModel
     {
 
         $errors = [];
-        $status = false;
+        $status = \ApiStatus::ERROR;
         $token = null;
         $user_id = null;
 
@@ -384,7 +388,7 @@ class Accounts
                     $token = \ModuleManager\Main::$jwt->get_token($payload);
                     $nick = $nick_in_db[0]['nick'];
 
-                    $status = true;
+                    $status = \ApiStatus::CORRECT;
 
                 } else {
                     $errors['password_is_incorrect'] = true;
@@ -404,7 +408,10 @@ class Accounts
             $this->set_new_login($user_id, $status);
         }
 
-        return ["status" => $status, "data" => ["token" => $token, "nick" => $nick], "errors" => $errors];
+
+        $return = new \Models\ApiModel($status, ["token" => $token, "nick" => $nick], $errors);
+        return $return;
+        // ["status" => $status, "data" => ["token" => $token, "nick" => $nick], "errors" => $errors];
 
     }
 
@@ -448,10 +455,11 @@ class Accounts
     /**
      * Reset user password sending mail
      */
-    public function password_reset($input): array
+    public function password_reset($input): \Models\ApiModel
     {
         $email = $input['email'];
-        $output = [];
+
+        $output = new \Models\ApiModel(\ApiStatus::ERROR);
 
         $table = 'Users';
         $this->sedjm->clear_where();
@@ -460,26 +468,29 @@ class Accounts
         $user_data = $this->sedjm->get(['user_id', 'nick', 'email', 'permission'], $table);
 
         if (count($user_data) > 0) {
-            $output['status'] = true;
+            // $output['status'] = true;
+            $output->set_status(\ApiStatus::CORRECT);
         } else {
-            $output['error'] = "user_doesnt_exist";
-            $output['status'] = false;
+            // $output['error'] = "user_doesnt_exist";
+            $output->set_error(["User doesn't exist"]);
+            // $output['status'] = false;
         }
         // TODO: Reset password by mail
         // MailSender::send_mail();
 
+        // return $output;
         return $output;
     }
 
     /**
      * password reset if user know password
      */
-    public function password_reset_login_user($input): array
+    public function password_reset_login_user($input): \Models\ApiModel
     {
 
         $errors = [];
         $incorrect_data = false;
-        $status = false;
+        $status = \ApiStatus::ERROR;
         $user_id = null;
         $table = 'Users';
 
@@ -537,31 +548,34 @@ class Accounts
                 $update_password = $this->sedjm->update(["password" => $new_password], $table);
 
                 if ($update_password["status"]) {
-                    $status = true;
+                    $status = \ApiStatus::CORRECT;
                 } else {
-                    $status = false;
+                    $status = \ApiStatus::ERROR;
                 }
 
             } else {
-                $status = false;
+                $status = \ApiStatus::ERROR;
                 $errors[] = 'password_is_incorrect';
             }
 
         }
 
-        return ["status" => $status, "errors" => $errors];
+        // return ["status" => $status, "errors" => $errors];
+
+        $output = new \Models\ApiModel($status, [], $errors);
+        return $output;
 
     }
 
     /**
      * Delete account
      */
-    public function delete_user_account($input): array
+    public function delete_user_account($input): \Models\ApiModel
     {
 
         $errors = [];
         $incorrect_data = false;
-        $status = false;
+        $status = \ApiStatus::ERROR;
         $user_id = null;
         $table = 'Users';
 
@@ -600,23 +614,25 @@ class Accounts
                 $update_password = $this->sedjm->update(["status" => 3], $table);
 
                 if ($update_password["status"]) {
-                    $status = true;
+                    $status = \ApiStatus::CORRECT;
                 } else {
-                    $status = false;
+                    $status = \ApiStatus::ERROR;
                 }
 
             } else {
-                $status = false;
-                $errors[] = 'password_is_incorrect';
+                $status = \ApiStatus::ERROR;
+                $errors[] = 'Password is incorrect';
             }
 
         }
 
         if ($accept === false || $accept === "false") {
-            $errors = 'user_is_not_accept_terms';
+            $errors[] = 'User is not accept terms';
         }
 
-        return ["status" => $status, "errors" => $errors, "accept" => $accept];
+        // return ["status" => $status, "errors" => $errors, "accept" => $accept];
+        $output = new \Models\ApiModel($status, ["accept" => $accept], $errors);
+        return $output;
 
     }
 

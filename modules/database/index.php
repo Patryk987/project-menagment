@@ -30,14 +30,17 @@ class useDatabase
         }
 
     }
-    public function save_database_structure($input): array
+    public function save_database_structure($input): \Models\ApiModel
     {
+        $output = new \Models\ApiModel(\ApiStatus::ERROR);
 
         $main = new ModuleManager\Main;
         if ($main->sedjm->generate_database(true)) {
-            $output['status'] = true;
+            // $output['status'] = true;
+            $output->set_status(\ApiStatus::CORRECT);
         } else {
-            $output['status'] = false;
+            // $output['status'] = false;
+            $output->set_status(\ApiStatus::ERROR);
         }
 
         return $output;

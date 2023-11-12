@@ -11,11 +11,11 @@ function login_to_panel($nick, $password)
     ];
 
     $login_status = $main->accounts->login_to_account($data);
-    if ($login_status['status']) {
+    if ($login_status->get_status() == \ApiStatus::CORRECT) {
 
         try {
-            ModuleManager\LocalStorage::set_data("token", $login_status["data"]["token"], 'session', true);
-            ModuleManager\LocalStorage::set_data("token", $login_status["data"]["token"], 'cookie', true);
+            ModuleManager\LocalStorage::set_data("token", $login_status->get_message()["token"], 'session', true);
+            ModuleManager\LocalStorage::set_data("token", $login_status->get_message()["token"], 'cookie', true);
         } catch (\Throwable $th) {
             $details = [
                 "message" => $th->getMessage(),
@@ -44,7 +44,7 @@ function login_form()
     if (!empty($_POST['active'])) {
 
         $v = login_to_panel($_POST["nick"], $_POST["password"]);
-        foreach ($v['errors'] as $key => $value) {
+        foreach ($v->get_error() as $key => $value) {
             switch ($key) {
                 case 'password_is_incorrect':
                     $errors[] = "Podano niepoprawne hasło";
