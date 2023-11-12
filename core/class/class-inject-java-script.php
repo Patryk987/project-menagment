@@ -21,7 +21,7 @@ class InjectJavaScript
 
         $output = "";
         foreach (static::$function_list as $scripts) {
-            $output .= "<script  nonce='" . \NONCE . "' src='" . $scripts['script'] . "'></script>";
+            $output .= "<script  nonce='" . \NONCE . "' src='" . $scripts['script'] . "'></script>\n\t";
         }
 
         return $output;

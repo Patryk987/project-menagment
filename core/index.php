@@ -78,6 +78,10 @@ class Main
     public function __construct()
     {
 
+        if (empty($_SESSION['tmp_key'])) {
+            $_SESSION['tmp_key'] = uniqid();
+        }
+
         $database_core_table = file_get_contents('./config/database.json');
         $database_core_table = html_entity_decode($database_core_table);
         $database_core_table = json_decode($database_core_table, true);

@@ -220,9 +220,16 @@ trait API
 
     public function get_endpoint($name): void
     {
-
-        if (empty(getallheaders()['api_key']) || getallheaders()['api_key'] != $_ENV['API_SECRET']) {
-
+        // TODO: add additional api keys
+        if (
+            (
+                empty(getallheaders()['api_key'])
+                || getallheaders()['api_key'] != $_ENV['API_SECRET']
+            ) && (
+                empty($_SESSION['tmp_key']) ||
+                getallheaders()['api_key'] != $_SESSION['tmp_key']
+            )
+        ) {
 
             $output = new \Models\ApiModel(\ApiStatus::ERROR, [], ['Unauthorized user']);
             $output->set_code(401);
@@ -263,7 +270,8 @@ trait API
             try {
 
                 $output = call_user_func(static::$endpoints[$method][$name]["function"], $this->inputData());
-                $output->set_code(200);
+                if ($output->get_code() == null)
+                    $output->set_code(200);
 
                 $this->return_data($output);
 
