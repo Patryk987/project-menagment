@@ -55,7 +55,7 @@ trait Modules
                 "parent" => $parent_link,
                 "show" => isset($module["show"]) ? $module["show"] : true,
                 "belongs_to_project" => static::$modules[$parent_link]["belongs_to_project"],
-                "position" => 999
+                "position" => !empty($module['position']) ? $module['position'] : 999
             ];
 
         }
@@ -140,11 +140,13 @@ trait Modules
                             "name" => $value['name'],
                             "link" => $value['link'],
                             "icon" => "",
-                            "show" => $value['show']
+                            "show" => $value['show'],
+                            "position" => $value['position'],
                         ];
                     }
                     if (isset($list[$value['parent']]))
                         $list[$value['parent']]["child"][] = $data;
+                    \Helper::sort_array($list[$value['parent']]["child"], "position");
                 }
 
 

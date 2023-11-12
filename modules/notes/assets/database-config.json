@@ -117,7 +117,7 @@
                 "encrypt": true,
                 "encrypt_type": "SIMPLE",
                 "valid_type": "NULL",
-                "NULL": false,
+                "NULL": true,
                 "unique": false
             },
             "background": {
@@ -128,7 +128,7 @@
                 "encrypt": true,
                 "encrypt_type": "SIMPLE",
                 "valid_type": "NULL",
-                "NULL": false,
+                "NULL": true,
                 "unique": false
             },
             "default_view": {
@@ -139,7 +139,7 @@
                 "encrypt": false,
                 "encrypt_type": "NULL",
                 "valid_type": "NULL",
-                "NULL": false,
+                "NULL": true,
                 "unique": false
             },
             "create_time": {

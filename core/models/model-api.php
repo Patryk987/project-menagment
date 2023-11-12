@@ -6,7 +6,7 @@ class ApiModel
     private \ApiStatus $status;
     private ?array $message = null;
     private ?array $error = null;
-    private int $code = 500;
+    private ?int $code = null;
 
     public function __construct(\ApiStatus $status, ?array $message = null, ?array $error = null)
     {
@@ -55,7 +55,7 @@ class ApiModel
         return $this->error;
     }
 
-    public function get_code(): int
+    public function get_code(): ?int
     {
         return $this->code;
     }

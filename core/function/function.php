@@ -493,6 +493,24 @@ ModuleManager\DataBinder::set_binder(
     ]
 );
 
+function put_token()
+{
+    $token = \ModuleManager\LocalStorage::get_data("token", 'session', true);
+    if (empty($token)) {
+        $token = \ModuleManager\LocalStorage::get_data("token", 'cookie', true);
+        \ModuleManager\LocalStorage::set_data("token", $token, 'session', true);
+    }
+
+    return $token;
+}
+
+ModuleManager\DataBinder::set_binder(
+    [
+        "key" => "token",
+        "function" => "put_token"
+    ]
+);
+
 function project_list()
 {
     global $main;
@@ -530,5 +548,30 @@ function project_list()
     [
         "key" => "project_list",
         "function" => "project_list"
+    ]
+);
+
+function put_base_link()
+{
+    $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+    return $link;
+}
+
+\ModuleManager\DataBinder::set_binder(
+    [
+        "key" => "base_link",
+        "function" => "put_base_link"
+    ]
+);
+
+function temp_key()
+{
+    return $_SESSION['tmp_key'];
+}
+
+\ModuleManager\DataBinder::set_binder(
+    [
+        "key" => "temp_key",
+        "function" => "temp_key"
     ]
 );

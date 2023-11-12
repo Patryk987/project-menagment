@@ -45,4 +45,14 @@ class Projects
 
     }
 
+    public function auth_user_in_project(): bool
+    {
+        $user_projects = $this->repository->get_user_projects($this->user_id);
+
+        if (in_array($this->project_id, $user_projects))
+            return true;
+        else
+            return false;
+    }
+
 }

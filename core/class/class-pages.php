@@ -259,8 +259,7 @@ trait MenageProject
         $last_page = end($sub_page_list);
         if (!empty($sub_page_list[1])) {
 
-            $project = new \Projects(static::$token['payload']->user_id, $sub_page_list[1]);
-            self::$project = $project->get_project_data();
+
             if (
                 self::$project->get_status() == \ProjectStatus::ACTIVE
                 || self::$project->get_status() == \ProjectStatus::ARCHIVE
@@ -291,6 +290,7 @@ class Pages
     public static array $token;
     public static \ProjectModel $project;
     public static $module;
+    public static $project_id;
 
     public function __construct($token, &$config)
     {
@@ -303,8 +303,6 @@ class Pages
 
         $this->base_link = $link . "/";
         $this->actual_link = $link . $_SERVER["REQUEST_URI"];
-
-        $this->map_modules();
 
     }
 
@@ -347,6 +345,15 @@ class Pages
 
         $sub_page_list = $this->get_sub_page();
         $last_sub_page = end($sub_page_list);
+
+        if (!empty($sub_page_list[0]) && $this->config["pages"]->project == $sub_page_list[0] && !empty($sub_page_list[1])) {
+
+            $project = new \Projects(static::$token['payload']->user_id, $sub_page_list[1]);
+            self::$project = $project->get_project_data();
+
+        }
+
+        $this->map_modules();
 
         if (!empty($sub_page_list[0])) {
 
