@@ -221,25 +221,22 @@ trait API
     public function get_endpoint($name): void
     {
 
-        header("Content-type: application/json; charset=utf-8");
-        header('Access-Control-Allow-Origin: *');
-
         if (empty(getallheaders()['api_key']) || getallheaders()['api_key'] != $_ENV['API_SECRET']) {
 
-            $this->http_response_code(401);
 
-            $output = [];
-            $output['code'] = 401;
-            $output["status"] = false;
-            $output["data"] = [];
-            $output['error'] = "Unauthorized";
+            $output = new \Models\ApiModel(\ApiStatus::ERROR, [], ['Unauthorized user']);
+            $output->set_code(401);
 
-            \ModuleManager\Main::set_error('Unauthorized client', 'ERROR', [
-                "{$_SERVER['REMOTE_ADDR']}",
-                "{$_SERVER['HTTP_USER_AGENT']}"
-            ]);
+            \ModuleManager\Main::set_error(
+                'Unauthorized client',
+                'ERROR',
+                [
+                    $_SERVER['REMOTE_ADDR'],
+                    $_SERVER['HTTP_USER_AGENT']
+                ]
+            );
 
-            echo json_encode($output);
+            $this->return_data($output);
 
             exit();
 
@@ -249,8 +246,10 @@ trait API
 
         if (empty(static::$endpoints[$method][$name])) {
 
-            $this->http_response_code(404);
-            echo json_encode(["status" => false, "data" => [], 'error' => "Not Found", "code" => 404]);
+            $output = new \Models\ApiModel(\ApiStatus::ERROR, [], ['Not Found']);
+            $output->set_code(404);
+
+            $this->return_data($output);
 
             exit();
 
@@ -263,18 +262,12 @@ trait API
 
             try {
 
-                $this->http_response_code(200);
-
                 $output = call_user_func(static::$endpoints[$method][$name]["function"], $this->inputData());
-                $output['code'] = 200;
+                $output->set_code(200);
 
-                echo json_encode($output);
+                $this->return_data($output);
 
             } catch (\Throwable $th) {
-
-                $this->http_response_code(500);
-
-
 
                 if (Main::get_debug_status()) {
 
@@ -283,7 +276,6 @@ trait API
                         "code" => $th->getCode(),
                         "file" => $th->getFile(),
                         "line" => $th->getLine(),
-                        // "trace" => $th->getTrace(),
                     ];
 
                 } else {
@@ -293,26 +285,22 @@ trait API
                 }
 
                 Main::set_error('API', 'ERROR', $error);
-                echo json_encode(["status" => false, "data" => [], 'error' => $error, "code" => 500]);
+
+                $output = new \Models\ApiModel(\ApiStatus::ERROR, [], $error);
+                $output->set_code(500);
+
+                $this->return_data($output);
 
             }
 
         } else {
 
-            $this->http_response_code(401);
+            $output = new \Models\ApiModel(\ApiStatus::ERROR, [], ["Unauthorized"]);
+            $output->set_code(401);
 
-            $output = [];
-            $output['code'] = 401;
-            $output["status"] = false;
-            $output["data"] = [];
-            $output['error'] = "Unauthorized";
-
-            echo json_encode($output);
+            $this->return_data($output);
 
         }
-
-
-
 
     }
 
@@ -322,6 +310,25 @@ trait API
         $this->get_endpoint($last_sub_page);
         exit();
 
+    }
+
+    private function return_data(\Models\ApiModel $data): void
+    {
+
+        header("Content-type: application/json; charset=utf-8");
+        header('Access-Control-Allow-Origin: *');
+
+        $this->http_response_code($data->get_code());
+
+        $output = [];
+        $output['code'] = $data->get_code();
+        $output["status"] = $data->get_status()->get_bool_status();
+        $output["message"] = $data->get_message();
+        $output['error'] = $data->get_error();
+
+        echo json_encode($output);
+
+        exit();
     }
 
 
