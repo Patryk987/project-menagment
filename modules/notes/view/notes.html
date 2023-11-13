@@ -11,40 +11,26 @@
             <div class="dowload">
                 {{insert_svg modules/notes/assets/img/download.svg}}
             </div>
+            <div class="delete">
+                {{insert_svg modules/notes/assets/img/trash-alt-delete-bin.svg}}
+            </div>
         </div>
     </div>
 
     <div class="content">
-        <div class="title">
-            <h3>Test</h3>
-        </div>
-        <div class="author">
-
-        </div>
-        <div class="params">
-            <table>
-                <tr>
-                    <th>Author</th>
-                    <td>Patryk Pękała</td>
-                </tr>
-                <tr>
-                    <th>Last modify</th>
-                    <td>0000/00/00</td>
-                </tr>
-            </table>
-        </div>
-        <div class="content">
-
-        </div>
+        <div class="loader"></div>
     </div>
 
 </section>
 
+
+
 <section id="notepads">
 
     <div class="title">
-        <h2>Tytuł</h2>
+        <h2>{{notepads_title}}</h2>
     </div>
+
     <div class="tabs">
         <div class="tab active" data-type="grid">grid</div>
         <div class="tab" data-type="kanban">kanban</div>

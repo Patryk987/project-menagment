@@ -291,18 +291,22 @@ class Pages
     public static \ProjectModel $project;
     public static $module;
     public static $project_id;
+    public static $sub_page_list;
+    public array $sub_pages;
 
-    public function __construct($token, &$config)
+    public function __construct($token, &$config, $sub_pages)
     {
+
+        $this->sub_pages = $sub_pages;
 
         static::$token = $token;
 
         $this->config = $config;
 
         $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
-
         $this->base_link = $link . "/";
         $this->actual_link = $link . $_SERVER["REQUEST_URI"];
+
 
     }
 
@@ -311,31 +315,11 @@ class Pages
         header("Location: " . $this->base_link . $this->config["pages"]->panel . $url);
     }
 
-    private function get_sub_page(): array
-    {
-
-        $sub_pages = str_replace($this->base_link, "", $this->actual_link);
-
-        while (str_contains($sub_pages, "//")) {
-            $sub_pages = str_replace("//", "/", $sub_pages);
-        }
-
-        $sub_pages = explode("?", $sub_pages)[0];
-        $sub_pages = explode("/", $sub_pages);
-
-        if (empty(end($sub_pages))) {
-            array_pop($sub_pages);
-        }
-
-        return $sub_pages;
-
-    }
-
 
     public function get_last_page()
     {
 
-        $sub_page_list = $this->get_sub_page();
+        $sub_page_list = $this->sub_pages;
         return end($sub_page_list);
 
     }
@@ -343,40 +327,41 @@ class Pages
     public function load_page()
     {
 
-        $sub_page_list = $this->get_sub_page();
-        $last_sub_page = end($sub_page_list);
+        $last_sub_page = end($this->sub_pages);
 
-        if (!empty($sub_page_list[0]) && $this->config["pages"]->project == $sub_page_list[0] && !empty($sub_page_list[1])) {
 
-            $project = new \Projects(static::$token['payload']->user_id, $sub_page_list[1]);
+
+        if (!empty($this->sub_pages[0]) && $this->config["pages"]->project == $this->sub_pages[0] && !empty($this->sub_pages[1])) {
+
+            $project = new \Projects(static::$token['payload']->user_id, $this->sub_pages[1]);
             self::$project = $project->get_project_data();
 
         }
 
         $this->map_modules();
 
-        if (!empty($sub_page_list[0])) {
+        if (!empty($this->sub_pages[0])) {
 
-            $type = $sub_page_list[0];
+            $type = $this->sub_pages[0];
 
-            if (!empty($sub_page_list[1]))
-                $project = $sub_page_list[1];
+            if (!empty($this->sub_pages[1]))
+                $project = $this->sub_pages[1];
 
-            if (!empty($sub_page_list[2]))
-                $module = $sub_page_list[2];
+            if (!empty($this->sub_pages[2]))
+                $module = $this->sub_pages[2];
 
-            if (!empty($sub_page_list[3]))
-                $sub_module = $sub_page_list[3];
+            if (!empty($this->sub_pages[3]))
+                $sub_module = $this->sub_pages[3];
 
         } else {
 
             $type = 'page';
 
-            if (!empty($sub_page_list[1]))
-                $page = $sub_page_list[1];
+            if (!empty($this->sub_pages[1]))
+                $page = $this->sub_pages[1];
 
-            if (!empty($sub_page_list[2]))
-                $sub_page = $sub_page_list[2];
+            if (!empty($this->sub_pages[2]))
+                $sub_page = $this->sub_pages[2];
 
         }
 
@@ -386,10 +371,10 @@ class Pages
                 echo $this->page($last_sub_page);
                 break;
             case $this->config["pages"]->panel:
-                echo $this->get_panel($sub_page_list);
+                echo $this->get_panel($this->sub_pages);
                 break;
             case $this->config["pages"]->project:
-                echo $this->get_project($sub_page_list);
+                echo $this->get_project($this->sub_pages);
                 break;
             case $this->config["pages"]->api:
                 echo $this->api($last_sub_page);

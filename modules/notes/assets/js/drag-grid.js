@@ -21,6 +21,7 @@ class Grid {
 
             grid.innerHTML += `
                 <div 
+                    data-id="` + element.note_id + `"
                     class="box" 
                     draggable="true"
                     style="background-image: url('` + element.background + `');">
@@ -28,12 +29,36 @@ class Grid {
                         <div class="title">` + element.title + `</div>
                         <div class="params"></div>
                         <div class="description">
-                            ` + this.#truncate(element.short_description, this.maxDescriptionLength) + `
+                            `+ element.create_time + `
                         </div>
                     </div>
                 </div>
             `;
+            // grid.innerHTML += `
+            //     <div 
+            //         class="box" 
+            //         draggable="true"
+            //         style="background-image: url('` + element.background + `');">
+            //         <div class="box_content">
+            //             <div class="title">` + element.title + `</div>
+            //             <div class="params"></div>
+            //             <div class="description">
+            //                 ` + this.#truncate(element.short_description, this.maxDescriptionLength) + `
+            //             </div>
+            //         </div>
+            //     </div>
+            // `;
         })
+
+        grid.innerHTML += `
+                <div 
+                    class="add_box" id="add_new_note" >
+
+                        <div class="add_icon">+</div>
+                        <div class="add_title">Add new note</div>
+
+                </div>
+            `;
     }
 
     #implementDragElement() {
@@ -58,6 +83,7 @@ class Grid {
 
                 if (afterElement == null) {
                     // container.appendChild(draggable)
+                    container.appendChild(draggable)
                 } else {
                     container.insertBefore(draggable, afterElement.element)
                 }

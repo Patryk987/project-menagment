@@ -17,7 +17,7 @@ class Projects
     }
 
     /**
-     * Check if user have access to this project and return data about this
+     * Check if user have access to this project and return data
      */
     public function get_project_data(): ProjectModel
     {

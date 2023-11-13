@@ -59,6 +59,17 @@ class NotesApiController
 
         \ModuleManager\Pages::set_endpoint($api);
 
+        // delete_note
+
+        $api = [
+            "link" => 'delete_note',
+            "function" => [$this, 'delete_note'],
+            "http_methods" => "DELETE",
+            "permission" => [1, 2, 11]
+        ];
+
+        \ModuleManager\Pages::set_endpoint($api);
+
 
     }
 
@@ -79,6 +90,7 @@ class NotesApiController
             "author_id" => $input['user_id'],
             "title" => $input['title'],
             "note" => $input['note'],
+            "background" => $input['background'],
             "project_id" => $input["project_id"]
         ];
 
@@ -94,10 +106,15 @@ class NotesApiController
      */
     public function update_note($input): \Models\ApiModel
     {
-        $data = [
-            "title" => $input['title'],
-            "note" => $input['note']
-        ];
+
+        $data = [];
+
+        if (!empty($input['title']))
+            $data["title"] = $input['title'];
+
+        if (!empty($input['note']))
+            $data["note"] = $input['note'];
+
 
         return $this->repository->update($input['note_id'], $data);
     }

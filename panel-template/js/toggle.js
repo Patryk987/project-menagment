@@ -2,7 +2,7 @@
 var toggle = document.querySelector('nav').querySelectorAll('.toggle');
 
 if (document.querySelectorAll(".active").length) {
-    var active = document.querySelector(".active");
+    var active = document.querySelector("nav .active");
     active.querySelector(".toggle").classList.toggle('open');
 
     if (active.querySelectorAll('ul').length) {
@@ -59,12 +59,12 @@ filtr_button.forEach(item => {
 
 
 // Close popup
-var close_popup = document.querySelectorAll('.close');
-close_popup.forEach(item => {
-    item.addEventListener("click", () => {
-        item.closest('.popup').style.display = "none";
-    });
-})
+// var close_popup = document.querySelectorAll('.close');
+// close_popup.forEach(item => {
+//     item.addEventListener("click", () => {
+//         item.closest('.popup').style.display = "none";
+//     });
+// })
 
 // toggle menu
 var menu_hamburger = document.querySelectorAll(".menu_hamburger");

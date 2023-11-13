@@ -32,8 +32,18 @@ class NotepadRepository // implements RepositoryNotepadsInterface
             "icon_url",
             "background",
             "default_view",
-            "create_time",
-            "update_time"
+            [
+                "table" => $this->table,
+                "column" => 'create_time',
+                "alias" => 'create_time',
+                "function" => ["Helper", "time_to_data"]
+            ],
+            [
+                "table" => $this->table,
+                "column" => 'update_time',
+                "alias" => 'update_time',
+                "function" => ["Helper", "time_to_data"]
+            ]
         ];
 
         $get = $this->sedjm->get($data, $this->table);
@@ -60,8 +70,18 @@ class NotepadRepository // implements RepositoryNotepadsInterface
             "icon_url",
             "background",
             "default_view",
-            "create_time",
-            "update_time"
+            [
+                "table" => $this->table,
+                "column" => 'create_time',
+                "alias" => 'create_time',
+                "function" => ["Helper", "time_to_data"]
+            ],
+            [
+                "table" => $this->table,
+                "column" => 'update_time',
+                "alias" => 'update_time',
+                "function" => ["Helper", "time_to_data"]
+            ]
         ];
 
         $get = $this->sedjm->get($data, $this->table);
@@ -111,16 +131,22 @@ class NotepadRepository // implements RepositoryNotepadsInterface
         if (
             !empty($id)
         ) {
-            $data = [
-                "name" => $data['name'],
-                "icon_url" => $data['icon_url'],
-                "background" => $data['background'],
-                "update_time" => time()
-            ];
+            $update_data = [];
+
+            if (!empty($data["name"]))
+                $update_data["name"] = $data['name'];
+
+            if (!empty($data["icon_url"]))
+                $update_data["icon_url"] = $data['icon_url'];
+
+            if (!empty($data["background"]))
+                $update_data["background"] = $data['background'];
+
+            $update_data["update_time"] = time();
 
             $this->sedjm->clear_all();
             $this->sedjm->set_where("note_id", $id, "=");
-            $insert = $this->sedjm->insert($data, $this->table);
+            $insert = $this->sedjm->update($update_data, $this->table);
 
             $output = new \Models\ApiModel(\ApiStatus::from($insert['status']));
             return $output;

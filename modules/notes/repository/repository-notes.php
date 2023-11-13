@@ -25,12 +25,24 @@ class NotesRepository implements RepositoryNotesInterface
         $this->sedjm->clear_all();
 
         $data = [
+            "note_id",
             "notepad_id",
             "author_id",
             "title",
             "note",
-            "create_time",
-            "update_time"
+            "background",
+            [
+                "table" => $this->table,
+                "column" => 'create_time',
+                "alias" => 'create_time',
+                "function" => ["Helper", "time_to_data"]
+            ],
+            [
+                "table" => $this->table,
+                "column" => 'update_time',
+                "alias" => 'update_time',
+                "function" => ["Helper", "time_to_data"]
+            ]
         ];
 
         $get = $this->sedjm->get($data, $this->table);
@@ -52,12 +64,24 @@ class NotesRepository implements RepositoryNotesInterface
         $this->sedjm->set_where("notepad_id", $notepad_id, "=");
 
         $data = [
+            "note_id",
             "notepad_id",
             "author_id",
             "title",
             "note",
-            "create_time",
-            "update_time"
+            "background",
+            [
+                "table" => $this->table,
+                "column" => 'create_time',
+                "alias" => 'create_time',
+                "function" => ["Helper", "time_to_data"]
+            ],
+            [
+                "table" => $this->table,
+                "column" => 'update_time',
+                "alias" => 'update_time',
+                "function" => ["Helper", "time_to_data"]
+            ]
         ];
 
         $get = $this->sedjm->get($data, $this->table);
@@ -79,12 +103,24 @@ class NotesRepository implements RepositoryNotesInterface
         $this->sedjm->set_where("note_id", $id, "=");
 
         $data = [
+            "note_id",
             "notepad_id",
             "author_id",
             "title",
             "note",
-            "create_time",
-            "update_time"
+            "background",
+            [
+                "table" => $this->table,
+                "column" => 'create_time',
+                "alias" => 'create_time',
+                "function" => ["Helper", "time_to_data"]
+            ],
+            [
+                "table" => $this->table,
+                "column" => 'update_time',
+                "alias" => 'update_time',
+                "function" => ["Helper", "time_to_data"]
+            ]
         ];
 
         $get = $this->sedjm->get($data, $this->table);
@@ -105,7 +141,6 @@ class NotesRepository implements RepositoryNotesInterface
         if (
             !empty($data['notepad_id'])
             && !empty($data['author_id'])
-            && !empty($data['title'])
         ) {
             $project_id = $this->get_project_by_notepads($data['notepad_id']);
             $project = new \Projects($data['author_id'], $project_id);
@@ -114,8 +149,9 @@ class NotesRepository implements RepositoryNotesInterface
 
                 $notepad_id = $data['notepad_id'];
                 $author_id = $data['author_id'];
-                $title = $data['title'];
-                $note = $data['note'];
+                $title = !empty($data['title']) ? $data['title'] : "";
+                $note = !empty($data['note']) ? $data['note'] : "";
+                $background = !empty($data['background']) ? $data['background'] : null;
 
                 $table = "Notes";
 
@@ -124,13 +160,14 @@ class NotesRepository implements RepositoryNotesInterface
                     "author_id" => $author_id,
                     "title" => $title,
                     "note" => $note,
+                    "background" => $background,
                     "create_time" => time(),
                     "update_time" => time()
                 ];
 
                 $insert = $this->sedjm->insert($data, $this->table);
 
-                $output = new \Models\ApiModel(\ApiStatus::from($insert['status']));
+                $output = new \Models\ApiModel(\ApiStatus::from($insert['status']), ["id" => $insert['id']]);
 
                 return $output;
 
@@ -154,17 +191,20 @@ class NotesRepository implements RepositoryNotesInterface
 
         if (
             !empty($id)
-            && !empty($data['title'])
         ) {
-            $data = [
-                "title" => $data['title'],
-                "note" => $data['note'],
-                "update_time" => time()
-            ];
+            $update_data = [];
+
+            if (!empty($data['title']))
+                $update_data["title"] = $data['title'];
+
+            if (!empty($data['note']))
+                $update_data["note"] = $data['note'];
+
+            $update_data["update_time"] = time();
 
             $this->sedjm->clear_all();
             $this->sedjm->set_where("note_id", $id, "=");
-            $insert = $this->sedjm->insert($data, $this->table);
+            $insert = $this->sedjm->update($update_data, $this->table);
 
             $output = new \Models\ApiModel(\ApiStatus::from($insert['status']));
             return $output;

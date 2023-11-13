@@ -63,7 +63,7 @@ class Main
     use Debug;
 
     public array $config;
-    public array $sub_pages;
+    public static array $sub_pages;
     public SEDJM $sedjm;
     protected array $database;
     public Pages $pages;
@@ -102,6 +102,33 @@ class Main
             header('X-Frame-Options: SAMEORIGIN');
         else
             header('X-Frame-Options: DENY');
+
+        static::$sub_pages = $this->get_sub_page();
+
+
+    }
+
+
+    private function get_sub_page(): array
+    {
+        $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+        $base_link = $link . "/";
+        $actual_link = $link . $_SERVER["REQUEST_URI"];
+
+        $sub_pages = str_replace($base_link, "", $actual_link);
+
+        while (str_contains($sub_pages, "//")) {
+            $sub_pages = str_replace("//", "/", $sub_pages);
+        }
+
+        $sub_pages = explode("?", $sub_pages)[0];
+        $sub_pages = explode("/", $sub_pages);
+
+        if (empty(end($sub_pages))) {
+            array_pop($sub_pages);
+        }
+
+        return $sub_pages;
 
     }
 
@@ -144,7 +171,7 @@ class Main
     public function set_pages()
     {
 
-        $this->pages = new Pages(static::$token, $this->config);
+        $this->pages = new Pages(static::$token, $this->config, static::$sub_pages);
         $this->page_name = $this->pages->get_last_page();
 
         $this->popups = new Popups;

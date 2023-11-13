@@ -283,6 +283,17 @@
                 "NULL": true,
                 "unique": false
             },
+            "background": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": true,
+                "unique": false
+            },
             "create_time": {
                 "type": "varchar",
                 "length": "255",
