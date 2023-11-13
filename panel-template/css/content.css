@@ -248,6 +248,7 @@ li.active .toggle_nav>ul {
     /* background-image: url("/panel-template//img/user-default-icon.png");
     background-size: cover; */
     cursor: pointer;
+    opacity: 0.8;
 }
 
 .projects .projects_list .project_box img {
@@ -260,6 +261,12 @@ li.active .toggle_nav>ul {
 
 .projects .projects_list .project_box:hover {
     border-color: var(--third);
+    opacity: 1;
+}
+
+.projects .projects_list .project_box.active {
+    border-color: var(--third);
+    opacity: 1;
 }
 
 .projects .add_project {

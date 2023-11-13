@@ -527,10 +527,12 @@ function project_list()
 
                 $img_src = '/' . $project_data[0]['photo_url'] . '" alt="' . $project_data[0]['name'] . '';
                 $link = '/' . ModuleManager\Config::get_config()["pages"]->project . "/" . $project_data[0]['project_id'];
-
+                $active = $project_data[0]['project_id'] == ModuleManager\Pages::$project->get_project_id() ? "active" : "";
                 $output .= '
                 <a href="' . $link . '">
-                    <div class="project_box"><img src="' . $img_src . '"/></div>
+                    <div class="project_box ' . $active . '">
+                        <img src="' . $img_src . '"/>
+                    </div>
                 </a>
                 ';
 
@@ -573,5 +575,17 @@ function temp_key()
     [
         "key" => "temp_key",
         "function" => "temp_key"
+    ]
+);
+
+function project_patch()
+{
+    return ModuleManager\Pages::$project->get_name();
+}
+
+\ModuleManager\DataBinder::set_binder(
+    [
+        "key" => "project_patch",
+        "function" => "project_patch"
     ]
 );
