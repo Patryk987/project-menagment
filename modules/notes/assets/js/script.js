@@ -11,7 +11,7 @@ tabs.forEach(tab => {
 
         switch (tab.dataset.type) {
             case "grid":
-                document.querySelector("#grid").style.display = "flex";
+                document.querySelector("#grid").style.display = "block";
                 document.querySelector("#kanban").style.display = "none";
                 document.querySelector("#list").style.display = "none";
                 break;

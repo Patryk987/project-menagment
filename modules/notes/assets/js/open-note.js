@@ -1,74 +1,3 @@
-// Create a class for the element
-class NoteDetailsElement extends HTMLElement {
-    static observedAttributes = [
-        "title",
-        "author",
-        "last_modify",
-        "background"
-    ];
-
-    constructor() {
-        super();
-    }
-
-    connectedCallback() {
-        // console.log("Custom element added to page.");
-        this.render();
-    }
-
-    disconnectedCallback() {
-        // console.log("Custom element removed from page.");
-    }
-
-    adoptedCallback() {
-        // console.log("Custom element moved to new page.");
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        // console.log(`Attribute ${name} has changed.`);
-        this.render();
-    }
-
-    render() {
-
-        const title = this.getAttribute("title") || "";
-        const author = this.getAttribute("author") || "";
-        const last_modify = this.getAttribute("last_modify") || "0000/00/00";
-        const background = this.getAttribute("background") || null;
-
-        var photoBox = background != null ? `<div class='background' style="background-image: url('${background}')"></div>` : ``;
-
-        this.innerHTML = `
-            <div>
-                ${photoBox}
-                <div class="title">
-                    <h3>
-                        <input type='text' value='${title}' id='note_title'/>
-                    </h3>
-                </div>
-                <div class="params">
-                    <table>
-                        <tr>
-                            <th>Author</th>
-                            <td>${author}</td>
-                        </tr>
-                        <tr>
-                            <th>Last modify</th>
-                            <td>${last_modify}</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="content">
-
-                </div>
-            </div>
-        `;
-    }
-}
-
-customElements.define("note-content", NoteDetailsElement);
-
-
 class Note {
 
     single_note = document.querySelector("#single_note");
@@ -154,9 +83,18 @@ class Note {
         var newNote = document.querySelector("#add_new_note");
 
         newNote.addEventListener("click", async () => {
-            var data = await this.add_notes("New notes");
+            var title = "New notes";
+            var data = await this.add_notes(title);
             this.note_id = data.id;
             this.#open(data.id);
+
+            // var grid = document.querySelector(".grid_view");
+            // grid.innerHTML += `
+            //     <simple-card 
+            //         note_id="` + data.id + `"
+            //         title="` + title + `"
+            //         create_time="0000-00-00"/>
+            // `;
         })
     }
 
@@ -174,7 +112,7 @@ class Note {
         deleteButton.addEventListener("click", async () => {
             var data = await this.delete_note(id);
             console.log(data);
-            document.querySelector(".box[data-id='" + id + "'").style.display = "none";
+            document.querySelector("simple-card[data-id='" + id + "'").style.display = "none";
             this.single_note.classList.remove("show_single_note");
         })
 

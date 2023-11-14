@@ -19,20 +19,26 @@ class Grid {
 
         items.forEach(element => {
 
+            // <div 
+            //     data-id="` + element.note_id + `"
+            //     class="box" 
+            //     draggable="true"
+            //     style="background-image: url('` + element.background + `');">
+            //     <div class="box_content">
+            //         <div class="title">` + element.title + `</div>
+            //         <div class="params"></div>
+            //         <div class="description">
+            //             `+ element.create_time + `
+            //         </div>
+            //     </div>
+            // </div>
             grid.innerHTML += `
-                <div 
-                    data-id="` + element.note_id + `"
-                    class="box" 
+                <simple-card 
                     draggable="true"
-                    style="background-image: url('` + element.background + `');">
-                    <div class="box_content">
-                        <div class="title">` + element.title + `</div>
-                        <div class="params"></div>
-                        <div class="description">
-                            `+ element.create_time + `
-                        </div>
-                    </div>
-                </div>
+                    data-id="` + element.note_id + `"
+                    background="` + element.background + `"
+                    title="` + element.title + `"
+                    create_time="` + element.create_time + `"/>
             `;
             // grid.innerHTML += `
             //     <div 
@@ -51,18 +57,17 @@ class Grid {
         })
 
         grid.innerHTML += `
-                <div 
-                    class="add_box" id="add_new_note" >
+                <div class="add_box" id="add_new_note" >
 
-                        <div class="add_icon">+</div>
-                        <div class="add_title">Add new note</div>
+                    <div class="add_icon">+</div>
+                    <div class="add_title">Add new note</div>
 
                 </div>
             `;
     }
 
     #implementDragElement() {
-        const draggableGrid = document.querySelectorAll('#grid .box')
+        const draggableGrid = document.querySelectorAll('#grid simple-card')
         const containersGrid = document.querySelectorAll('#grid .grid_view')
 
         draggableGrid.forEach(draggable => {
@@ -93,7 +98,7 @@ class Grid {
     }
 
     #getDragAfterElementGrid(container, y, x) {
-        const draggableElements = [...container.querySelectorAll('#grid .box')];
+        const draggableElements = [...container.querySelectorAll('#grid simple-card')];
 
         return draggableElements.reduce((closest, child) => {
             const box = child.getBoundingClientRect()
