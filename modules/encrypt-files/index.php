@@ -2,6 +2,12 @@
 
 namespace Files;
 
+define('FILE_ENCRYPTION_BLOCKS', 10000);
+
+// Helper
+// require_once __DIR__ . "/helper/encrypt-file.php";
+// require_once __DIR__ . "/helper/decrypt-file.php";
+
 // Model
 require_once __DIR__ . "/model/file-model.php";
 

@@ -23,30 +23,40 @@ class DatabaseConnect
 
     private function map_database_extends()
     {
-        $dir_path = './modules/';
-        $modules = scandir($dir_path);
+        try {
+            $dir_path = './modules/';
+            $modules = scandir($dir_path);
 
 
-        foreach ($modules as $key => $value) {
+            foreach ($modules as $key => $value) {
 
-            if ($value != ".." && $value != ".") {
-                $file_in_module = scandir($dir_path . $value);
-                if (in_array("extends-database.php", $file_in_module)) {
-                    try {
-                        include_once $dir_path . $value . '/extends-database.php';
-                    } catch (\Throwable $th) {
-                        $details = [
-                            "message" => $th->getMessage(),
-                            "code" => $th->getCode(),
-                            "file" => $th->getFile(),
-                            "line" => $th->getLine()
-                        ];
-                        \ModuleManager\Main::set_error('Include module', 'ERROR', $details);
+                if ($value != ".." && $value != ".") {
+                    $file_in_module = scandir($dir_path . $value);
+                    if (in_array("extends-database.php", $file_in_module)) {
+                        try {
+                            include_once $dir_path . $value . '/extends-database.php';
+                        } catch (\Throwable $th) {
+                            $details = [
+                                "message" => $th->getMessage(),
+                                "code" => $th->getCode(),
+                                "file" => $th->getFile(),
+                                "line" => $th->getLine()
+                            ];
+                            \ModuleManager\Main::set_error('Include module', 'ERROR', $details);
+                        }
+
                     }
-
                 }
-            }
 
+            }
+        } catch (\Throwable $th) {
+            $details = [
+                "message" => $th->getMessage(),
+                "code" => $th->getCode(),
+                "file" => $th->getFile(),
+                "line" => $th->getLine()
+            ];
+            \ModuleManager\Main::set_error('Include module', 'ERROR', $details);
         }
     }
 
