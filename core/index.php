@@ -190,13 +190,13 @@ class Main
             $logger = new Logger($path);
 
             // $logger->log('Working time: ' . $debug_info['working_time'], 'INFO');
+            // echo 'Memory usage: ' . round(memory_get_usage() / 1048576, 2) . "M\n";
 
             foreach ($debug_info['error_list'] as $key => $value) {
                 $logger->log($value['name'] . ": " . implode(',', $value['details']), $value['type']);
             }
 
             $logger->close();
-
         }
     }
 }

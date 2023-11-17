@@ -15,6 +15,8 @@ class FilesNotepadsController
             $this->project_id = \ModuleManager\Pages::$project->get_project_id();
         }
 
+
+
         $main_page = [
             "name" => "Files",
             "link" => "files",
@@ -31,6 +33,7 @@ class FilesNotepadsController
 
     public function files()
     {
+        $this->repository = new \Files\Repository\FilesRepository($this->project_id);
         // Add style
         \InjectStyles::set_style(["name" => "add_project_style", "style" => "/modules/encrypt-files/assets/css/style.css"]);
 
@@ -39,26 +42,73 @@ class FilesNotepadsController
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-            encryptFile($_FILES['file']['tmp_name'], 'my-secret-key', './modules/encrypt-files/helper/test.encrypt');
-            // chmod('./modules/encrypt-files/helper/' . $_FILES['file']['name'], 0777);
-            decryptFile('./modules/encrypt-files/helper/test.encrypt', 'my-secret-key', './modules/encrypt-files/helper/' . $_FILES['file']['name']);
-            // chmod('./modules/encrypt-files/helper/d-' . $_FILES['file']['name'], 0777);
+            $this->repository->upload_file($_FILES['file']['tmp_name'], $_GET['pwd'], $_FILES['file']['name'], $_FILES['file']['type']);
 
-            header('Content-Description: File Transfer');
-            header('Content-Type: application/octet-stream');
-            header('Content-Disposition: attachment; filename="' . basename('./modules/encrypt-files/helper/' . $_FILES['file']['name']) . '"');
-            header('Expires: 0');
-            header('Cache-Control: must-revalidate');
-            header('Pragma: public');
-            header('Content-Length: ' . filesize('./modules/encrypt-files/helper/' . $_FILES['file']['name']));
-            flush(); // Flush system output buffer
-            readfile('./modules/encrypt-files/helper/' . $_FILES['file']['name']);
-            die();
         }
 
 
+        $files_header = [
+            "Nazwa" => ["name"],
+            "Data modyfikacji" => ["modify_time"],
+            "Rozmiar" => ["size"]
+        ];
+        $form = '
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="file" value="add file" />
+                <input type="submit" />
+            </form>
+        ';
 
-        return $this->get_page(__DIR__ . "/../view/files.html");
+        $table = new \ModuleManager\Table(500);
+
+        $view = $form;
+        $view .= $table->generate_table($this->get_files(), $files_header);
+        return $view;
+
+    }
+
+    private function parse_size($size): string
+    {
+        $units = array('B', 'KB', 'MB', 'GB', 'TB');
+
+        if ($size > 0) {
+            $exp = floor(log($size, 1024));
+            $convert_unit = $size / (pow(1024, $exp));
+            $unit = $units[$exp];
+
+            return sprintf('%.2f %s', $convert_unit, $unit);
+        } else {
+            return '0 B';
+        }
+    }
+
+    private function get_files(): array
+    {
+
+        $directory = !empty($_GET["pwd"]) ? $_GET["pwd"] : ".";
+
+        $data = [];
+
+        if (!empty($_GET["loca_file"])) {
+            $this->repository->download_file($_GET["loca_file"], $_GET["name"]);
+        }
+
+        foreach ($this->repository->list_file($directory) as $key => $value) {
+            if ($value['type'] == "directory")
+                $name = "<a href='?pwd=" . $value["pwd"] . "/" . $value["name"] . "'>" . $value["name"] . "</a>";
+            else
+                $name = "<a href='?pwd=" . $value["pwd"] . "/" . $value["name"] . "&loca_file=" . $value["pwd"] . "/" . $value["name"] . "&name=" . $value["name"] . "'>" . $value["name"] . "</a>";
+
+
+            $data[] = [
+                "name" => $name,
+                "modify_time" => $value["modify_time"],
+                "size" => $this->parse_size($value["size"])
+            ];
+        }
+
+        return $data;
+
     }
 
 }
