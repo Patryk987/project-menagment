@@ -12,6 +12,7 @@ class ApiModel
     {
         $this->status = $status;
         $this->message = $message;
+        $this->error = $error;
     }
 
     // SET

@@ -410,8 +410,9 @@ class Accounts
 
 
         $return = new \Models\ApiModel($status, ["token" => $token, "nick" => $nick], $errors);
+
         return $return;
-        // ["status" => $status, "data" => ["token" => $token, "nick" => $nick], "errors" => $errors];
+
 
     }
 
@@ -441,9 +442,9 @@ class Accounts
         $data = [
             "status" => 0
         ];
+        $this->sedjm->clear_all();
         $this->sedjm->set_where("token_id", $token_id, "=");
         $token = $this->sedjm->update($data, $table);
-        // $token = $this->sedjm->get(['status'], $table);
 
         LocalStorage::remove_data("token", "session");
         LocalStorage::remove_data("token", "cookie");

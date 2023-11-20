@@ -43,8 +43,8 @@ function login_form()
 
     if (!empty($_POST['active'])) {
 
-        $v = login_to_panel($_POST["nick"], $_POST["password"]);
-        foreach ($v->get_error() as $key => $value) {
+        $login = login_to_panel($_POST["nick"], $_POST["password"]);
+        foreach ($login->get_error() as $key => $value) {
             switch ($key) {
                 case 'password_is_incorrect':
                     $errors[] = "Podano niepoprawne hasło";
@@ -509,7 +509,8 @@ function project_list()
 
                 $img_src = '/' . $project_data[0]['photo_url'] . '" alt="' . $project_data[0]['name'] . '';
                 $link = '/' . ModuleManager\Config::get_config()["pages"]->project . "/" . $project_data[0]['project_id'];
-
+                // $active = !empty($project_data) && $project_data[0]['project_id'] == ModuleManager\Pages::$project->get_project_id() ? "active" : "";
+                $active = "";
                 $output .= '
                 <a href="' . $link . '">
                     <div class="project_box"><img src="' . $img_src . '"/></div>

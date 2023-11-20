@@ -345,8 +345,22 @@ class Pages
     public function load_page()
     {
 
-        $sub_page_list = $this->get_sub_page();
-        $last_sub_page = end($sub_page_list);
+        $last_sub_page = end($this->sub_pages);
+
+
+
+        if (
+            !empty($this->sub_pages[0])
+            && $this->config["pages"]->project == $this->sub_pages[0]
+            && !empty($this->sub_pages[1])
+        ) {
+
+            $project = new \Projects(static::$token['payload']->user_id, $this->sub_pages[1]);
+            self::$project = $project->get_project_data();
+
+        }
+
+        $this->map_modules();
 
         if (!empty($sub_page_list[0])) {
 
