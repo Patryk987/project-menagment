@@ -11,9 +11,53 @@ class DatabaseConnect
 
     static public array $database_structure = [];
 
+    public function __construct()
+    {
+        $this->map_database_extends();
+    }
+
     static public function set_database_fragment(array $fragment): void
     {
         self::$database_structure = array_merge(self::$database_structure, $fragment);
+    }
+
+    private function map_database_extends()
+    {
+        try {
+            $dir_path = './modules/';
+            $modules = scandir($dir_path);
+
+
+            foreach ($modules as $key => $value) {
+
+                if ($value != ".." && $value != ".") {
+                    $file_in_module = scandir($dir_path . $value);
+                    if (in_array("extends-database.php", $file_in_module)) {
+                        try {
+                            include_once $dir_path . $value . '/extends-database.php';
+                        } catch (\Throwable $th) {
+                            $details = [
+                                "message" => $th->getMessage(),
+                                "code" => $th->getCode(),
+                                "file" => $th->getFile(),
+                                "line" => $th->getLine()
+                            ];
+                            \ModuleManager\Main::set_error('Include module', 'ERROR', $details);
+                        }
+
+                    }
+                }
+
+            }
+        } catch (\Throwable $th) {
+            $details = [
+                "message" => $th->getMessage(),
+                "code" => $th->getCode(),
+                "file" => $th->getFile(),
+                "line" => $th->getLine()
+            ];
+            \ModuleManager\Main::set_error('Include module', 'ERROR', $details);
+        }
     }
 
     private function get_database_structure(string $db_name)

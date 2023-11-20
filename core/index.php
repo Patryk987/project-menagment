@@ -63,7 +63,7 @@ class Main
     use Debug;
 
     public array $config;
-    public array $sub_pages;
+    public static array $sub_pages;
     public SEDJM $sedjm;
     protected array $database;
     public Pages $pages;
@@ -78,7 +78,9 @@ class Main
     public function __construct()
     {
 
-
+        if (empty($_SESSION['tmp_key'])) {
+            $_SESSION['tmp_key'] = uniqid();
+        }
 
         $database_core_table = file_get_contents('./config/database.json');
         $database_core_table = html_entity_decode($database_core_table);
@@ -86,21 +88,14 @@ class Main
         DatabaseConnect::set_database_fragment($database_core_table[DB_NAME]);
 
 
-        // Set Env
-        $load_env = new LoadEnv(__DIR__ . "/../config/");
-        $load_env->initEnv();
-
-
         // Error Trigger 
         set_exception_handler([$this, 'exceptionHandler']);
         set_error_handler([$this, 'errorHandler']);
 
-        // Set config
         $this->config = Config::get_config();
         $debug = $this->config['debug'];
 
         $this->start_debug($debug);
-
 
         // Anti-clickjacking
         if ($this->config['Anti-clickjacking'])
@@ -108,10 +103,50 @@ class Main
         else
             header('X-Frame-Options: DENY');
 
+        static::$sub_pages = $this->get_sub_page();
+
+
+    }
+
+
+    private function get_sub_page(): array
+    {
+        $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+        $base_link = $link . "/";
+        $actual_link = $link . $_SERVER["REQUEST_URI"];
+
+        $sub_pages = str_replace($base_link, "", $actual_link);
+
+        while (str_contains($sub_pages, "//")) {
+            $sub_pages = str_replace("//", "/", $sub_pages);
+        }
+
+        $sub_pages = explode("?", $sub_pages)[0];
+        $sub_pages = explode("/", $sub_pages);
+
+        if (empty(end($sub_pages))) {
+            array_pop($sub_pages);
+        }
+
+        return $sub_pages;
+
+    }
+
+    // Set Env
+    public function set_env()
+    {
+        $load_env = new LoadEnv(__DIR__ . "/../config/");
+        $load_env->initEnv();
+    }
+
+    // Set tokens
+    public function set_token()
+    {
+
         // Set JWT
         static::$jwt = new JWT($_ENV['JWT_TOKEN']);
 
-        // Set tokens
+
         $token = LocalStorage::get_data("token", 'session', true);
         if (empty($token)) {
             $token = LocalStorage::get_data("token", 'cookie', true);
@@ -120,23 +155,29 @@ class Main
 
         static::$token = static::$jwt->check_token($token);
 
-        // Pages
-        $this->pages = new Pages(static::$token, $this->config);
+    }
 
-        // connect to database
+    // connect to database
+    public function set_database_connect()
+    {
+
         $this->db_connect = new DatabaseConnect();
         $this->database = $this->db_connect->get_db_connect(DB_NAME);
         $this->sedjm = new SEDJM($this->db_connect->connect, $this->database);
         $this->accounts = new Accounts($this->sedjm);
+    }
 
+    // Pages
+    public function set_pages()
+    {
 
-
-
+        $this->pages = new Pages(static::$token, $this->config, static::$sub_pages);
         $this->page_name = $this->pages->get_last_page();
 
         $this->popups = new Popups;
 
     }
+
 
     public function __destruct()
     {
@@ -149,13 +190,13 @@ class Main
             $logger = new Logger($path);
 
             // $logger->log('Working time: ' . $debug_info['working_time'], 'INFO');
+            // echo 'Memory usage: ' . round(memory_get_usage() / 1048576, 2) . "M\n";
 
             foreach ($debug_info['error_list'] as $key => $value) {
                 $logger->log($value['name'] . ": " . implode(',', $value['details']), $value['type']);
             }
 
             $logger->close();
-
         }
     }
 }

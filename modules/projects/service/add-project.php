@@ -26,7 +26,7 @@ class AddProjects
     {
         global $main;
         \InjectStyles::set_style(["name" => "add_project_style", "style" => "/modules/projects/assets/css/style.css"]);
-        \InjectJavaScript::set_script(["name" => "auto_reload", "script" => "/modules/projects/assets/js/script.js"]);
+        \InjectJavaScript::set_script(["name" => "auto_reload", "src" => "/modules/projects/assets/js/script.js"]);
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $data = [

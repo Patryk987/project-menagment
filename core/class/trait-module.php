@@ -55,7 +55,7 @@ trait Modules
                 "parent" => $parent_link,
                 "show" => isset($module["show"]) ? $module["show"] : true,
                 "belongs_to_project" => static::$modules[$parent_link]["belongs_to_project"],
-                "position" => 999
+                "position" => !empty($module['position']) ? $module['position'] : 999
             ];
 
         }
@@ -64,30 +64,40 @@ trait Modules
 
     public function map_modules()
     {
-        $dir_path = './modules/';
-        $modules = scandir($dir_path);
+        try {
+            $dir_path = './modules/';
+            $modules = scandir($dir_path);
 
 
-        foreach ($modules as $key => $value) {
+            foreach ($modules as $key => $value) {
 
-            if ($value != ".." && $value != ".") {
-                $file_in_module = scandir($dir_path . $value);
-                if (in_array("index.php", $file_in_module)) {
-                    try {
-                        include_once $dir_path . $value . '/index.php';
-                    } catch (\Throwable $th) {
-                        $details = [
-                            "message" => $th->getMessage(),
-                            "code" => $th->getCode(),
-                            "file" => $th->getFile(),
-                            "line" => $th->getLine()
-                        ];
-                        \ModuleManager\Main::set_error('Include module', 'ERROR', $details);
+                if ($value != ".." && $value != ".") {
+                    $file_in_module = scandir($dir_path . $value);
+                    if (in_array("index.php", $file_in_module)) {
+                        try {
+                            include_once $dir_path . $value . '/index.php';
+                        } catch (\Throwable $th) {
+                            $details = [
+                                "message" => $th->getMessage(),
+                                "code" => $th->getCode(),
+                                "file" => $th->getFile(),
+                                "line" => $th->getLine()
+                            ];
+                            \ModuleManager\Main::set_error('Include module', 'ERROR', $details);
+                        }
+
                     }
-
                 }
-            }
 
+            }
+        } catch (\Throwable $th) {
+            $details = [
+                "message" => $th->getMessage(),
+                "code" => $th->getCode(),
+                "file" => $th->getFile(),
+                "line" => $th->getLine()
+            ];
+            \ModuleManager\Main::set_error('Include module', 'ERROR', $details);
         }
     }
 
@@ -140,11 +150,13 @@ trait Modules
                             "name" => $value['name'],
                             "link" => $value['link'],
                             "icon" => "",
-                            "show" => $value['show']
+                            "show" => $value['show'],
+                            "position" => $value['position'],
                         ];
                     }
                     if (isset($list[$value['parent']]))
                         $list[$value['parent']]["child"][] = $data;
+                    \Helper::sort_array($list[$value['parent']]["child"], "position");
                 }
 
 

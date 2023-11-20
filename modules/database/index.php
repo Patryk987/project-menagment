@@ -24,7 +24,7 @@ class useDatabase
     public function get_database_structure($input): void
     {
 
-        $main = new ModuleManager\Main;
+        global $main;
         foreach ($main->sedjm->generate_database() as $value) {
             echo $value . "\n";
         }

@@ -1,1 +1,121 @@
-notes
+<section id="single_note">
+
+    <div class="header">
+        <div class="close">
+            {{insert_svg modules/notes/assets/img/previous-arrow-backward.svg}}
+        </div>
+        <div class="details">
+            <div class="modify_data">
+                0000/00/00
+            </div>
+            <div class="dowload">
+                {{insert_svg modules/notes/assets/img/download.svg}}
+            </div>
+            <div class="delete">
+                {{insert_svg modules/notes/assets/img/trash-alt-delete-bin.svg}}
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="loader"></div>
+    </div>
+
+</section>
+
+
+
+<section id="notepads">
+
+    <div class="title">
+        <h2>{{notepads_title}}</h2>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active" data-type="grid">grid</div>
+        <div class="tab" data-type="kanban">kanban</div>
+        <div class="tab" data-type="list">list</div>
+    </div>
+    <div class="content">
+
+        <div id="grid">
+            <div class="grid_view">
+
+            </div>
+        </div>
+
+        <div id="kanban">
+
+            <div class="kanban_view">
+                <div class="title">
+                    TODO
+                </div>
+                <div class="box" draggable="true">
+                    <div class="box_content">
+                        <div class="title">test1</div>
+                        <div class="params"></div>
+                        <div class="description">
+                            Culpa anim ex exercitation deserunt duis enim minim. Id magna et esse amet do in.
+                        </div>
+                    </div>
+                </div>
+                <div class="box" draggable="true">
+                    <div class="box_content">
+                        <div class="title">test2</div>
+                        <div class="params"></div>
+                        <div class="description">
+                            Culpa anim ex exercitation deserunt duis enim minim. Id magna et esse amet do in.
+                        </div>
+                    </div>
+                </div>
+                <div class="box" draggable="true">
+                    <div class="box_content">
+                        <div class="title">test3</div>
+                        <div class="params"></div>
+                        <div class="description">
+                            Culpa anim ex exercitation deserunt duis enim minim. Id magna et esse amet do in.
+                        </div>
+                    </div>
+                </div>
+                <div class="box" draggable="true">
+                    <div class="box_content">
+                        <div class="title">test4</div>
+                        <div class="params"></div>
+                        <div class="description">
+                            Culpa anim ex exercitation deserunt duis enim minim. Id magna et esse amet do in.
+                        </div>
+                    </div>
+                </div>
+                <div class="box" draggable="true">
+                    <div class="box_content">
+                        <div class="title">test5</div>
+                        <div class="params"></div>
+                        <div class="description">
+                            Culpa anim ex exercitation deserunt duis enim minim. Id magna et esse amet do in.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kanban_view">
+                <div class="title">
+                    IN PROGRES
+                </div>
+            </div>
+
+            <div class="kanban_view">
+                <div class="title">
+                    TEST
+                </div>
+            </div>
+
+            <div class="kanban_view">
+                <div class="title">
+                    DONE
+                </div>
+            </div>
+        </div>
+
+        <div id="list"></div>
+    </div>
+
+</section>

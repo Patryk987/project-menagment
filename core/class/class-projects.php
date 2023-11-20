@@ -17,7 +17,7 @@ class Projects
     }
 
     /**
-     * Check if user have access to this project and return data about this
+     * Check if user have access to this project and return data
      */
     public function get_project_data(): ProjectModel
     {
@@ -43,6 +43,16 @@ class Projects
 
         return $output;
 
+    }
+
+    public function auth_user_in_project(): bool
+    {
+        $user_projects = $this->repository->get_user_projects($this->user_id);
+
+        if (in_array($this->project_id, $user_projects))
+            return true;
+        else
+            return false;
     }
 
 }

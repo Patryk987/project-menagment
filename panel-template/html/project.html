@@ -27,6 +27,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
+    <!-- Script -->
+    <script nonce="{{nonce}}" src="/panel-template/js/api.js"></script>
+
+    <script nonce="{{nonce}}">
+
+        var api = new Api();
+        api.set_user_key(`{{token}}`);
+        api.set_base_link(`{{base_link}}`);
+        api.set_api_key(`{{temp_key}}`);
+
+        // async function test() {
+        //     console.log(await api.post("api/add_note", {
+        //         "project_id": 1,
+        //         "notepad_id": 1,
+        //         "title": "Title",
+        //         "note": "asdf"
+        //     }));
+        // }
+
+        // test();
+
+    </script>
+
     <!-- Injected styles -->
     {{inject_style}}
 
@@ -43,7 +66,7 @@
                     <div></div>
                     <div></div>
                 </div>
-                {{module_patch}}
+                {{project_patch}}
             </div>
             <div>
                 <a href="edit_your_account">
@@ -93,6 +116,7 @@
     </script>
 
     {{inject_javascript}}
+
 
 </body>
 

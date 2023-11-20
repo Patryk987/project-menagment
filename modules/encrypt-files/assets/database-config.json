@@ -1,0 +1,116 @@
+{
+    "files": {
+        "RemoteFiles": {
+            "file_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": true,
+                "AUTO_INCREMENT": true,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true
+            },
+            "user_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "ftp_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "file_name": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "encrypt_file_name": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "file_extension": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "directory": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "access_key": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "create_time": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "checksum": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            }
+        }
+    }
+}
