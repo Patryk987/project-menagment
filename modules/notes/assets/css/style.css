@@ -53,6 +53,7 @@
     /* display: none; */
     overflow-y: auto;
     transition: 1s;
+    box-shadow: 0 0 10px gray;
 
 }
 
@@ -291,6 +292,7 @@
     width: 100%;
     background-position: center;
     background-size: cover;
+    border-radius: var(--radius);
 }
 
 #single_note .content h3 {

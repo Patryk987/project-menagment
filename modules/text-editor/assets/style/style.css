@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2.5vh;
+    margin-top: 25px;
 }
 
 #text-editor .page {
@@ -22,12 +22,13 @@
 
 /* box */
 
-#text-editor .box {
+#text-editor .text_box {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
 
-#text-editor .box .options {
+#text-editor .text_box .options {
     opacity: 0;
     display: flex;
     justify-content: center;
@@ -35,7 +36,7 @@
     transition: 0.5s;
 }
 
-#text-editor .box .select {
+#text-editor .text_box .select {
     width: 100%;
     /* height: 20px; */
     /* box-shadow: 0 0 5px black; */
@@ -46,7 +47,7 @@
     display: none;
 }
 
-#text-editor .box .select.show {
+#text-editor .text_box .select.show {
     /* visibility: visible; */
     display: flex;
     opacity: 1;
@@ -65,20 +66,20 @@
     }
 }
 
-#text-editor .box:hover .select {
+#text-editor .text_box:hover .select {
     /* display: block; */
     /* display: flex; */
 
 }
 
-#text-editor .box .select .divider {
+#text-editor .text_box .select .divider {
     width: 2px;
     background-color: #f6f6f6;
     border-radius: 10px;
     height: 15px;
 }
 
-#text-editor .box .select .select-box {
+#text-editor .text_box .select .select-box {
     margin: 5px;
     width: 20px;
     height: 20px;
@@ -90,7 +91,7 @@
 }
 
 
-#text-editor .box .select .select-box p {
+#text-editor .text_box .select .select-box p {
     text-transform: uppercase;
     font-weight: bold;
     color: #f6f6f6;
@@ -99,24 +100,24 @@
     margin: 0px;
 }
 
-#text-editor .box .select .select-box:hover {
+#text-editor .text_box .select .select-box:hover {
     /* border: 0.5px solid #282829; */
     background-color: #f6f6f6;
     cursor: pointer;
 }
 
-#text-editor .box .select .select-box:hover p {
+#text-editor .text_box .select .select-box:hover p {
     color: #282829
 }
 
 
 
-#text-editor .box:hover .options {
+#text-editor .text_box:hover .options {
     opacity: 1;
     transition: 0.5s;
 }
 
-#text-editor .box .options .option {
+#text-editor .text_box .options .option {
     /* padding: 5px; */
     display: flex;
     flex-direction: column;
@@ -126,15 +127,15 @@
 }
 
 
-#text-editor .box .data {
+#text-editor .text_box .data {
     width: calc(100% - (40px * 2));
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-#text-editor .box .data .content {
-    padding: 2.5px;
+#text-editor .text_box .data .text_content {
+    /* padding: 2.5px; */
     width: 100%;
     max-width: 100%;
     min-width: 100%;
@@ -159,15 +160,15 @@ textarea::-webkit-outer-spin-button {
 }
 
 
-#text-editor .box .content {
+#text-editor .text_box .text_content {
     border: 1px solid rgba(0, 0, 0, 0);
 }
 
-#text-editor .box:hover .content {
+#text-editor .text_box:hover .text_content {
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-#text-editor .box .drop {
+#text-editor .text_box .drop {
     transition: 0.5s;
     width: 100%;
     /* background-color: red; */
@@ -176,7 +177,7 @@ textarea::-webkit-outer-spin-button {
     border-radius: 5px;
 }
 
-#text-editor .box .drop.on {
+#text-editor .text_box .drop.on {
     transition: 0.5s;
     /* width: 100%; */
     /* height: 20px; */
@@ -197,27 +198,27 @@ textarea::-webkit-outer-spin-button {
 
 /* Type */
 
-.content {
+.text_content {
     font-size: 1rem;
 }
 
-.content p {
+.text_content p {
     font-size: 1rem;
 }
 
-.content.h1 {
+.text_content.h1 {
     font-size: 2.5rem;
 }
 
-.content.h2 {
+.text_content.h2 {
     font-size: 2rem;
 }
 
-.content.h3 {
+.text_content.h3 {
     font-size: 1.5rem;
 }
 
-.content:empty:before {
+.text_content:empty:before {
     content: "Zacznij pisać";
     color: #888;
     font-style: italic;

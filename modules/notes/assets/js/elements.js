@@ -58,9 +58,7 @@ class NoteDetailsElement extends HTMLElement {
                         </tr>
                     </table>
                 </div>
-                <div class="content">
-
-                </div>
+                <div id="text-editor"></div>
             </div>
         `;
     }

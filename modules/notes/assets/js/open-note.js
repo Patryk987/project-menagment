@@ -4,6 +4,7 @@ class Note {
     static notepad_id;
     static project_id;
     note_id = 0;
+
     constructor(notepad_id, project_id) {
         Note.notepad_id = notepad_id;
         Note.project_id = project_id;
@@ -140,9 +141,12 @@ class Note {
         this.single_note.querySelector(".content").innerHTML = `
             <note-content 
                 title="` + title + `" 
-                author="" 
+                author="Jan kowalski" 
                 last_modify="` + update_time + `"
-                background="` + background + `" />`;
+                background="https://cdn.pixabay.com/photo/2023/11/05/21/04/alps-8368328_1280.jpg" />`;
+
+        var text_editor = new TextEditor;
+        text_editor.load();
 
         this.#activeUpdateTitle(id);
 
