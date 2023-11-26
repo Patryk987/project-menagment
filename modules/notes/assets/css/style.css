@@ -295,6 +295,28 @@
     border-radius: var(--radius);
 }
 
+#single_note .content .add_button {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+    border: 4px solid var(--selected);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--selected);
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#single_note .content .add_button:hover {
+    opacity: 1;
+}
+
 #single_note .content h3 {
     font-size: 2rem;
     color: var(--selected)

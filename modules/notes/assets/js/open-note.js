@@ -42,12 +42,14 @@ class Note {
         return message;
     }
 
-    async update_notes(id, title, note = "") {
+    async update_notes(id, title = "", note = "", background = "") {
         let response = await api.put("api/update_note", {
             "note_id": id,
             "notepad_id": Note.notepad_id,
             "project_id": Note.project_id,
             "title": title,
+            "note": note,
+            "background": background
         });
 
         var message = [];
@@ -125,6 +127,39 @@ class Note {
         `;
     }
 
+    #addImage(id) {
+        var background = document.querySelector('.background');
+
+        background.addEventListener('click', (item) => {
+
+            var fileInput = document.getElementById('fileInput');
+            fileInput.click();
+
+            fileInput.addEventListener('change', () => {
+
+                var selectedFile = fileInput.files[0];
+
+                if (selectedFile && selectedFile.type.startsWith('image/')) {
+                    var reader = new FileReader();
+                    reader.addEventListener(
+                        "load",
+                        async () => {
+                            background.style.backgroundImage = 'url("' + reader.result + '")';
+                            // background.style.backgroundImage = reader.result;
+                            console.log(await this.update_notes(id, "", "", reader.result))
+                        },
+                        false,
+                    );
+
+                    reader.readAsDataURL(selectedFile);
+                } else {
+                    alert('Wybierz plik w formacie obrazka (np. JPG, PNG, GIF)');
+                }
+            });
+
+        });
+    }
+
     async #open(id) {
 
 
@@ -138,15 +173,21 @@ class Note {
         var title = data.title;
         var update_time = data.update_time;
         var background = data.background;
+        if (background) background = "url(/" + background + ")";
         this.single_note.querySelector(".content").innerHTML = `
             <note-content 
                 title="` + title + `" 
                 author="Jan kowalski" 
                 last_modify="` + update_time + `"
-                background="https://cdn.pixabay.com/photo/2023/11/05/21/04/alps-8368328_1280.jpg" />`;
+                background="` + background + `" />`;
 
+        // Active text editor
         var text_editor = new TextEditor;
         text_editor.load();
+
+        // add image 
+
+        this.#addImage(id);
 
         this.#activeUpdateTitle(id);
 

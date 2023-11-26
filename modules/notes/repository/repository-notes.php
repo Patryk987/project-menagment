@@ -200,6 +200,9 @@ class NotesRepository implements RepositoryNotesInterface
             if (!empty($data['note']))
                 $update_data["note"] = $data['note'];
 
+            if (!empty($data['background']))
+                $update_data["background"] = $data['background'];
+
             $update_data["update_time"] = time();
 
             $this->sedjm->clear_all();
