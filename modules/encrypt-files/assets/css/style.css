@@ -1,0 +1,36 @@
+
+.encrypted,
+.not_encrypted {
+    width: 50px;
+    height: 25px;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-right: auto;
+} 
+
+.encrypted svg,
+.not_encrypted svg {
+    max-width: 15px;
+    border-radius: var(--radius);
+    stroke: white;
+    stroke-width: 4
+} 
+
+.encrypted {
+    background-color: #4dac26;
+}
+
+.not_encrypted {
+    background-color: #d7191c;
+
+}
+
+td a{ 
+    color: var(--selected);
+    text-decoration: none;
+    font-weight: bold;
+}
