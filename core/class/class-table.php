@@ -4,12 +4,21 @@ namespace ModuleManager;
 
 class Table
 {
-    protected $data, $key, $table, $row_per_page, $actual_page, $id, $more_filter = [], $action = [], $mass_action = [], $actual_link;
-
-    public $buttons = "";
-
+    protected $data;
+    protected $key;
+    protected $table;
+    protected $row_per_page;
+    protected $actual_page;
+    protected $id;
+    protected $more_filter = [];
+    protected $action = [];
+    protected $mass_action = [];
+    protected $actual_link;
+    protected $toggle = false;
+    protected $additional = [];
     protected $filter_list = [];
     protected $sort_list = [];
+    public $buttons = "";
 
     public function __construct($row_per_page = 20, $actual_page = 1)
     {
@@ -23,8 +32,33 @@ class Table
         }
     }
 
+    private function arrow($value)
+    {
+        $arrow = "
+                    <div class='arrows'>
+                        <div class='up " . (!empty($_GET['sort']) && $value == $_GET['sort'] && $_GET['order'] == "ASC" ? "active" : "not_active") . "'>
+                         " . file_get_contents(__DIR__ . "/../../panel-template/img/up-arrow.svg") . "   
+                        </div>
+                        <div class='down " . (!empty($_GET['sort']) && $value == $_GET['sort'] && $_GET['order'] == "DESC" ? "active" : "not_active") . "'>
+                         " . file_get_contents(__DIR__ . "/../../panel-template/img/down-arrow.svg") . "                      
+                        </div>
+                    </div>
+                ";
+
+        return $arrow;
+    }
+
     protected function create_header()
     {
+
+        // Order 
+        $order = "ASC";
+        if (!empty($_GET['order'])) {
+            if ($_GET['order'] == "ASC")
+                $order = "DESC";
+        }
+
+
         $header = "<thead>";
         $header .= "<tr>";
         if (!empty($this->id) && !empty($this->mass_action)) {
@@ -44,18 +78,55 @@ class Table
             $header .= "";
             $header .= "</th>";
         }
+
+        if ($this->toggle) {
+            $header .= "<th class='check_field'>";
+            $header .= "";
+            $header .= "</th>";
+        }
+
         if (!empty($this->key)) {
+
             foreach ($this->key as $key => $value) {
+
+                $link = "?sort=" . $value[0] . "&order=" . $order;
+
+
+                foreach ($_GET as $get_key => $get_value) {
+
+                    if ($get_key != 'sort' && $get_key != 'order') {
+                        $link .= $this->create_link($get_key, $get_value, false);
+                    }
+                }
                 $header .= "<th>";
+                $header .= "<a href='" . $this->actual_link . $link . "'>";
                 $header .= $key;
+                $header .= $this->arrow($value[0]);
+                $header .= "</a>";
                 $header .= "</th>";
             }
+
         } else {
+
+
             foreach ($this->data[0] as $key => $value) {
+
+                $link = "?sort=" . $value[0] . "&order=" . $order;
+                foreach ($_GET as $key => $value) {
+
+                    if ($key != 'sort' && $key != 'order') {
+                        $link .= $this->create_link($key, $value, false);
+                    }
+                }
+
                 $header .= "<th>";
+                $header .= "<a href='" . $this->actual_link . $link . "'>";
                 $header .= $key;
+                $header .= $this->arrow($value[0]);
+                $header .= "</a>";
                 $header .= "</th>";
             }
+
         }
         $header .= "</tr>";
         $header .= "</thead>";
@@ -66,26 +137,8 @@ class Table
     protected function sort(array &$rows, array $sorts)
     {
 
-        // $args = [];
-        //
-        // foreach ($sorts as $field => $direction) {
-        //     $col = array_column($rows, $field);
-        //     $args[] = $col;
-        //
-        //     if ('asc' === $direction) {
-        //         $args[] = SORT_ASC;
-        //     } else {
-        //         $args[] = SORT_DESC;
-        //     }
-        // }
-        // $args[] = &$rows;
-        // call_user_func_array("array_multisort", $args);
-
         $tmp = [];
 
-
-
-        // foreach($rows as &$ma) {
         foreach ($sorts as $key => $value) {
             foreach ($rows as &$ma)
                 $tmp[] = &$ma[$key];
@@ -98,12 +151,64 @@ class Table
                 array_multisort($tmp, $rows);
             }
         }
-        // }
 
-        // return $rows;
         array_multisort($tmp, $rows);
 
         return $rows;
+
+    }
+
+    private function toggle_row($data = []): string
+    {
+        $body = "</tr>";
+        $body .= "<tr class='explode hide'>";
+        $body .= "<td colspan='" . count($data) + 2 . "'>";
+        $body .= "<div class='boxes'>";
+
+        foreach ($this->additional as $value) {
+
+            // foreach ($data as $key => $value) {
+
+            //     if (in_array($key, $value['key'])) {
+            //         $body .= "<p>" . $key_k . ": " . "<span class='value'>" . $value . " </span></p>";
+            //     }
+
+            // }
+
+            $body .= "<div class='content'>";
+            $body .= "<p class='header'>" . $value['header'] . "</p>";
+            $body .= "<div>";
+
+            if (isset($value['key'])) {
+
+                foreach ($data[$value['key']] as $data_key => $data_value) {
+
+                    if (array_key_exists($data_key, $value['field']))
+                        $body .= "<p><b>" . $value['field'][$data_key] . "</b>: " . $data_value . "<p>";
+
+                }
+
+            } else {
+
+                foreach ($data as $data_key => $data_value) {
+
+                    if (array_key_exists($data_key, $value['field']))
+                        $body .= "<p><b>" . $value['field'][$data_key] . "</b>: " . $data_value . "<p>";
+
+                }
+            }
+
+            $body .= "</div>";
+            $body .= "</div>";
+
+        }
+
+        $body .= "</div>";
+        $body .= "</td>";
+        $body .= "</tr>";
+
+        return $body;
+
     }
 
     protected function create_content()
@@ -112,25 +217,28 @@ class Table
         $first_row = $this->actual_page * $this->row_per_page;
         $last_row = $first_row + $this->row_per_page;
 
-        // $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $this->actual_link = explode("?", $this->actual_link)[0];
+
+        $order = "ASC";
+        if (!empty($_GET['order'])) {
+            $order = $_GET['order'];
+        }
 
         $body = "<tbody>";
         if (!empty($this->key)) {
-            if (!empty($_GET['sort'])) {
-                $this->data = $this->sort($this->data, [
-                    $_GET['sort'] => 'ASC'
-                ]);
+            if (isset($_GET['sort'])) {
+                \Helper::sort_array($this->data, $_GET['sort'], $order);
             }
 
             foreach ($this->data as $data) {
+
                 $row++;
                 if ($last_row < $row)
                     break;
                 if ($first_row > $row)
                     continue;
 
-                $body .= "<tr>";
+                $body .= "<tr class='standard'>";
                 if (!empty($this->id) && !empty($this->mass_action)) {
 
                     $body .= "<td class='check_field'>";
@@ -140,9 +248,16 @@ class Table
                             <span class='checkmark'></span>
                         </label>
                     ";
-                    $body .= "</td>";
+
 
                 }
+                $body .= "</td>";
+                if ($this->toggle) {
+                    $body .= "<td class='exploder'>";
+                    $body .= file_get_contents(__DIR__ . "/../template/img/down-arrow.svg");
+                    $body .= "</td>";
+                }
+
                 if (count($this->action) > 0) {
                     $body .= "<td class='icon_field'>";
                     if (!empty($this->id) && !empty($this->action)) {
@@ -150,29 +265,25 @@ class Table
                             $body .= "<a href='" . $this->actual_link . "/" . $action['link'] . "?id=" . $data[$this->id] . "&type=" . $action['icon'] . "' label=''>";
                             switch ($action['icon']) {
                                 case 'edit':
-                                    // $body .= "edit";
-                                    $body .= file_get_contents("panel-template/img/edit.svg");
+                                    $body .= file_get_contents(__DIR__ . "/../../panel-template/img/edit.svg");
                                     break;
                                 case 'show':
-                                    // $body .= "show";
-                                    $body .= file_get_contents("panel-template/img/show.svg");
+                                    $body .= file_get_contents(__DIR__ . "/../../panel-template/img/show.svg");
                                     break;
                                 case 'delete':
-                                    // $body .= "delete";
-                                    $body .= file_get_contents("panel-template/img/delete.svg");
+                                    $body .= file_get_contents(__DIR__ . "/../../panel-template/img/delete.svg");
                                     break;
                                 default:
-                                    // $body .= "edit";
-                                    $body .= file_get_contents("core/interface/img/edit.svg");
+                                    $body .= file_get_contents(__DIR__ . "/../../core/interface/img/edit.svg");
                                     break;
                             }
                             $body .= "</a>";
                         }
-                        // $body .= $data[$this->id];
                     }
-                    // $body .= file_get_contents("core/interface/img/edit.svg");
+
                     $body .= "</td>";
                 }
+
                 foreach ($this->key as $key_k => $value_k) {
                     $body .= "<td>";
 
@@ -186,10 +297,14 @@ class Table
 
                     $body .= "</td>";
                 }
-                $body .= "</tr>";
+
+                $body .= $this->toggle_row($data);
+
+
             }
 
         } else {
+
             foreach ($this->data as $data) {
                 $row++;
                 if ($last_row < $row)
@@ -209,14 +324,15 @@ class Table
                 $body .= "<td class='check_field'>";
                 $body .= file_get_contents("core/interface/img/edit.svg");
                 $body .= "</td>";
+
                 if (true) {
 
-                    // if(in_array(, $data))
                     foreach ($data as $key => $value) {
                         $body .= "<td>";
                         $body .= $value;
                         $body .= "</td>";
                     }
+
                 } else {
 
                     foreach ($data as $key => $value) {
@@ -224,7 +340,9 @@ class Table
                         $body .= $value;
                         $body .= "</td>";
                     }
+
                 }
+
                 $body .= "</tr>";
             }
         }
@@ -235,6 +353,11 @@ class Table
     public function set_id($id)
     {
         $this->id = $id;
+    }
+
+    public function set_toggle($toggle)
+    {
+        $this->toggle = $toggle;
     }
 
     public function add_mass_action($klucz, $name)
@@ -284,6 +407,26 @@ class Table
         ];
     }
 
+    public function set_additional(array $additional)
+    {
+        $this->additional[] = $additional;
+    }
+
+    private function create_link($key, $value, $first): string
+    {
+        $output = "";
+        if ($first) {
+            $output = "?";
+        } else {
+            $output = "&";
+        }
+
+        $output .= $key . "=" . $value;
+
+        return $output;
+
+    }
+
     protected function page_navigation()
     {
 
@@ -291,7 +434,31 @@ class Table
             $page = $this->actual_link . "?sort=" . $_GET['sort'] . "&page=";
         } else {
             $page = $this->actual_link . "?page=";
+        }
 
+        $page = $this->actual_link;
+        $first = true;
+
+        if (isset($_GET['sort'])) {
+            $page .= $this->create_link("sort", $_GET['sort'], $first);
+            $first = false;
+        }
+
+        if (isset($_GET['order'])) {
+            $page .= $this->create_link("order", $_GET['order'], $first);
+            $first = false;
+        }
+
+        if (isset($_GET['filter'])) {
+            $page .= $this->create_link("filter", $_GET['filter'], $first);
+            $first = false;
+        }
+
+        if ($first) {
+            $first = false;
+            $page .= "?page=";
+        } else {
+            $page .= "&page=";
         }
 
 
@@ -323,13 +490,12 @@ class Table
 
         $this->actual_link = explode("?", $this->actual_link)[0];
 
-        $button = "<div class='table_filtr' cellspacing='0' cellpadding='0'>";
-        // $button .= "<a class='button' href='#' onclick='toggle_filtr()'>" . file_get_contents("./core/interface/img/filtr.svg") . "</a>";
-        // $button .= "<a class='button' href='#' onclick='toggle_sort()'>" . file_get_contents("./core/interface/img/sort.svg") . "</a>";
+        // $button = "<div class='table_filtr' cellspacing='0' cellpadding='0'>";
+        $button = "";
         foreach ($this->more_filter as $filtr) {
             $button .= "<a class='button' href='" . $this->actual_link . $filtr['link'] . "'>" . $filtr['label'] . "</a>";
         }
-        $button .= "</div>";
+        // $button .= "</div>";
         return $button;
     }
 
@@ -404,8 +570,6 @@ class Table
 
                 $value = "";
             }
-
-            // $html .= "<input type='" . $data['filed_type'] . "' placeholder='" . $data["placeholder"] . "' name='" . $data["row_key"] . "' " . $value . ">";
 
             switch ($data["filed_type"]) {
                 case 'select':
@@ -519,9 +683,9 @@ class Table
         $table .= $this->create_content();
         $table .= "</table>";
         $table .= "</div>";
-        $table .= "</table>";
         $table .= $this->mass_action();
         $table .= "</form>";
+        $table .= "</div>";
 
         return $table;
     }

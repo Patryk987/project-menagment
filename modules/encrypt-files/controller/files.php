@@ -2,6 +2,8 @@
 
 namespace Files\Controller;
 
+use Files\Repository as Repository;
+
 class FilesNotepadsController
 {
 
@@ -33,37 +35,49 @@ class FilesNotepadsController
 
     public function files()
     {
-        $this->repository = new \Files\Repository\FilesRepository($this->project_id);
+        $this->repository = new Repository\FilesRepository($this->project_id);
+        $status = $this->repository->connect_to_ftp();
+
         // Add style
-        \InjectStyles::set_style(["name" => "add_project_style", "style" => "/modules/encrypt-files/assets/css/style.css"]);
+        \InjectStyles::set_style(["name" => "add_file_style", "style" => "/modules/encrypt-files/assets/css/style.css"]);
+        if ($status) {
 
-        // Add js script
-        \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/encrypt-files/assets/js/script.js"]);
+            // Add js script
+            \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/encrypt-files/assets/js/script.js"]);
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-            $this->repository->upload_file($_FILES['file']['tmp_name'], $_GET['pwd'], $_FILES['file']['name'], $_FILES['file']['type']);
+                $this->repository->upload_file($_FILES['file']['tmp_name'], $_GET['pwd'], $_FILES['file']['name'], $_FILES['file']['type']);
 
-        }
+            }
 
 
-        $files_header = [
-            "Nazwa" => ["name"],
-            "Data modyfikacji" => ["modify_time"],
-            "Rozmiar" => ["size"]
-        ];
-        $form = '
+            $files_header = [
+                "Nazwa" => ["name"],
+                "Data modyfikacji" => ["modify_time"],
+                "Rozmiar" => ["size"],
+                "Szyfrowane" => ["encrypt_icon"]
+            ];
+            $form = '
             <form method="post" enctype="multipart/form-data">
-                <input type="file" name="file" value="add file" />
-                <input type="submit" />
+            <input type="file" name="file" value="add file" />
+            <input type="submit" />
             </form>
-        ';
+            ';
 
-        $table = new \ModuleManager\Table(500);
+            $table = new \ModuleManager\Table(500);
+            $table->set_id("pwd");
+            $table->set_action("", 'delete', 'delete');
 
-        $view = $form;
-        $view .= $table->generate_table($this->get_files(), $files_header);
-        return $view;
+            // $table->set_action("?pwd=" . $_GET['pwd'], 'edit', 'edit');
+            $view = $form;
+            $view .= $table->generate_table($this->get_files(), $files_header);
+            return $view;
+
+        } else {
+            $link = __DIR__ . "/../view/connect_problem.html";
+            return $this->get_page($link);
+        }
 
     }
 
@@ -94,16 +108,27 @@ class FilesNotepadsController
         }
 
         foreach ($this->repository->list_file($directory) as $key => $value) {
+
+            if ($value['encrypted']) {
+                $lock_privacy = file_get_contents(__DIR__ . "/../assets/img/lock-privacy.svg");
+                $encrypt_icon = "<div class='encrypted'>$lock_privacy</div>";
+            } else {
+                $lock_open = file_get_contents(__DIR__ . "/../assets/img/lock-open.svg");
+                $encrypt_icon = "<div class='not_encrypted'>$lock_open</div>";
+            }
+
             if ($value['type'] == "directory")
-                $name = "<a href='?pwd=" . $value["pwd"] . "/" . $value["name"] . "'>" . $value["name"] . "</a>";
+                $name = "<a href='?pwd=" . $value["pwd"] . "/" . $value["name"] . "'>" . $value["display_name"] . "</a>";
             else
-                $name = "<a href='?pwd=" . $value["pwd"] . "/" . $value["name"] . "&loca_file=" . $value["pwd"] . "/" . $value["name"] . "&name=" . $value["name"] . "'>" . $value["name"] . "</a>";
+                $name = "<a href='?pwd=" . $value["pwd"] . "/" . $value["name"] . "&loca_file=" . $value["pwd"] . "/" . $value["name"] . "&name=" . $value["name"] . "'>" . $value["display_name"] . "</a>";
 
 
             $data[] = [
+                "pwd" => $value["pwd"],
                 "name" => $name,
                 "modify_time" => $value["modify_time"],
-                "size" => $this->parse_size($value["size"])
+                "size" => $this->parse_size($value["size"]),
+                "encrypt_icon" => $encrypt_icon
             ];
         }
 

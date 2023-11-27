@@ -21,6 +21,11 @@ class FilesRepository
         $this->sedjm = $main->sedjm;
 
         $this->connect_data = $this->get_ftp_connect_data();
+
+    }
+
+    public function connect_to_ftp()
+    {
         try {
 
             $this->ftp = new \FTP(
@@ -30,16 +35,27 @@ class FilesRepository
                 $this->connect_data["password"]
             );
 
-        } catch (\Throwable $th) {
-            echo $th->__toString();
-        }
+            return true;
 
+        } catch (\Throwable $th) {
+            $details = [
+                "message" => $th->getMessage(),
+                "code" => $th->getCode(),
+                "file" => $th->getFile(),
+                "line" => $th->getLine()
+            ];
+            \ModuleManager\Main::set_error('FTP connect', 'ERROR', $details);
+
+            return false;
+        }
     }
 
     public function list_file($directory = ".")
     {
-        return $this->ftp->list_files($directory);
+        $ftp_file = $this->ftp->list_files($directory);
+        $x = $this->concat_files($ftp_file);
 
+        return $x;
     }
 
     public function list_file_tree()
@@ -121,6 +137,32 @@ class FilesRepository
         ], $this->ftp_connect_data_table);
 
         return $data[0];
+    }
+
+    private function concat_files($file)
+    {
+        $output = [];
+
+        foreach ($file as $key => $value) {
+            if ($value["name"] != ".") {
+
+                $encrypted_file_data = $this->get_file_info($value["name"]);
+
+                $output[] = [
+                    "pwd" => $value["pwd"],
+                    "type" => $value["type"],
+                    "permission" => $value["permission"],
+                    "name" => $value["name"],
+                    "display_name" => $encrypted_file_data['status'] ? $encrypted_file_data["data"]["file_name"] : $value["name"],
+                    "size" => $value["size"],
+                    "modify_time" => $value["modify_time"],
+                    "encrypted" => $encrypted_file_data['status'] ? true : false,
+                ];
+
+            }
+        }
+        return $output;
+        // 
     }
 
     private function save_file_info($encrypt_file_name, $key, $destination, $checksum, $filename, $type)
