@@ -36,7 +36,16 @@ class NoteDetailsElement extends HTMLElement {
         const last_modify = this.getAttribute("last_modify") || "0000/00/00";
         const background = this.getAttribute("background") || null;
 
-        var photoBox = background != null ? `<div class='background' style="background-image: url('${background}')"></div>` : ``;
+        var photoBox = background != null ? (
+            `<div class='background' style="background-image: ${background}"></div>`
+        ) : (
+            `<div class='background'>
+                <div class='add_button'>
+                    <div>+</div>
+                    <div>Add image</div>
+                </div>
+            </div>`
+        );
 
         this.innerHTML = `
             <div>
@@ -58,9 +67,8 @@ class NoteDetailsElement extends HTMLElement {
                         </tr>
                     </table>
                 </div>
-                <div class="content">
-
-                </div>
+                <div id="text-editor"></div>
+                <input type="file" id="fileInput" style="display: none;">
             </div>
         `;
     }
@@ -106,7 +114,7 @@ class SimpleCardElement extends HTMLElement {
         const title = this.getAttribute("title") || "";
         const create_time = this.getAttribute("create_time") || "";
 
-        const style = background ? `style="background-image: url('${background}');"` : "";
+        const style = background ? `style="background-image: url('/${background}');"` : "";
 
         this.innerHTML = `
             <div

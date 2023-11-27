@@ -4,6 +4,7 @@ class Note {
     static notepad_id;
     static project_id;
     note_id = 0;
+
     constructor(notepad_id, project_id) {
         Note.notepad_id = notepad_id;
         Note.project_id = project_id;
@@ -23,11 +24,11 @@ class Note {
         return message;
     }
 
-    async add_notes(title, note = "") {
+    async add_notes(title, note = null) {
         let response = await api.post("api/add_note", {
             "notepad_id": Note.notepad_id,
             "title": title,
-            "note": "asdf",
+            "note": note,
             "background": "",
             "project_id": Note.project_id
         });
@@ -41,12 +42,14 @@ class Note {
         return message;
     }
 
-    async update_notes(id, title, note = "") {
+    async update_notes(id, title = "", note = "", background = "") {
         let response = await api.put("api/update_note", {
             "note_id": id,
             "notepad_id": Note.notepad_id,
             "project_id": Note.project_id,
             "title": title,
+            "note": note,
+            "background": background
         });
 
         var message = [];
@@ -87,14 +90,6 @@ class Note {
             var data = await this.add_notes(title);
             this.note_id = data.id;
             this.#open(data.id);
-
-            // var grid = document.querySelector(".grid_view");
-            // grid.innerHTML += `
-            //     <simple-card 
-            //         note_id="` + data.id + `"
-            //         title="` + title + `"
-            //         create_time="0000-00-00"/>
-            // `;
         })
     }
 
@@ -118,10 +113,36 @@ class Note {
 
     }
 
-    #load_content(data) {
-        this.single_note.innerHTML = `
-            
-        `;
+    #addImage(id) {
+        var background = document.querySelector('.background');
+
+        background.addEventListener('click', (item) => {
+
+            var fileInput = document.getElementById('fileInput');
+            fileInput.click();
+
+            fileInput.addEventListener('change', () => {
+
+                var selectedFile = fileInput.files[0];
+
+                if (selectedFile && selectedFile.type.startsWith('image/')) {
+                    var reader = new FileReader();
+                    reader.addEventListener(
+                        "load",
+                        async () => {
+                            background.style.backgroundImage = 'url("' + reader.result + '")';
+                            await this.update_notes(id, "", "", reader.result);
+                        },
+                        false,
+                    );
+
+                    reader.readAsDataURL(selectedFile);
+                } else {
+                    alert('Wybierz plik w formacie obrazka (np. JPG, PNG, GIF)');
+                }
+            });
+
+        });
     }
 
     async #open(id) {
@@ -131,18 +152,33 @@ class Note {
         this.single_note.classList.add("show_single_note");
 
         var data = await this.#download_data(id);
-        console.log(data);
         document.querySelector('.modify_data').innerHTML = data.create_time;
 
         var title = data.title;
+        var note = data.note;
         var update_time = data.update_time;
         var background = data.background;
+        if (background) background = "url(/" + background + ")";
         this.single_note.querySelector(".content").innerHTML = `
             <note-content 
                 title="` + title + `" 
-                author="" 
+                author="Jan kowalski" 
                 last_modify="` + update_time + `"
                 background="` + background + `" />`;
+
+        // Active text editor
+        var text_editor = new TextEditor;
+        text_editor.load();
+        text_editor.loadContent(note);
+        // this.#updateNote(text_editor, id);
+
+        text_editor.addChangeListener((newValue) => {
+            // console.log(newValue);
+            this.update_notes(id, "", newValue);
+        });
+        // add image 
+
+        this.#addImage(id);
 
         this.#activeUpdateTitle(id);
 

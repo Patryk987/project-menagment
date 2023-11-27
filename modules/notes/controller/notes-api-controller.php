@@ -96,7 +96,15 @@ class NotesApiController
 
         return $this->repository->create($data);
     }
+    private function sava_photo($user_id, $photo)
+    {
+        $photo = preg_replace('/^data:image\/(png|jpg|jpeg);base64,/', '', $photo);
+        $name = uniqid() . ".jpg";
 
+        $file_upload = new \ModuleManager\FileUpload\FileUploader(["png", "jpg"]);
+        $file_upload = $file_upload->upload_base64($user_id, $photo, $name);
+        return $file_upload['file_path'];
+    }
     /**
      * function to update notes
      * @param int $note_id
@@ -114,6 +122,12 @@ class NotesApiController
 
         if (!empty($input['note']))
             $data["note"] = $input['note'];
+
+        if (!empty($input['background'])) {
+            $file_name = $this->sava_photo($input['user_id'], $input['background']);
+            var_dump($file_name);
+            $data["background"] = $file_name;
+        }
 
 
         return $this->repository->update($input['note_id'], $data);

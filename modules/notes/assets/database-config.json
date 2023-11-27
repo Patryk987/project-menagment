@@ -277,7 +277,7 @@
                 "length": "255",
                 "PRIMARY_KEY": false,
                 "AUTO_INCREMENT": false,
-                "encrypt": true,
+                "encrypt": false,
                 "encrypt_type": "SIMPLE",
                 "valid_type": "NULL",
                 "NULL": true,

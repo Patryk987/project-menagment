@@ -29,7 +29,12 @@ class NotesRepository implements RepositoryNotesInterface
             "notepad_id",
             "author_id",
             "title",
-            "note",
+            [
+                "table" => $this->table,
+                "column" => "note",
+                "alias" => "note",
+                "function" => ["Helper", "htmlspecialchars_decode"],
+            ],
             "background",
             [
                 "table" => $this->table,
@@ -68,7 +73,12 @@ class NotesRepository implements RepositoryNotesInterface
             "notepad_id",
             "author_id",
             "title",
-            "note",
+            [
+                "table" => $this->table,
+                "column" => "note",
+                "alias" => "note",
+                "function" => ["Helper", "htmlspecialchars_decode"],
+            ],
             "background",
             [
                 "table" => $this->table,
@@ -107,7 +117,12 @@ class NotesRepository implements RepositoryNotesInterface
             "notepad_id",
             "author_id",
             "title",
-            "note",
+            [
+                "table" => $this->table,
+                "column" => "note",
+                "alias" => "note",
+                "function" => ["Helper", "htmlspecialchars_decode"],
+            ],
             "background",
             [
                 "table" => $this->table,
@@ -199,6 +214,9 @@ class NotesRepository implements RepositoryNotesInterface
 
             if (!empty($data['note']))
                 $update_data["note"] = $data['note'];
+
+            if (!empty($data['background']))
+                $update_data["background"] = $data['background'];
 
             $update_data["update_time"] = time();
 

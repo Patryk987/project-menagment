@@ -7,6 +7,17 @@ class Helper
     {
         return $number == 1 ? "<p style='color: green'>Tak</p>" : "<p style='color: red'>Nie</p>";
     }
+    static public function htmlspecialchars_decode($value)
+    {
+        if (empty($value)) {
+            return $value;
+        }
+        $value = htmlspecialchars_decode($value);
+        $value = str_replace("&quot;", "\"", $value);
+        // return '[{"type":"p","content":"witam w raju"}]';
+        return $value;
+
+    }
 
     static public function time_to_data($time)
     {
