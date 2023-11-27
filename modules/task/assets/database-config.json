@@ -56,6 +56,17 @@
                 "NULL": false,
                 "unique": false
             },
+            "group_description": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
             "color": {
                 "type": "varchar",
                 "length": "255",
