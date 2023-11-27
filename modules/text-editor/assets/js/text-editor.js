@@ -1,6 +1,8 @@
 
 class TextEditor {
 
+    content = {};
+    content2 = {};
     dataToMove;
 
     // Moving element
@@ -49,6 +51,7 @@ class TextEditor {
 
             var data = event.dataTransfer.getData("element");
             item.closest(".text_box").insertAdjacentElement('afterend', this.dataToMove);
+            this.#updateContent();
         });
     }
 
@@ -59,6 +62,8 @@ class TextEditor {
         classList.forEach((element) => {
 
             item.closest(".text_box").querySelector('.text_content').classList.remove(element);
+            this.#updateContent();
+
         })
     }
 
@@ -88,16 +93,28 @@ class TextEditor {
 
     #typeChange(element) {
         var setHeader = element.querySelectorAll(".select-box.h1");
-        setHeader.forEach(item => item.addEventListener("click", (event) => this.#setHeader1(item)));
+        setHeader.forEach(item => item.addEventListener("click", (event) => {
+            this.#setHeader1(item)
+            this.#updateContent();
+        }));
 
         var setHeader = element.querySelectorAll(".select-box.h2");
-        setHeader.forEach(item => item.addEventListener("click", (event) => this.#setHeader2(item)));
+        setHeader.forEach(item => item.addEventListener("click", (event) => {
+            this.#setHeader2(item)
+            this.#updateContent();
+        }));
 
         var setHeader = element.querySelectorAll(".select-box.h3");
-        setHeader.forEach(item => item.addEventListener("click", (event) => this.#setHeader3(item)));
+        setHeader.forEach(item => item.addEventListener("click", (event) => {
+            this.#setHeader3(item)
+            this.#updateContent();
+        }));
 
         var setHeader = element.querySelectorAll(".select-box.p");
-        setHeader.forEach(item => item.addEventListener("click", (event) => this.#setParagraf(item)));
+        setHeader.forEach(item => item.addEventListener("click", (event) => {
+            this.#setParagraf(item)
+            this.#updateContent();
+        }));
     }
 
 
@@ -134,6 +151,7 @@ class TextEditor {
         var container = element.querySelectorAll(".delete");
         container.forEach(item => {
             item.addEventListener("click", (event) => this.#deleteElement(item));
+            this.#updateContent();
         });
     }
 
@@ -187,6 +205,23 @@ class TextEditor {
         });
     }
 
+    addChangeListener(callback) {
+        this.content = callback;
+    }
+
+    #changeListener(element) {
+        const textContent = element.querySelector(".text_content");
+
+        textContent.addEventListener("focusout", () => {
+            this.#updateContent();
+        })
+    }
+
+    #updateContent() {
+        let note = this.download()
+        this.content(note);
+    }
+
     #activeNewElement(element) {
         this.#deleteAction(element);
         this.#addAction(element);
@@ -194,6 +229,7 @@ class TextEditor {
         this.#contentActive(element);
         this.#optionActive(element);
         this.#moveElement(element);
+        this.#changeListener(element);
     }
 
     // Delete
@@ -244,6 +280,36 @@ class TextEditor {
 
     }
 
+    async #addNewElementType(type, value) {
+
+        let newElement = await this.#getBlock();
+
+        var existingElement = document.querySelector("#text-editor");
+        existingElement.appendChild(newElement);
+        newElement.querySelector('.text_content').innerHTML = value;
+        newElement.querySelector('#text-editor .text_content');
+        this.#activeNewElement(newElement);
+
+        switch (type) {
+            case "text":
+                this.#setParagraf(newElement);
+                break;
+            case "header1":
+                this.#setHeader1(newElement);
+                break;
+            case "header2":
+                this.#setHeader2(newElement);
+                break;
+            case "header3":
+                this.#setHeader3(newElement);
+                break;
+            default:
+                this.#setParagraf(newElement);
+                break;
+        }
+
+    }
+
     async #addNewElementOnEnterClick() {
 
         let newElement = await this.#getBlock();
@@ -256,7 +322,46 @@ class TextEditor {
     }
 
     load() {
-        this.#addNewElementOnEnterClick();
+        // this.#addNewElementOnEnterClick();
+    }
+
+    // JSON 
+
+    download() {
+
+        var boxList = document.querySelector("#text-editor").querySelectorAll(".text_box");
+        var result = [];
+        boxList.forEach((item, key) => {
+            let contentBox = item.querySelector('.text_content');
+            let content = contentBox.innerText;
+            let type = contentBox.getAttribute("type");
+            result.push({
+                "key": key,
+                "type": type,
+                "content": content
+            })
+        })
+        return JSON.stringify(result);
+    }
+
+    async loadContent(content = '[{"type":"text","content":""}]') {
+        try {
+            var json = JSON.parse(content);
+            if (json && json.length > 0) {
+                const sortedJson = json.sort((a, b) => a.key - b.key);
+                console.log(sortedJson);
+
+                for (const element of sortedJson) {
+                    await this.#addNewElementType(element.type, element.content);
+                }
+
+            } else {
+                this.#addNewElementOnEnterClick();
+            }
+        } catch (error) {
+            this.#addNewElementOnEnterClick();
+        }
+
     }
 
 }

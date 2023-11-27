@@ -1,5 +1,0 @@
-class SendPhoto {
-    #parseToBase64() {
-
-    }
-}

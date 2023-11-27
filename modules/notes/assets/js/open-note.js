@@ -24,11 +24,11 @@ class Note {
         return message;
     }
 
-    async add_notes(title, note = "") {
+    async add_notes(title, note = null) {
         let response = await api.post("api/add_note", {
             "notepad_id": Note.notepad_id,
             "title": title,
-            "note": "asdf",
+            "note": note,
             "background": "",
             "project_id": Note.project_id
         });
@@ -90,14 +90,6 @@ class Note {
             var data = await this.add_notes(title);
             this.note_id = data.id;
             this.#open(data.id);
-
-            // var grid = document.querySelector(".grid_view");
-            // grid.innerHTML += `
-            //     <simple-card 
-            //         note_id="` + data.id + `"
-            //         title="` + title + `"
-            //         create_time="0000-00-00"/>
-            // `;
         })
     }
 
@@ -121,12 +113,6 @@ class Note {
 
     }
 
-    #load_content(data) {
-        this.single_note.innerHTML = `
-            
-        `;
-    }
-
     #addImage(id) {
         var background = document.querySelector('.background');
 
@@ -145,8 +131,7 @@ class Note {
                         "load",
                         async () => {
                             background.style.backgroundImage = 'url("' + reader.result + '")';
-                            // background.style.backgroundImage = reader.result;
-                            console.log(await this.update_notes(id, "", "", reader.result))
+                            await this.update_notes(id, "", "", reader.result);
                         },
                         false,
                     );
@@ -167,10 +152,10 @@ class Note {
         this.single_note.classList.add("show_single_note");
 
         var data = await this.#download_data(id);
-        console.log(data);
         document.querySelector('.modify_data').innerHTML = data.create_time;
 
         var title = data.title;
+        var note = data.note;
         var update_time = data.update_time;
         var background = data.background;
         if (background) background = "url(/" + background + ")";
@@ -184,7 +169,13 @@ class Note {
         // Active text editor
         var text_editor = new TextEditor;
         text_editor.load();
+        text_editor.loadContent(note);
+        // this.#updateNote(text_editor, id);
 
+        text_editor.addChangeListener((newValue) => {
+            // console.log(newValue);
+            this.update_notes(id, "", newValue);
+        });
         // add image 
 
         this.#addImage(id);

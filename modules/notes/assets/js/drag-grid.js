@@ -19,19 +19,6 @@ class Grid {
 
         items.forEach(element => {
 
-            // <div 
-            //     data-id="` + element.note_id + `"
-            //     class="box" 
-            //     draggable="true"
-            //     style="background-image: url('` + element.background + `');">
-            //     <div class="box_content">
-            //         <div class="title">` + element.title + `</div>
-            //         <div class="params"></div>
-            //         <div class="description">
-            //             `+ element.create_time + `
-            //         </div>
-            //     </div>
-            // </div>
             grid.innerHTML += `
                 <simple-card 
                     draggable="true"
@@ -40,20 +27,7 @@ class Grid {
                     title="` + element.title + `"
                     create_time="` + element.create_time + `"/>
             `;
-            // grid.innerHTML += `
-            //     <div 
-            //         class="box" 
-            //         draggable="true"
-            //         style="background-image: url('` + element.background + `');">
-            //         <div class="box_content">
-            //             <div class="title">` + element.title + `</div>
-            //             <div class="params"></div>
-            //             <div class="description">
-            //                 ` + this.#truncate(element.short_description, this.maxDescriptionLength) + `
-            //             </div>
-            //         </div>
-            //     </div>
-            // `;
+
         })
 
         grid.innerHTML += `
