@@ -908,6 +908,17 @@
                 "valid_type": "NULL",
                 "NULL": false,
                 "unique": false
+            },
+            "start_folder": {
+                "type": "varchar",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": true,
+                "encrypt_type": "SIMPLE",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
             }
         }
     }

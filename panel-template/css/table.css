@@ -1,6 +1,7 @@
 .cms_table {
-    max-width: 100vw;
+    max-width: 100%;
     overflow-x: auto;
+
 }
 
 table {
@@ -19,10 +20,12 @@ td {
 }
 
 td.icon_field {
-    display: flex;
+    /* display: flex; */
     /* justify-content: center; */
-    width: 0px;
+    /* width: 0px; */
+    text-align: center;
     align-items: center;
+    height: 100%;
 }
 
 th {
@@ -30,15 +33,60 @@ th {
     color: var(--selected);
     font-weight: bold;
     text-align: left;
-    padding: 12px;
+    padding: 6px;
+    font-size: 0.75rem;
     border-bottom: 1px solid var(--selected);
 }
 
-tr:nth-child(even) {
-    background-color: #F2F2F2;
+th a {
+    color: var(--selected);
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
-tr:hover {
+th .arrows {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+th svg {
+    stroke: rgba(194, 194, 194, 0.3);
+}
+
+th:hover svg {
+    stroke: #c2c2c2;
+}
+
+th .arrows svg {
+    width: 10px;
+    height: 10px;
+}
+
+th .arrows .up,
+th .arrows .down {
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+th .arrows .up.active svg {
+    stroke: var(--selected);
+}
+
+th .arrows .down.active svg {
+    stroke: var(--selected);
+}
+
+.standard:nth-child(2n+2) {
+    background-color: #F2F2F2 !important;
+}
+
+.standard:hover {
     background-color: #F2F2F2;
 }
 
@@ -101,7 +149,8 @@ a.button {
 .buttons {
     display: flex;
     margin-bottom: 10px;
-
+    max-width: 85%;
+    flex-wrap: wrap;
 }
 
 .button {
@@ -209,4 +258,91 @@ a.button {
     color: var(--selected);
     background-color: var(--primary);
 
+}
+
+tr.hide {
+    display: none;
+}
+
+.explode {
+    background-color: #F4F5F8;
+}
+
+.explode .header {
+    /* width: 10px; */
+    font-weight: bold;
+    color: var(--selected);
+}
+
+.explode p span {
+
+    font-weight: normal;
+    color: var(--secondary);
+}
+
+.explode .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 75vw;
+}
+
+.explode .content {
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    border-color: var(--selected);
+    padding: 5px;
+    margin: 5px;
+    width: calc(25% - 22px);
+}
+
+.explode .content:nth-child(4n) {
+    border-width: 0;
+}
+
+.exploder svg {
+    stroke: var(--secondary);
+    width: 15px;
+    height: 15px;
+    transition: 0.5s;
+}
+
+.exploder.show svg {
+    transition: 0.5s;
+    transform: rotateX(180deg);
+}
+
+/* Scrollbar */
+
+.cms_table::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.cms_table::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+.cms_table::-webkit-scrollbar-thumb {
+    background: var(--selected);
+    opacity: 0.8;
+}
+
+.cms_table::-webkit-scrollbar-thumb:hover {
+    opacity: 1;
+}
+
+.cms_table table a {
+    color: black;
+    text-decoration: none;
+}
+
+.cms_table table a:hover {
+    color: var(--selected);
+    text-decoration: none;
+}
+
+.table_filtr {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 65%;
 }
