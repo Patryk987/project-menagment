@@ -2,6 +2,8 @@
 
 namespace Notes\Controller;
 
+use \ModuleManager\Forms\Forms;
+
 class NotepadsController
 {
 
@@ -71,7 +73,27 @@ class NotepadsController
             $this->repository->create($data);
 
         }
-        return $this->get_page(__DIR__ . "/../view/add-notes.html");
+        // return $this->get_page(__DIR__ . "/../view/add-notes.html");
+
+        // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //     $data = [
+        //         "author_id" => \ModuleManager\Main::$token['payload']->user_id,
+        //         "group_name" => $_POST['name'],
+        //         "group_description" => $_POST['description'],
+        //         "color" => $_POST['color']
+        //     ];
+        //     $this->task_group_repository->create($data);
+        // }
+
+        $form = new Forms();
+
+        $form->set_data([
+            "key" => "name",
+            "name" => "Notepads name",
+            "type" => "input"
+        ]);
+
+        return $form->get_form("Add tasks group", "Add");
     }
     public function notes()
     {
