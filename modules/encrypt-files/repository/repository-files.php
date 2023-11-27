@@ -21,6 +21,11 @@ class FilesRepository
         $this->sedjm = $main->sedjm;
 
         $this->connect_data = $this->get_ftp_connect_data();
+
+    }
+
+    public function connect_to_ftp()
+    {
         try {
 
             $this->ftp = new \FTP(
@@ -30,10 +35,19 @@ class FilesRepository
                 $this->connect_data["password"]
             );
 
-        } catch (\Throwable $th) {
-            echo $th->__toString();
-        }
+            return true;
 
+        } catch (\Throwable $th) {
+            $details = [
+                "message" => $th->getMessage(),
+                "code" => $th->getCode(),
+                "file" => $th->getFile(),
+                "line" => $th->getLine()
+            ];
+            \ModuleManager\Main::set_error('FTP connect', 'ERROR', $details);
+
+            return false;
+        }
     }
 
     public function list_file($directory = ".")

@@ -320,3 +320,94 @@
 [2023-11-27 16:01:05] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
 [2023-11-27 16:01:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
 [2023-11-27 16:01:25] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:34:23] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:34:24] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:34:26] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:34:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:34:31] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:35:01] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:35:31] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:36:24] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:36:25] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:36:26] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:36:26] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:36:51] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$ftp must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,41
+[2023-11-27 18:37:40] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:37:40] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$ftp must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,47
+[2023-11-27 18:37:45] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:19] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:20] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:39:20] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:22] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:22] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:23] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:39:23] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:24] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:27] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:29] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:29] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:39:29] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:35] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:39:35] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:41:34] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:41:34] [ERROR] Unexpected error: file_get_contents(&lt;section id=&quot;&quot;&gt;
+    &lt;div&gt;
+        &lt;p&gt;Problem with FTP connect&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2023-11-27 18:41:34] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:41:35] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:41:35] [ERROR] Unexpected error: file_get_contents(&lt;section id=&quot;&quot;&gt;
+    &lt;div&gt;
+        &lt;p&gt;Problem with FTP connect&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2023-11-27 18:41:35] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:41:36] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:41:36] [ERROR] Unexpected error: file_get_contents(&lt;section id=&quot;&quot;&gt;
+    &lt;div&gt;
+        &lt;p&gt;Problem with FTP connect&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2023-11-27 18:41:36] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:41:51] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:41:51] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:42:46] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:42:46] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:42:57] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:42:57] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:43:31] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:43:31] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:43:37] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:43:37] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:44:18] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:44:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:44:30] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:44:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:44:38] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:44:38] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:44:44] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:44:50] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:44:52] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:44:52] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:44:58] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:44:59] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:45:00] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:45:00] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:45:28] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:45:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:45:49] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:45:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:06] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:46:06] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:11] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-27 18:46:11] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:17] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:19] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:21] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:26] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:27] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-27 18:46:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
