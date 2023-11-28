@@ -94,11 +94,12 @@ class TasksGroupRepository
             "author_id" => $input['author_id'],
             "create_date" => time(),
             "group_name" => $input['group_name'],
-            "group_description" => $input['group_description'],
-            "color" => $input['color'],
+            "group_description" => !empty($input['group_description']) ? $input['group_description'] : null,
+            "color" => !empty($input['color']) ? $input['color'] : null,
             "status" => Enums\TaskGroupStatus::ACTIVE->value,
         ];
-        $this->sedjm->insert($data, $this->table);
+
+        return $this->sedjm->insert($data, $this->table);
     }
 
     public function update($id, array $input)

@@ -76,39 +76,54 @@ class TasksRepository
 
     public function create(array $input)
     {
+
         $data = [
             "task_group_id" => $this->task_group_id,
             "author_id" => $input['author_id'],
             "create_date" => time(),
             "update_date" => time(),
             "task_name" => $input['task_name'],
-            "content" => $input['content'],
-            "end_time" => $input['end_time'],
-            "repeat_status" => $input['repeat_status'],
-            "color" => $input['color'],
+            "content" => !empty($input['content']) ? $input['content'] : null,
+            "end_time" => !empty($input['end_time']) ? $input['end_time'] : null,
+            "repeat_status" => !empty($input['repeat_status']) ? $input['repeat_status'] : 0,
+            "color" => !empty($input['color']) ? $input['color'] : null,
             "task_status_id" => Enums\TaskStatus::ACTIVE->value
         ];
+
         $this->sedjm->clear_all();
-        $this->sedjm->insert($data, $this->table);
+        return $this->sedjm->insert($data, $this->table);
 
     }
 
     public function update($id, array $input)
     {
-        $data = [
-            "update_date" => time(),
-            "task_name" => $input['task_name'],
-            "content" => $input['content'],
-            "end_time" => $input['end_time'],
-            "repeat_status" => $input['repeat_status'],
-            "color" => $input['color'],
-            "task_status_id" => $input['task_status_id']
-        ];
+        $data = [];
+        $data["update_date"] = time();
+
+        if (!empty($input['task_name']))
+            $data["task_name"] = $input['task_name'];
+
+        if (!empty($input['content']))
+            $data["content"] = $input['content'];
+
+        if (!empty($input['end_time']))
+            $data["end_time"] = $input['end_time'];
+
+        if (!empty($input['repeat_status']))
+            $data["repeat_status"] = $input['repeat_status'];
+
+        if (!empty($input['color']))
+            $data["color"] = $input['color'];
+
+        if (!empty($input['task_status_id']))
+            $data["task_status_id"] = $input['task_status_id'];
+
 
         $this->sedjm->clear_all();
-        $this->sedjm->set_where("project_id", $id, "=");
+        $this->sedjm->set_where("task_id", $id, "=");
         $this->sedjm->set_where("task_group_id", $this->task_group_id, "=");
-        $this->sedjm->update($data, $this->table);
+
+        return $this->sedjm->update($data, $this->table);
 
     }
 
@@ -116,9 +131,9 @@ class TasksRepository
     {
 
         $this->sedjm->clear_all();
-        $this->sedjm->set_where("project_id", $id, "=");
+        $this->sedjm->set_where("task_id", $id, "=");
         $this->sedjm->set_where("task_group_id", $this->task_group_id, "=");
-        $this->sedjm->delete($this->table);
+        return $this->sedjm->delete($this->table);
 
     }
 
