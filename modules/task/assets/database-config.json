@@ -225,7 +225,7 @@
                 "NULL": false,
                 "unique": true
             },
-            "project_id": {
+            "task_group_id": {
                 "type": "int",
                 "length": "11",
                 "PRIMARY_KEY": false,
