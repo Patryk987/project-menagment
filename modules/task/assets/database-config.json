@@ -64,7 +64,7 @@
                 "encrypt": true,
                 "encrypt_type": "SIMPLE",
                 "valid_type": "NULL",
-                "NULL": false,
+                "NULL": true,
                 "unique": false
             },
             "color": {
@@ -75,7 +75,7 @@
                 "encrypt": true,
                 "encrypt_type": "SIMPLE",
                 "valid_type": "NULL",
-                "NULL": false,
+                "NULL": true,
                 "unique": false
             },
             "status": {
@@ -165,7 +165,7 @@
                 "encrypt": true,
                 "encrypt_type": "SIMPLE",
                 "valid_type": "NULL",
-                "NULL": false,
+                "NULL": true,
                 "unique": false
             },
             "end_time": {
@@ -176,7 +176,7 @@
                 "encrypt": true,
                 "encrypt_type": "SIMPLE",
                 "valid_type": "NULL",
-                "NULL": false,
+                "NULL": true,
                 "unique": false
             },
             "repeat_status": {
@@ -184,10 +184,10 @@
                 "length": "11",
                 "PRIMARY_KEY": false,
                 "AUTO_INCREMENT": false,
-                "encrypt": true,
-                "encrypt_type": "SIMPLE",
+                "encrypt": false,
+                "encrypt_type": "NULL",
                 "valid_type": "NULL",
-                "NULL": false,
+                "NULL": true,
                 "unique": false
             },
             "color": {
@@ -198,7 +198,7 @@
                 "encrypt": true,
                 "encrypt_type": "SIMPLE",
                 "valid_type": "NULL",
-                "NULL": false,
+                "NULL": true,
                 "unique": false
             },
             "task_status_id": {

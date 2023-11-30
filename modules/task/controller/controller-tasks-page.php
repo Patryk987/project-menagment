@@ -112,10 +112,30 @@ class TasksPageController
 
     public function task_group()
     {
-        $this->task_repository = new Repository\TasksRepository($this->project_id, $this->get_task_group_id());
-        $tasks = $this->task_repository->get_all();
-        var_dump($tasks);
-        return "task_group";
+        // Add style
+        \InjectStyles::set_style(["name" => "add_task_style", "style" => "/modules/task/assets/css/style.css"]);
+
+        // Add js script
+        \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/task/assets/js/elements.js"]);
+        \InjectJavaScript::set_script(["name" => "load_js_task_repository", "src" => "/modules/task/assets/js/repository-tasks.js"]);
+        \InjectJavaScript::set_script(["name" => "load_js_task", "src" => "/modules/task/assets/js/task.js"]);
+
+        \InjectJavaScript::set_script(
+            [
+                "name" => "load_task",
+                "type" => "script",
+                "script" => "
+                    async function load() {
+                        var task = new Task(" . $this->task_group_id . ", " . $this->project_id . ");
+                        task.active();
+                    }
+
+                    load();
+                "
+            ]
+        );
+
+        return $this->get_page(__DIR__ . "/../view/task.html");
     }
 
     public function get_task_group_id()

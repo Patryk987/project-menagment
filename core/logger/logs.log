@@ -1,0 +1,54 @@
+[2023-11-30 18:27:20] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-30 18:46:52] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:46:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:46:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:46:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:05] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:05] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:05] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:05] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:15] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:16] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:17] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:21] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:21] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:21] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:21] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:22] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:22] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:22] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:22] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:42] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:42] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:42] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:42] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:43] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:49] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:49] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:49] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:49] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 19:08:30] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-30 19:08:35] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-30 19:08:38] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-30 19:45:15] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-11-30 20:18:43] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
