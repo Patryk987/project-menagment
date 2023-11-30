@@ -1,5 +1,98 @@
-<div class="newTask">
-    <input type="text" placeholder="Task" id="newTaskName">
-    <button id="addNewTask">Dodaj</button>
-</div>
-<div id="task"></div>
+<section id="tasks">
+
+    <div class="title">
+        <h2>{{task_group_title}}</h2>
+    </div>
+
+    <div class="tabs">
+        <div class="tab" data-type="kanban">kanban</div>
+        <div class="tab" data-type="list">list</div>
+        <div class="tab" data-type="grid">grid</div>
+    </div>
+    <div class="content">
+        <div id="list">
+            <div class="newTask">
+                <input type="text" placeholder="Task" id="newTaskName">
+                <button id="addNewTask">Dodaj</button>
+            </div>
+
+            <div id="task"></div>
+        </div>
+
+        <div id="grid">
+        </div>
+
+        <div id="kanban">
+
+            <div class="kanban_view">
+                <div class="title">
+                    TODO
+                </div>
+                <div class="box" draggable="true">
+                    <div class="box_content">
+                        <div class="title">test1</div>
+                        <div class="params"></div>
+                        <div class="description">
+                            Culpa anim ex exercitation deserunt duis enim minim. Id magna et esse amet do in.
+                        </div>
+                    </div>
+                </div>
+                <div class="box" draggable="true">
+                    <div class="box_content">
+                        <div class="title">test2</div>
+                        <div class="params"></div>
+                        <div class="description">
+                            Culpa anim ex exercitation deserunt duis enim minim. Id magna et esse amet do in.
+                        </div>
+                    </div>
+                </div>
+                <div class="box" draggable="true">
+                    <div class="box_content">
+                        <div class="title">test3</div>
+                        <div class="params"></div>
+                        <div class="description">
+                            Culpa anim ex exercitation deserunt duis enim minim. Id magna et esse amet do in.
+                        </div>
+                    </div>
+                </div>
+                <div class="box" draggable="true">
+                    <div class="box_content">
+                        <div class="title">test4</div>
+                        <div class="params"></div>
+                        <div class="description">
+                            Culpa anim ex exercitation deserunt duis enim minim. Id magna et esse amet do in.
+                        </div>
+                    </div>
+                </div>
+                <div class="box" draggable="true">
+                    <div class="box_content">
+                        <div class="title">test5</div>
+                        <div class="params"></div>
+                        <div class="description">
+                            Culpa anim ex exercitation deserunt duis enim minim. Id magna et esse amet do in.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kanban_view">
+                <div class="title">
+                    IN PROGRES
+                </div>
+            </div>
+
+            <div class="kanban_view">
+                <div class="title">
+                    TEST
+                </div>
+            </div>
+
+            <div class="kanban_view">
+                <div class="title">
+                    DONE
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

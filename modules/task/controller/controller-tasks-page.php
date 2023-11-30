@@ -64,7 +64,19 @@ class TasksPageController
                 \ModuleManager\Pages::set_child_modules($main_page);
             }
             // }
+
+            // BINDER ??? 
+
+            \ModuleManager\DataBinder::set_binder(
+                [
+                    "key" => "task_group_title",
+                    "function" => [$this, "get_task_group_title"]
+                ]
+            );
+
+
         }
+
 
 
     }
@@ -114,11 +126,14 @@ class TasksPageController
     {
         // Add style
         \InjectStyles::set_style(["name" => "add_task_style", "style" => "/modules/task/assets/css/style.css"]);
+        \InjectStyles::set_style(["name" => uniqid(), "style" => "/modules/task/assets/css/other.css"]);
 
         // Add js script
         \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/task/assets/js/elements.js"]);
         \InjectJavaScript::set_script(["name" => "load_js_task_repository", "src" => "/modules/task/assets/js/repository-tasks.js"]);
         \InjectJavaScript::set_script(["name" => "load_js_task", "src" => "/modules/task/assets/js/task.js"]);
+        \InjectJavaScript::set_script(["name" => "script", "src" => "/modules/task/assets/js/script.js"]);
+        \InjectJavaScript::set_script(["name" => "kanban", "src" => "/modules/task/assets/js/kanban.js"]);
 
         \InjectJavaScript::set_script(
             [
@@ -143,6 +158,13 @@ class TasksPageController
 
         return end(\ModuleManager\Main::$sub_pages);
 
+    }
+
+
+    public function get_task_group_title()
+    {
+        $project_data = $this->task_group_repository->get_by_id($this->task_group_id);
+        return $project_data[0]['group_name'];
     }
 
 }
