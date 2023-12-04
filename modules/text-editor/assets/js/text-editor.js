@@ -349,7 +349,6 @@ class TextEditor {
             var json = JSON.parse(content);
             if (json && json.length > 0) {
                 const sortedJson = json.sort((a, b) => a.key - b.key);
-                console.log(sortedJson);
 
                 for (const element of sortedJson) {
                     await this.#addNewElementType(element.type, element.content);

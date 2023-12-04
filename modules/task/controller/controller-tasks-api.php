@@ -147,6 +147,7 @@ class TasksApiController
                     "author_id" => $input["user_id"],
                     "task_name" => $input["task"],
                     "content" => !empty($input["content"]) ? $input["content"] : null,
+                    "task_tag_id" => !empty($input["task_tag_id"]) ? $input["task_tag_id"] : null,
                     "end_time" => !empty($input["end_time"]) ? $input["end_time"] : null,
                     "repeat_status" => !empty($input["repeat_status"]) ? $input["repeat_status"] : null,
                     "color" => !empty($input["color"]) ? $input["color"] : null,
@@ -203,6 +204,9 @@ class TasksApiController
 
                 if (!empty($input['task_status']))
                     $data["task_status_id"] = $input['task_status'];
+
+                if (!empty($input['task_tag_id']))
+                    $data["task_tag_id"] = $input['task_tag_id'];
 
                 $update = $repository->update($input['task_id'], $data);
 

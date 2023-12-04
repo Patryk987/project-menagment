@@ -12,44 +12,44 @@ class TasksStatusApiController
     public function __construct()
     {
 
-        // get_task_status
+        // get_task_tags
 
         $api = [
-            "link" => 'get_task_status',
-            "function" => [$this, 'get_task_status'],
+            "link" => 'get_task_tags',
+            "function" => [$this, 'get_task_tags'],
             "http_methods" => "GET",
             "permission" => [1, 2, 11]
         ];
 
         \ModuleManager\Pages::set_endpoint($api);
 
-        // add_task_status
+        // add_task_tags
 
         $api = [
-            "link" => 'add_task_status',
-            "function" => [$this, 'add_task_status'],
+            "link" => 'add_task_tags',
+            "function" => [$this, 'add_task_tags'],
             "http_methods" => "POST",
             "permission" => [1, 2, 11]
         ];
 
         \ModuleManager\Pages::set_endpoint($api);
 
-        // update_task_status
+        // update_task_tags
 
         $api = [
-            "link" => 'update_task_status',
-            "function" => [$this, 'update_task_status'],
+            "link" => 'update_task_tags',
+            "function" => [$this, 'update_task_tags'],
             "http_methods" => "PUT",
             "permission" => [1, 2, 11]
         ];
 
         \ModuleManager\Pages::set_endpoint($api);
 
-        // delete_task_status
+        // delete_task_tags
 
         $api = [
-            "link" => 'delete_task_status',
-            "function" => [$this, 'delete_task_status'],
+            "link" => 'delete_task_tags',
+            "function" => [$this, 'delete_task_tags'],
             "http_methods" => "DELETE",
             "permission" => [1, 2, 11]
         ];
@@ -59,7 +59,7 @@ class TasksStatusApiController
 
     }
 
-    public function get_task_status($input): \Models\ApiModel
+    public function get_task_tags($input): \Models\ApiModel
     {
         $output = new \Models\ApiModel(\ApiStatus::ERROR);
         if (
@@ -89,7 +89,7 @@ class TasksStatusApiController
         return $output;
     }
 
-    public function add_task_status($input): \Models\ApiModel
+    public function add_task_tags($input): \Models\ApiModel
     {
         $output = new \Models\ApiModel(\ApiStatus::ERROR);
         if (
@@ -126,13 +126,13 @@ class TasksStatusApiController
         return $output;
     }
 
-    public function update_task_status($input): \Models\ApiModel
+    public function update_task_tags($input): \Models\ApiModel
     {
         $output = new \Models\ApiModel(\ApiStatus::ERROR);
         if (
             !empty($input['project_id'])
             && !empty($input['task_group_id'])
-            && !empty($input['task_status_id'])
+            && !empty($input['task_tags_id'])
         ) {
 
             try {
@@ -147,7 +147,7 @@ class TasksStatusApiController
                 if (!empty($input['color']))
                     $input_data["color"] = $input['color'];
 
-                $data = $repository->update($input['task_status_id'], $input_data);
+                $data = $repository->update($input['task_tags_id'], $input_data);
 
                 if ($data['status']) {
                     $output->set_status(\ApiStatus::CORRECT);
@@ -167,20 +167,20 @@ class TasksStatusApiController
         return $output;
     }
 
-    public function delete_task_status($input): \Models\ApiModel
+    public function delete_task_tags($input): \Models\ApiModel
     {
         $output = new \Models\ApiModel(\ApiStatus::ERROR);
         if (
             !empty($input['project_id'])
             && !empty($input['task_group_id'])
-            && !empty($input['task_status_id'])
+            && !empty($input['task_tags_id'])
         ) {
 
             try {
 
                 $repository = new Repository\TasksStatusRepository($input['project_id'], $input['task_group_id']);
 
-                $data = $repository->delete($input['task_status_id']);
+                $data = $repository->delete($input['task_tags_id']);
 
                 if ($data['status']) {
                     $output->set_status(\ApiStatus::CORRECT);

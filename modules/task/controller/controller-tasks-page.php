@@ -130,22 +130,31 @@ class TasksPageController
 
         // Add js script
         \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/task/assets/js/elements.js"]);
+        \InjectJavaScript::set_script(["name" => "task_repository", "src" => "/modules/task/assets/js/repository-status-tasks.js"]);
         \InjectJavaScript::set_script(["name" => "load_js_task_repository", "src" => "/modules/task/assets/js/repository-tasks.js"]);
         \InjectJavaScript::set_script(["name" => "load_js_task", "src" => "/modules/task/assets/js/task.js"]);
         \InjectJavaScript::set_script(["name" => "script", "src" => "/modules/task/assets/js/script.js"]);
         \InjectJavaScript::set_script(["name" => "kanban", "src" => "/modules/task/assets/js/kanban.js"]);
+        \InjectJavaScript::set_script(["name" => uniqid(), "src" => "/modules/task/assets/js/load-kanban-script.js"]);
 
         \InjectJavaScript::set_script(
             [
                 "name" => "load_task",
                 "type" => "script",
                 "script" => "
-                    async function load() {
-                        var task = new Task(" . $this->task_group_id . ", " . $this->project_id . ");
-                        task.active();
-                    }
+                    var task = new Task(" . $this->task_group_id . ", " . $this->project_id . ");
+                    task.active();
+                "
+            ]
+        );
 
-                    load();
+        \InjectJavaScript::set_script(
+            [
+                "name" => "load_kanban",
+                "type" => "script",
+                "script" => "
+                    var kanban = new loadKanban(" . $this->task_group_id . ", " . $this->project_id . ");
+                    kanban.load();
                 "
             ]
         );

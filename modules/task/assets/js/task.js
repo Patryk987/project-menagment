@@ -6,7 +6,7 @@ class Task extends TasksRepository {
         var tasks = await this.getAllTask();
 
         for (let task of tasks) {
-            await this.#addNewBlock(task.task_id, task.task_name, task.task_status_id);
+            await this.#addNewBlock(task.task_id, task.task_name, task.task_tags_id);
         }
 
         this.#activeBlocks();
@@ -55,13 +55,12 @@ class Task extends TasksRepository {
     async #markAsDone(element) {
         let checkboxTask = element.querySelector(".checkbox");
         checkboxTask.addEventListener("click", async () => {
-
             let taskElement = await checkboxTask.closest("task-element");
 
             let taskId = await taskElement.getAttribute("id");
             let actualStatus = await taskElement.getAttribute("status");
             let newStatus = actualStatus == 2 ? 1 : 2;
-            await this.updateTask(taskId, { "task_status": newStatus });
+            await this.updateTask(taskId, { "task_tags": newStatus });
             taskElement.setAttribute("status", newStatus);
             this.#activeBlocks();
         });

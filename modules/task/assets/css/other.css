@@ -1,6 +1,6 @@
 #tasks {
     width: 100%;
-    height: auto;
+    height: calc(100vh - 100px);
     /* display: flex; */
 }
 
@@ -11,6 +11,7 @@
 }
 
 #tasks .tabs {
+    height: 5vh;
     width: 100%;
     display: flex;
     border-width: 0 0 1px 0;
@@ -42,11 +43,24 @@
 #kanban {
     display: flex;
     display: none;
+    overflow-x: auto;
+    max-height: 75vh;
 }
 
-.kanban_view {
-    width: 48%;
+kanban-view,
+new-kanban-tag {
+    max-width: 100%;
+    width: 300px;
+    min-width: 300px;
     margin: 1%;
+}
+
+.kanban_view,
+.add_kanban {
+    max-width: 100%;
+    width: 300px;
+    min-width: 300px;
+
     border-radius: var(--radius);
 
     background-color: #7D926890;
@@ -54,6 +68,41 @@
     flex-wrap: wrap;
     align-content: flex-start;
     align-items: flex-start;
+}
+
+.kanban_view>.title {
+
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+    background-color: var(--selected);
+    width: calc(100% - 10px);
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--radius);
+
+}
+
+.kanban_view>.title input[type='text'] {
+
+    color: inherit;
+    background-color: inherit;
+    border: 0px;
+    font-weight: inherit;
+    font-size: inherit;
+    outline: 0px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    padding: 5px;
+}
+
+.kanban_view>.title input[type='text']:focus {
+
+    background-color: var(--selected);
+    border: 2px solid var(--secondary);
+    border-radius: var(--radius);
+
 }
 
 .kanban_view .title {
@@ -110,4 +159,39 @@
 
 .kanban_view .box.dragging {
     opacity: 0.5;
+}
+
+/* add_kanban */
+
+.add_kanban {
+    color: white;
+    font-weight: bold;
+    padding: 17.5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.add_kanban:hover {
+    background-color: var(--selected);
+    transition: 0.5s;
+}
+
+kanban-view .tags_delete {
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+kanban-view:hover .tags_delete {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+kanban-view .title .icon {
+    width: 25px;
+    cursor: pointer;
+}
+
+kanban-view .title input {
+    width: 75%;
 }

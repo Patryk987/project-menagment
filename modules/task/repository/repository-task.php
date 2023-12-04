@@ -38,7 +38,8 @@ class TasksRepository
                 "end_time",
                 "repeat_status",
                 "color",
-                "task_status_id"
+                "task_status_id",
+                "task_tag_id"
             ],
             $this->table
         );
@@ -65,7 +66,8 @@ class TasksRepository
                 "end_time",
                 "repeat_status",
                 "color",
-                "task_status_id"
+                "task_status_id",
+                "task_tag_id"
             ],
             $this->table
         );
@@ -86,6 +88,7 @@ class TasksRepository
             "content" => !empty($input['content']) ? $input['content'] : null,
             "end_time" => !empty($input['end_time']) ? $input['end_time'] : null,
             "repeat_status" => !empty($input['repeat_status']) ? $input['repeat_status'] : 0,
+            "task_tag_id" => !empty($input['task_tag_id']) ? $input['task_tag_id'] : -1,
             "color" => !empty($input['color']) ? $input['color'] : null,
             "task_status_id" => Enums\TaskStatus::ACTIVE->value
         ];
@@ -117,6 +120,9 @@ class TasksRepository
 
         if (!empty($input['task_status_id']))
             $data["task_status_id"] = $input['task_status_id'];
+
+        if (!empty($input['task_tag_id']))
+            $data["task_tag_id"] = $input['task_tag_id'];
 
 
         $this->sedjm->clear_all();

@@ -9,7 +9,7 @@ class TasksStatusRepository
 {
 
     private \ModuleManager\SEDJM $sedjm;
-    private $table = "TaskStatus";
+    private $table = "TaskTags";
     private int $project_id;
     private int $task_group_id;
 
@@ -28,6 +28,8 @@ class TasksStatusRepository
         $this->sedjm->set_where("task_group_id", $this->task_group_id, "=");
         $data = $this->sedjm->get(
             [
+                "task_group_id",
+                "task_tags_id",
                 "name",
                 "color"
             ],
@@ -63,7 +65,7 @@ class TasksStatusRepository
             $data["color"] = $input['color'];
 
         $this->sedjm->clear_all();
-        $this->sedjm->set_where("task_status_id", $id, "=");
+        $this->sedjm->set_where("task_tags_id", $id, "=");
         $this->sedjm->set_where("task_group_id", $this->task_group_id, "=");
 
         return $this->sedjm->update($data, $this->table);
@@ -74,7 +76,7 @@ class TasksStatusRepository
     {
 
         $this->sedjm->clear_all();
-        $this->sedjm->set_where("task_status_id", $id, "=");
+        $this->sedjm->set_where("task_tags_id", $id, "=");
         $this->sedjm->set_where("task_group_id", $this->task_group_id, "=");
         return $this->sedjm->delete($this->table);
 

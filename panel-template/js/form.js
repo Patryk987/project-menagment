@@ -16,7 +16,6 @@ function duplicateObjectGroup() {
 
         var regex = /\[(\d+)\]/;
         var match = regex.exec(input.name);
-        // console.log(match[1]);
 
         let number = parseInt(match[1]) + 1;
 
@@ -28,7 +27,6 @@ function duplicateObjectGroup() {
 
         var regex = /\[(\d+)\]/;
         var match = regex.exec(select.name);
-        // console.log(match[1]);
 
         let number = parseInt(match[1]) + 1;
 
