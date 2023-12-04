@@ -1,413 +1,69 @@
-[2023-11-13 20:59:13] [ERROR] API: Field 'notepad_id' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
-[2023-11-13 20:59:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:01:09] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:01:22] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:01:39] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:01:49] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,100
-[2023-11-13 21:01:49] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2023-11-13 21:01:49] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2023-11-13 21:01:49] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2023-11-13 21:01:53] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:01:59] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,100
-[2023-11-13 21:01:59] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2023-11-13 21:01:59] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2023-11-13 21:01:59] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2023-11-13 21:02:12] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,100
-[2023-11-13 21:02:12] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2023-11-13 21:02:12] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2023-11-13 21:02:12] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2023-11-13 21:03:15] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:03:21] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/repository/repository-notes.php,200
-[2023-11-13 21:03:21] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2023-11-13 21:03:21] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2023-11-13 21:03:21] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2023-11-13 21:03:28] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/repository/repository-notes.php,200
-[2023-11-13 21:03:28] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2023-11-13 21:03:28] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2023-11-13 21:03:28] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2023-11-13 21:03:57] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:04:01] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:04:12] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:05:05] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:05:13] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:05:19] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:05:35] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:05:41] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:05:41] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:05:48] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:07:27] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:07:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:07:36] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:07:36] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:07:44] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:07:46] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:08:05] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:09:51] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:10:48] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:10:53] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:14:31] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:14:36] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:14:46] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:15:02] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:15:02] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:17:06] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:17:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:17:51] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:18:08] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:18:24] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:18:25] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:18:41] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:18:42] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:18:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:19:13] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:19:25] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:19:42] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:19:53] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:19:55] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:19:56] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:19:56] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:20:04] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:20:08] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:20:34] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:20:43] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:23:00] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:23:02] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:23:03] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:23:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:26:13] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:30:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:30:34] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:30:37] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:31:42] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:31:55] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:31:59] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:32:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:32:40] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:32:44] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:34:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:34:43] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:35:45] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:35:52] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:36:01] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:38:38] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:39:08] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:39:13] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:39:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:39:29] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:39:39] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:39:53] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:40:00] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:41:08] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:41:09] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:41:25] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:41:26] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:41:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:41:33] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:41:34] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:41:46] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:41:48] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:41:58] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:07] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:08] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:10] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:11] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:11] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:22] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:24] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:25] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:27] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:33] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:46] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:51] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-13 21:42:51] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:00:42] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:00:44] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:00:53] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:00:54] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:00:59] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:01:02] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:01:02] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:01:02] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:02:17] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:02:25] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:02:46] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:02:47] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:02:51] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:02:54] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:02:56] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:03:04] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:03:07] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:25:58] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:06] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:07] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:08] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:10] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:12] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:14] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:26] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:27] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:29] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:29] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:32] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:32] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 13:26:34] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:00:40] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:00:41] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:00:43] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:00:45] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:11:33] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:12:55] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:13:08] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:15:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:15:32] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:15:35] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:15:38] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:16:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:16:35] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:16:37] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:16:43] [ERROR] Unexpected error: unlink(/var/www/html/modules/encrypt-files/repository/_2082b327-742d-44ea-ad08-356e47fcab10.jpeg): No such file or directory,/var/www/html/modules/encrypt-files/repository/repository-files.php,74
-[2023-11-27 14:16:54] [ERROR] Unexpected error: unlink(/var/www/html/modules/encrypt-files/repository/_2082b327-742d-44ea-ad08-356e47fcab10.jpeg): No such file or directory,/var/www/html/modules/encrypt-files/repository/repository-files.php,74
-[2023-11-27 14:17:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:17:33] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:17:35] [ERROR] Unexpected error: ftp_get(): /domains/uwwzzxyvuj.cfolks.pl/public_html/LAB 2.zip: No such file or directory,/var/www/html/modules/encrypt-files/helper/ftp.php,138
-[2023-11-27 14:17:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,78
-[2023-11-27 14:17:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,79
-[2023-11-27 14:17:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,80
-[2023-11-27 14:17:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,81
-[2023-11-27 14:17:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,82
-[2023-11-27 14:17:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,83
-[2023-11-27 14:17:35] [ERROR] Unexpected error: filesize(): stat failed for /var/www/html/modules/encrypt-files/repository/LAB 2.zip,/var/www/html/modules/encrypt-files/repository/repository-files.php,84
-[2023-11-27 14:17:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,84
-[2023-11-27 14:17:35] [ERROR] Unexpected error: readfile(/var/www/html/modules/encrypt-files/repository/LAB 2.zip): Failed to open stream: No such file or directory,/var/www/html/modules/encrypt-files/repository/repository-files.php,86
-[2023-11-27 14:17:35] [ERROR] Unexpected error: unlink(/var/www/html/modules/encrypt-files/repository/LAB 2.zip): No such file or directory,/var/www/html/modules/encrypt-files/repository/repository-files.php,88
-[2023-11-27 14:17:35] [ERROR] Unexpected error: ftp_chdir(): /domains/uwwzzxyvuj.cfolks.pl/public_html/LAB 2.zip: No such file or directory,/var/www/html/modules/encrypt-files/helper/ftp.php,47
-[2023-11-27 14:17:37] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:19:34] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:19:44] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:20:53] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:23:13] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:24:17] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:25:17] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:25:20] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:25:50] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:26:01] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:26:08] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:26:19] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:26:59] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:27:13] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:27:51] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:27:55] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:27:58] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:28:01] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:28:04] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:31:05] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:31:37] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:32:03] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:32:23] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:32:40] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:32:59] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:33:44] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:33:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:33:59] [ERROR] Unexpected error: ftp_chdir(): /domains/uwwzzxyvuj.cfolks.pl/public_html/index.html: Not a directory,/var/www/html/modules/encrypt-files/helper/ftp.php,47
-[2023-11-27 14:34:29] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:34:37] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:34:39] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:34:42] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:34:48] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:34:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:36:20] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:38:08] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 14:38:36] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:40:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:41:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:41:25] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:41:27] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:43:05] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:46:07] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:46:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:49:37] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:49:37] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:49:37] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:49:37] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:49:37] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:49:37] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:49:37] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:49:37] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:49:37] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:50:33] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:50:33] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:50:33] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:50:33] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:50:33] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:50:33] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:50:33] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:50:33] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:50:33] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:51:43] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:51:43] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:51:43] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:51:43] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:51:43] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:51:43] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:51:43] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:51:43] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:51:43] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:52:17] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel_template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:52:17] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel_template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:52:17] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel_template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:52:17] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel_template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:52:17] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel_template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:52:17] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel_template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:52:17] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel_template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:52:17] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel_template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:52:17] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:52:50] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../../panel-template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:52:50] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../../panel-template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:52:50] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../../panel-template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:52:50] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../../panel-template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:52:50] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../../panel-template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:52:50] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../../panel-template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:52:50] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../../panel-template/img/up-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,40
-[2023-11-27 15:52:50] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../../panel-template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:52:50] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:53:14] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel-template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:53:14] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel-template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:53:14] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel-template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:53:14] [ERROR] Unexpected error: file_get_contents(/var/www/html/core/class/../../panel-template/img/down-arrow.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,43
-[2023-11-27 15:53:14] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:53:52] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:54:02] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:54:04] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:54:23] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:54:38] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:54:41] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:54:52] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:55:02] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:55:04] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:55:13] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:55:16] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:55:22] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:55:55] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:56:14] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:56:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:56:35] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:56:42] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:57:47] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:58:05] [ERROR] Unexpected error: file_get_contents(/../../panel-template/img/edit.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,268
-[2023-11-27 15:58:05] [ERROR] Unexpected error: file_get_contents(/../../panel-template/img/edit.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,268
-[2023-11-27 15:58:05] [ERROR] Unexpected error: file_get_contents(/../../panel-template/img/edit.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,268
-[2023-11-27 15:58:05] [ERROR] Unexpected error: file_get_contents(/../../panel-template/img/edit.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,268
-[2023-11-27 15:58:05] [ERROR] Unexpected error: file_get_contents(/../../panel-template/img/edit.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,268
-[2023-11-27 15:58:05] [ERROR] Unexpected error: file_get_contents(/../../panel-template/img/edit.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,268
-[2023-11-27 15:58:05] [ERROR] Unexpected error: file_get_contents(/../../panel-template/img/edit.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,268
-[2023-11-27 15:58:05] [ERROR] Unexpected error: file_get_contents(/../../panel-template/img/edit.svg): Failed to open stream: No such file or directory,/var/www/html/core/class/class-table.php,268
-[2023-11-27 15:58:05] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:58:09] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:59:37] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:59:47] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 15:59:47] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 16:00:13] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 16:00:15] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 16:00:16] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 16:00:17] [ERROR] Unexpected error: Undefined array key "pwd",/var/www/html/modules/encrypt-files/controller/files.php,65
-[2023-11-27 16:00:17] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 16:00:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 16:00:37] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 16:01:02] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 16:01:05] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 16:01:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 16:01:25] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:34:23] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:34:24] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:34:26] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:34:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:34:31] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:35:01] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:35:31] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:36:24] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:36:25] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:36:26] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:36:26] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:36:51] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$ftp must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,41
-[2023-11-27 18:37:40] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:37:40] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$ftp must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,47
-[2023-11-27 18:37:45] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:19] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:20] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:39:20] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:22] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:22] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:23] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:39:23] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:24] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:27] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:29] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:29] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:39:29] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:35] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:39:35] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:41:34] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:41:34] [ERROR] Unexpected error: file_get_contents(&lt;section id=&quot;&quot;&gt;
-    &lt;div&gt;
-        &lt;p&gt;Problem with FTP connect&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/section&gt;): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
-[2023-11-27 18:41:34] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:41:35] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:41:35] [ERROR] Unexpected error: file_get_contents(&lt;section id=&quot;&quot;&gt;
-    &lt;div&gt;
-        &lt;p&gt;Problem with FTP connect&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/section&gt;): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
-[2023-11-27 18:41:35] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:41:36] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:41:36] [ERROR] Unexpected error: file_get_contents(&lt;section id=&quot;&quot;&gt;
-    &lt;div&gt;
-        &lt;p&gt;Problem with FTP connect&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/section&gt;): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
-[2023-11-27 18:41:36] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:41:51] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:41:51] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:42:46] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:42:46] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:42:57] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:42:57] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:43:31] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:43:31] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:43:37] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:43:37] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:44:18] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:44:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:44:30] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:44:30] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:44:38] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:44:38] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:44:44] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:44:50] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:44:52] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:44:52] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:44:58] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:44:59] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:45:00] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:45:00] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:45:28] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:45:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:45:49] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:45:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:06] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:46:06] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:11] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2023-11-27 18:46:11] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:17] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:18] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:19] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:21] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:26] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:27] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
-[2023-11-27 18:46:28] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,45
+[2023-11-30 18:27:20] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-30 18:46:52] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:46:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:46:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:46:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:05] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:05] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:05] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:05] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:15] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:16] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:17] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:21] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:21] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:21] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:21] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:22] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:22] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:22] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:22] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:42] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:42] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:42] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:42] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:43] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 18:47:49] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/modules/notes/controller/notes-api-controller.php,139
+[2023-11-30 18:47:49] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-11-30 18:47:49] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-11-30 18:47:49] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-11-30 19:08:30] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-30 19:08:35] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-30 19:08:38] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-11-30 19:45:15] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-11-30 20:18:43] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-01 17:34:40] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-03 18:01:18] [ERROR] Taks API: Unknown column 'Task.task_tags_id' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-12-03 18:01:18] [ERROR] Taks API: Unknown column 'Task.task_tags_id' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-12-03 18:01:37] [ERROR] Taks API: Unknown column 'Task.task_tags_id' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-12-03 18:01:37] [ERROR] Taks API: Unknown column 'Task.task_tags_id' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-12-03 18:01:38] [ERROR] Taks API: Unknown column 'Task.task_tags_id' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-12-03 18:01:38] [ERROR] Taks API: Unknown column 'Task.task_tags_id' in 'field list',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-12-03 18:14:09] [ERROR] Taks API: Field 'task_tag_id' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
+[2023-12-03 18:14:12] [ERROR] Taks API: Field 'task_tag_id' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
+[2023-12-03 18:14:23] [ERROR] Taks API: Field 'task_tag_id' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
+[2023-12-04 16:47:17] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-04 18:51:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:128),/var/www/html/core/class/trait-api.php,333
+[2023-12-04 18:51:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:128),/var/www/html/core/class/trait-api.php,334
+[2023-12-04 18:51:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:128),/var/www/html/core/class/trait-api.php,162
+[2023-12-04 19:02:32] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11

@@ -106,7 +106,6 @@ class Note {
 
         deleteButton.addEventListener("click", async () => {
             var data = await this.delete_note(id);
-            console.log(data);
             document.querySelector("simple-card[data-id='" + id + "'").style.display = "none";
             this.single_note.classList.remove("show_single_note");
         })
@@ -173,7 +172,6 @@ class Note {
         // this.#updateNote(text_editor, id);
 
         text_editor.addChangeListener((newValue) => {
-            // console.log(newValue);
             this.update_notes(id, "", newValue);
         });
         // add image 

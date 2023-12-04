@@ -117,7 +117,6 @@ class NotepadsController
                         var note = new Note(" . $this->notepad_id . ", " . $this->project_id . ");
                         data = await note.get_notes();
                         var grid = new Grid(50);
-                        console.log(data);
                         grid.load(data);
                         note.active();
                     }
