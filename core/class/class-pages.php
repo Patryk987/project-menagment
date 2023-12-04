@@ -336,6 +336,8 @@ class Pages
             $project = new \Projects(static::$token['payload']->user_id, $this->sub_pages[1]);
             self::$project = $project->get_project_data();
 
+        } else {
+            // self::$project = new \ProjectModel(\ProjectStatus::BLOCKED);
         }
 
         $this->map_modules();

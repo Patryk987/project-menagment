@@ -18,7 +18,7 @@ class TasksPageController
 
     public function __construct()
     {
-        if (!empty(\ModuleManager\Pages::$project)) {
+        if (!empty(\ModuleManager\Pages::$project) && \ModuleManager\Pages::$project->get_status() != \ProjectStatus::BLOCKED) {
 
             $this->project_id = \ModuleManager\Pages::$project->get_project_id();
             $this->task_group_id = $this->get_task_group_id();
