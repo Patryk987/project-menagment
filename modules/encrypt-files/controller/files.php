@@ -40,7 +40,9 @@ class FilesNotepadsController
 
         // Add style
         \InjectStyles::set_style(["name" => "add_file_style", "style" => "/modules/encrypt-files/assets/css/style.css"]);
+
         if ($status) {
+
 
             // Add js script
             \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/encrypt-files/assets/js/script.js"]);
