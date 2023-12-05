@@ -54,7 +54,9 @@ class Helper
                     return strcmp($a[$key], $b[$key]);
                 }
             });
+
         } else if ($type == "DESC") {
+
             usort($table, function ($a, $b) use ($key) {
                 if (is_numeric($a[$key]) && is_numeric($b[$key])) {
                     return $b[$key] - $a[$key];
@@ -62,6 +64,7 @@ class Helper
                     return strcmp($b[$key], $a[$key]);
                 }
             });
+
         }
     }
 

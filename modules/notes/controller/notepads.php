@@ -2,6 +2,8 @@
 
 namespace Notes\Controller;
 
+use \ModuleManager\Forms\Forms;
+
 class NotepadsController
 {
 
@@ -12,50 +14,50 @@ class NotepadsController
 
     public function __construct()
     {
-        if (!empty(\ModuleManager\Pages::$project)) {
+        if (!empty(\ModuleManager\Pages::$project) && \ModuleManager\Pages::$project->get_status() != \ProjectStatus::BLOCKED) {
             $this->project_id = \ModuleManager\Pages::$project->get_project_id();
             $this->notepad_id = $this->get_notepads_id();
-        }
+            $this->repository = new \Notes\Repository\NotepadRepository();
 
-        $this->repository = new \Notes\Repository\NotepadRepository();
+            $main_page = [
+                "name" => "+ Add notepads",
+                "link" => "add_notepads",
+                "function" => [$this, "add_notepads"],
+                "parent_link" => "notes",
+                "show" => true
+            ];
 
-        $main_page = [
-            "name" => "+ Add notepads",
-            "link" => "add_notepads",
-            "function" => [$this, "add_notepads"],
-            "parent_link" => "notes",
-            "show" => true
-        ];
+            \ModuleManager\Pages::set_child_modules($main_page);
 
-        \ModuleManager\Pages::set_child_modules($main_page);
+            // 
 
-        // 
-
-        \ModuleManager\DataBinder::set_binder(
-            [
-                "key" => "notepads_title",
-                "function" => [$this, "get_notepads_title"]
-            ]
-        );
+            \ModuleManager\DataBinder::set_binder(
+                [
+                    "key" => "notepads_title",
+                    "function" => [$this, "get_notepads_title"]
+                ]
+            );
 
 
 
-        $all_notepads = $this->repository->get_all($this->project_id);
+            $all_notepads = $this->repository->get_all($this->project_id);
 
-        if ($all_notepads->get_status() == \ApiStatus::CORRECT) {
-            foreach ($all_notepads->get_message() as $key => $value) {
-                $main_page = [
-                    "name" => $value["name"],
-                    "link" => $value["notepad_id"],
-                    "function" => [$this, "notes"],
-                    "parent_link" => "notes",
-                    "show" => true,
-                    "position" => 1
-                ];
+            if ($all_notepads->get_status() == \ApiStatus::CORRECT) {
+                foreach ($all_notepads->get_message() as $key => $value) {
+                    $main_page = [
+                        "name" => $value["name"],
+                        "link" => $value["notepad_id"],
+                        "function" => [$this, "notes"],
+                        "parent_link" => "notes",
+                        "show" => true,
+                        "position" => 1
+                    ];
 
-                \ModuleManager\Pages::set_child_modules($main_page);
+                    \ModuleManager\Pages::set_child_modules($main_page);
+                }
             }
         }
+
     }
 
     public function add_notepads()
@@ -71,7 +73,27 @@ class NotepadsController
             $this->repository->create($data);
 
         }
-        return $this->get_page(__DIR__ . "/../view/add-notes.html");
+        // return $this->get_page(__DIR__ . "/../view/add-notes.html");
+
+        // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //     $data = [
+        //         "author_id" => \ModuleManager\Main::$token['payload']->user_id,
+        //         "group_name" => $_POST['name'],
+        //         "group_description" => $_POST['description'],
+        //         "color" => $_POST['color']
+        //     ];
+        //     $this->task_group_repository->create($data);
+        // }
+
+        $form = new Forms();
+
+        $form->set_data([
+            "key" => "name",
+            "name" => "Notepads name",
+            "type" => "input"
+        ]);
+
+        return $form->get_form("Add tasks group", "Add");
     }
     public function notes()
     {
@@ -95,7 +117,6 @@ class NotepadsController
                         var note = new Note(" . $this->notepad_id . ", " . $this->project_id . ");
                         data = await note.get_notes();
                         var grid = new Grid(50);
-                        console.log(data);
                         grid.load(data);
                         note.active();
                     }

@@ -198,5 +198,6 @@ class Main
 
             $logger->close();
         }
+
     }
 }
