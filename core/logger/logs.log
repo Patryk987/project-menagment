@@ -87,3 +87,11 @@
 [2023-12-04 20:12:43] [ERROR] Include module: ProjectModel::get_project_id(): Return value must be of type int, null returned,0,/var/www/html/core/models/model-projects.php,28
 [2023-12-04 20:15:23] [ERROR] Incorrect function: Typed static property ModuleManager\Pages::$project must not be accessed before initialization,0,/var/www/html/core/function/function.php,523
 [2023-12-04 20:17:15] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-05 21:02:06] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-05 21:10:16] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-05 21:11:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:128),/var/www/html/core/class/trait-api.php,333
+[2023-12-05 21:11:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:128),/var/www/html/core/class/trait-api.php,334
+[2023-12-05 21:11:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:128),/var/www/html/core/class/trait-api.php,162
+[2023-12-05 21:11:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:128),/var/www/html/core/class/trait-api.php,333
+[2023-12-05 21:11:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:128),/var/www/html/core/class/trait-api.php,334
+[2023-12-05 21:11:16] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:128),/var/www/html/core/class/trait-api.php,162

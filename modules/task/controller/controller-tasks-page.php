@@ -127,6 +127,7 @@ class TasksPageController
         // Add style
         \InjectStyles::set_style(["name" => "add_task_style", "style" => "/modules/task/assets/css/style.css"]);
         \InjectStyles::set_style(["name" => uniqid(), "style" => "/modules/task/assets/css/other.css"]);
+        \InjectStyles::set_style(["name" => 'single-note', "style" => "/modules/task/assets/css/single-note.css"]);
 
         // Add js script
         \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/task/assets/js/elements.js"]);
@@ -136,6 +137,8 @@ class TasksPageController
         \InjectJavaScript::set_script(["name" => "script", "src" => "/modules/task/assets/js/script.js"]);
         \InjectJavaScript::set_script(["name" => "kanban", "src" => "/modules/task/assets/js/kanban.js"]);
         \InjectJavaScript::set_script(["name" => uniqid(), "src" => "/modules/task/assets/js/load-kanban-script.js"]);
+        \InjectJavaScript::set_script(["name" => "open_note", "src" => "/modules/notes/assets/js/open-note.js"]);
+
 
         \InjectJavaScript::set_script(
             [

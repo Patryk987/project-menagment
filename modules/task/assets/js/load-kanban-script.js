@@ -40,9 +40,15 @@ class loadKanban {
     }
 
     async #loadTaskTags(name, id) {
-        this.kanban.innerHTML += `
-            <kanban-view name="${name}" id="${this.kanbanStatusIdName}-${id}" data-id="${id}"></kanban-view>
-        `;
+
+        // Create a new kanban-view element
+        const kanbanView = document.createElement('kanban-view');
+        kanbanView.setAttribute('name', name);
+        kanbanView.setAttribute('id', `${this.kanbanStatusIdName}-${id}`);
+        kanbanView.setAttribute('data-id', id);
+
+        // Append the created kanban-view element as a child of this.kanban
+        this.kanban.appendChild(kanbanView);
     }
 
     async #addTaskTagsButtom() {
@@ -69,8 +75,17 @@ class loadKanban {
     }
 
     async #addTaskToTagField(name, id, taskId) {
+
         let kanbanView = document.querySelector(`#${this.kanbanStatusIdName}-${id}`).querySelector(".kanban_view");
-        kanbanView.innerHTML += `<task-box name="${name}" data-id="${taskId}" class="box" draggable="true"></task-box>`;
+
+        const taskBox = document.createElement('task-box');
+        taskBox.setAttribute('name', name);
+        taskBox.setAttribute('data-id', taskId);
+        taskBox.setAttribute('class', 'box');
+        taskBox.setAttribute('draggable', 'true');
+
+        kanbanView.appendChild(taskBox);
+
     }
 
     #updateStatus() {
@@ -107,7 +122,7 @@ class loadKanban {
                 let tag_name = "new task";
                 let response = await this.taskRepository.createNewTask(tag_name, tag_id);
                 this.#addTaskToTagField(tag_name, tag_id, response.id);
-                this.#active();
+                // this.#active();
             })
         });
 
@@ -118,6 +133,9 @@ class loadKanban {
         this.#updateTaskTag();
         this.#delete();
         this.#addNewTask();
+
+        let note = new Note;
+        note.active();
     }
 
     async load() {

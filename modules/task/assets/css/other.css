@@ -74,7 +74,7 @@ new-kanban-tag {
 
     position: sticky;
     top: 0px;
-    z-index: 999;
+    z-index: 4;
     background-color: var(--selected);
     width: calc(100% - 10px);
     margin: 5px;
