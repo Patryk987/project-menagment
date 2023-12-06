@@ -1,0 +1,131 @@
+/* single_note */
+
+#single_note {
+    position: fixed;
+    z-index: 999;
+    right: -50%;
+    top: 0;
+    min-width: 50%;
+    height: 100vh;
+    background-color: white;
+    border-left: 2px solid var(--selected);
+    /* display: none; */
+    overflow-y: auto;
+    transition: 1s;
+    box-shadow: 0 0 10px gray;
+
+}
+
+.show_single_note {
+    /* animation-name: show_note;
+    animation-duration: 1s; */
+    transition: 1s;
+    right: 0 !important;
+}
+
+#single_note .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid var(--selected);
+
+}
+
+#single_note .header .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#single_note .header .details>div {
+    display: flex;
+    padding: 10px;
+}
+
+#single_note .header .details .modify_data {
+    font-weight: bold;
+    color: var(--selected)
+}
+
+#single_note .header svg {
+    stroke: var(--selected)
+}
+
+#single_note .header .close:hover svg {
+    stroke: var(--third);
+    cursor: pointer;
+}
+
+#single_note .content {
+    padding: 20px;
+}
+
+#single_note .content .background {
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: var(--radius);
+    border: 2px solid rgba(255, 255, 255, 0);
+    transition: 0.5s;
+}
+
+#single_note .content .background:hover {
+    cursor: pointer;
+    border-color: var(--selected);
+    transition: 0.5s;
+}
+
+#single_note .content .add_button {
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border-radius: var(--radius);
+    border: 4px solid var(--selected);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--selected);
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#single_note .content .add_button:hover {
+    opacity: 1;
+}
+
+#single_note .content h3 {
+    font-size: 2rem;
+    color: var(--selected)
+}
+
+#single_note .content input[type='text'] {
+    border: 0px solid rgba(255, 255, 255, 0);
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    outline: none;
+}
+
+#single_note .content .params th,
+#single_note .content .params td {
+    border-width: 0px;
+    font-size: 1rem;
+}
+
+/* animation */
+
+@keyframes show_note {
+    from {
+        right: -50%
+    }
+
+    to {
+        right: 0px
+    }
+}
