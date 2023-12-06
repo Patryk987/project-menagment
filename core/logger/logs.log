@@ -571,3 +571,5 @@
 [2023-12-06 19:37:45] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,56
 [2023-12-06 19:37:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,56
 [2023-12-06 19:37:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,56
+[2023-12-06 19:48:23] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-06 19:49:08] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11

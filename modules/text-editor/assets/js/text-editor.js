@@ -2,7 +2,6 @@
 class TextEditor {
 
     content = {};
-    content2 = {};
     dataToMove;
 
     // Moving element
@@ -168,8 +167,6 @@ class TextEditor {
             item.addEventListener('keydown', (event) => {
                 this.#handleKeyPress(event, item)
             });
-            // item.addEventListener('focus', () => {});
-            // item.addEventListener('blur', () => {});
         });
     }
 
@@ -219,6 +216,7 @@ class TextEditor {
 
     #updateContent() {
         let note = this.download()
+        console.log(note);
         this.content(note);
     }
 
@@ -294,13 +292,13 @@ class TextEditor {
             case "text":
                 this.#setParagraf(newElement);
                 break;
-            case "header1":
+            case "h1":
                 this.#setHeader1(newElement);
                 break;
-            case "header2":
+            case "h2":
                 this.#setHeader2(newElement);
                 break;
-            case "header3":
+            case "h3":
                 this.#setHeader3(newElement);
                 break;
             default:
