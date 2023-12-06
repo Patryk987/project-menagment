@@ -2,25 +2,21 @@
 
 namespace Notes\Repository;
 
-interface RepositoryNotesInterface extends \RepositoryInterface
-{
+interface RepositoryNotesInterface extends \RepositoryInterface {
     public function get_all_notepads_notes(int $notepad_id);
 }
 
-class NotesRepository implements RepositoryNotesInterface
-{
+class NotesRepository implements RepositoryNotesInterface {
 
     private \ModuleManager\SEDJM $sedjm;
     private $table = "Notes";
 
-    public function __construct()
-    {
+    public function __construct() {
         global $main;
         $this->sedjm = $main->sedjm;
     }
 
-    public function get_all()
-    {
+    public function get_all() {
 
         $this->sedjm->clear_all();
 
@@ -52,7 +48,7 @@ class NotesRepository implements RepositoryNotesInterface
 
         $get = $this->sedjm->get($data, $this->table);
 
-        if (count($get) > 0) {
+        if(count($get) > 0) {
             $status = \ApiStatus::CORRECT;
         } else {
             $status = \ApiStatus::ERROR;
@@ -62,8 +58,7 @@ class NotesRepository implements RepositoryNotesInterface
         return $output;
     }
 
-    public function get_all_notepads_notes($notepad_id)
-    {
+    public function get_all_notepads_notes($notepad_id) {
 
         $this->sedjm->clear_all();
         $this->sedjm->set_where("notepad_id", $notepad_id, "=");
@@ -96,7 +91,7 @@ class NotesRepository implements RepositoryNotesInterface
 
         $get = $this->sedjm->get($data, $this->table);
 
-        if (count($get) > 0) {
+        if(count($get) > 0) {
             $status = \ApiStatus::CORRECT;
         } else {
             $status = \ApiStatus::ERROR;
@@ -106,8 +101,7 @@ class NotesRepository implements RepositoryNotesInterface
         return $output;
     }
 
-    public function get_by_id($id)
-    {
+    public function get_by_id($id) {
 
         $this->sedjm->clear_all();
         $this->sedjm->set_where("note_id", $id, "=");
@@ -122,6 +116,12 @@ class NotesRepository implements RepositoryNotesInterface
                 "column" => "note",
                 "alias" => "note",
                 "function" => ["Helper", "htmlspecialchars_decode"],
+            ],
+            [
+                "table" => $this->table,
+                "column" => "author_id",
+                "alias" => "user_data",
+                "function" => [$this, "get_user_data"],
             ],
             "background",
             [
@@ -140,7 +140,7 @@ class NotesRepository implements RepositoryNotesInterface
 
         $get = $this->sedjm->get($data, $this->table);
 
-        if (count($get) > 0) {
+        if(count($get) > 0) {
             $status = \ApiStatus::CORRECT;
         } else {
             $status = \ApiStatus::ERROR;
@@ -150,17 +150,16 @@ class NotesRepository implements RepositoryNotesInterface
         return $output;
     }
 
-    public function create(array $data)
-    {
+    public function create(array $data) {
 
-        if (
+        if(
             !empty($data['notepad_id'])
             && !empty($data['author_id'])
         ) {
             $project_id = $this->get_project_by_notepads($data['notepad_id']);
             $project = new \Projects($data['author_id'], $project_id);
 
-            if ($project->auth_user_in_project()) {
+            if($project->auth_user_in_project()) {
 
                 $notepad_id = $data['notepad_id'];
                 $author_id = $data['author_id'];
@@ -201,21 +200,20 @@ class NotesRepository implements RepositoryNotesInterface
 
     }
 
-    public function update($id, array $data)
-    {
+    public function update($id, array $data) {
 
-        if (
+        if(
             !empty($id)
         ) {
             $update_data = [];
 
-            if (!empty($data['title']))
+            if(!empty($data['title']))
                 $update_data["title"] = $data['title'];
 
-            if (!empty($data['note']))
+            if(!empty($data['note']))
                 $update_data["note"] = $data['note'];
 
-            if (!empty($data['background']))
+            if(!empty($data['background']))
                 $update_data["background"] = $data['background'];
 
             $update_data["update_time"] = time();
@@ -233,8 +231,7 @@ class NotesRepository implements RepositoryNotesInterface
         }
     }
 
-    public function delete($id)
-    {
+    public function delete($id) {
         $this->sedjm->clear_all();
         $this->sedjm->set_where("note_id", $id, "=");
         $insert = $this->sedjm->delete($this->table);
@@ -245,15 +242,41 @@ class NotesRepository implements RepositoryNotesInterface
 
     // private
 
-    public function get_project_by_notepads($notepads_id): ?int
-    {
+    public function get_project_by_notepads($notepads_id): ?int {
         $this->sedjm->clear_all();
         $this->sedjm->set_where("notepad_id", $notepads_id, "=");
         $get = $this->sedjm->get(["project_id"], "Notepad");
 
-        if (!empty($get))
+        if(!empty($get))
             return $get[0]['project_id'];
         else
             return -1;
+    }
+
+    public static function get_user_data($user_id) {
+
+        global $main;
+
+        $table = "Users";
+        $additionalTable = "UserData";
+
+        $main->sedjm->clear_all();
+        $main->sedjm->set_where("user_id", $user_id, "=");
+        $get_data = $main->sedjm->get(["nick", "email"], $table);
+        $additional_data = $main->sedjm->get(["field_key", "value"], $additionalTable);
+
+        $additional = [];
+        foreach($additional_data as $key => $value) {
+
+            $additional[$value['field_key']] = $value['value'];
+
+        }
+
+        $output = [
+            "data" => $get_data[0],
+            "additional_data" => $additional
+        ];
+
+        return $output;
     }
 }

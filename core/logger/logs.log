@@ -573,3 +573,28 @@
 [2023-12-06 19:37:49] [ERROR] Incorrect function: usort(): Argument #1 ($array) must be of type array, null given,0,/var/www/html/core/class/class-helper.php,56
 [2023-12-06 19:48:23] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
 [2023-12-06 19:49:08] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-06 20:11:59] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-06 20:17:05] [ERROR] Unexpected error: Undefined array key "note_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-12-06 20:17:05] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-12-06 20:17:05] [ERROR] SEDJM helper function: Unknown column 'Users.note_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-12-06 20:17:05] [ERROR] API: Unknown column 'Users.note_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,420
+[2023-12-06 20:17:05] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-12-06 20:17:05] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-12-06 20:17:05] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-12-06 20:17:17] [ERROR] Unexpected error: Undefined array key "note_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-12-06 20:17:17] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-12-06 20:17:17] [ERROR] SEDJM helper function: Unknown column 'Users.note_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-12-06 20:17:17] [ERROR] API: Unknown column 'Users.note_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,420
+[2023-12-06 20:17:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-12-06 20:17:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-12-06 20:17:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-12-06 20:17:56] [ERROR] Unexpected error: Undefined array key "note_id",/var/www/html/core/class/class-sedjm.php,40
+[2023-12-06 20:17:56] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2023-12-06 20:17:56] [ERROR] SEDJM helper function: Unknown column 'Users.note_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,410
+[2023-12-06 20:17:56] [ERROR] API: Unknown column 'Users.note_id' in 'where clause',1054,/var/www/html/core/class/class-sedjm.php,420
+[2023-12-06 20:17:56] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-12-06 20:17:56] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-12-06 20:17:56] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-12-06 20:25:29] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-06 20:26:57] [ERROR] API: Call to a member function get_code() on array,0,/var/www/html/core/class/trait-api.php,273
+[2023-12-06 20:28:46] [ERROR] API: Call to a member function get_code() on array,0,/var/www/html/core/class/trait-api.php,273

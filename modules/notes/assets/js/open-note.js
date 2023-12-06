@@ -108,8 +108,9 @@ class Note extends RepositoryNote {
         var note = data.note;
         var update_time = data.update_time;
         var background = data.background;
+        var userData = data.user_data;
 
-        await this.#addNoteBlock(title, update_time, background)
+        await this.#addNoteBlock(title, update_time, background, userData)
         await this.#loadTextEditor(id, note);
     }
 
@@ -125,14 +126,21 @@ class Note extends RepositoryNote {
 
     }
 
-    async #addNoteBlock(title, update_time, background) {
+    async #addNoteBlock(title, update_time, background, user_data) {
 
         if (background) background = "url(/" + background + ")";
 
         let noteContent = document.createElement('note-content');
 
+        var userName = user_data.data.nick;
+
+        if (user_data.additional_data.name && user_data.additional_data.surname) {
+            userName = `${user_data.additional_data.name} ${user_data.additional_data.surname}`;
+        }
+
+
         noteContent.setAttribute('title', title);
-        noteContent.setAttribute('author', 'Jan kowalski');
+        noteContent.setAttribute('author', userName);
         noteContent.setAttribute('last_modify', update_time);
         noteContent.setAttribute('background', background);
         let contentElement = this.single_note.querySelector('.content');
