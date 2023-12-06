@@ -27,15 +27,18 @@ class FilesRepository
     public function connect_to_ftp()
     {
         try {
+            if (!empty($this->connect_data)) {
 
-            $this->ftp = new \FTP(
-                $this->connect_data["serwer"],
-                $this->connect_data["port"],
-                $this->connect_data["user"],
-                $this->connect_data["password"]
-            );
+                $this->ftp = new \FTP(
+                    $this->connect_data["serwer"],
+                    $this->connect_data["port"],
+                    $this->connect_data["user"],
+                    $this->connect_data["password"]
+                );
 
-            return true;
+                return true;
+
+            }
 
         } catch (\Throwable $th) {
             $details = [
@@ -46,8 +49,9 @@ class FilesRepository
             ];
             \ModuleManager\Main::set_error('FTP connect', 'ERROR', $details);
 
-            return false;
         }
+
+        return false;
     }
 
     public function list_file($directory = ".")
@@ -136,7 +140,11 @@ class FilesRepository
             "port"
         ], $this->ftp_connect_data_table);
 
-        return $data[0];
+        if (!empty($data)) {
+            return $data[0];
+        } else {
+            return [];
+        }
     }
 
     private function concat_files($file)

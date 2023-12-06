@@ -154,9 +154,10 @@ trait Modules
                             "position" => $value['position'],
                         ];
                     }
-                    if (isset($list[$value['parent']]))
+                    if (isset($list[$value['parent']])) {
                         $list[$value['parent']]["child"][] = $data;
-                    \Helper::sort_array($list[$value['parent']]["child"], "position");
+                        \Helper::sort_array($list[$value['parent']]["child"], "position");
+                    }
                 }
 
 

@@ -13,23 +13,26 @@ class FilesNotepadsController
 
     public function __construct()
     {
-        if (!empty(\ModuleManager\Pages::$project)) {
+        if (!empty(\ModuleManager\Pages::$project) && \ModuleManager\Pages::$project->get_status() != \ProjectStatus::BLOCKED) {
+
             $this->project_id = \ModuleManager\Pages::$project->get_project_id();
+
+            $main_page = [
+                "name" => "Files",
+                "link" => "files",
+                "function" => [$this, "files"],
+                "permission" => [1, 11],
+                "status" => true,
+                "icon" => basename(__DIR__) . "/../encrypt-files/assets/img/icon.svg",
+                "position" => 3,
+                "belongs_to_project" => true
+            ];
+            \ModuleManager\Pages::set_modules($main_page);
+
         }
 
 
 
-        $main_page = [
-            "name" => "Files",
-            "link" => "files",
-            "function" => [$this, "files"],
-            "permission" => [1, 11],
-            "status" => true,
-            "icon" => basename(__DIR__) . "/../encrypt-files/assets/img/icon.svg",
-            "position" => 3,
-            "belongs_to_project" => true
-        ];
-        \ModuleManager\Pages::set_modules($main_page);
 
     }
 
@@ -40,7 +43,9 @@ class FilesNotepadsController
 
         // Add style
         \InjectStyles::set_style(["name" => "add_file_style", "style" => "/modules/encrypt-files/assets/css/style.css"]);
+
         if ($status) {
+
 
             // Add js script
             \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/encrypt-files/assets/js/script.js"]);

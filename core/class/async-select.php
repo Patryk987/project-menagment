@@ -48,10 +48,6 @@ class AsyncSelect
                     var link = '" . $this->link . "?value=' + input;
 
                     var response = await getData(link);
-                    console.log(response);
-                    // var html = parseData(response.data); 
-
-                    // document.querySelector('#results_area').innerHTML = html;
                 });
             </script>
 
