@@ -598,3 +598,5 @@
 [2023-12-06 20:25:29] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
 [2023-12-06 20:26:57] [ERROR] API: Call to a member function get_code() on array,0,/var/www/html/core/class/trait-api.php,273
 [2023-12-06 20:28:46] [ERROR] API: Call to a member function get_code() on array,0,/var/www/html/core/class/trait-api.php,273
+[2023-12-06 20:52:10] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-06 20:55:47] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
