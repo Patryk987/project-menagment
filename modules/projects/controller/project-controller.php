@@ -1,14 +1,17 @@
 <?php
 
-namespace Projects;
+namespace Projects\Controller;
+
+use Projects\ProjectsRepository;
 
 class AddProjects
 {
 
     use \ModuleManager\LoadFile;
 
-    public function __construct()
+    public function init_page()
     {
+
         $main_page = [
             "name" => "Add project",
             "link" => "add_project",
@@ -20,12 +23,18 @@ class AddProjects
             "belongs_to_project" => false
         ];
         \ModuleManager\Pages::set_modules($main_page);
+
     }
 
     public function add_project()
     {
         global $main;
+
+        // Style
         \InjectStyles::set_style(["name" => "add_project_style", "style" => "/modules/projects/assets/css/style.css"]);
+        \InjectStyles::set_style(["name" => "animation", "style" => "/modules/projects/assets/css/animation.css"]);
+
+        // script
         \InjectJavaScript::set_script(["name" => "auto_reload", "src" => "/modules/projects/assets/js/script.js"]);
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -38,8 +47,6 @@ class AddProjects
                 "user" => $_POST['user'],
                 "password" => $_POST['password'],
                 "port" => $_POST['port'],
-                // "user_id" => $_POST['user_id'],
-                // "role" => $_POST['role']
             ];
             $project_repository = new ProjectsRepository();
             $project_repository->create($data);
