@@ -17,56 +17,191 @@ class EditProjectsController
         global $main;
         if (!empty(\ModuleManager\Pages::$project) && \ModuleManager\Pages::$project->get_status() != \ProjectStatus::BLOCKED) {
 
-            $this->project_id = \ModuleManager\Pages::$project->get_project_id();
-            $this->sedjm = $main->sedjm;
+
+            if (\ModuleManager\Pages::$project->get_owner_id() == \ModuleManager\Main::$token['payload']->user_id) {
+
+                $this->project_id = \ModuleManager\Pages::$project->get_project_id();
+                $this->sedjm = $main->sedjm;
+
+                $main_page = [
+                    "name" => "Edit project",
+                    "link" => "project",
+                    "function" => [$this, "project_homepage"],
+                    "permission" => [1, 11],
+                    "status" => true,
+                    "icon" => basename(__DIR__) . "/../projects/assets/img/icon.svg",
+                    "position" => 999,
+                    "belongs_to_project" => true
+                ];
+                \ModuleManager\Pages::set_modules($main_page);
 
 
-            $main_page = [
-                "name" => "Edit project",
-                "link" => "edit_project",
-                "function" => [$this, "edit_project"],
-                "permission" => [1, 11],
-                "status" => true,
-                "icon" => basename(__DIR__) . "/../projects/assets/img/icon.svg",
-                "position" => 999,
-                "belongs_to_project" => true
-            ];
-            \ModuleManager\Pages::set_modules($main_page);
+                // project setting 
+                $main_page = [
+                    "name" => "Edit project",
+                    "link" => "edit_project",
+                    "function" => [$this, "edit_project"],
+                    "parent_link" => "project",
+                    "show" => true
+                ];
 
-            $main_page = [
-                "name" => "Add collaborators",
-                "link" => "add_collaborators",
-                "function" => [$this, "add_collaborators"],
-                "parent_link" => "edit_project",
-                "show" => true
-            ];
+                \ModuleManager\Pages::set_child_modules($main_page);
 
-            \ModuleManager\Pages::set_child_modules($main_page);
+                // Collaborators
+                $main_page = [
+                    "name" => "Collaborators list",
+                    "link" => "collaborators_list",
+                    "function" => [$this, "collaborators_list"],
+                    "parent_link" => "project",
+                    "show" => true
+                ];
+
+                \ModuleManager\Pages::set_child_modules($main_page);
+
+                $main_page = [
+                    "name" => "Add collaborators",
+                    "link" => "add_collaborators",
+                    "function" => [$this, "add_collaborators"],
+                    "parent_link" => "project",
+                    "show" => false
+                ];
+
+                \ModuleManager\Pages::set_child_modules($main_page);
+
+            }
+
 
 
         }
 
     }
 
-    public function edit_project()
+    public function project_homepage()
     {
 
-        return $this->edit_collaborators();
+        return "";
     }
 
-    public function edit_collaborators()
+    public function edit_project()
+    {
+        $form = new \ModuleManager\Forms\Forms("multipart/form-data");
+
+        $repository = new ProjectsRepository();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = $_POST;
+            $data['owner_id'] = \ModuleManager\Main::$token['payload']->user_id;
+
+            if (!empty($_FILES['photo']['name']))
+                $data["photo"] = $_FILES['photo'];
+
+            try {
+                $repository->update($this->project_id, $data);
+            } catch (\Throwable $th) {
+                echo $th->__toString();
+            }
+        }
+
+        $data = $repository->get_by_id($this->project_id);
+
+        $form->set_data([
+            "key" => "only_title",
+            "name" => "Project details",
+            "type" => "title"
+        ]);
+
+        $form->set_data([
+            "key" => "name",
+            "name" => "Name",
+            "type" => "input",
+            "value" => $data['name']
+        ]);
+
+        $form->set_data([
+            "key" => "photo",
+            "name" => "Photo",
+            "type" => "file",
+            "value" => $data['photo_url']
+        ]);
+
+        $form->set_data([
+            "key" => "description",
+            "name" => "Description",
+            "type" => "text",
+            "value" => $data['description']
+        ]);
+
+        // FTP
+
+        $form->set_data([
+            "key" => "only_title",
+            "name" => "serwer FTP",
+            "type" => "title",
+        ]);
+
+        $form->set_data([
+            "key" => "serwer",
+            "name" => "serwer",
+            "type" => "text",
+            "value" => $data['serwer']
+        ]);
+
+        $form->set_data([
+            "key" => "port",
+            "name" => "Port",
+            "type" => "number",
+            "value" => $data['port']
+        ]);
+
+        $form->set_data([
+            "key" => "user",
+            "name" => "user",
+            "type" => "text",
+            "value" => $data['user']
+        ]);
+
+        $form->set_data([
+            "key" => "start_folder",
+            "name" => "start_folder",
+            "type" => "text",
+            "value" => $data['start_folder']
+        ]);
+
+        $form->set_data([
+            "key" => "password",
+            "name" => "password",
+            "type" => "text",
+            "value" => $data['password']
+        ]);
+
+        // Project status 
+
+        $form->set_data([
+            "key" => "only_title",
+            "name" => "Project status ",
+            "type" => "title",
+        ]);
+
+        $form->set_data([
+            "key" => "status",
+            "name" => "Project status",
+            "type" => "select",
+            "options" => [
+                1 => "Active",
+                2 => "Archive"
+            ],
+            "value" => $data['status']
+        ]);
+
+
+        return $form->get_form("Edit project", "save");
+    }
+
+    public function collaborators_list()
     {
 
         global $main;
 
-        // Add style
-        // \InjectStyles::set_style(["name" => "add_task_style", "style" => "/modules/task/assets/css/style.css"]);
-
-        // Add js script
-        // \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/task/assets/js/elements.js"]);
-
-        // $url = __DIR__ . "/../view/edit_collaborators.html";
-        // return $this->get_page($url);
         $this->sedjm->clear_all();
         $this->sedjm->set_join(
             "LEFT",
@@ -103,7 +238,7 @@ class EditProjectsController
         $table = new \ModuleManager\Table(50);
 
         // Button
-        // $table->add_button("/add_collaborators", "", "Add collaborators");
+        $table->add_button("/add_collaborators", "", "Add collaborators");
 
         $table->set_id("collaborator_id");
 
@@ -122,7 +257,7 @@ class EditProjectsController
             collaborators.activeFindCollaborators();
         "]);
 
-        $link = __DIR__ . "/../view/edit_collaborators.html";
+        $link = __DIR__ . "/../view/edit-collaborators.html";
         return $this->get_page($link);
     }
 

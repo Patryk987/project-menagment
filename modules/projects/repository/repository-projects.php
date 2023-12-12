@@ -4,8 +4,70 @@ namespace Projects;
 
 class ProjectsRepository
 {
+    public $ftp_table = 'FTP';
+    public $project_table = 'Projects';
+
     public function get_by_id($id)
     {
+        global $main;
+        $main->sedjm->clear_all();
+        $main->sedjm->set_join(
+            'LEFT',
+            [
+                'table' => $this->ftp_table,
+                'column' => 'project_id'
+            ],
+            [
+                'table' => $this->project_table,
+                'column' => 'project_id'
+            ],
+        );
+
+
+        $data = [
+            'project_id',
+            'name',
+            'description',
+            'photo_url',
+            'status',
+            'create_time',
+            [
+                "column" => "serwer",
+                "alias" => "serwer",
+                "table" => $this->ftp_table
+            ],
+            [
+                "column" => "user",
+                "alias" => "user",
+                "table" => $this->ftp_table
+            ],
+            [
+                "column" => "password",
+                "alias" => "password",
+                "table" => $this->ftp_table
+            ],
+            [
+                "column" => "port",
+                "alias" => "port",
+                "table" => $this->ftp_table
+            ],
+            [
+                "column" => "start_folder",
+                "alias" => "start_folder",
+                "table" => $this->ftp_table
+            ]
+        ];
+
+
+        $main->sedjm->set_where("project_id", $id, '=');
+        $results = $main->sedjm->get($data, $this->project_table);
+        $main->sedjm->clear_all();
+
+        if (!empty($results)) {
+            return $results[0];
+        } else {
+            return [];
+        }
     }
 
     public function get_all()
@@ -22,12 +84,14 @@ class ProjectsRepository
         $project = $this->create_new_project($data);
         if ($project->get_status()) {
             $this->create_new_ftp_connect($data, $project->get_id());
-            // $this->create_collaborator($data, $project->get_id());
         }
     }
 
     public function update($id, $data)
     {
+        $this->update_project($id, $data);
+        $this->update_ftp_connect($id, $data);
+
     }
 
     public function delete_by_id($id)
@@ -56,13 +120,39 @@ class ProjectsRepository
             'create_time' => time(),
         ];
 
-        $results = $main->sedjm->insert($data, "Projects");
+        $results = $main->sedjm->insert($data, $this->project_table);
 
         $output = new Model\InsertModel($results['status']);
         if ($results['status']) {
             $output->set_id($results['id']);
         }
 
+        return $output;
+    }
+
+    private function update_project($id, $input): Model\InsertModel
+    {
+        global $main;
+        $data = [];
+
+        if (!empty($input['name']))
+            $data['name'] = $input['name'];
+
+        if (!empty($input['description']))
+            $data['description'] = $input['description'];
+
+        if (!empty($input['photo'])) {
+            $photo_url = $this->sava_photo($input['owner_id'], $input['photo']);
+            $data['photo_url'] = $photo_url;
+        }
+        if (!empty($input['status']))
+            $data['status'] = $input['status'];
+
+        $main->sedjm->clear_all();
+        $main->sedjm->set_where("project_id", $id, '=');
+        $results = $main->sedjm->update($data, $this->project_table);
+
+        $output = new Model\InsertModel($results['status']);
         return $output;
     }
 
@@ -78,13 +168,45 @@ class ProjectsRepository
             'port' => $data['port']
         ];
 
-        $results = $main->sedjm->insert($data, "FTP");
+        $results = $main->sedjm->insert($data, $this->ftp_table);
 
         $output = new Model\InsertModel($results['status']);
         if ($results['status']) {
             $output->set_id($results['id']);
         }
 
+        return $output;
+    }
+
+    private function update_ftp_connect($project_id, $input): Model\InsertModel
+    {
+        global $main;
+
+        $data = [];
+
+        if (!empty($input['serwer']))
+            $data['serwer'] = $input['serwer'];
+
+        if (!empty($input['user']))
+            $data['user'] = $input['user'];
+
+        if (!empty($input['password']))
+            $data['password'] = $input['password'];
+
+        if (!empty($input['port']))
+            $data['port'] = $input['port'];
+
+        if (!empty($data)) {
+            $main->sedjm->clear_all();
+            $main->sedjm->set_where("project_id", $project_id, '=');
+            $results = $main->sedjm->update($data, $this->ftp_table);
+
+            $output = new Model\InsertModel($results['status']);
+
+        } else {
+            $output = new Model\InsertModel(false);
+
+        }
         return $output;
     }
 
@@ -128,9 +250,10 @@ class ProjectsRepository
         $main->sedjm->clear_all();
         $main->sedjm->set_where("owner_id", $owner_id, '=');
         $main->sedjm->set_where("status", 1, '=');
-        $results = $main->sedjm->get($data, "Projects");
+        $results = $main->sedjm->get($data, $this->project_table);
         $main->sedjm->clear_all();
 
         return $results;
     }
+
 }
