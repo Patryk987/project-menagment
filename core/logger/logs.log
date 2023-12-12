@@ -87,3 +87,43 @@
 [2023-12-04 20:12:43] [ERROR] Include module: ProjectModel::get_project_id(): Return value must be of type int, null returned,0,/var/www/html/core/models/model-projects.php,28
 [2023-12-04 20:15:23] [ERROR] Incorrect function: Typed static property ModuleManager\Pages::$project must not be accessed before initialization,0,/var/www/html/core/function/function.php,523
 [2023-12-04 20:17:15] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-12 20:18:42] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:42] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:42] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:42] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:42] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:42] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:42] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:43] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:43] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:43] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:43] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:43] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:43] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:43] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:48] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:48] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:48] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:48] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:48] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:48] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:18:48] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/repository/repository-projects.php,156
+[2023-12-12 20:36:58] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-12 20:50:15] [ERROR] Unexpected error: Undefined array key "CSRF_token",/var/www/html/core/class/class-forms.php,19
+[2023-12-12 20:50:15] [ERROR] CSRF attack detected: 
+[2023-12-12 20:50:21] [ERROR] Unexpected error: Undefined array key "CSRF_token",/var/www/html/core/class/class-forms.php,19
+[2023-12-12 20:50:21] [ERROR] CSRF attack detected: 
+[2023-12-12 20:50:30] [ERROR] Unexpected error: Undefined array key "CSRF_token",/var/www/html/core/class/class-forms.php,19
+[2023-12-12 20:50:30] [ERROR] CSRF attack detected: 
+[2023-12-12 20:52:05] [ERROR] Unexpected error: Undefined array key "CSRF_token",/var/www/html/core/class/class-forms.php,19
+[2023-12-12 20:52:05] [ERROR] CSRF attack detected: 
+[2023-12-12 20:52:42] [ERROR] Unexpected error: Undefined array key "type",/var/www/html/modules/projects/controller/project-setting-controller.php,206
+[2023-12-12 20:54:42] [ERROR] Unexpected error: Undefined array key "type",/var/www/html/modules/projects/controller/project-setting-controller.php,206
+[2023-12-12 20:54:53] [ERROR] Unexpected error: Undefined array key "type",/var/www/html/modules/projects/controller/project-setting-controller.php,206
+[2023-12-12 20:54:56] [ERROR] Unexpected error: Undefined array key "type",/var/www/html/modules/projects/controller/project-setting-controller.php,206
+[2023-12-12 20:54:57] [ERROR] Unexpected error: Undefined array key "type",/var/www/html/modules/projects/controller/project-setting-controller.php,206
+[2023-12-12 20:55:02] [ERROR] Unexpected error: Undefined array key "type",/var/www/html/modules/projects/controller/project-setting-controller.php,206
+[2023-12-12 20:59:01] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,265
+[2023-12-12 21:02:10] [WARNING] Unexpected warning: Typed static property ModuleManager\Pages::$project must not be accessed before initialization
+[2023-12-12 21:02:16] [WARNING] Unexpected warning: Typed static property ModuleManager\Pages::$project must not be accessed before initialization
+[2023-12-12 21:02:24] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112

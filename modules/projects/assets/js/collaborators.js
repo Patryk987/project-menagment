@@ -19,12 +19,13 @@ class AddCollaborators {
     }
 
     active() {
-        let x = document.querySelectorAll('.invite');
-        x.forEach((element) => {
+        let invite = document.querySelectorAll('.invite');
+        invite.forEach((element) => {
             element.addEventListener('click', async () => {
 
                 let id = element.getAttribute('data-id');
                 let response = await this.#addUsers(id);
+                element.innerHTML = "invited"
 
             });
 
@@ -66,7 +67,7 @@ class SearchCollaborators extends AddCollaborators {
 
         cell1.innerHTML = element.nick;
         cell2.innerHTML = element.email;
-        cell3.innerHTML = `<div class='invite' data-id=${element.user_id}>Invite</div>`;
+        cell3.innerHTML = `<div class='invite' data-id=${element.user_id}>Send invite</div>`;
     }
 
     #activeFinder() {

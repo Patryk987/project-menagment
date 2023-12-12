@@ -153,9 +153,11 @@ class ProjectsRepository implements ProjectsRepositoryInterface
     {
         $output = [];
         $projects_id = array_merge($this->user_as_admin($user_id), $this->user_as_collaborators($user_id));
-
+        // $projects_id = array_unique($projects_id);
         foreach ($projects_id as $project_id) {
-            $output[] = (int) $project_id["project_id"];
+            $id = (int) $project_id["project_id"];
+            if (!in_array($id, $output))
+                $output[] = $id;
             // $output[] = $this->get_by_id($project_id["project_id"]);
         }
 

@@ -11,7 +11,7 @@ class Forms
 
     public $form_html;
 
-    public function __construct($enctype = "text/plain", $id_field = null)
+    public function __construct($enctype = "multipart/form-data", $id_field = null)
     {
 
         if (!empty($_SESSION['CSRF_token']) && $_SERVER["REQUEST_METHOD"] == "POST") {

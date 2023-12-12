@@ -202,6 +202,17 @@ class EditProjectsController
 
         global $main;
 
+
+        if (!empty($_GET['type']) && $_GET['type'] == 'delete' && !empty($_GET['id'])) {
+            $this->sedjm->clear_all();
+            $this->sedjm->set_where("user_id", $_GET['id'], "=");
+            $this->sedjm->set_where("project_id", $this->project_id, "=");
+            $this->sedjm->delete("Collaborators");
+            $this->sedjm->clear_all();
+
+        }
+
+
         $this->sedjm->clear_all();
         $this->sedjm->set_join(
             "LEFT",
@@ -218,6 +229,7 @@ class EditProjectsController
         $collaborators = $this->sedjm->get(
             [
                 'collaborator_id',
+                'user_id',
                 [
                     "column" => "nick",
                     "alias" => "nick",
@@ -232,7 +244,7 @@ class EditProjectsController
 
         $header = [
             "Nick" => ["nick"],
-            "E-mail" => ["email"],
+            "E-mail" => ["email"]
         ];
 
         $table = new \ModuleManager\Table(50);
@@ -240,7 +252,9 @@ class EditProjectsController
         // Button
         $table->add_button("/add_collaborators", "", "Add collaborators");
 
-        $table->set_id("collaborator_id");
+        $table->set_action("", 'delete', 'delete');
+
+        $table->set_id("user_id");
 
         return $table->generate_table($collaborators, $header);
     }
