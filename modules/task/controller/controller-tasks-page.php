@@ -137,7 +137,7 @@ class TasksPageController
         \InjectJavaScript::set_script(["name" => "script", "src" => "/modules/task/assets/js/script.js"]);
         \InjectJavaScript::set_script(["name" => "kanban", "src" => "/modules/task/assets/js/kanban.js"]);
         \InjectJavaScript::set_script(["name" => uniqid(), "src" => "/modules/task/assets/js/load-kanban-script.js"]);
-        \InjectJavaScript::set_script(["name" => "open_note", "src" => "/modules/notes/assets/js/open-note.js"]);
+        \InjectJavaScript::set_script(["name" => "open_note", "src" => "/modules/task/assets/js/open-note.js"]);
 
 
         \InjectJavaScript::set_script(

@@ -6,7 +6,7 @@ class Task extends TasksRepository {
         var tasks = await this.getAllTask();
 
         for (let task of tasks) {
-            await this.#addNewBlock(task.task_id, task.task_name, task.task_tags_id);
+            await this.#addNewBlock(task.task_id, task.task_name, task.task_status_id);
         }
 
         this.#activeBlocks();
@@ -60,7 +60,7 @@ class Task extends TasksRepository {
             let taskId = await taskElement.getAttribute("id");
             let actualStatus = await taskElement.getAttribute("status");
             let newStatus = actualStatus == 2 ? 1 : 2;
-            await this.updateTask(taskId, { "task_tags": newStatus });
+            let response = await this.updateTask(taskId, { "task_status": newStatus });
             taskElement.setAttribute("status", newStatus);
             this.#activeBlocks();
         });
