@@ -1,0 +1,140 @@
+{
+    "issues": {
+        "Issues": {
+            "issues_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": true,
+                "AUTO_INCREMENT": true,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true
+            },
+            "project_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "author_id": {
+                "type": "int",
+                "length": "100",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": true,
+                "unique": false
+            },
+            "create_date": {
+                "type": "int",
+                "length": "100",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "update_date": {
+                "type": "varchar",
+                "length": "100",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "title": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "description": {
+                "type": "text",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": true,
+                "unique": false
+            },
+            "status": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            }
+        },
+        "AssignedIssuesUsers": {
+            "assigned_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": true,
+                "AUTO_INCREMENT": true,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": true
+            },
+            "issues_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "user_id": {
+                "type": "int",
+                "length": "100",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
+            "assign_date": {
+                "type": "int",
+                "length": "100",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            }
+        }
+    }
+}
