@@ -20,7 +20,9 @@ class Table
     protected $sort_list = [];
     public $buttons = "";
 
-    public function __construct($row_per_page = 20, $actual_page = 1)
+    private array $converter = [];
+
+    public function __construct($row_per_page = 25, $actual_page = 1)
     {
         $this->actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $this->row_per_page = $row_per_page;
@@ -32,21 +34,254 @@ class Table
         }
     }
 
+    // Setters
+    public function set_id($id)
+    {
+        $this->id = $id;
+    }
+
+    public function set_converter($key, $function)
+    {
+        $this->converter[$key] = $function;
+    }
+
+    public function set_toggle($toggle)
+    {
+        $this->toggle = $toggle;
+    }
+
+    public function add_mass_action($klucz, $name)
+    {
+        $this->mass_action[$klucz] = $name;
+    }
+
+    public function set_page($page)
+    {
+        if (!empty($page)) {
+            if ($page > 0) {
+                $this->actual_page = $page - 1;
+            } else {
+                $this->actual_page = 0;
+            }
+        }
+    }
+
+    public function set_action($link, $icon, $label = '')
+    {
+        $this->action[] = [
+            "link" => $link,
+            "icon" => $icon,
+            "label" => $label
+        ];
+    }
+
+    public function set_additional(array $additional)
+    {
+        $this->additional[] = $additional;
+    }
+
+    public function add_button($link, $icon, $label = '')
+    {
+        $this->more_filter[] = [
+            "link" => $link,
+            "icon" => $icon,
+            "label" => $label
+        ];
+    }
+
+    public function add_filter($placeholder, $key, $filed_type, $options = [])
+    {
+        $this->filter_list[] = [
+            "placeholder" => $placeholder,
+            "filed_type" => $filed_type,
+            "row_key" => $key,
+            "options" => $options
+        ];
+    }
+
+    public function add_sort($placeholder, $key, $options = [])
+    {
+        $this->sort_list[] = [
+            "placeholder" => $placeholder,
+            "row_key" => $key,
+            "options" => $options
+        ];
+    }
+
+    // Create table
+    public function generate_table($data, $key = null)
+    {
+        if (!empty($_GET['page'])) {
+            $this->set_page($_GET['page']);
+        }
+
+        $this->data = $data;
+        $this->key = $key;
+
+        $table = "<div class='pole_filtry'>";
+        $table .= "<div class='buttons'>";
+        $table .= $this->filter();
+        if (count($this->filter_list) > 0) {
+            $table .= $this->filter_icon();
+        }
+        if (count($this->sort_list) > 0) {
+            $table .= $this->sort_icon();
+        }
+        $table .= "</div>";
+        $table .= $this->page_navigation();
+        $table .= "</div>";
+        $table .= $this->filter_inputs();
+        $table .= $this->sort_inputs();
+        $table .= "<div class='table'>";
+        $table .= "<form method='post'>";
+        $table .= "<div class='cms_table'>";
+        $table .= "<table>";
+        $table .= $this->create_header();
+        $table .= $this->create_content();
+        $table .= "</table>";
+        $table .= "</div>";
+        $table .= $this->mass_action();
+        $table .= "</form>";
+        $table .= "</div>";
+
+        return $table;
+    }
+
+    // Private
+
     private function arrow($value)
     {
         $arrow = "
-                    <div class='arrows'>
-                        <div class='up " . (!empty($_GET['sort']) && $value == $_GET['sort'] && $_GET['order'] == "ASC" ? "active" : "not_active") . "'>
-                         " . file_get_contents(__DIR__ . "/../../panel-template/img/up-arrow.svg") . "   
-                        </div>
-                        <div class='down " . (!empty($_GET['sort']) && $value == $_GET['sort'] && $_GET['order'] == "DESC" ? "active" : "not_active") . "'>
-                         " . file_get_contents(__DIR__ . "/../../panel-template/img/down-arrow.svg") . "                      
-                        </div>
-                    </div>
-                ";
+            <div class='arrows'>
+                <div class='up " . (!empty($_GET['sort']) && $value == $_GET['sort'] && $_GET['order'] == "ASC" ? "active" : "not_active") . "'>
+                    " . file_get_contents(__DIR__ . "/../../panel-template/img/up-arrow.svg") . "   
+                </div>
+                <div class='down " . (!empty($_GET['sort']) && $value == $_GET['sort'] && $_GET['order'] == "DESC" ? "active" : "not_active") . "'>
+                    " . file_get_contents(__DIR__ . "/../../panel-template/img/down-arrow.svg") . "                      
+                </div>
+            </div>
+        ";
 
         return $arrow;
     }
+
+    private function toggle_row($data = []): string
+    {
+        $body = "</tr>";
+        $body .= "<tr class='explode hide'>";
+        $body .= "<td colspan='" . count($data) + 2 . "'>";
+        $body .= "<div class='boxes'>";
+
+        foreach ($this->additional as $value) {
+
+            // foreach ($data as $key => $value) {
+
+            //     if (in_array($key, $value['key'])) {
+            //         $body .= "<p>" . $key_k . ": " . "<span class='value'>" . $value . " </span></p>";
+            //     }
+
+            // }
+
+            $body .= "<div class='content'>";
+            $body .= "<p class='header'>" . $value['header'] . "</p>";
+            $body .= "<div>";
+
+            if (isset($value['key'])) {
+
+                foreach ($data[$value['key']] as $data_key => $data_value) {
+
+                    if (array_key_exists($data_key, $value['field']))
+                        $body .= "<p><b>" . $value['field'][$data_key] . "</b>: " . $data_value . "<p>";
+
+                }
+
+            } else {
+
+                foreach ($data as $data_key => $data_value) {
+
+                    if (array_key_exists($data_key, $value['field']))
+                        $body .= "<p><b>" . $value['field'][$data_key] . "</b>: " . $data_value . "<p>";
+
+                }
+            }
+
+            $body .= "</div>";
+            $body .= "</div>";
+
+        }
+
+        $body .= "</div>";
+        $body .= "</td>";
+        $body .= "</tr>";
+
+        return $body;
+
+    }
+
+    private function create_link($key, $value, $first): string
+    {
+        $output = "";
+        if ($first) {
+            $output = "?";
+        } else {
+            $output = "&";
+        }
+
+        $output .= $key . "=" . $value;
+
+        return $output;
+
+    }
+
+    private function select($values)
+    {
+        $html = "<label>";
+        $html .= '<select name="' . $values['key'] . '" id="" style="color: black !important">';
+        $html .= "<option value=''>" . $values['name'] . "</option>";
+        foreach ($values['options'] as $key => $value) {
+            if (!empty($_GET[$values['key']]) && $_GET[$values['key']] == $key) {
+                $html .= "<option value='$key' selected>$value</option>";
+            } else {
+                $html .= "<option value='$key'>$value</option>";
+            }
+        }
+
+        $html .= '</select>';
+        $html .= "</label>";
+
+        return $html;
+    }
+
+    private function input($values)
+    {
+        $html = "<label>";
+        $html .= "<input type='" . $values['type'] . "' placeholder='" . $values['name'] . "' name='" . $values['key'] . "'  value='" . (!empty($_POST[$values['key']]) ? $_POST[$values['key']] : "") . "'>";
+        $html .= "</label>";
+
+        return $html;
+    }
+
+    private function filter_icon()
+    {
+        $html = "<div class='button filtr_button'>";
+        $html .= "<img src='/panel-template/img/filter_icon.svg' />";
+        $html .= "<p>Filtruj</p>";
+        $html .= "</div>";
+
+        return $html;
+    }
+
+    private function sort_icon()
+    {
+        $html = "<div class='button sort_button'>";
+        $html .= "<img src='/panel-template/img/sort_icon.svg' />";
+        $html .= "<p>Sortuj</p>";
+        $html .= "</div>";
+
+        return $html;
+    }
+
+    // Protected
 
     protected function create_header()
     {
@@ -158,64 +393,11 @@ class Table
 
     }
 
-    private function toggle_row($data = []): string
-    {
-        $body = "</tr>";
-        $body .= "<tr class='explode hide'>";
-        $body .= "<td colspan='" . count($data) + 2 . "'>";
-        $body .= "<div class='boxes'>";
-
-        foreach ($this->additional as $value) {
-
-            // foreach ($data as $key => $value) {
-
-            //     if (in_array($key, $value['key'])) {
-            //         $body .= "<p>" . $key_k . ": " . "<span class='value'>" . $value . " </span></p>";
-            //     }
-
-            // }
-
-            $body .= "<div class='content'>";
-            $body .= "<p class='header'>" . $value['header'] . "</p>";
-            $body .= "<div>";
-
-            if (isset($value['key'])) {
-
-                foreach ($data[$value['key']] as $data_key => $data_value) {
-
-                    if (array_key_exists($data_key, $value['field']))
-                        $body .= "<p><b>" . $value['field'][$data_key] . "</b>: " . $data_value . "<p>";
-
-                }
-
-            } else {
-
-                foreach ($data as $data_key => $data_value) {
-
-                    if (array_key_exists($data_key, $value['field']))
-                        $body .= "<p><b>" . $value['field'][$data_key] . "</b>: " . $data_value . "<p>";
-
-                }
-            }
-
-            $body .= "</div>";
-            $body .= "</div>";
-
-        }
-
-        $body .= "</div>";
-        $body .= "</td>";
-        $body .= "</tr>";
-
-        return $body;
-
-    }
-
     protected function create_content()
     {
-        $row = 0;
         $first_row = $this->actual_page * $this->row_per_page;
-        $last_row = $first_row + $this->row_per_page;
+        array_splice($this->data, 0, $first_row);
+        array_splice($this->data, $this->row_per_page);
 
         $this->actual_link = explode("?", $this->actual_link)[0];
 
@@ -224,21 +406,19 @@ class Table
             $order = $_GET['order'];
         }
 
+        if (isset($_GET['sort'])) {
+            \Helper::sort_array($this->data, $_GET['sort'], $order);
+        }
+
         $body = "<tbody>";
+
+
         if (!empty($this->key)) {
-            if (isset($_GET['sort'])) {
-                \Helper::sort_array($this->data, $_GET['sort'], $order);
-            }
 
             foreach ($this->data as $data) {
 
-                $row++;
-                if ($last_row < $row)
-                    break;
-                if ($first_row > $row)
-                    continue;
-
                 $body .= "<tr class='standard'>";
+
                 if (!empty($this->id) && !empty($this->mass_action)) {
 
                     $body .= "<td class='check_field'>";
@@ -252,6 +432,7 @@ class Table
 
                 }
                 $body .= "</td>";
+
                 if ($this->toggle) {
                     $body .= "<td class='exploder'>";
                     $body .= file_get_contents(__DIR__ . "/../template/img/down-arrow.svg");
@@ -289,6 +470,21 @@ class Table
 
                     foreach ($data as $key => $value) {
 
+                        try {
+                            if (!empty($this->converter[$key])) {
+                                $value = call_user_func($this->converter[$key], $value);
+                            }
+                        } catch (\Throwable $th) {
+                            $details = [
+                                "message" => $th->getMessage(),
+                                "code" => $th->getCode(),
+                                "file" => $th->getFile(),
+                                "line" => $th->getLine()
+                            ];
+                            \ModuleManager\Main::set_error('Include module', 'WARING', $details);
+                        }
+
+
                         if (in_array($key, $value_k)) {
                             $body .= "<span class='value'>" . $value . " </span>";
                         }
@@ -306,11 +502,6 @@ class Table
         } else {
 
             foreach ($this->data as $data) {
-                $row++;
-                if ($last_row < $row)
-                    break;
-                if ($first_row > $row)
-                    continue;
 
                 $body .= "<tr>";
                 $body .= "<td>";
@@ -350,20 +541,6 @@ class Table
 
         return $body;
     }
-    public function set_id($id)
-    {
-        $this->id = $id;
-    }
-
-    public function set_toggle($toggle)
-    {
-        $this->toggle = $toggle;
-    }
-
-    public function add_mass_action($klucz, $name)
-    {
-        $this->mass_action[$klucz] = $name;
-    }
 
     protected function mass_action()
     {
@@ -385,46 +562,6 @@ class Table
         } else {
             return "";
         }
-    }
-
-    public function set_page($page)
-    {
-        if (!empty($page)) {
-            if ($page > 0) {
-                $this->actual_page = $page - 1;
-            } else {
-                $this->actual_page = 0;
-            }
-        }
-    }
-
-    public function set_action($link, $icon, $label = '')
-    {
-        $this->action[] = [
-            "link" => $link,
-            "icon" => $icon,
-            "label" => $label
-        ];
-    }
-
-    public function set_additional(array $additional)
-    {
-        $this->additional[] = $additional;
-    }
-
-    private function create_link($key, $value, $first): string
-    {
-        $output = "";
-        if ($first) {
-            $output = "?";
-        } else {
-            $output = "&";
-        }
-
-        $output .= $key . "=" . $value;
-
-        return $output;
-
     }
 
     protected function page_navigation()
@@ -476,15 +613,6 @@ class Table
         return $button;
     }
 
-    public function add_button($link, $icon, $label = '')
-    {
-        $this->more_filter[] = [
-            "link" => $link,
-            "icon" => $icon,
-            "label" => $label
-        ];
-    }
-
     protected function filter()
     {
 
@@ -497,59 +625,6 @@ class Table
         }
         // $button .= "</div>";
         return $button;
-    }
-
-    private function filter_icon()
-    {
-        $html = "<div class='button filtr_button'>";
-        $html .= "<img src='/panel-template/img/filter_icon.svg' />";
-        $html .= "<p>Filtruj</p>";
-        $html .= "</div>";
-
-        return $html;
-    }
-
-    private function sort_icon()
-    {
-        $html = "<div class='button sort_button'>";
-        $html .= "<img src='/panel-template/img/sort_icon.svg' />";
-        $html .= "<p>Sortuj</p>";
-        $html .= "</div>";
-
-        return $html;
-    }
-
-    public function action($action, $function)
-    {
-
-    }
-
-    private function select($values)
-    {
-        $html = "<label>";
-        $html .= '<select name="' . $values['key'] . '" id="" style="color: black !important">';
-        $html .= "<option value=''>" . $values['name'] . "</option>";
-        foreach ($values['options'] as $key => $value) {
-            if (!empty($_GET[$values['key']]) && $_GET[$values['key']] == $key) {
-                $html .= "<option value='$key' selected>$value</option>";
-            } else {
-                $html .= "<option value='$key'>$value</option>";
-            }
-        }
-
-        $html .= '</select>';
-        $html .= "</label>";
-
-        return $html;
-    }
-
-    private function input($values)
-    {
-        $html = "<label>";
-        $html .= "<input type='" . $values['type'] . "' placeholder='" . $values['name'] . "' name='" . $values['key'] . "'  value='" . (!empty($_POST[$values['key']]) ? $_POST[$values['key']] : "") . "'>";
-        $html .= "</label>";
-
-        return $html;
     }
 
     protected function filter_inputs()
@@ -606,25 +681,6 @@ class Table
         return $html;
     }
 
-    public function add_filter($placeholder, $key, $filed_type, $options = [])
-    {
-        $this->filter_list[] = [
-            "placeholder" => $placeholder,
-            "filed_type" => $filed_type,
-            "row_key" => $key,
-            "options" => $options
-        ];
-    }
-
-    public function add_sort($placeholder, $key, $options = [])
-    {
-        $this->sort_list[] = [
-            "placeholder" => $placeholder,
-            "row_key" => $key,
-            "options" => $options
-        ];
-    }
-
     protected function sort_inputs()
     {
         $html = "<div id='sort_inputs' class='toggle_box options_list'>";
@@ -649,44 +705,5 @@ class Table
         $html .= "</div>";
 
         return $html;
-    }
-
-    public function generate_table($data, $key = null)
-    {
-        if (!empty($_GET['page'])) {
-            $this->set_page($_GET['page']);
-        }
-
-        $this->data = $data;
-        $this->key = $key;
-
-        $table = "<div class='pole_filtry'>";
-        // $table .= $this->filter();
-        $table .= "<div class='buttons'>";
-        $table .= $this->filter();
-        if (count($this->filter_list) > 0) {
-            $table .= $this->filter_icon();
-        }
-        if (count($this->sort_list) > 0) {
-            $table .= $this->sort_icon();
-        }
-        $table .= "</div>";
-        $table .= $this->page_navigation();
-        $table .= "</div>";
-        $table .= $this->filter_inputs();
-        $table .= $this->sort_inputs();
-        $table .= "<div class='table'>";
-        $table .= "<form method='post'>";
-        $table .= "<div class='cms_table'>";
-        $table .= "<table>";
-        $table .= $this->create_header();
-        $table .= $this->create_content();
-        $table .= "</table>";
-        $table .= "</div>";
-        $table .= $this->mass_action();
-        $table .= "</form>";
-        $table .= "</div>";
-
-        return $table;
     }
 }

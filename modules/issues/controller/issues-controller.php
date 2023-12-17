@@ -3,6 +3,7 @@
 namespace Issues\Controller;
 
 use \ModuleManager\Forms\Forms;
+use \Issues\Enums\IssuesStatus;
 
 class IssuesController
 {
@@ -87,16 +88,40 @@ class IssuesController
 
     public function list_issues()
     {
+        // Add style
+        \InjectStyles::set_style(["name" => "add_file_style", "style" => "/modules/issues/assets/css/style.css"]);
 
         $issues = $this->repository->get_all();
+        // $issues = [];
+        // for ($i = 0; $i < 1000000; $i++) {
+        //     $issues[] = [
+        //         "title" => $i . "title",
+        //         "create_date" => $i . "create_date",
+        //         "status" => $i . "status",
+        //     ];
+        // }
         $header = [
             "Tytuł" => ["title"],
-            "Status" => ["status"],
             "Create date" => ["create_date"],
+            "Status" => ["status"]
         ];
         $table = new \ModuleManager\Table(50);
-
+        $table->set_converter("status", [$this, "convert_status"]);
+        // return $table->generate_table($issues, $header);
         return $table->generate_table($issues->get_message(), $header);
+    }
+
+    public function convert_status($value)
+    {
+
+        $value = IssuesStatus::from($value);
+        $class = $value->get_class();
+
+        $html = '<div class="' . $class . '">';
+        $html .= $value->get_name();
+        $html .= '</div>';
+
+        return $html;
     }
 
 

@@ -20,5 +20,16 @@ enum IssuesStatus: int
             self::ARCHIVE => "Archive",
         };
     }
+
+    public function get_class(): string
+    {
+        return match ($this) {
+            self::TODO => "error",
+            self::INPROGRESS => "warn",
+            self::TEST => "warn",
+            self::DONE => "correct",
+            self::ARCHIVE => "neutral",
+        };
+    }
 }
 

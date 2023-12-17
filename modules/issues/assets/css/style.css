@@ -1,0 +1,29 @@
+.error,
+.warn,
+.correct,
+.neutral {
+    width: 200px;
+    padding: 10px;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.error {
+    background-color: #ff9999;
+    color: #c00;
+}
+
+.warn {
+    background-color: #ffff99;
+    color: #c08500;
+}
+
+.correct {
+    background-color: #99ff99;
+    color: #0c0;
+}
+
+.neutral {
+    background-color: #f0f0f0;
+    color: #333;
+}
