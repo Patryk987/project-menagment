@@ -1,127 +1,95 @@
-class Note {
+class Details {
 
     single_note = document.querySelector("#single_note");
-    static notepad_id;
-    static project_id;
-    note_id = 0;
 
-    active(data = null) {
-        const box = document.querySelectorAll("task-box");
+    title;
+    data;
 
-        box.forEach(item => {
-            item.addEventListener("click", () => {
-                this.note_id = item.dataset.id;
-                this.#open(item.dataset.id);
-            })
-        })
+    active() {
+        this.#insertContent();
         this.#close();
     }
 
-    #activeUpdateTitle(id) {
-
-        const noteTitle = document.querySelector("#note_title");
-
-        noteTitle.addEventListener("change", () => {
-            this.update_notes(id, noteTitle.value)
-            document.querySelector(".box[data-id='" + id + "'").querySelector(".title").innerHTML = noteTitle.value;
-        })
-
-        const deleteButton = document.querySelector("#single_note .delete");
-
-        deleteButton.addEventListener("click", async () => {
-            var data = await this.delete_note(id);
-            document.querySelector("simple-card[data-id='" + id + "'").style.display = "none";
-            this.single_note.classList.remove("show_single_note");
-        })
-
-    }
-
-    #addImage(id) {
-        var background = document.querySelector('.background');
-
-        background.addEventListener('click', (item) => {
-
-            var fileInput = document.getElementById('fileInput');
-            fileInput.click();
-
-            fileInput.addEventListener('change', () => {
-
-                var selectedFile = fileInput.files[0];
-
-                if (selectedFile && selectedFile.type.startsWith('image/')) {
-                    var reader = new FileReader();
-                    reader.addEventListener(
-                        "load",
-                        async () => {
-                            background.style.backgroundImage = 'url("' + reader.result + '")';
-                            await this.update_notes(id, "", "", reader.result);
-                        },
-                        false,
-                    );
-
-                    reader.readAsDataURL(selectedFile);
-                } else {
-                    alert('Wybierz plik w formacie obrazka (np. JPG, PNG, GIF)');
-                }
-            });
-
-        });
-    }
-
-    async #open(id) {
-
+    async open(id, data) {
 
         this.single_note.querySelector(".content").innerHTML = `<div class="loader"></div>`;
         this.single_note.classList.add("show_single_note");
 
-        var data = await this.#download_data(id);
+
+    }
+
+    /**
+     * 
+     * @param {title, note, update_time, background} data 
+     */
+    insertData(data) {
+
         document.querySelector('.modify_data').innerHTML = data.create_time;
 
         var title = data.title;
-        var note = data.note;
+        var content = data.content;
         var update_time = data.update_time;
+        var author = data.author;
         var background = data.background;
         if (background) background = "url(/" + background + ")";
         this.single_note.querySelector(".content").innerHTML = `
             <note-content 
                 title="` + title + `" 
-                author="Jan kowalski" 
+                author="`+ author + `" 
                 last_modify="` + update_time + `"
                 background="` + background + `" />`;
+
+        this.#updateTitle();
+        this.#activeTextEditor(content);
+
+    }
+
+    insertComments() {
+
+    }
+
+    // Private
+    addChangeTitle(callback) {
+        this.title = callback;
+    }
+
+    #updateTitle() {
+        const title = document.querySelector("#note_title");
+
+        title.addEventListener("change", () => {
+            this.title(title.value);
+        })
+    }
+
+    addChangeData(callback) {
+        this.data = callback;
+    }
+
+    #activeTextEditor(content) {
 
         // Active text editor
         var text_editor = new TextEditor;
         text_editor.load();
-        text_editor.loadContent(note);
+        text_editor.loadContent(content);
+        // this.#updateNote(text_editor, id);
 
-        text_editor.addChangeListener((newValue) => {
-            this.update_notes(id, "", newValue);
+        text_editor.addChangeListener((value) => {
+            this.data(value);
         });
-
-        this.#addImage(id);
-        this.#activeUpdateTitle(id);
 
     }
 
-    async #download_data(id) {
+    #addImage() {
 
-        // let response = await api.get("api/get_note", {
-        //     "note_id": id
-        // });
+    }
 
-        // var message = [];
-
-        // if (response && response.status) {
-        //     message = await response.message[0];
-        // }
-
-        return [];
+    #insertContent() {
 
     }
 
     #close() {
 
-        this.single_note.querySelector(".close").addEventListener("click", () => {
+        this.single_note.querySelector("#single_note .close").addEventListener("click", () => {
             this.single_note.classList.remove("show_single_note");
         });
 

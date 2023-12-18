@@ -3,6 +3,7 @@ class loadKanban {
     kanban;
     taskRepository;
     TaskTagsRepository;
+    details;
 
     kanbanStatusIdName = 'kanban';
 
@@ -109,6 +110,7 @@ class loadKanban {
                 let id = element.closest("kanban-view").getAttribute('data-id');
                 this.TaskTagsRepository.deleteTaskTags(id);
                 element.closest("kanban-view").remove();
+                this.load();
             })
         });
     }
@@ -122,7 +124,7 @@ class loadKanban {
                 let tag_name = "new task";
                 let response = await this.taskRepository.createNewTask(tag_name, tag_id);
                 this.#addTaskToTagField(tag_name, tag_id, response.id);
-                // this.#active();
+                // this.#updateTaskTag();
             })
         });
 
@@ -133,9 +135,49 @@ class loadKanban {
         this.#updateTaskTag();
         this.#delete();
         this.#addNewTask();
+        this.#activeClick();
 
-        let note = new Note;
-        note.active();
+        this.details = new Details;
+        this.details.active();
+    }
+
+    #activeClick() {
+        var taskBox = document.querySelectorAll("task-box");
+        taskBox.forEach(element => {
+            element.addEventListener("click", async () => {
+                let id = element.getAttribute('data-id');
+                this.details.open();
+
+                var details = await this.taskRepository.getTaskByDetailsId(id);
+                var detailsData = details[0];
+                if (detailsData.author.additional_data.name) {
+                    var nick = detailsData.author.additional_data.name + " " + detailsData.author.additional_data.surname;
+                } else {
+                    var nick = detailsData.author.data.nick;
+
+                }
+                var data = {
+                    "title": detailsData.task_name,
+                    "content": detailsData.content,
+                    "update_time": detailsData.update_date,
+                    "create_time": detailsData.create_date,
+                    "background": "",
+                    "author": nick
+                }
+
+                this.details.insertData(data);
+
+                this.details.addChangeTitle((value) => {
+                    console.log(value, id);
+                    this.taskRepository.updateTask(id, { "name": value })
+                });
+
+                this.details.addChangeData((value) => {
+                    this.taskRepository.updateTask(id, { "content": value })
+                });
+            })
+        })
+
     }
 
     async load() {

@@ -3,6 +3,7 @@ class Task extends TasksRepository {
     taskBlock = document.querySelector("#task");
 
     async loadTask() {
+        this.taskBlock.innerHTML = "";
         var tasks = await this.getAllTask();
 
         for (let task of tasks) {
