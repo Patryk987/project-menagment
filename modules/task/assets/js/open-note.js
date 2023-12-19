@@ -4,10 +4,14 @@ class Details {
 
     title;
     data;
+    deleteActiveNote;
+    addNewBackgroundFile;
 
     active() {
         this.#insertContent();
-        this.#close();
+        this.single_note.querySelector("#single_note .close").addEventListener("click", () => {
+            this.close();
+        });
     }
 
     async open(id, data) {
@@ -31,7 +35,7 @@ class Details {
         var update_time = data.update_time;
         var author = data.author;
         var background = data.background;
-        if (background) background = "url(/" + background + ")";
+        if (background) background = "url(" + background + ")";
         this.single_note.querySelector(".content").innerHTML = `
             <note-content 
                 title="` + title + `" 
@@ -40,6 +44,8 @@ class Details {
                 background="` + background + `" />`;
 
         this.#updateTitle();
+        this.#deleteNote();
+        this.#noteBackground();
         this.#activeTextEditor(content);
 
     }
@@ -61,6 +67,55 @@ class Details {
         })
     }
 
+    deleteNote(callback) {
+        this.deleteActiveNote = callback;
+    }
+
+    #deleteNote() {
+
+        const deleteNote = document.querySelector("#single_note .delete");
+
+        deleteNote.addEventListener("click", () => {
+            this.deleteActiveNote(true);
+        })
+    }
+
+    changeNoteBackground(callback) {
+        this.addBackgroundFile = callback;
+    }
+
+    async #noteBackground() {
+
+        var background = await document.querySelector('#single_note .background');
+
+        await background.addEventListener('click', async (item) => {
+
+            var fileInput = await document.getElementById('fileInput');
+            await fileInput.click();
+
+            await fileInput.addEventListener('change', async () => {
+
+                var selectedFile = await fileInput.files[0];
+
+                if (selectedFile && selectedFile.type.startsWith('image/')) {
+                    var reader = new FileReader();
+                    await reader.addEventListener(
+                        "load",
+                        async () => {
+                            background.style.backgroundImage = 'url("' + reader.result + '")';
+                            this.addBackgroundFile(await reader.result);
+                        },
+                        false,
+                    );
+
+                    await reader.readAsDataURL(selectedFile);
+                } else {
+                    alert('Wybierz plik w formacie obrazka (np. JPG, PNG, GIF)');
+                }
+            });
+        });
+    }
+
     addChangeData(callback) {
         this.data = callback;
     }
@@ -79,19 +134,14 @@ class Details {
 
     }
 
-    #addImage() {
-
-    }
-
     #insertContent() {
 
     }
 
-    #close() {
+    close() {
 
-        this.single_note.querySelector("#single_note .close").addEventListener("click", () => {
-            this.single_note.classList.remove("show_single_note");
-        });
+
+        this.single_note.classList.remove("show_single_note");
 
     }
 }

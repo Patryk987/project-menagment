@@ -61,7 +61,8 @@ class TaskBox extends HTMLElement {
     static observedAttributes = [
         "name",
         "status",
-        "id"
+        "id",
+        "background"
     ];
 
     constructor() {
@@ -90,8 +91,11 @@ class TaskBox extends HTMLElement {
     render() {
 
         const name = this.getAttribute("name") || "";
+        const background = this.getAttribute("background") || "";
+        const style = background && background != "null" ? `style="background-image: url('${background}');"` : `style="background-image: url('https://cdn.pixabay.com/photo/2023/11/05/21/04/alps-8368328_1280.jpg')"`;
         // console.log(this.childNodes);
         this.innerHTML = `
+            <div class='box_inner' ${style}>
                 <div class="box_content">
                     <div class="title">${name}</div>
                     <div class="params"></div>
@@ -99,6 +103,7 @@ class TaskBox extends HTMLElement {
 
                     </div>
                 </div>
+            </div>
         `;
     }
 }
@@ -247,7 +252,7 @@ class NoteDetailsElement extends HTMLElement {
         const last_modify = this.getAttribute("last_modify") || "0000/00/00";
         const background = this.getAttribute("background") || null;
 
-        var photoBox = background != null ? (
+        var photoBox = background != null && background != "null" ? (
             `<div class='background' style="background-image: ${background}"></div>`
         ) : (
             `<div class='background'>

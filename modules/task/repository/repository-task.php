@@ -39,7 +39,8 @@ class TasksRepository
                 "repeat_status",
                 "color",
                 "task_status_id",
-                "task_tag_id"
+                "task_tag_id",
+                "background"
             ],
             $this->table
         );
@@ -65,6 +66,7 @@ class TasksRepository
                 "color",
                 "task_status_id",
                 "task_tag_id",
+                "background",
                 [
                     "column" => "create_date",
                     "alias" => "create_date",
@@ -144,6 +146,9 @@ class TasksRepository
 
         if (!empty($input['task_tag_id']))
             $data["task_tag_id"] = $input['task_tag_id'];
+
+        if (!empty($input['background']))
+            $data["background"] = $input['background'];
 
 
         $this->sedjm->clear_all();

@@ -113,16 +113,22 @@ new-kanban-tag {
 
 .kanban_view .box {
     /* width: calc(25% - 28px); */
-    width: calc(100%);
-    height: 200px;
+    width: 100%;
     margin: 10px;
+    transition: 0.5s;
+}
+
+.kanban_view .box .box_inner {
+    /* width: calc(25% - 28px); */
+    width: calc(100% - 4px);
+    height: 200px;
     border-radius: var(--radius);
     border: 4px solid var(--selected);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
-    background-image: url("https://cdn.pixabay.com/photo/2023/11/05/21/04/alps-8368328_1280.jpg");
+    /* background-image: url("https://cdn.pixabay.com/photo/2023/11/05/21/04/alps-8368328_1280.jpg"); */
     background-position: center;
     background-size: cover;
 

@@ -69,7 +69,6 @@ class TasksRepository {
         };
         let data = Object.assign({}, params, defaultData);
         let response = await api.put("api/update_task", data);
-        console.log(data);
 
         var message = [];
 
