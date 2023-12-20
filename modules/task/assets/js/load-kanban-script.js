@@ -3,6 +3,7 @@ class loadKanban {
     kanban;
     taskRepository;
     TaskTagsRepository;
+    details;
 
     kanbanStatusIdName = 'kanban';
 
@@ -29,7 +30,7 @@ class loadKanban {
     }
 
     async #getTask() {
-        let task = await this.taskRepository.getAllTask()
+        let task = await this.taskRepository.getAllTask();
         return task;
     }
 
@@ -40,9 +41,15 @@ class loadKanban {
     }
 
     async #loadTaskTags(name, id) {
-        this.kanban.innerHTML += `
-            <kanban-view name="${name}" id="${this.kanbanStatusIdName}-${id}" data-id="${id}"></kanban-view>
-        `;
+
+        // Create a new kanban-view element
+        const kanbanView = document.createElement('kanban-view');
+        kanbanView.setAttribute('name', name);
+        kanbanView.setAttribute('id', `${this.kanbanStatusIdName}-${id}`);
+        kanbanView.setAttribute('data-id', id);
+
+        // Append the created kanban-view element as a child of this.kanban
+        this.kanban.appendChild(kanbanView);
     }
 
     async #addTaskTagsButtom() {
@@ -68,9 +75,19 @@ class loadKanban {
         });
     }
 
-    async #addTaskToTagField(name, id, taskId) {
+    async #addTaskToTagField(name, id, taskId, background = null) {
+
         let kanbanView = document.querySelector(`#${this.kanbanStatusIdName}-${id}`).querySelector(".kanban_view");
-        kanbanView.innerHTML += `<task-box name="${name}" data-id="${taskId}" class="box" draggable="true"></task-box>`;
+
+        const taskBox = document.createElement('task-box');
+        taskBox.setAttribute('name', name);
+        taskBox.setAttribute('data-id', taskId);
+        taskBox.setAttribute('class', 'box');
+        taskBox.setAttribute('draggable', 'true');
+        taskBox.setAttribute('background', background);
+
+        kanbanView.appendChild(taskBox);
+
     }
 
     #updateStatus() {
@@ -94,6 +111,7 @@ class loadKanban {
                 let id = element.closest("kanban-view").getAttribute('data-id');
                 this.TaskTagsRepository.deleteTaskTags(id);
                 element.closest("kanban-view").remove();
+                this.load();
             })
         });
     }
@@ -107,7 +125,7 @@ class loadKanban {
                 let tag_name = "new task";
                 let response = await this.taskRepository.createNewTask(tag_name, tag_id);
                 this.#addTaskToTagField(tag_name, tag_id, response.id);
-                this.#active();
+                this.#updateTaskTag();
             })
         });
 
@@ -118,6 +136,60 @@ class loadKanban {
         this.#updateTaskTag();
         this.#delete();
         this.#addNewTask();
+        this.#activeClick();
+
+        this.details = new Details;
+        this.details.active();
+    }
+
+    #activeClick() {
+        var taskBox = document.querySelectorAll("task-box");
+        taskBox.forEach(element => {
+            element.addEventListener("click", async () => {
+                let id = element.getAttribute('data-id');
+                this.details.open();
+
+                var details = await this.taskRepository.getTaskByDetailsId(id);
+                var detailsData = details[0];
+
+                if (detailsData.author.additional_data.name) {
+                    var nick = detailsData.author.additional_data.name + " " + detailsData.author.additional_data.surname;
+                } else {
+                    var nick = detailsData.author.data.nick;
+                }
+
+                var data = {
+                    "title": detailsData.task_name,
+                    "content": detailsData.content,
+                    "update_time": detailsData.update_date,
+                    "create_time": detailsData.create_date,
+                    "background": detailsData.background,
+                    "author": nick
+                }
+
+                this.details.insertData(data);
+
+                this.details.addChangeTitle((value) => {
+                    this.taskRepository.updateTask(id, { "name": value })
+                    element.querySelector(".title").innerHTML = value;
+                });
+
+                this.details.addChangeData((value) => {
+                    this.taskRepository.updateTask(id, { "content": value })
+                });
+
+                this.details.deleteNote((value) => {
+                    this.taskRepository.deleteTask(id);
+                    this.details.close();
+                    element.remove();
+                });
+
+                this.details.changeNoteBackground((value) => {
+                    this.taskRepository.updateTask(id, { "background": value });
+                });
+            })
+        })
+
     }
 
     async load() {
@@ -141,7 +213,7 @@ class loadKanban {
             if (tagsIdList.includes(taskElement.task_tag_id) && taskElement.task_tag_id != undefined) {
                 tag_id = taskElement.task_tag_id;
             }
-            this.#addTaskToTagField(taskElement.task_name, tag_id, taskElement.task_id);
+            this.#addTaskToTagField(taskElement.task_name, tag_id, taskElement.task_id, taskElement.background);
         }
 
         let x = new Kanban;

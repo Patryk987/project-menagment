@@ -39,7 +39,8 @@ class TasksRepository
                 "repeat_status",
                 "color",
                 "task_status_id",
-                "task_tag_id"
+                "task_tag_id",
+                "background"
             ],
             $this->table
         );
@@ -59,15 +60,37 @@ class TasksRepository
                 "task_id",
                 "task_group_id",
                 "author_id",
-                "create_date",
-                "update_date",
                 "task_name",
-                "content",
                 "end_time",
                 "repeat_status",
                 "color",
                 "task_status_id",
-                "task_tag_id"
+                "task_tag_id",
+                "background",
+                [
+                    "column" => "create_date",
+                    "alias" => "create_date",
+                    "table" => $this->table,
+                    "function" => ["helper", "time_to_data"]
+                ],
+                [
+                    "column" => "update_date",
+                    "alias" => "update_date",
+                    "table" => $this->table,
+                    "function" => ["helper", "time_to_data"]
+                ],
+                [
+                    "column" => "author_id",
+                    "alias" => "author",
+                    "table" => $this->table,
+                    "function" => [$this, "get_user_by_id"]
+                ],
+                [
+                    "column" => "content",
+                    "alias" => "content",
+                    "table" => $this->table,
+                    "function" => [$this, "parse_content"]
+                ]
             ],
             $this->table
         );
@@ -124,6 +147,9 @@ class TasksRepository
         if (!empty($input['task_tag_id']))
             $data["task_tag_id"] = $input['task_tag_id'];
 
+        if (!empty($input['background']))
+            $data["background"] = $input['background'];
+
 
         $this->sedjm->clear_all();
         $this->sedjm->set_where("task_id", $id, "=");
@@ -142,5 +168,40 @@ class TasksRepository
         return $this->sedjm->delete($this->table);
 
     }
+
+    public function get_user_by_id($user_id)
+    {
+        $this->sedjm->clear_all();
+
+        $table = "Users";
+        $additionalTable = "UserData";
+
+        $this->sedjm->set_where("user_id", $user_id, "=");
+        $get_data = $this->sedjm->get(["nick", "email", "phone_number"], $table);
+        $additional_data = $this->sedjm->get(["field_key", "value"], $additionalTable);
+
+        $additional = [];
+        foreach ($additional_data as $key => $value) {
+
+            $additional[$value['field_key']] = $value['value'];
+
+        }
+
+        $output = [
+            "status" => true,
+            "data" => $get_data[0],
+            "additional_data" => $additional
+        ];
+
+        return $output;
+    }
+
+    public function parse_content($content)
+    {
+        $content = html_entity_decode($content);
+        $content = htmlspecialchars_decode($content);
+        return $content;
+    }
+
 
 }

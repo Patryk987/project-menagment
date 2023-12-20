@@ -23,7 +23,21 @@ class TasksRepository {
         return message;
     }
 
-    getTaskByDetailsId(id) {
+    async getTaskByDetailsId(id) {
+
+        let response = await api.get("api/get_task_details", {
+            "project_id": TasksRepository.project_id,
+            "task_group_id": TasksRepository.task_group_id,
+            "task_id": id,
+        });
+
+        var message = [];
+
+        if (response && response.status) {
+            message = await response.message;
+        }
+
+        return message;
 
     }
 
@@ -54,7 +68,6 @@ class TasksRepository {
             "task_id": id
         };
         let data = Object.assign({}, params, defaultData);
-
         let response = await api.put("api/update_task", data);
 
         var message = [];
@@ -63,7 +76,7 @@ class TasksRepository {
             message = await response.message;
         }
 
-        return message;
+        return response;
 
     }
 

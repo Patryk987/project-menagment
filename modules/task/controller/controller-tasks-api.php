@@ -208,6 +208,9 @@ class TasksApiController
                 if (!empty($input['task_tag_id']))
                     $data["task_tag_id"] = $input['task_tag_id'];
 
+                if (!empty($input['background']))
+                    $data["background"] = $input['background'];
+
                 $update = $repository->update($input['task_id'], $data);
 
 

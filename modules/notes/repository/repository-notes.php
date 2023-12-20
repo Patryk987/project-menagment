@@ -209,14 +209,14 @@ class NotesRepository implements RepositoryNotesInterface
         ) {
             $update_data = [];
 
-            if (!empty($data['title']))
-                $update_data["title"] = $data['title'];
+            if (!empty($data["title"]))
+                $update_data["title"] = $data["title"];
 
-            if (!empty($data['note']))
-                $update_data["note"] = $data['note'];
+            if (!empty($data["note"]))
+                $update_data["note"] = $data["note"];
 
-            if (!empty($data['background']))
-                $update_data["background"] = $data['background'];
+            if (!empty($data["background"]))
+                $update_data["background"] = $data["background"];
 
             $update_data["update_time"] = time();
 

@@ -212,6 +212,17 @@
                 "NULL": false,
                 "unique": false
             },
+            "background": {
+                "type": "varchar",
+                "length": "255",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
             "task_tag_id": {
                 "type": "int",
                 "length": "11",
