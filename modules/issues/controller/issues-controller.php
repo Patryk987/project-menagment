@@ -44,6 +44,13 @@ class IssuesController
 
             \ModuleManager\Pages::set_child_modules($main_page);
 
+            \ModuleManager\DataBinder::set_binder(
+                [
+                    "key" => "issues_list",
+                    "function" => [$this, "issues_list"]
+                ]
+            );
+
         }
 
     }
@@ -88,27 +95,30 @@ class IssuesController
 
     public function list_issues()
     {
+
         // Add style
         \InjectStyles::set_style(["name" => "add_file_style", "style" => "/modules/issues/assets/css/style.css"]);
+        \InjectStyles::set_style(["name" => "single_note_style", "style" => "/modules/issues/assets/css/single-note.css"]);
 
-        $issues = $this->repository->get_all();
-        // $issues = [];
-        // for ($i = 0; $i < 1000000; $i++) {
-        //     $issues[] = [
-        //         "title" => $i . "title",
-        //         "create_date" => $i . "create_date",
-        //         "status" => $i . "status",
-        //     ];
-        // }
-        $header = [
-            "Tytuł" => ["title"],
-            "Create date" => ["create_date"],
-            "Status" => ["status"]
-        ];
-        $table = new \ModuleManager\Table(50);
-        $table->set_converter("status", [$this, "convert_status"]);
-        // return $table->generate_table($issues, $header);
-        return $table->generate_table($issues->get_message(), $header);
+        // script
+        \InjectJavaScript::set_script(["name" => "issues_element", "src" => "/modules/issues/assets/js/elements.js"]);
+        \InjectJavaScript::set_script(["name" => "issues_repository_script", "src" => "/modules/issues/assets/js/issues-repository.js"]);
+        \InjectJavaScript::set_script(["name" => "details_script", "src" => "/modules/issues/assets/js/open-note.js"]);
+        \InjectJavaScript::set_script(["name" => "issues_script", "src" => "/modules/issues/assets/js/script.js"]);
+
+        \InjectJavaScript::set_script(
+            [
+                "name" => "issues",
+                "type" => "script",
+                "script" => "
+                    var issues = new Issues(" . $this->project_id . ");
+                    issues.active();
+                "
+            ]
+        );
+
+        return $this->get_page(__DIR__ . "/../view/issues.html");
+
     }
 
     public function convert_status($value)
@@ -124,6 +134,21 @@ class IssuesController
         return $html;
     }
 
+
+    public function issues_list()
+    {
+        $issues = $this->repository->get_all();
+        $header = [
+            "Tytuł" => ["title"],
+            "Create date" => ["create_date"],
+            "Status" => ["status"]
+        ];
+        $table = new \ModuleManager\Table(50);
+        $table->set_converter("status", [$this, "convert_status"]);
+        $table->set_id("issues_id");
+        // return $table->generate_table($issues, $header);
+        return $table->generate_table($issues->get_message(), $header);
+    }
 
 
 }

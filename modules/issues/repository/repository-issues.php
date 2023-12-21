@@ -66,8 +66,24 @@ class IssuesRepository
             "issues_id",
             "project_id",
             "author_id",
-            "create_date",
-            "update_date",
+            [
+                "column" => "create_date",
+                "alias" => "create_date",
+                "table" => $this->table,
+                "function" => ["helper", "time_to_data"]
+            ],
+            [
+                "column" => "update_date",
+                "alias" => "update_date",
+                "table" => $this->table,
+                "function" => ["helper", "time_to_data"]
+            ],
+            [
+                "column" => "author_id",
+                "alias" => "author",
+                "table" => $this->table,
+                "function" => [$this, "get_user_by_id"]
+            ],
             "title",
             "description",
             "status"
@@ -154,6 +170,33 @@ class IssuesRepository
         $insert = $this->sedjm->delete($this->table);
 
         $output = new \Models\ApiModel(\ApiStatus::from($insert['status']));
+        return $output;
+    }
+
+    public function get_user_by_id($user_id)
+    {
+        $this->sedjm->clear_all();
+
+        $table = "Users";
+        $additionalTable = "UserData";
+
+        $this->sedjm->set_where("user_id", $user_id, "=");
+        $get_data = $this->sedjm->get(["nick", "email", "phone_number"], $table);
+        $additional_data = $this->sedjm->get(["field_key", "value"], $additionalTable);
+
+        $additional = [];
+        foreach ($additional_data as $key => $value) {
+
+            $additional[$value['field_key']] = $value['value'];
+
+        }
+
+        $output = [
+            "status" => true,
+            "data" => $get_data[0],
+            "additional_data" => $additional
+        ];
+
         return $output;
     }
 }

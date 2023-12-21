@@ -3,6 +3,7 @@
 namespace Issues\Controller;
 
 use Issues\Repository\IssuesRepository;
+use Issues\Enums\IssuesStatus;
 
 class IssuesApiController
 {
@@ -18,6 +19,17 @@ class IssuesApiController
         $api = [
             "link" => 'get_issues',
             "function" => [$this, 'get_issues'],
+            "http_methods" => "GET",
+            "permission" => [1, 2, 11]
+        ];
+
+        \ModuleManager\Pages::set_endpoint($api);
+
+        // get_issues_by_id
+
+        $api = [
+            "link" => 'get_issues_by_id',
+            "function" => [$this, 'get_issues_by_id'],
             "http_methods" => "GET",
             "permission" => [1, 2, 11]
         ];
@@ -46,6 +58,17 @@ class IssuesApiController
 
         \ModuleManager\Pages::set_endpoint($api);
 
+        // get_options 
+
+        $api = [
+            "link" => 'get_options',
+            "function" => [$this, 'get_options'],
+            "http_methods" => "GET",
+            "permission" => [1, 2, 11]
+        ];
+
+        \ModuleManager\Pages::set_endpoint($api);
+
 
     }
 
@@ -59,6 +82,27 @@ class IssuesApiController
             $project_id = $input['project_id'];
             $repository = new IssuesRepository($project_id);
             $data = $repository->get_all();
+
+            if ($data->get_status() == \ApiStatus::CORRECT) {
+                $output->set_message($data->get_message());
+                $output->set_status($data->get_status());
+            }
+
+        }
+
+        return $output;
+    }
+
+    public function get_issues_by_id($input)
+    {
+
+        $output = new \Models\ApiModel(\ApiStatus::ERROR);
+
+        if (!empty($input['project_id']) && !empty($input['issues_id'])) {
+
+            $project_id = $input['project_id'];
+            $repository = new IssuesRepository($project_id);
+            $data = $repository->get_by_id($input['issues_id']);
 
             if ($data->get_status() == \ApiStatus::CORRECT) {
                 $output->set_message($data->get_message());
@@ -128,6 +172,24 @@ class IssuesApiController
 
         }
 
+        return $output;
+
+    }
+
+    public function get_options($input)
+    {
+
+        $output = new \Models\ApiModel(\ApiStatus::ERROR);
+        $options = [];
+        foreach (IssuesStatus::cases() as $key => $value) {
+            $options[] = [
+                "key" => $value->value,
+                "value" => $value->get_name(),
+                "class" => $value->get_class()
+            ];
+        }
+
+        $output->set_message(["options" => $options]);
         return $output;
 
     }

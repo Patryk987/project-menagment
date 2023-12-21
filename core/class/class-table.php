@@ -417,7 +417,12 @@ class Table
 
             foreach ($this->data as $data) {
 
-                $body .= "<tr class='standard'>";
+                $data_id = "";
+
+                if (!empty($this->id))
+                    $data_id = "data-id='" . $data[$this->id] . "'";
+
+                $body .= "<tr class='standard' " . $data_id . ">";
 
                 if (!empty($this->id) && !empty($this->mass_action)) {
 
