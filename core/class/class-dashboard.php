@@ -31,15 +31,18 @@ class Dashboard
 
         $location = $location[0];
         $html = "<div id='dashboard'>";
+        if (!empty(static::$dash_list[$location])) {
 
-        foreach (static::$dash_list[$location] as $value) {
+            foreach (static::$dash_list[$location] as $value) {
 
-            $width = $value->get_width();
-            $height = $value->get_height();
+                $width = $value->get_width();
+                $height = $value->get_height();
 
-            $html .= sprintf("<div class='block width-%s height-%s'>", $width, $height);
-            $html .= call_user_func($value->get_content());
-            $html .= sprintf("</div>");
+                $html .= sprintf("<div class='block width-%s height-%s'>", $width, $height);
+                $html .= call_user_func($value->get_content());
+                $html .= sprintf("</div>");
+
+            }
 
         }
 
