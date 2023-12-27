@@ -1,0 +1,25 @@
+.invite {
+    border: 2px solid var(--selected);
+    border-radius: var(--radius);
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--selected);
+    transition: 0.5s;
+}
+
+.invite:hover {
+    background-color: var(--selected);
+    cursor: pointer;
+    transition: 0.5s;
+    color: var(--secondary)
+}
+
+.find_user {
+    width: calc(100% - 20px);
+    border: 1px solid var(--selected);
+    border-radius: var(--radius);
+    padding: 10px;
+    margin-bottom: 20px;
+}

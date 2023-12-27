@@ -331,13 +331,22 @@ class Pages
 
 
 
-        if (!empty($this->sub_pages[0]) && $this->config["pages"]->project == $this->sub_pages[0] && !empty($this->sub_pages[1])) {
+        if (
+            !empty(static::$token['payload']->user_id)
+            && !empty($this->sub_pages[0])
+            && $this->config["pages"]->project == $this->sub_pages[0]
+            && !empty($this->sub_pages[1])
+        ) {
 
             $project = new \Projects(static::$token['payload']->user_id, $this->sub_pages[1]);
             self::$project = $project->get_project_data();
 
         } else {
-            // self::$project = new \ProjectModel(\ProjectStatus::BLOCKED);
+            if (empty(static::$token['payload']->user_id)) {
+                // $this->redirect("/" . $this->config["pages"]->login);
+            } else {
+                // self::$project = new \ProjectModel(\ProjectStatus::BLOCKED);
+            }
         }
 
         $this->map_modules();

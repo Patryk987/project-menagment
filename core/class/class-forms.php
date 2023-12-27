@@ -7,11 +7,11 @@ class Forms
 {
 
     protected $data = [];
-    protected $table, $id_field;
+    protected $table, $id_field, $enctype;
 
     public $form_html;
 
-    public function __construct($id_field = null)
+    public function __construct($enctype = "multipart/form-data", $id_field = null)
     {
 
         if (!empty($_SESSION['CSRF_token']) && $_SERVER["REQUEST_METHOD"] == "POST") {
@@ -26,6 +26,7 @@ class Forms
         }
 
         $this->id_field = $id_field;
+        $this->enctype = $enctype;
 
     }
 
@@ -124,6 +125,13 @@ class Forms
 
         return $html;
     }
+    private function title($values)
+    {
+
+        $html = "<h3>" . $values['name'] . "</h3>";
+
+        return $html;
+    }
 
     private function multi($values)
     {
@@ -200,7 +208,7 @@ class Forms
             $html .= "</div>";
         }
 
-        $html .= "<form method='post' enctype='multipart/form-data'>";
+        $html .= "<form method='post' enctype='" . $this->enctype . "'>";
         $html .= "<input type='hidden' value='true' name='active'>";
         $html .= "<input type='hidden' value='" . $_SESSION['CSRF_token'] . "' name='CSRF_token'>";
 
@@ -237,6 +245,9 @@ class Forms
                 break;
             case 'checkbox_list':
                 $field = $this->checkbox_list($values);
+                break;
+            case 'title':
+                $field = $this->title($values);
                 break;
             default:
                 $field = $this->input($values);
