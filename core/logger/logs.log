@@ -87,3 +87,23 @@
 [2023-12-04 20:12:43] [ERROR] Include module: ProjectModel::get_project_id(): Return value must be of type int, null returned,0,/var/www/html/core/models/model-projects.php,28
 [2023-12-04 20:15:23] [ERROR] Incorrect function: Typed static property ModuleManager\Pages::$project must not be accessed before initialization,0,/var/www/html/core/function/function.php,523
 [2023-12-04 20:17:15] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-27 12:07:23] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:07:39] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:07:49] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:07:51] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:07:51] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:07:53] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:07:54] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:07:54] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:07:54] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:07:54] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:07:56] [ERROR] Include module: Class "Users\Controller\UsersController" not found,0,/var/www/html/modules/user/index.php,5
+[2023-12-27 12:10:06] [ERROR] Include module: syntax error, unexpected variable "$user_controller",0,/var/www/html/modules/user/index.php,7
+[2023-12-27 12:13:17] [ERROR] Load module: Class "Users\Controller\ModuleManager\Forms\Forms" not found,0,/var/www/html/modules/user/controller/user-controller.php,31
+[2023-12-27 12:13:17] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2023-12-27 12:24:33] [ERROR] Load module: Class "Users\Controller\Main" not found,0,/var/www/html/modules/user/controller/user-controller.php,58
+[2023-12-27 12:24:33] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2023-12-27 12:36:23] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-account.php,293
+[2023-12-27 12:36:23] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-account.php,301
+[2023-12-27 12:36:23] [ERROR] Load module: Incorrect integer value: '' for column `cms`.`UserData`.`user_id` at row 1,1366,/var/www/html/core/class/class-sedjm.php,536
+[2023-12-27 12:36:23] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned

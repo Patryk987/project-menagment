@@ -11,6 +11,14 @@ class Accounts
     private SEDJM $sedjm;
     public function __construct($sedjm)
     {
+
+        $this->sedjm = $sedjm;
+
+    }
+
+    public function init_endpoint()
+    {
+
         Pages::set_endpoint([
             "link" => 'create_account',
             "function" => [$this, 'create_account'],
@@ -45,8 +53,6 @@ class Accounts
             "http_methods" => 'DELETE',
             "permission" => [11, 2, 3]
         ]);
-
-        $this->sedjm = $sedjm;
 
     }
 
