@@ -107,3 +107,8 @@
 [2023-12-27 12:36:23] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-account.php,301
 [2023-12-27 12:36:23] [ERROR] Load module: Incorrect integer value: '' for column `cms`.`UserData`.`user_id` at row 1,1366,/var/www/html/core/class/class-sedjm.php,536
 [2023-12-27 12:36:23] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2023-12-27 12:40:15] [ERROR] Unexpected error: Undefined array key 0,/var/www/html/modules/issues/repository/repository-issues.php,196
+[2023-12-27 12:40:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2023-12-27 12:40:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2023-12-27 12:40:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2023-12-27 12:40:37] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
