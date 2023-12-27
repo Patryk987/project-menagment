@@ -4,3 +4,5 @@
 [2023-12-14 20:17:59] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/issues/controller/issues-api-controller.php:94),/var/www/html/core/class/trait-api.php,333
 [2023-12-14 20:17:59] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/issues/controller/issues-api-controller.php:94),/var/www/html/core/class/trait-api.php,334
 [2023-12-14 20:17:59] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/issues/controller/issues-api-controller.php:94),/var/www/html/core/class/trait-api.php,162
+[2023-12-27 09:21:47] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
+[2023-12-27 09:21:48] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, no array or string given,0,/var/www/html/core/class/load-file.php,79
