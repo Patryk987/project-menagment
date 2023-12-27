@@ -167,6 +167,7 @@ class Main
         $this->database = $this->db_connect->get_db_connect(DB_NAME);
         $this->sedjm = new SEDJM($this->db_connect->connect, $this->database);
         $this->accounts = new Accounts($this->sedjm);
+        $this->accounts->init_endpoint();
     }
 
     // Pages
