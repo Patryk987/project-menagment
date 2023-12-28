@@ -42,7 +42,7 @@ class TaskElementy extends HTMLElement {
             <div data-id='${id}'>
                 <div>
                     ${checked}
-                    ${name}
+                    <div class='title'>${name}</div>
                 </div>
                 
                 <div class='delete'>
@@ -150,7 +150,7 @@ class KanbanView extends HTMLElement {
 
                 <div class="title">
                     <div class='tags_delete icon'>
-                        <img src="/modules/task/assets/img/trash.svg" />
+                        <img src="/modules/task/assets/img/w-trash.svg" />
                     </div>
                     <input type="text" value="${name}" class="tags_name" />
                     <div class='add_task icon'>

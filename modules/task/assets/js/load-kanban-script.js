@@ -126,6 +126,7 @@ class loadKanban {
                 let response = await this.taskRepository.createNewTask(tag_name, tag_id);
                 this.#addTaskToTagField(tag_name, tag_id, response.id);
                 this.#updateTaskTag();
+                this.#activeClick();
             })
         });
 

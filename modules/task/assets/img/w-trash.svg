@@ -1,0 +1,16 @@
+<svg width="15" height="15" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;">
+    <g transform="matrix(1.48403,0,0,1.48403,20.8887,2.6846)">
+        <rect id="Artboard2" x="-14.076" y="-1.809" width="10.101" height="10.101" style="fill:none;" stroke="none" />
+        <g id="Artboard21" serif:id="Artboard2">
+            <g id="trash-alt-delete-bin.svg" transform="matrix(0.414208,0,0,0.414208,-8.67358,3.22776)">
+                <g transform="matrix(1,0,0,1,-12,-12)">
+                    <path stroke="white"
+                        d="M8,6L8,4C8,2.895 8.895,2 10,2L14,2C15.105,2 16,2.895 16,4L16,6M3,6L21,6L3,6ZM5,6L5,20C5,21.105 5.895,22 7,22L17,22C18.105,22 19,21.105 19,20L19,6L5,6Z"
+                        style="fill:none;fill-rule:nonzero;stroke-width:2px;" />
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
