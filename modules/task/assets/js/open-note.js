@@ -15,7 +15,7 @@ class Details {
         });
     }
 
-    async open(id, data) {
+    async open() {
 
         this.single_note.querySelector(".content").innerHTML = `<div class="loader"></div>`;
         this.single_note.classList.add("show_single_note");
