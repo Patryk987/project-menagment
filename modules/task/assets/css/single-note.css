@@ -119,3 +119,20 @@
     border-width: 0px;
     font-size: 1rem;
 }
+
+#single_note input[type='datetime-local'] {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 2px solid var(--selected);
+    padding: 5px;
+}
+
+#single_note .active_collaborators {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#single_note .active_collaborators p {
+    padding-left: 10px;
+}

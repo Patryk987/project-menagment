@@ -23,6 +23,11 @@ class loadKanban {
 
     }
 
+    async getCollaborators() {
+        let response = await this.taskRepository.getCollaboratorsList();
+        return response;
+    }
+
     async #getTaskTags() {
         let TaskTags = await this.TaskTagsRepository.getAllTaskTags();
 
@@ -165,7 +170,8 @@ class loadKanban {
                     "update_time": detailsData.update_date,
                     "create_time": detailsData.create_date,
                     "background": detailsData.background,
-                    "author": nick
+                    "author": nick,
+                    "deadline": detailsData.end_time
                 }
 
                 this.details.insertData(data);
@@ -187,6 +193,10 @@ class loadKanban {
 
                 this.details.changeNoteBackground((value) => {
                     this.taskRepository.updateTask(id, { "background": value });
+                });
+
+                this.details.changeDeadline((value) => {
+                    this.taskRepository.updateTask(id, { "end_time": value });
                 });
             })
         })

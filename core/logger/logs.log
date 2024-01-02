@@ -1,0 +1,127 @@
+[2023-12-28 15:26:43] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-28 15:27:26] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2023-12-28 15:27:34] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-28 15:29:36] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2023-12-28 15:35:26] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2023-12-28 15:47:32] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2023-12-28 15:47:32] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-12-28 15:47:44] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-12-28 15:47:45] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-12-28 15:47:45] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-12-28 15:47:46] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-12-28 15:47:46] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-12-28 15:47:54] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-12-28 15:48:05] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 15:48:05] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 15:53:02] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 15:53:02] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 15:53:19] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 15:53:19] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 15:57:00] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 15:57:00] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 15:58:26] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 15:58:26] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 15:58:39] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 15:58:39] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 15:58:57] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 15:58:57] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:07:46] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:07:46] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:07:58] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:07:58] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:08:35] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:08:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:08:54] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:08:54] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:09:07] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:09:07] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:15:54] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:15:54] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:26:24] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2023-12-28 16:26:24] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,112
+[2023-12-28 16:26:32] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:26:32] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:26:37] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:26:37] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:41:41] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-28 16:49:26] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:49:26] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:49:53] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:49:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 16:50:26] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
+[2023-12-28 16:50:26] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2023-12-28 19:41:48] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-28 20:20:58] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-28 20:39:34] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2023-12-29 10:42:38] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-02 10:09:31] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-02 11:37:14] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-02 11:37:18] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-02 11:38:54] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-02 11:39:59] [ERROR] Unexpected error: ftp_chdir(): //.lsphp_restart.txt: Not a directory,/var/www/html/modules/encrypt-files/helper/ftp.php,47
+[2024-01-02 13:21:32] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/modules/task/controller/controller-tasks-api.php,280
+[2024-01-02 13:21:32] [ERROR] Unexpected error: Undefined array key "task_group_id",/var/www/html/modules/task/controller/controller-tasks-api.php,280
+[2024-01-02 13:21:32] [ERROR] API: Cannot assign null to property Tasks\Repository\TasksRepository::$project_id of type int,0,/var/www/html/modules/task/repository/repository-task.php,19
+[2024-01-02 13:21:32] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 13:21:32] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 13:21:32] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 13:21:32] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/modules/task/controller/controller-tasks-api.php,280
+[2024-01-02 13:21:32] [ERROR] Unexpected error: Undefined array key "task_group_id",/var/www/html/modules/task/controller/controller-tasks-api.php,280
+[2024-01-02 13:21:32] [ERROR] API: Cannot assign null to property Tasks\Repository\TasksRepository::$project_id of type int,0,/var/www/html/modules/task/repository/repository-task.php,19
+[2024-01-02 13:21:32] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 13:21:32] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 13:21:32] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 13:22:04] [ERROR] Unexpected error: Undefined array key "project_id",/var/www/html/modules/task/controller/controller-tasks-api.php,280
+[2024-01-02 13:22:04] [ERROR] Unexpected error: Undefined array key "task_group_id",/var/www/html/modules/task/controller/controller-tasks-api.php,280
+[2024-01-02 13:22:04] [ERROR] API: Cannot assign null to property Tasks\Repository\TasksRepository::$project_id of type int,0,/var/www/html/modules/task/repository/repository-task.php,19
+[2024-01-02 13:22:04] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 13:22:04] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 13:22:04] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 13:22:13] [ERROR] Unexpected error: Undefined array key "$user_id",/var/www/html/modules/task/controller/controller-tasks-api.php,281
+[2024-01-02 13:22:13] [ERROR] Unexpected error: Undefined array key "$task_id",/var/www/html/modules/task/controller/controller-tasks-api.php,281
+[2024-01-02 13:22:13] [ERROR] API: Incorrect integer value: '' for column `cms`.`AssignedCollaborators`.`user_id` at row 1,1366,/var/www/html/core/class/class-sedjm.php,536
+[2024-01-02 13:22:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 13:22:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 13:22:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 13:22:13] [ERROR] Unexpected error: Undefined array key "$user_id",/var/www/html/modules/task/controller/controller-tasks-api.php,281
+[2024-01-02 13:22:13] [ERROR] Unexpected error: Undefined array key "$task_id",/var/www/html/modules/task/controller/controller-tasks-api.php,281
+[2024-01-02 13:22:13] [ERROR] API: Incorrect integer value: '' for column `cms`.`AssignedCollaborators`.`user_id` at row 1,1366,/var/www/html/core/class/class-sedjm.php,536
+[2024-01-02 13:22:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 13:22:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 13:22:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 13:22:31] [ERROR] Unexpected error: Undefined array key "$user_id",/var/www/html/modules/task/controller/controller-tasks-api.php,281
+[2024-01-02 13:22:31] [ERROR] Unexpected error: Undefined array key "$task_id",/var/www/html/modules/task/controller/controller-tasks-api.php,281
+[2024-01-02 13:22:31] [ERROR] API: Incorrect integer value: '' for column `cms`.`AssignedCollaborators`.`user_id` at row 1,1366,/var/www/html/core/class/class-sedjm.php,536
+[2024-01-02 13:22:31] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 13:22:31] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 13:22:31] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 13:22:39] [ERROR] Unexpected error: Undefined array key "$user_id",/var/www/html/modules/task/controller/controller-tasks-api.php,281
+[2024-01-02 13:22:39] [ERROR] Unexpected error: Undefined array key "$task_id",/var/www/html/modules/task/controller/controller-tasks-api.php,281
+[2024-01-02 13:22:39] [ERROR] API: Incorrect integer value: '' for column `cms`.`AssignedCollaborators`.`user_id` at row 1,1366,/var/www/html/core/class/class-sedjm.php,536
+[2024-01-02 13:22:39] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 13:22:39] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 13:22:39] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 13:23:26] [ERROR] Unexpected error: Undefined array key "$user_id",/var/www/html/modules/task/controller/controller-tasks-api.php,283
+[2024-01-02 13:23:26] [ERROR] Unexpected error: Undefined array key "$task_id",/var/www/html/modules/task/controller/controller-tasks-api.php,283
+[2024-01-02 13:23:26] [ERROR] API: Incorrect integer value: '' for column `cms`.`AssignedCollaborators`.`user_id` at row 1,1366,/var/www/html/core/class/class-sedjm.php,536
+[2024-01-02 13:23:26] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 13:23:26] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 13:23:26] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 14:23:25] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/repository/repository-task.php:216),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 14:23:25] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/repository/repository-task.php:216),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 14:23:25] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/repository/repository-task.php:216),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 14:24:09] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 14:24:09] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 14:24:09] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 14:24:56] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 14:24:56] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 14:24:56] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 14:25:04] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 14:25:04] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 14:25:04] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 14:25:09] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 14:25:09] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 14:25:09] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 14:25:09] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 14:25:09] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 14:25:09] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/task/controller/controller-tasks-api.php:292),/var/www/html/core/class/trait-api.php,162
