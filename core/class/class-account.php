@@ -5,10 +5,12 @@ namespace ModuleManager;
 /**
  * 
  */
-class Accounts {
+class Accounts
+{
     use DataValidation;
     private SEDJM $sedjm;
-    public function __construct($sedjm) {
+    public function __construct($sedjm)
+    {
         Pages::set_endpoint([
             "link" => 'create_account',
             "function" => [$this, 'create_account'],
@@ -58,7 +60,8 @@ class Accounts {
     /**
      * Login history
      */
-    private function set_new_login($user_id, $status): void {
+    private function set_new_login($user_id, $status): void
+    {
 
         $table = 'LoginHistory';
         $data = [
@@ -77,7 +80,8 @@ class Accounts {
      * @param int $expire_time
      * @param array $token - token status and id 
      */
-    private function save_token(int $user_id, int $expire_time): array {
+    private function save_token(int $user_id, int $expire_time): array
+    {
 
         $table = 'Tokens';
         $data = [
@@ -95,7 +99,8 @@ class Accounts {
      * @param array $input
      * @return array \Models\ApiModel
      */
-    public function create_account($input): \Models\ApiModel {
+    public function create_account($input): \Models\ApiModel
+    {
 
         $input_nick = !empty($input['nick']) ? trim($input['nick']) : "";
         $input_password = !empty($input['password']) ? trim($input['password']) : "";
@@ -110,7 +115,7 @@ class Accounts {
 
         $check_nick = $this->is_valid_nick($input_nick);
 
-        if(!$check_nick['status']) {
+        if (!$check_nick['status']) {
             $error_details['nick_error'] = $check_nick['errors'];
             $errors = true;
         } else {
@@ -119,7 +124,7 @@ class Accounts {
 
         $check_password = $this->is_password_valid($input_password);
 
-        if(!$check_password['status']) {
+        if (!$check_password['status']) {
             $error_details['password_error'] = $check_password['errors'];
             $errors = true;
         } else {
@@ -128,7 +133,7 @@ class Accounts {
 
         $check_password_integrity = $this->password_are_identical($input_password, $input_repeat_password);
 
-        if(!$check_password_integrity['status']) {
+        if (!$check_password_integrity['status']) {
             $error_details['password_error'] = array_merge($error_details['password_error'], $check_password_integrity['errors']);
             $errors = true;
         } else {
@@ -137,18 +142,18 @@ class Accounts {
 
         $check_mail = $this->is_valid_email($input_email);
 
-        if(!$check_mail['status']) {
+        if (!$check_mail['status']) {
             $error_details['email_error'] = $check_mail['errors'];
             $errors = true;
         } else {
             $error_details['email_error'] = [];
         }
 
-        if(!empty($input_phone_number)) {
+        if (!empty($input_phone_number)) {
 
             $check_password = $this->is_valid_phone_number($input_phone_number);
 
-            if(!$check_password['status']) {
+            if (!$check_password['status']) {
                 $error_details['telephone_error'] = $check_password['errors'];
                 $errors = true;
             } else {
@@ -161,9 +166,9 @@ class Accounts {
 
         $return = new \Models\ApiModel(\ApiStatus::ERROR);
 
-        if(!$errors) {
+        if (!$errors) {
 
-            if(!$check_password['status']) {
+            if (!$check_password['status']) {
                 $find_error = true;
             }
 
@@ -179,7 +184,7 @@ class Accounts {
 
             $registration_state = $this->sedjm->insert($data, $table);
 
-            if($registration_state["status"]) {
+            if ($registration_state["status"]) {
 
                 try {
                     \TestMail::send_welcome_mail($input_email);
@@ -193,7 +198,7 @@ class Accounts {
                     \ModuleManager\Main::set_error('Send e-mail', 'ERROR', $details);
                 }
 
-                foreach($input['additional'] as $key => $value) {
+                foreach ($input['additional'] as $key => $value) {
 
                     $additional_table = 'UserData';
                     $additional_data = [
@@ -233,7 +238,8 @@ class Accounts {
      * @param array $input
      * @return array $output
      */
-    public function get_account_data($input): array {
+    public function get_account_data($input): array
+    {
 
         $table = "Users";
         $additionalTable = "UserData";
@@ -243,7 +249,7 @@ class Accounts {
         $additional_data = $this->sedjm->get(["field_key", "value"], $additionalTable);
 
         $additional = [];
-        foreach($additional_data as $key => $value) {
+        foreach ($additional_data as $key => $value) {
 
             $additional[$value['field_key']] = $value['value'];
 
@@ -264,7 +270,8 @@ class Accounts {
      * @param array $input
      * @return array $output
      */
-    public function update_user_data($input): \Models\ApiModel {
+    public function update_user_data($input): \Models\ApiModel
+    {
         $this->sedjm->clear_all();
 
         // TODO: Walidacja, automatyczne wykrywanie dodatkowych pul
@@ -273,22 +280,22 @@ class Accounts {
         $data = [];
 
 
-        if(!empty($input["nick"]))
+        if (!empty($input["nick"]))
             $data["nick"] = $input["nick"];
 
-        if(!empty($input["email"]))
+        if (!empty($input["email"]))
             $data["email"] = $input["email"];
 
-        if(!empty($input["phone_number"]))
+        if (!empty($input["phone_number"]))
             $data["phone_number"] = $input["phone_number"];
 
         $this->sedjm->set_where("user_id", $input['user_id'], "=");
         $update_data = $this->sedjm->update($data, $table);
 
         // Dodatkowe dane
-        if(!empty($input['additional'])) {
+        if (!empty($input['additional'])) {
 
-            foreach($input['additional'] as $key => $value) {
+            foreach ($input['additional'] as $key => $value) {
 
                 $this->update_additional_data($key, $value, $input['user_id']);
 
@@ -308,7 +315,8 @@ class Accounts {
      * @param string $user_id
      * @return void
      */
-    private function update_additional_data($key, $value, $user_id) {
+    private function update_additional_data($key, $value, $user_id)
+    {
         $additional_table = "UserData";
         $this->sedjm->clear_all();
 
@@ -322,7 +330,7 @@ class Accounts {
         $this->sedjm->set_where("field_key", $key, "=");
         $field_content = $this->sedjm->get(["user_id"], $additional_table);
 
-        if(count($field_content)) {
+        if (count($field_content)) {
             $this->sedjm->update($data_additional, $additional_table);
         } else {
             $this->sedjm->insert($data_additional, $additional_table);
@@ -338,7 +346,8 @@ class Accounts {
      * @param array $input [$nick, $password]
      * @return array [$status bool, $token string, $error string]
      */
-    public function login_to_account($input): \Models\ApiModel {
+    public function login_to_account($input): \Models\ApiModel
+    {
 
         $errors = [];
         $status = \ApiStatus::ERROR;
@@ -348,7 +357,7 @@ class Accounts {
         $nick = trim($input['nick']);
         $password = trim($input['password']);
 
-        if(
+        if (
             !empty($nick)
             && !empty($password)
         ) {
@@ -360,13 +369,13 @@ class Accounts {
             $this->sedjm->set_where('status', 1, '=');
             $nick_in_db = $this->sedjm->get(['user_id', 'nick', 'password', 'permission'], $table);
 
-            if(count($nick_in_db) > 0) {
+            if (count($nick_in_db) > 0) {
 
                 $user_id = $nick_in_db[0]['user_id'];
                 $hash = $nick_in_db[0]['password'];
 
                 $password_is_correct = EncryptData::password_hash_verify($password, $hash);
-                if($password_is_correct) {
+                if ($password_is_correct) {
 
                     $expire_time = strtotime("+30 day");
 
@@ -400,7 +409,7 @@ class Accounts {
             $errors['incomplete_input_data'] = true;
         }
 
-        if(!empty($user_id)) {
+        if (!empty($user_id)) {
             $this->set_new_login($user_id, $status);
         }
 
@@ -417,7 +426,8 @@ class Accounts {
      * @param array $input [token]
      * @return array [$status bool]
      */
-    public function check_user_token($input): array {
+    public function check_user_token($input): array
+    {
 
         $token = $input["token"];
 
@@ -430,7 +440,8 @@ class Accounts {
     /**
      * logout user
      */
-    public function logout($token_id): array {
+    public function logout($token_id): array
+    {
 
         $table = 'Tokens';
         $data = [
@@ -450,7 +461,8 @@ class Accounts {
     /**
      * Reset user password sending mail
      */
-    public function password_reset($input): \Models\ApiModel {
+    public function password_reset($input): \Models\ApiModel
+    {
         $email = $input['email'];
 
         $output = new \Models\ApiModel(\ApiStatus::ERROR);
@@ -461,7 +473,7 @@ class Accounts {
         $this->sedjm->set_where('email', $email, '=', 'OR');
         $user_data = $this->sedjm->get(['user_id', 'nick', 'email', 'permission'], $table);
 
-        if(count($user_data) > 0) {
+        if (count($user_data) > 0) {
             // $output['status'] = true;
             $output->set_status(\ApiStatus::CORRECT);
         } else {
@@ -479,7 +491,8 @@ class Accounts {
     /**
      * password reset if user know password
      */
-    public function password_reset_login_user($input): \Models\ApiModel {
+    public function password_reset_login_user($input): \Models\ApiModel
+    {
 
         $errors = [];
         $incorrect_data = false;
@@ -492,7 +505,7 @@ class Accounts {
         $new_password = !empty($input['new_password']) ? trim($input['new_password']) : "";
         $repeat_password = !empty($input['r_new_password']) ? trim($input['r_new_password']) : "";
 
-        if(
+        if (
             empty($nick)
             && empty($password)
             && empty($new_password)
@@ -505,7 +518,7 @@ class Accounts {
 
         $check_password_integrity = $this->password_are_identical($new_password, $repeat_password);
 
-        if(!$check_password_integrity['status']) {
+        if (!$check_password_integrity['status']) {
             $errors[] = 'password_is_not_identical';
             $incorrect_data = true;
         }
@@ -513,7 +526,7 @@ class Accounts {
 
         $check_password = $this->is_password_valid($new_password);
 
-        if(!$check_password['status']) {
+        if (!$check_password['status']) {
             $error_details['password_error'] = $check_password['errors'];
             $incorrect_data = true;
         }
@@ -523,24 +536,24 @@ class Accounts {
         $this->sedjm->set_where('user_id', $user_id, '=');
         $nick_in_db = $this->sedjm->get(['user_id', 'nick', 'password', 'permission'], $table);
 
-        if(count($nick_in_db) <= 0) {
+        if (count($nick_in_db) <= 0) {
             $errors[] = 'account_is_not_exist';
             $incorrect_data = true;
         }
 
-        if(!$incorrect_data) {
+        if (!$incorrect_data) {
 
             $user_id = $nick_in_db[0]['user_id'];
             $hash = $nick_in_db[0]['password'];
 
             $password_is_correct = EncryptData::password_hash_verify($password, $hash);
-            if($password_is_correct) {
+            if ($password_is_correct) {
 
                 $this->sedjm->clear_all();
                 $this->sedjm->set_where('user_id', $user_id, '=');
                 $update_password = $this->sedjm->update(["password" => $new_password], $table);
 
-                if($update_password["status"]) {
+                if ($update_password["status"]) {
                     $status = \ApiStatus::CORRECT;
                 } else {
                     $status = \ApiStatus::ERROR;
@@ -563,7 +576,8 @@ class Accounts {
     /**
      * Delete account
      */
-    public function delete_user_account($input): \Models\ApiModel {
+    public function delete_user_account($input): \Models\ApiModel
+    {
 
         $errors = [];
         $incorrect_data = false;
@@ -575,7 +589,7 @@ class Accounts {
         $password = !empty($input['password']) ? trim($input['password']) : "";
         $accept = !empty($input['accept']) ? $input['accept'] : false;
 
-        if(
+        if (
             empty($nick)
             && empty($password)
         ) {
@@ -587,24 +601,24 @@ class Accounts {
         $this->sedjm->set_where('user_id', $user_id, '=');
         $nick_in_db = $this->sedjm->get(['user_id', 'nick', 'password', 'permission'], $table);
 
-        if(count($nick_in_db) <= 0) {
+        if (count($nick_in_db) <= 0) {
             $errors[] = 'account_is_not_exist';
             $incorrect_data = true;
         }
 
-        if(!$incorrect_data && ($accept === true || $accept === "true")) {
+        if (!$incorrect_data && ($accept === true || $accept === "true")) {
 
             $user_id = $nick_in_db[0]['user_id'];
             $hash = $nick_in_db[0]['password'];
 
             $password_is_correct = EncryptData::password_hash_verify($password, $hash);
-            if($password_is_correct) {
+            if ($password_is_correct) {
 
                 $this->sedjm->clear_all();
                 $this->sedjm->set_where('user_id', $user_id, '=');
                 $update_password = $this->sedjm->update(["status" => 3], $table);
 
-                if($update_password["status"]) {
+                if ($update_password["status"]) {
                     $status = \ApiStatus::CORRECT;
                 } else {
                     $status = \ApiStatus::ERROR;
@@ -617,7 +631,7 @@ class Accounts {
 
         }
 
-        if($accept === false || $accept === "false") {
+        if ($accept === false || $accept === "false") {
             $errors[] = 'User is not accept terms';
         }
 
