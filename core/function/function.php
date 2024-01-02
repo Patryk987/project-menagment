@@ -62,13 +62,15 @@ function login_form()
     $form->set_data([
         "key" => "nick",
         "name" => "Adres e-mail",
-        "type" => "input"
+        "type" => "text",
+        "id" => "nick"
     ]);
 
     $form->set_data([
         "key" => "password",
         "name" => "Wpisz hasło",
-        "type" => "password"
+        "type" => "password",
+        "id" => "password"
     ]);
 
     // $form->set_data([
@@ -102,13 +104,15 @@ function delete_account_form()
     $form->set_data([
         "key" => "nick",
         "name" => "Adres e-mail",
-        "type" => "input"
+        "type" => "text",
+        "id" => "nick"
     ]);
 
     $form->set_data([
         "key" => "password",
         "name" => "Wpisz hasło",
-        "type" => "password"
+        "type" => "password",
+        "id" => "password"
     ]);
 
     $form->set_data([

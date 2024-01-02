@@ -78,9 +78,36 @@
     width: 35px;
     height: 35px;
     border-radius: 5px;
-    border: 2px solid var(--selected);
+    /* border: 2px solid var(--selected); */
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0);
     background-image: url("/panel-template/img/user-default-icon.png");
     background-size: cover;
+    transition: 0.5s;
+}
+
+.profile:hover {
+    border-color: var(--selected);
+    transition: 0.5s;
+}
+
+.logout {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.logout:hover {
+    border-color: var(--selected);
+    transition: 0.5s;
 }
 
 /* Nawigacja */

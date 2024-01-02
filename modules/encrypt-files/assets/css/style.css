@@ -1,4 +1,3 @@
-
 .encrypted,
 .not_encrypted {
     width: 50px;
@@ -10,7 +9,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-right: auto;
-} 
+}
 
 .encrypted svg,
 .not_encrypted svg {
@@ -18,7 +17,7 @@
     border-radius: var(--radius);
     stroke: white;
     stroke-width: 4
-} 
+}
 
 .encrypted {
     background-color: #4dac26;
@@ -29,7 +28,7 @@
 
 }
 
-td a{ 
+td a {
     color: var(--selected);
     text-decoration: none;
     font-weight: bold;
@@ -45,14 +44,14 @@ td a{
     justify-content: center;
 }
 
-#ftp_connect > div {
+#ftp_connect>div {
     box-shadow: 0 0 10px black;
-    background-color:#d7191cf3;
+    background-color: #d7191cf3;
     padding: 50px;
     border-radius: var(--radius);
 }
 
-#ftp_connect p{
+#ftp_connect p {
     font-size: 2rem;
     font-weight: bold;
     color: var(--primary);
