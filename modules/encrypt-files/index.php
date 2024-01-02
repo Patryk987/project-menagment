@@ -17,10 +17,13 @@ require_once __DIR__ . "/repository/repository-files.php";
 
 // controller
 require_once __DIR__ . "/controller/files.php";
+require_once __DIR__ . "/controller/share-file-controller.php";
 
 
 // Init pages
 new \Files\Controller\FilesNotepadsController();
+$file_share = new \Files\Controller\FilesShareController();
+$file_share->init_page();
 
 // Init api
 

@@ -94,3 +94,10 @@
 [2024-01-02 18:50:59] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:123),/var/www/html/core/class/trait-api.php,334
 [2024-01-02 18:50:59] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:123),/var/www/html/core/class/trait-api.php,162
 [2024-01-02 18:52:05] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-02 19:37:16] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-02 19:52:58] [ERROR] API: Call to a member function get_code() on null,0,/var/www/html/core/class/trait-api.php,273
+[2024-01-02 19:52:58] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/database/index.php:29),/var/www/html/core/class/trait-api.php,333
+[2024-01-02 19:52:58] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/database/index.php:29),/var/www/html/core/class/trait-api.php,334
+[2024-01-02 19:52:58] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/database/index.php:29),/var/www/html/core/class/trait-api.php,162
+[2024-01-02 19:59:27] [ERROR] Include module: Class "Files\Controller\FilesShareController" not found,0,/var/www/html/modules/encrypt-files/index.php,25
+[2024-01-02 20:21:15] [ERROR] Load module: call_user_func(): Argument #1 ($callback) must be a valid callback, class Files\Controller\FilesShareController does not have a method "share_file",0,/var/www/html/core/class/trait-module.php,201

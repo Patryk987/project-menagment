@@ -32,7 +32,7 @@ class TasksPageController
                 "permission" => [1, 11],
                 "status" => true,
                 "icon" => basename(__DIR__) . "/../task/assets/img/icon.svg",
-                "position" => 3,
+                "position" => 5,
                 "belongs_to_project" => true
             ];
             \ModuleManager\Pages::set_modules($main_page);
