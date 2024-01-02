@@ -129,9 +129,11 @@ class TasksPageController
         \InjectStyles::set_style(["name" => uniqid(), "style" => "/modules/task/assets/css/other.css"]);
         \InjectStyles::set_style(["name" => 'single-note', "style" => "/modules/task/assets/css/single-note.css"]);
 
+        // Blocks
+        \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/task/assets/blocks/elements.js"]);
+
         // Add js script
         \InjectJavaScript::set_script(["name" => "open_note", "src" => "/modules/task/assets/js/open-note.js"]);
-        \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/task/assets/js/elements.js"]);
         \InjectJavaScript::set_script(["name" => "task_repository", "src" => "/modules/task/assets/js/repository-status-tasks.js"]);
         \InjectJavaScript::set_script(["name" => "load_js_task_repository", "src" => "/modules/task/assets/js/repository-tasks.js"]);
         \InjectJavaScript::set_script(["name" => "load_js_task", "src" => "/modules/task/assets/js/task.js"]);

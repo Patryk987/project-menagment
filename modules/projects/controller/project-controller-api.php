@@ -26,6 +26,13 @@ class ProjectsApi
             "permission" => [1, 2, 3, 11]
         ]);
 
+        \ModuleManager\Pages::set_endpoint([
+            "link" => 'get_all_project_user',
+            "function" => [$this, 'get_all_project_user'],
+            "http_methods" => 'GET',
+            "permission" => [1, 2, 3, 11]
+        ]);
+
 
     }
 
@@ -42,6 +49,53 @@ class ProjectsApi
             $results = $main->sedjm->get(["user_id", "nick", "email"], "Users");
             $output->set_message($results);
             $output->set_status(\ApiStatus::CORRECT);
+        }
+        return $output;
+
+    }
+
+    public function get_all_project_user($input): \Models\ApiModel
+    {
+        global $main;
+
+        $output = new \Models\ApiModel(\ApiStatus::ERROR);
+        if (!empty($input['project_id'])) {
+            $main->sedjm->clear_all();
+            $main->sedjm->set_join(
+                "LEFT",
+                [
+                    'table' => "Users",
+                    'column' => "user_id"
+                ],
+                [
+                    'table' => "Collaborators",
+                    'column' => "user_id"
+                ],
+            );
+            $main->sedjm->set_where("project_id", $input['project_id'], "=");
+            $collaborators = $main->sedjm->get(
+                [
+                    'collaborator_id',
+                    'user_id',
+                    [
+                        "column" => "nick",
+                        "alias" => "nick",
+                        "table" => "Users"
+                    ],
+                    [
+                        "column" => "email",
+                        "alias" => "email",
+                        "table" => "Users"
+                    ],
+                ],
+                "Collaborators"
+            );
+
+            $output->set_message(["data" => $collaborators]);
+            $output->set_status(\ApiStatus::CORRECT);
+        } else {
+
+            $output->set_error(["project id is empty"]);
         }
         return $output;
 

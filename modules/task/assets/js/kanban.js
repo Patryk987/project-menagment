@@ -1,5 +1,3 @@
-
-
 class Kanban {
     draggableKanban = document.querySelectorAll('#kanban .box')
     containersKanban = document.querySelectorAll('#kanban .kanban_view')

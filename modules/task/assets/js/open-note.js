@@ -6,6 +6,7 @@ class Details {
     data;
     deleteActiveNote;
     addNewBackgroundFile;
+    deadline;
 
     active() {
         this.#insertContent();
@@ -34,6 +35,7 @@ class Details {
         var content = data.content;
         var update_time = data.update_time;
         var author = data.author;
+        var deadline = data.deadline;
         var background = data.background;
         if (background) background = "url(" + background + ")";
         this.single_note.querySelector(".content").innerHTML = `
@@ -41,11 +43,13 @@ class Details {
                 title="` + title + `" 
                 author="`+ author + `" 
                 last_modify="` + update_time + `"
-                background="` + background + `" />`;
+                background="` + background + `"
+                deadline="`+ deadline + `" />`;
 
         this.#updateTitle();
         this.#deleteNote();
         this.#noteBackground();
+        this.#updateDeadline();
         this.#activeTextEditor(content);
 
     }
@@ -64,6 +68,18 @@ class Details {
 
         title.addEventListener("change", () => {
             this.title(title.value);
+        })
+    }
+
+    changeDeadline(callback) {
+        this.deadline = callback;
+    }
+
+    #updateDeadline() {
+        const deadline = document.querySelector("#deadline");
+
+        deadline.addEventListener("change", () => {
+            this.deadline(deadline.value);
         })
     }
 

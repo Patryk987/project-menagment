@@ -69,6 +69,26 @@ class TasksApiController
 
         \ModuleManager\Pages::set_endpoint($api);
 
+        // assign new collaborators
+
+        $api = [
+            "link" => 'assign_collaborator',
+            "function" => [$this, 'assign_collaborator'],
+            "http_methods" => "PUT",
+            "permission" => [1, 2, 11]
+        ];
+
+        \ModuleManager\Pages::set_endpoint($api);
+
+        $api = [
+            "link" => 'get_assigned_collaborator',
+            "function" => [$this, 'get_assigned_collaborator'],
+            "http_methods" => "GET",
+            "permission" => [1, 2, 11]
+        ];
+
+        \ModuleManager\Pages::set_endpoint($api);
+
     }
 
     public function get_task_details($input): \Models\ApiModel
@@ -254,6 +274,46 @@ class TasksApiController
 
         }
 
+
+        return $output;
+    }
+
+    public function assign_collaborator($input): \Models\ApiModel
+    {
+        $output = new \Models\ApiModel(\ApiStatus::ERROR);
+
+        if (
+            !empty($input['project_id'])
+            && !empty($input['task_group_id'])
+            && !empty($input['collaborator_id'])
+            && !empty($input['task_id'])
+        ) {
+            $repository = new Repository\TasksRepository($input['project_id'], $input['task_group_id']);
+            $results = $repository->assign_user_to_task($input['collaborator_id'], $input['task_id']);
+            if ($results['status']) {
+                $output->set_status(\ApiStatus::CORRECT);
+            }
+        }
+
+        return $output;
+    }
+
+    public function get_assigned_collaborator($input): \Models\ApiModel
+    {
+        $output = new \Models\ApiModel(\ApiStatus::ERROR);
+
+        if (
+            !empty($input['project_id'])
+            && !empty($input['task_group_id'])
+            && !empty($input['task_id'])
+        ) {
+            $repository = new Repository\TasksRepository($input['project_id'], $input['task_group_id']);
+            $results = $repository->get_assigned_user($input['task_id']);
+            if ($results['status']) {
+                $output->set_status(\ApiStatus::CORRECT);
+                $output->set_message(["data" => $results['data']]);
+            }
+        }
 
         return $output;
     }

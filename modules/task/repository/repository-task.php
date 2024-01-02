@@ -196,6 +196,50 @@ class TasksRepository
         return $output;
     }
 
+    public function assign_user_to_task($user_id, $task_id)
+    {
+        $this->sedjm->clear_all();
+
+        $table = "AssignedCollaborators";
+
+        $this->sedjm->set_where("user_id", $user_id, "=");
+        $this->sedjm->set_where("task_id", $task_id, "=");
+        $get_data = $this->sedjm->get(["assigned_collaborators_id"], $table);
+        if (count($get_data) > 0) {
+            $delete_user = $this->sedjm->delete($table);
+        } else {
+            $data = [
+                "user_id" => $user_id,
+                "task_id" => $task_id
+            ];
+
+            $insert_user = $this->sedjm->insert($data, $table);
+        }
+
+        $output = [
+            "status" => true
+        ];
+
+        return $output;
+    }
+
+    public function get_assigned_user($task_id)
+    {
+        $this->sedjm->clear_all();
+
+        $table = "AssignedCollaborators";
+
+        $this->sedjm->set_where("task_id", $task_id, "=");
+        $get_data = $this->sedjm->get(["task_id", "user_id"], $table);
+
+        $output = [
+            "status" => true,
+            "data" => $get_data
+        ];
+
+        return $output;
+    }
+
     public function parse_content($content)
     {
         $content = html_entity_decode($content);
