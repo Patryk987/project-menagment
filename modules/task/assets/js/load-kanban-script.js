@@ -4,6 +4,7 @@ class loadKanban {
     taskRepository;
     TaskTagsRepository;
     details;
+    collaborators;
 
     kanbanStatusIdName = 'kanban';
 
@@ -21,11 +22,6 @@ class loadKanban {
 
         this.kanban = document.querySelector(div);
 
-    }
-
-    async getCollaborators() {
-        let response = await this.taskRepository.getCollaboratorsList();
-        return response;
     }
 
     async #getTaskTags() {
@@ -137,7 +133,20 @@ class loadKanban {
 
     }
 
-    #active() {
+    async #activeCollaboratorsList(task_id) {
+        let collaborators = document.querySelectorAll(".active_collaborators");
+        collaborators.forEach((item) => {
+            item.addEventListener("click", async (event) => {
+                event.stopPropagation();
+                let checkbox = item.querySelector("input");
+                let collaborator_id = await checkbox.getAttribute("data-id");
+                this.taskRepository.assignCollaborators(collaborator_id, task_id)
+                checkbox.checked = !checkbox.checked;
+            });
+        })
+    }
+
+    async #active() {
         this.#updateStatus();
         this.#updateTaskTag();
         this.#delete();
@@ -146,6 +155,13 @@ class loadKanban {
 
         this.details = new Details;
         this.details.active();
+        this.collaborators = await this.#getCollaborators();
+    }
+
+
+    async #getCollaborators() {
+        let response = await this.taskRepository.getCollaboratorsList();
+        return response.data;
     }
 
     #activeClick() {
@@ -174,7 +190,28 @@ class loadKanban {
                     "deadline": detailsData.end_time
                 }
 
+
                 this.details.insertData(data);
+
+                var collaborators_list = document.querySelector("#collaborators_list");
+                var assignedCollaborators = await this.taskRepository.getAssignedCollaboratorsList(id);
+
+                this.collaborators.forEach((item) => {
+
+                    let checked = "";
+                    if (this.#checkUser(item, assignedCollaborators)) {
+                        checked = "checked";
+                    }
+
+                    collaborators_list.innerHTML += `
+                        <div class='active_collaborators'>
+                            <input type='checkbox' name='collaborators' ${checked} data-id='${item.user_id}'/>
+                            <p>${item.nick}</p>
+                        </div>
+                    `;
+                });
+
+                this.#activeCollaboratorsList(id);
 
                 this.details.addChangeTitle((value) => {
                     this.taskRepository.updateTask(id, { "name": value })
@@ -232,5 +269,15 @@ class loadKanban {
 
         this.#active();
 
+    }
+
+
+    #checkUser(item, list1) {
+        for (let user of list1) {
+            if (item["user_id"] === user["user_id"]) {
+                return true;
+            }
+        }
+        return false;
     }
 }
