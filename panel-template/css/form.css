@@ -75,9 +75,28 @@
     transition: 0.5s;
 }
 
+.container .box p {
+    color: var(--selected);
+}
+
+.container .box p a {
+    color: var(--selected);
+    opacity: 0.8;
+}
+
+.container .box p a:hover {
+    transition: 0.5s;
+    opacity: 1;
+}
+
+label>table {
+    margin-top: 10px;
+}
+
 label>table td {
     padding-right: 10px;
     font-size: 10pt;
+    color: var(--selected);
 }
 
 input[type="checkbox"] {
@@ -89,7 +108,7 @@ input[type="checkbox"] {
     padding: 0 !important;
     width: 20px !important;
     height: 20px !important;
-    border: 1px solid white;
+    border: 1px solid var(--selected) !important;
     border-radius: 5px !important;
 }
 
@@ -101,7 +120,7 @@ input[type="checkbox"]::before {
     width: 10px !important;
     height: 10px !important;
     transform: scale(0);
-    background-color: var(--secondary);
+    background-color: var(--selected);
     border-radius: 2.5px !important;
 }
 

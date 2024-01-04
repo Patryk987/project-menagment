@@ -112,3 +112,6 @@
 [2023-12-27 12:40:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
 [2023-12-27 12:40:15] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
 [2023-12-27 12:40:37] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-04 11:12:53] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-04 12:42:45] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-04 12:43:09] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
