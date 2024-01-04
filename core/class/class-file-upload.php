@@ -18,6 +18,9 @@ class FileUploader implements IFileUploader
     private string $upload_dir = "";
     private string $main_path = __DIR__ . "/../..";
 
+    public int $quality = 50;
+    public int $max_width = 1080;
+
     public function __construct(array $allowed_extensions = [], $upload_dir = "uploads")
     {
         $this->allowed_extensions = $allowed_extensions;
@@ -46,6 +49,29 @@ class FileUploader implements IFileUploader
         return $data;
     }
 
+    private function compress($source, $destination)
+    {
+
+        $info = getimagesize($source);
+        list($width, $height, $type, $attr) = $info;
+
+        if ($info['mime'] == 'image/jpeg')
+            $image = imagecreatefromjpeg($source);
+        elseif ($info['mime'] == 'image/gif')
+            $image = imagecreatefromgif($source);
+        elseif ($info['mime'] == 'image/png')
+            $image = imagecreatefrompng($source);
+
+        if ($width > $this->max_width)
+            $image = imagescale($image, $this->max_width);
+
+        imagejpeg($image, $destination, $this->quality);
+
+        return $destination;
+    }
+
+
+
     public function upload_file(int $user_id, array $file, string $type = ""): array
     {
         $error = [];
@@ -63,9 +89,9 @@ class FileUploader implements IFileUploader
         if (!empty($this->allowed_extensions) && !in_array($file_extension, $this->allowed_extensions)) {
             $error[] = "Nieprawidłowe rozszerzenie pliku. Dozwolone rozszerzenia: " . $allowed_extensions_string;
         } else {
-
             // Przeniesienie pliku do folderu docelowego
-            $move_file = move_uploaded_file($file['tmp_name'], $destination);
+            $move_file = $this->compress($file['tmp_name'], $destination);
+            // $move_file = move_uploaded_file($file['tmp_name'], $destination);
             $save_in_db = $this->save_file_in_database($this->upload_dir . '/' . $new_filename, $filename, $user_id);
 
             if ($move_file && $save_in_db['status']) {
@@ -98,8 +124,9 @@ class FileUploader implements IFileUploader
         $destination = $this->main_path . '/' . $this->upload_dir . '/' . $new_filename;
 
 
-        // Przeniesienie pliku do folderu docelowego
         $move_file = file_put_contents($destination, base64_decode($base64));
+        // Przeniesienie pliku do folderu docelowego
+        $move_file = $this->compress($destination, $destination);
 
         $save_in_db = $this->save_file_in_database($this->upload_dir . '/' . $new_filename, $filename, $user_id);
 

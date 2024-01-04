@@ -11,7 +11,7 @@
 }
 
 #tasks .tabs {
-    height: 5vh;
+    /* height: 5vh; */
     width: 100%;
     display: flex;
     border-width: 0 0 1px 0;

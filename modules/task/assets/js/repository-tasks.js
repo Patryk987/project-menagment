@@ -98,4 +98,60 @@ class TasksRepository {
 
     }
 
+    async getCollaboratorsList() {
+
+        let response = await api.get("api/get_all_project_user", {
+            "project_id": TasksRepository.project_id
+        });
+
+        var message = [];
+
+
+        if (response && response.status) {
+            message = await response.message;
+        }
+
+        return message;
+
+    }
+
+    async getAssignedCollaboratorsList(task_id) {
+
+        let response = await api.get("api/get_assigned_collaborator", {
+            "project_id": TasksRepository.project_id,
+            "task_group_id": TasksRepository.task_group_id,
+            "task_id": task_id
+        });
+
+        var message = [];
+
+
+        if (response && response.status && response.message && response.message.data) {
+            message = await response.message.data;
+        }
+
+        return message;
+
+    }
+
+    async assignCollaborators(collaborator_id, task_id) {
+
+        let response = await api.put("api/assign_collaborator", {
+            "project_id": TasksRepository.project_id,
+            "task_group_id": TasksRepository.task_group_id,
+            "task_id": parseInt(task_id),
+            "collaborator_id": parseInt(collaborator_id)
+        });
+
+        var message = [];
+
+
+        if (response && response.status) {
+            message = await response.message;
+        }
+
+        return message;
+
+    }
+
 }

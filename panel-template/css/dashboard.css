@@ -1,0 +1,50 @@
+#dashboard {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+#dashboard .block {
+    border-radius: var(--radius);
+    /* background-color: var(--selected); */
+    padding: 10px;
+    border: 2px solid var(--selected);
+}
+
+/* szerokości bloków */
+#dashboard .block.width-1 {
+    grid-column: span 1;
+}
+
+#dashboard .block.width-2 {
+    grid-column: span 2;
+}
+
+#dashboard .block.width-3 {
+    grid-column: span 3;
+}
+
+#dashboard .block.width-4 {
+    grid-column: span 4;
+}
+
+/* wysokości bloków */
+#dashboard .block.height-1 {
+    grid-row: span 1;
+}
+
+#dashboard .block.height-2 {
+    grid-row: span 2;
+}
+
+#dashboard .block.height-3 {
+    grid-row: span 3;
+}
+
+#dashboard .block.height-4 {
+    grid-row: span 4;
+}

@@ -52,6 +52,8 @@ class Forms
     private function input($values)
     {
 
+        $id = !empty($values['id']) ? $values['id'] : uniqid();
+
         if (!empty($_POST[$values['key']])) {
             $value = htmlspecialchars($_POST[$values['key']]);
         } else {
@@ -60,7 +62,7 @@ class Forms
 
         $html = "<label>";
         $html .= "<p>" . $values['name'] . "</p>";
-        $html .= "<input type='" . $values['type'] . "' placeholder='" . $values['name'] . "' name='" . $values['key'] . "'  value='" . (!empty($_POST[$values['key']]) ? $value : $values['value']) . "'>";
+        $html .= "<input type='" . $values['type'] . "' placeholder='" . $values['name'] . "' name='" . $values['key'] . "'  value='" . (!empty($_POST[$values['key']]) ? $value : $values['value']) . "' id='" . $id . "'>";
         $html .= "</label>";
 
         return $html;
@@ -192,7 +194,8 @@ class Forms
             "value" => !empty($data['value']) ? $data['value'] : "",
             "options" => !empty($data['options']) ? $data['options'] : [],
             "description" => !empty($data['description']) ? $data['description'] : "",
-            "field" => !empty($data['field']) ? $data['field'] : []
+            "field" => !empty($data['field']) ? $data['field'] : [],
+            "id" => !empty($data['id']) ? $data['id'] : [],
         ];
     }
 
@@ -218,7 +221,7 @@ class Forms
 
         }
 
-        $html .= "<input type='submit' value='" . $submit_button_name . "'>";
+        $html .= "<input type='submit' value='" . $submit_button_name . "' id='submit'>";
 
         $html .= "</form>";
 

@@ -8,6 +8,7 @@ define("NONCE", uniqid());
 // Models
 require_once("./core/models/model-api.php");
 require_once("./core/models/model-projects.php");
+require_once("./core/models/model-dashboard.php");
 
 
 // Interface
@@ -49,6 +50,7 @@ require_once("./core/class/async-select.php");
 require_once("./core/class/notification.php");
 require_once("./core/class/class-get-csv.php");
 require_once("./core/class/logger.php");
+require_once("./core/class/class-dashboard.php");
 
 require_once("./core/class/class-inject-java-script.php");
 require_once("./core/class/class-inject-style.php");
@@ -105,7 +107,7 @@ class Main
 
         static::$sub_pages = $this->get_sub_page();
 
-
+        new \Dashboard\Dashboard;
     }
 
 

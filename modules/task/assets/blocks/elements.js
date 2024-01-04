@@ -42,7 +42,7 @@ class TaskElementy extends HTMLElement {
             <div data-id='${id}'>
                 <div>
                     ${checked}
-                    ${name}
+                    <div class='title'>${name}</div>
                 </div>
                 
                 <div class='delete'>
@@ -62,7 +62,8 @@ class TaskBox extends HTMLElement {
         "name",
         "status",
         "id",
-        "background"
+        "background",
+        "deadline"
     ];
 
     constructor() {
@@ -150,7 +151,7 @@ class KanbanView extends HTMLElement {
 
                 <div class="title">
                     <div class='tags_delete icon'>
-                        <img src="/modules/task/assets/img/trash.svg" />
+                        <img src="/modules/task/assets/img/w-trash.svg" />
                     </div>
                     <input type="text" value="${name}" class="tags_name" />
                     <div class='add_task icon'>
@@ -251,6 +252,7 @@ class NoteDetailsElement extends HTMLElement {
         const author = this.getAttribute("author") || "";
         const last_modify = this.getAttribute("last_modify") || "0000/00/00";
         const background = this.getAttribute("background") || null;
+        const deadline = this.getAttribute("deadline") || null;
 
         var photoBox = background != null && background != "null" ? (
             `<div class='background' style="background-image: ${background}"></div>`
@@ -280,6 +282,19 @@ class NoteDetailsElement extends HTMLElement {
                         <tr>
                             <th>Last modify</th>
                             <td>${last_modify}</td>
+                        </tr>
+                        <tr>
+                            <th>Deadline</th>
+                            <td>
+                                <input type='datetime-local' name='deadline' id='deadline' value='${deadline}'>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Collaborators</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan='2' id='collaborators_list'></td>
                         </tr>
                     </table>
                 </div>

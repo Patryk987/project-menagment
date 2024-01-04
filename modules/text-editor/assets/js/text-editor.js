@@ -2,7 +2,6 @@
 class TextEditor {
 
     content = {};
-    content2 = {};
     dataToMove;
 
     // Moving element
@@ -77,18 +76,29 @@ class TextEditor {
         this.#removeOther(item);
         item.closest(".text_box").querySelector('.text_content').classList.add("h2");
         item.closest(".text_box").querySelector('.text_content').setAttribute("type", "h2");
+        item.closest(".text_box").querySelector('.text_content').setAttribute("contenteditable", "true");
     }
 
     #setHeader3(item) {
         this.#removeOther(item);
         item.closest(".text_box").querySelector('.text_content').classList.add("h3");
         item.closest(".text_box").querySelector('.text_content').setAttribute("type", "h3");
+        item.closest(".text_box").querySelector('.text_content').setAttribute("contenteditable", "true");
     }
 
     #setParagraf(item) {
         this.#removeOther(item);
         item.closest(".text_box").querySelector('.text_content').classList.add("p");
         item.closest(".text_box").querySelector('.text_content').setAttribute("type", "p");
+        item.closest(".text_box").querySelector('.text_content').setAttribute("contenteditable", "true");
+    }
+
+    #setImage(item) {
+        this.#removeOther(item);
+        item.closest(".text_box").querySelector('.text_content').classList.add("img");
+        item.closest(".text_box").querySelector('.text_content').setAttribute("type", "img");
+        item.closest(".text_box").querySelector('.text_content').setAttribute("contenteditable", "false");
+        item.closest(".text_box").querySelector('.text_content').innerHTML = "<img src='https://images.unsplash.com/photo-1682687982185-531d09ec56fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt='text-editor-image'/>";
     }
 
     #typeChange(element) {
@@ -113,6 +123,12 @@ class TextEditor {
         var setHeader = element.querySelectorAll(".select-box.p");
         setHeader.forEach(item => item.addEventListener("click", (event) => {
             this.#setParagraf(item)
+            this.#updateContent();
+        }));
+
+        var setHeader = element.querySelectorAll(".select-box.img");
+        setHeader.forEach(item => item.addEventListener("click", (event) => {
+            this.#setImage(item)
             this.#updateContent();
         }));
     }
@@ -168,8 +184,6 @@ class TextEditor {
             item.addEventListener('keydown', (event) => {
                 this.#handleKeyPress(event, item)
             });
-            // item.addEventListener('focus', () => {});
-            // item.addEventListener('blur', () => {});
         });
     }
 
@@ -219,6 +233,7 @@ class TextEditor {
 
     #updateContent() {
         let note = this.download()
+        console.log(note);
         this.content(note);
     }
 
@@ -294,14 +309,17 @@ class TextEditor {
             case "text":
                 this.#setParagraf(newElement);
                 break;
-            case "header1":
+            case "h1":
                 this.#setHeader1(newElement);
                 break;
-            case "header2":
+            case "h2":
                 this.#setHeader2(newElement);
                 break;
-            case "header3":
+            case "h3":
                 this.#setHeader3(newElement);
+                break;
+            case "img":
+                this.#setImage(newElement);
                 break;
             default:
                 this.#setParagraf(newElement);

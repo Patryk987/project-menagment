@@ -3,6 +3,7 @@ task-element {
     border-bottom: 1px solid var(--selected);
     display: block;
     padding: 10px;
+    cursor: pointer;
 }
 
 task-element div {
@@ -23,6 +24,11 @@ task-element .checkbox {
 
 task-element .checkbox.checked {
     background-color: var(--selected);
+}
+
+task-element .checkbox.checked+div {
+    opacity: 0.5;
+    text-decoration: line-through
 }
 
 task-element .checkbox.checked::before {

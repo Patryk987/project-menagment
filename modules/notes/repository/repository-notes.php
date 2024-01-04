@@ -123,6 +123,12 @@ class NotesRepository implements RepositoryNotesInterface
                 "alias" => "note",
                 "function" => ["Helper", "htmlspecialchars_decode"],
             ],
+            [
+                "table" => $this->table,
+                "column" => "author_id",
+                "alias" => "user_data",
+                "function" => [$this, "get_user_data"],
+            ],
             "background",
             [
                 "table" => $this->table,
@@ -255,5 +261,33 @@ class NotesRepository implements RepositoryNotesInterface
             return $get[0]['project_id'];
         else
             return -1;
+    }
+
+    public static function get_user_data($user_id)
+    {
+
+        global $main;
+
+        $table = "Users";
+        $additionalTable = "UserData";
+
+        $main->sedjm->clear_all();
+        $main->sedjm->set_where("user_id", $user_id, "=");
+        $get_data = $main->sedjm->get(["nick", "email"], $table);
+        $additional_data = $main->sedjm->get(["field_key", "value"], $additionalTable);
+
+        $additional = [];
+        foreach ($additional_data as $key => $value) {
+
+            $additional[$value['field_key']] = $value['value'];
+
+        }
+
+        $output = [
+            "data" => $get_data[0],
+            "additional_data" => $additional
+        ];
+
+        return $output;
     }
 }

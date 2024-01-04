@@ -12,13 +12,13 @@ class Accounts
     public function __construct($sedjm)
     {
 
+
         $this->sedjm = $sedjm;
 
     }
 
     public function init_endpoint()
     {
-
         Pages::set_endpoint([
             "link" => 'create_account',
             "function" => [$this, 'create_account'],
@@ -54,6 +54,12 @@ class Accounts
             "permission" => [11, 2, 3]
         ]);
 
+        Pages::set_endpoint([
+            "link" => 'update_user_data',
+            "function" => [$this, 'update_user_data'],
+            "http_methods" => 'PUT',
+            "permission" => [11, 2, 3]
+        ]);
     }
 
     /**
@@ -240,8 +246,6 @@ class Accounts
     public function get_account_data($input): array
     {
 
-        $user_id = $input['user_id'];
-
         $table = "Users";
         $additionalTable = "UserData";
 
@@ -271,7 +275,7 @@ class Accounts
      * @param array $input
      * @return array $output
      */
-    public function update_user_data($input)
+    public function update_user_data($input): \Models\ApiModel
     {
         $this->sedjm->clear_all();
 
@@ -304,8 +308,8 @@ class Accounts
 
         }
 
-
-        return $update_data;
+        $output = new \Models\ApiModel(\ApiStatus::from($update_data["status"]));
+        return $output;
 
     }
 
@@ -598,7 +602,6 @@ class Accounts
             $errors[] = 'incomplete_input_data';
         }
 
-
         $this->sedjm->clear_where();
         $this->sedjm->set_where('user_id', $user_id, '=');
         $nick_in_db = $this->sedjm->get(['user_id', 'nick', 'password', 'permission'], $table);
@@ -637,7 +640,6 @@ class Accounts
             $errors[] = 'User is not accept terms';
         }
 
-        // return ["status" => $status, "errors" => $errors, "accept" => $accept];
         $output = new \Models\ApiModel($status, ["accept" => $accept], $errors);
         return $output;
 

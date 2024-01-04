@@ -1,0 +1,94 @@
+/* Grid view */
+#grid {
+    width: 100%;
+}
+
+.grid_view {
+    /* width: 45%;
+    margin: 2.5%; */
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.grid_view simple-card {
+    /* width: 100%; */
+    max-width: calc(25% - 20px);
+    width: 25%;
+    padding: 10px;
+}
+
+.grid_view .box:hover {
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.grid_view .box .box_content {
+    transition: 1s;
+    opacity: 0.9;
+    background-color: var(--selected);
+    padding: 10px;
+
+}
+
+.grid_view .box {
+    /* width: calc(25% - 28px); */
+    width: 100%;
+    height: 200px;
+    border-radius: var(--radius);
+    border: 4px solid var(--selected);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background-image: url("https://cdn.pixabay.com/photo/2023/11/05/21/04/alps-8368328_1280.jpg");
+    background-position: center;
+    background-size: cover;
+
+    transition: 0.5s;
+}
+
+.grid_view .box:hover .box_content {
+    opacity: 1;
+}
+
+.grid_view .box .title {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.grid_view .box .description {
+    color: white;
+}
+
+.grid_view simple-card.dragging {
+    opacity: 0.5;
+}
+
+.grid_view .add_box {
+    width: calc(25% - 28px);
+    /* width: calc(100%); */
+    height: 200px;
+    margin: 10px;
+    border-radius: var(--radius);
+    border: 4px solid var(--selected);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--selected);
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.grid_view .add_box:hover {
+    opacity: 1;
+}

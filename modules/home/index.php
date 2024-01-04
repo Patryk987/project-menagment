@@ -26,18 +26,6 @@ class Home
         ];
         \ModuleManager\Pages::set_modules($main_page);
 
-        $main_page = [
-            "name" => "Home",
-            "link" => "homeasdf",
-            "function" => [$this, "home"],
-            "permission" => [1, 11],
-            "status" => true,
-            "icon" => basename(__DIR__) . "/assets/img/icon.svg",
-            "position" => 1,
-            "belongs_to_project" => true
-        ];
-        \ModuleManager\Pages::set_modules($main_page);
-
     }
 
     public function home()
