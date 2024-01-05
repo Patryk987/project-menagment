@@ -170,7 +170,7 @@ function registration_form()
         "key" => "remember",
         "name" => "remember box",
         "type" => "checkbox",
-        "description" => "asd"
+        "description" => "Akceptuje politykę prywatności"
     ]);
 
     return $form->get_form("Registration", "Registration");
