@@ -161,9 +161,9 @@ function registration_form()
     ]);
 
     $form->set_data([
-        "key" => "password",
-        "name" => "Repet Password",
-        "type" => "repeat_password"
+        "key" => "repeat_password",
+        "name" => "Repet password",
+        "type" => "password"
     ]);
 
     $form->set_data([

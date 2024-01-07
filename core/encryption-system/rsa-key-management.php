@@ -9,14 +9,24 @@ interface KeyManagementInterface
 class RSAKeyManagement
 {
     private int $key_size = 2048;
-    private $id;
-    private $prefix;
+    protected string $url;
+    private \EAS\EncryptDecryptEAS $eas;
     private string $symmetric_algorithm_password;
 
-    public function __construct($id, $prefix = "")
+    protected string $public_key_destination, $private_key_destination;
+
+    public function __construct($id, $prefix = "", $access_key = null)
     {
-        $this->id = $id;
-        $this->prefix = $prefix;
+        $url = __DIR__ . '/keys/';
+        $this->public_key_destination = $url . $prefix . $id . '_public_key.pem';
+        $this->private_key_destination = $url . $prefix . $id . '_private_key.pem';
+
+        if ($access_key == null) {
+            $this->eas = new \EAS\EncryptDecryptEAS($_ENV["SECRET"]);
+        } else {
+            $this->eas = new \EAS\EncryptDecryptEAS($access_key);
+
+        }
     }
 
     public function set_key_size(int $size)
@@ -47,23 +57,48 @@ class RSAKeyManagement
 
     public function get_keys(): RsaKeyModel
     {
-        $private_key = file_get_contents(__DIR__ . '/keys/' . $this->id . '_private_key.pem');
-        $public_key = file_get_contents(__DIR__ . '/keys/' . $this->id . '_public_key.pem');
+
+        $this->create_keys_if_not_exist();
+
+        // private
+        $private_key = file_get_contents($this->private_key_destination);
+        $private_key = $this->eas->decrypt($private_key);
+
+        // public
+        $public_key = file_get_contents($this->public_key_destination);
 
         return new RsaKeyModel($public_key, $private_key);
+    }
+
+    public function get_public_keys(): RsaKeyModel
+    {
+
+        $this->create_keys_if_not_exist();
+        $public_key = file_get_contents($this->public_key_destination);
+
+        return new RsaKeyModel($public_key);
     }
 
     private function save_private_key($private_key)
     {
 
-        file_put_contents(__DIR__ . '/keys/' . $this->prefix . $this->id . '_private_key.pem', $private_key);
+        $private_key = $this->eas->encrypt($private_key);
+        file_put_contents($this->private_key_destination, $private_key);
 
     }
 
     private function save_public_key($public_key)
     {
 
-        file_put_contents(__DIR__ . '/keys/' . $this->prefix . $this->id . '_public_key.pem', $public_key);
+        file_put_contents($this->public_key_destination, $public_key);
 
+    }
+
+
+    private function create_keys_if_not_exist()
+    {
+        if (!file_exists($this->public_key_destination)) {
+            $this->generate_key();
+        }
     }
 }

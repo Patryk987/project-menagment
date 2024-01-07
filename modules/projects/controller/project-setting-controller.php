@@ -161,13 +161,6 @@ class EditProjectsController
         ]);
 
         $form->set_data([
-            "key" => "start_folder",
-            "name" => "start_folder",
-            "type" => "text",
-            "value" => $data['start_folder']
-        ]);
-
-        $form->set_data([
             "key" => "password",
             "name" => "password",
             "type" => "text",
@@ -240,7 +233,9 @@ class EditProjectsController
                     "alias" => "email",
                     "table" => "Users"
                 ],
-            ], "Collaborators");
+            ],
+            "Collaborators"
+        );
 
         $header = [
             "Nick" => ["nick"],
@@ -266,10 +261,14 @@ class EditProjectsController
 
         // Add js script
         \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/projects/assets/js/collaborators.js"]);
-        \InjectJavaScript::set_script(["name" => "script", "type" => "script", "script" => "
+        \InjectJavaScript::set_script([
+            "name" => "script",
+            "type" => "script",
+            "script" => "
             let collaborators = new Collaborators('" . $this->project_id . "');
             collaborators.activeFindCollaborators();
-        "]);
+        "
+        ]);
 
         $link = __DIR__ . "/../view/edit-collaborators.html";
         return $this->get_page($link);

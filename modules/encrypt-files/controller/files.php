@@ -50,9 +50,26 @@ class FilesNotepadsController
             // Add js script
             \InjectJavaScript::set_script(["name" => "load_js_elements", "src" => "/modules/encrypt-files/assets/js/script.js"]);
 
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // send_file
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['type']) && $_POST['type'] == "send_file") {
 
                 $this->repository->upload_file($_FILES['file']['tmp_name'], $_GET['pwd'], $_FILES['file']['name'], $_FILES['file']['type']);
+
+            }
+
+            // add_folder
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['type']) && $_POST['type'] == "add_folder") {
+                $pwd = !empty($_GET['pwd']) ? $_GET['pwd'] : ".";
+                $this->repository->create_catalogue($_POST['catalogue_name'], $pwd);
+
+            }
+
+            // Delete
+            if ($_SERVER["REQUEST_METHOD"] == "GET" && !empty($_GET['type']) && $_GET['type'] == "delete" && !empty($_GET['id'])) {
+
+                $pwd = !empty($_GET['pwd']) ? $_GET['pwd'] : ".";
+
+                $this->repository->delete_file($_GET['id'], $pwd);
 
             }
 
@@ -63,18 +80,29 @@ class FilesNotepadsController
                 "Rozmiar" => ["size"],
                 "Szyfrowane" => ["encrypt_icon"]
             ];
+
             $form = '
             <form method="post" enctype="multipart/form-data">
-            <input type="file" name="file" value="add file" />
-            <input type="submit" />
+                <input type="hidden" name="type" value="send_file" />
+                <input type="file" name="file" value="add file" />
+                <input type="submit" />
+            </form>
+            ';
+
+            $form .= '
+            <form method="post">
+                <input type="hidden" name="type" value="add_folder" />
+                <input type="text" name="catalogue_name" value="Catalogue name" />
+                <input type="submit" />
             </form>
             ';
 
             $table = new \ModuleManager\Table(500);
-            $table->set_id("pwd");
-            $table->set_action("", 'delete', 'delete');
+            $table->set_id("unique_name");
+            $pwd = !empty($_GET['pwd']) ? $_GET['pwd'] : "/";
 
-            // $table->set_action("?pwd=" . $_GET['pwd'], 'edit', 'edit');
+            $table->set_action("", 'delete', 'delete', ["pwd" => $pwd]);
+
             $view = $form;
             $view .= $table->generate_table($this->get_files(), $files_header);
             return $view;
@@ -129,6 +157,7 @@ class FilesNotepadsController
 
 
             $data[] = [
+                "unique_name" => $value["name"],
                 "pwd" => $value["pwd"],
                 "name" => $name,
                 "modify_time" => $value["modify_time"],

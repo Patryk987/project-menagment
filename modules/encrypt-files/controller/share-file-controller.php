@@ -53,14 +53,34 @@ class FilesShareController
     public function shared_files_list()
     {
 
-        return "Share files";
+        $this->project_id = \ModuleManager\Pages::$project->get_project_id();
+        $this->repository = new Repository\FilesShareRepository($this->project_id);
+
+        $header = [
+            "Recipient" => ["recipient_email"],
+            "Upload time" => ["upload_time"],
+            "Life time" => ["life_time"],
+            "File name" => ["file_name"]
+        ];
+
+        $table = new \ModuleManager\Table(50);
+
+        $table->set_action("", 'delete', 'delete');
+
+        $table->set_id("file_id");
+
+        return $table->generate_table($this->repository->list_share_files(), $header);
 
     }
 
     public function share_file()
     {
+        $this->project_id = \ModuleManager\Pages::$project->get_project_id();
+        $this->repository = new Repository\FilesShareRepository($this->project_id);
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            $this->repository->share_file($_FILES['file']['tmp_name'], $_FILES['file']['name'], $_FILES['file']['type'], $_POST['email'], $_POST['life_time']);
 
         }
 

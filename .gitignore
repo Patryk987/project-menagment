@@ -1,5 +1,6 @@
 uploads/
 uploads/*
-.log
+*.log
 core/logger/waf-logs.txt
 core/logger/logs.log
+*.pem

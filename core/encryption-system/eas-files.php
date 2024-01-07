@@ -6,7 +6,7 @@ class EncryptFile
 {
     private int $encrypt_blocks = 10000;
 
-    private function encryptFile($source, $key, $dest)
+    public function encryptFile($source, $key, $dest)
     {
 
         $key = substr(sha1($key, true), 0, 16);
@@ -56,7 +56,7 @@ class EncryptFile
     }
 
 
-    private function decryptFile($source, $key, $dest)
+    public function decryptFile($source, $key, $dest)
     {
         $key = substr(sha1($key, true), 0, 16);
 

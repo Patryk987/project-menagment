@@ -6,8 +6,10 @@ namespace Files\Repository;
 class FilesRepository
 {
 
-    private \ModuleManager\SEDJM $sedjm;
-    private \FTP $ftp;
+    protected \ModuleManager\SEDJM $sedjm;
+    protected \EAS\EncryptFile $eas_file;
+    protected \RSA\EncryptDecryptRSA $rsa_encrypt_decrypt;
+    protected \FTP $ftp;
     private $table = "";
     private int $project_id;
     public $ftp_connect_data_table = "FTP";
@@ -19,12 +21,13 @@ class FilesRepository
         global $main;
         $this->project_id = $project_id;
         $this->sedjm = $main->sedjm;
-
         $this->connect_data = $this->get_ftp_connect_data();
+        $this->eas_file = new \EAS\EncryptFile();
 
+        $this->rsa_encrypt_decrypt = new \RSA\EncryptDecryptRSA($project_id, "project");
     }
 
-    public function connect_to_ftp()
+    public function connect_to_ftp(): bool
     {
         try {
             if (!empty($this->connect_data)) {
@@ -54,12 +57,12 @@ class FilesRepository
         return false;
     }
 
-    public function list_file($directory = ".")
+    public function list_file($directory = "."): array
     {
         $ftp_file = $this->ftp->list_files($directory);
-        $x = $this->concat_files($ftp_file);
+        $concat_files = $this->concat_files($ftp_file);
 
-        return $x;
+        return $concat_files;
     }
 
     public function list_file_tree()
@@ -67,30 +70,32 @@ class FilesRepository
 
     }
 
-    public function download_file($file, $name)
+    public function download_file($file, $name): void
     {
 
         $source = __DIR__ . "/" . $name;
         $data = $this->get_file_info($name);
         if ($data['status']) {
 
-            $key = hex2bin($data["data"]['access_key']);
+            $key = $this->rsa_encrypt_decrypt->decrypt($data["data"]['access_key']);
+            $key = hex2bin($key);
             $local_file = $data["data"]["file_name"];
             $this->ftp->get_file($source, $file);
-            decryptFile($source, $key, __DIR__ . "/" . $local_file);
+            // decryptFile($source, $key, __DIR__ . "/temp/" . $local_file);
+            $destination = __DIR__ . "/temp/" . $local_file;
+            $this->eas_file->decryptFile($source, $key, $destination);
 
             header('Content-Description: File Transfer');
             header('Content-Type: application/octet-stream');
-            header('Content-Disposition: attachment; filename="' . basename(__DIR__ . "/" . $local_file));
+            header('Content-Disposition: attachment; filename="' . basename(__DIR__ . "/temp/" . $local_file));
             header('Expires: 0');
             header('Cache-Control: must-revalidate');
             header('Pragma: public');
-            header('Content-Length: ' . filesize(__DIR__ . "/" . $local_file));
+            header('Content-Length: ' . filesize(__DIR__ . "/temp/" . $local_file));
             flush();
-            readfile(__DIR__ . "/" . $local_file);
-            unlink(__DIR__ . "/" . $local_file);
+            readfile(__DIR__ . "/temp/" . $local_file);
+            unlink(__DIR__ . "/temp/" . $local_file);
             unlink($source);
-            die();
         } else {
             $this->ftp->get_file($source, $file);
             header('Content-Description: File Transfer');
@@ -105,29 +110,53 @@ class FilesRepository
 
             unlink($source);
         }
+        die();
     }
 
-    public function upload_file($file, $destination, $filename, $type)
+    public function upload_file($file, $destination, $filename, $type): array
     {
         $checksum = $this->create_checksum($file);
         $key = $this->create_key();
-        var_dump(bin2hex($key));
         $encrypt_name = $this->create_encrypt_name();
-        $this->save_file_info($encrypt_name, $key, $destination, $checksum, $filename, $type);
 
-        encryptFile($file, $key, __DIR__ . "/" . $encrypt_name);
+        $save_info = $this->save_file_info($encrypt_name, $key, $destination, $checksum, $filename, $type);
 
-        $fp = fopen(__DIR__ . "/" . $encrypt_name, 'r');
-        $this->ftp->send_file($fp, $destination, $encrypt_name);
-        unlink(__DIR__ . "/" . $encrypt_name);
+        if ($save_info['status']) {
+
+            $source = __DIR__ . "/temp/" . $encrypt_name;
+            $this->eas_file->encryptFile($file, $key, $source);
+            // encryptFile($file, $key, __DIR__ . "/temp/" . $encrypt_name);
+            $fp = fopen($source, 'r');
+            $this->ftp->send_file($fp, $destination, $encrypt_name);
+            unlink($source);
+        }
+
+        return $save_info;
     }
 
-    public function delete_file($id)
+    public function delete_file($id, $pwd = "."): array
     {
+        $directory = $pwd . "/" . $id;
+        $this->sedjm->clear_all();
+        $this->sedjm->set_where("encrypt_file_name", $id, "=");
+        $this->sedjm->set_where("directory", $pwd, "=");
+        if ($this->ftp->check_type_of_directory($directory) == "file") {
+            $this->ftp->remove_file($directory);
+        } else {
+            $this->ftp->remove_catalogue_recursive($directory);
+        }
+        $response = $this->sedjm->delete($this->files_table);
 
+        return $response;
     }
 
-    private function get_ftp_connect_data()
+    public function create_catalogue($name, $pwd): bool
+    {
+        $new_catalogue = $pwd . "/" . $name;
+        return $this->ftp->create_catalogue($new_catalogue);
+    }
+
+    private function get_ftp_connect_data(): array
     {
         $this->sedjm->clear_all();
         $this->sedjm->set_where("project_id", $this->project_id, "=");
@@ -147,7 +176,7 @@ class FilesRepository
         }
     }
 
-    private function concat_files($file)
+    private function concat_files($file): array
     {
         $output = [];
 
@@ -173,8 +202,10 @@ class FilesRepository
         // 
     }
 
-    private function save_file_info($encrypt_file_name, $key, $destination, $checksum, $filename, $type)
+    private function save_file_info($encrypt_file_name, $key, $destination, $checksum, $filename, $type): array
     {
+        $key = bin2hex($key);
+        $key = $this->rsa_encrypt_decrypt->encrypt($key);
 
         $data = [
             "user_id" => \ModuleManager\Main::$token['payload']->user_id,
@@ -183,14 +214,14 @@ class FilesRepository
             "encrypt_file_name" => $encrypt_file_name,
             "file_extension" => $type,
             "directory" => $destination,
-            "access_key" => bin2hex($key),
+            "access_key" => $key,
             "create_time" => time(),
             "checksum" => $checksum
         ];
-        $this->sedjm->insert($data, $this->files_table);
+        return $this->sedjm->insert($data, $this->files_table);
     }
 
-    private function get_file_info($encrypt_file_name)
+    private function get_file_info($encrypt_file_name): array
     {
         $data = [
             "user_id",
@@ -207,11 +238,9 @@ class FilesRepository
         $this->sedjm->set_where("encrypt_file_name", $encrypt_file_name, "=");
         $data = $this->sedjm->get($data, $this->files_table);
         if (!empty($data)) {
-
             return ["status" => true, "data" => $data[0]];
         } else {
             return ["status" => false];
-
         }
     }
 
@@ -231,6 +260,16 @@ class FilesRepository
     private function create_encrypt_name(): string
     {
         // TODO: IMPROVE
-        return md5(rand() . rand() . time());
+        return md5(rand() . time() . uniqid());
+    }
+
+    private function encrypt_key($key)
+    {
+
+    }
+
+    private function decrypt_key($encrypt_key)
+    {
+
     }
 }

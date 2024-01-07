@@ -19,6 +19,14 @@ php_value memory_limit 2048M
     Require all denied
 </Files>
 
+<Files "*.pem">
+    Require all denied
+</Files>
+
+<Files "*.json">
+    Require all denied
+</Files>
+
 # Ograniczenie dostępu do katalogu "system"
 # <Directory "system">
 #     Require all denied

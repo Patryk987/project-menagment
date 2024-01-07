@@ -14,6 +14,7 @@ require_once __DIR__ . "/model/file-model.php";
 
 // repository
 require_once __DIR__ . "/repository/repository-files.php";
+require_once __DIR__ . "/repository/repository-share-files.php";
 
 // controller
 require_once __DIR__ . "/controller/files.php";

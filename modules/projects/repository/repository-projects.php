@@ -50,11 +50,6 @@ class ProjectsRepository
                 "column" => "port",
                 "alias" => "port",
                 "table" => $this->ftp_table
-            ],
-            [
-                "column" => "start_folder",
-                "alias" => "start_folder",
-                "table" => $this->ftp_table
             ]
         ];
 

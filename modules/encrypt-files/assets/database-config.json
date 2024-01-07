@@ -113,7 +113,7 @@
             }
         },
         "ShareFile": {
-            "share_fileId_id": {
+            "share_file_id": {
                 "type": "int",
                 "length": "11",
                 "PRIMARY_KEY": true,
@@ -136,17 +136,6 @@
                 "unique": false
             },
             "recipient_email": {
-                "type": "varchar",
-                "length": "255",
-                "PRIMARY_KEY": false,
-                "AUTO_INCREMENT": false,
-                "encrypt": true,
-                "encrypt_type": "SIMPLE",
-                "valid_type": "NULL",
-                "NULL": false,
-                "unique": false
-            },
-            "share_id": {
                 "type": "varchar",
                 "length": "255",
                 "PRIMARY_KEY": false,

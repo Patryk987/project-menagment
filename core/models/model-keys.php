@@ -5,12 +5,13 @@ namespace RSA;
 class RsaKeyModel
 {
     private string $public_key;
-    private string $private_key;
+    private ?string $private_key = null;
 
-    public function __construct($public_key, $private_key)
+    public function __construct($public_key, $private_key = null)
     {
         $this->public_key = $public_key;
-        $this->private_key = $private_key;
+        if ($private_key != null)
+            $this->private_key = $private_key;
     }
 
     // Geter

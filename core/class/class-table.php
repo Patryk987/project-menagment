@@ -66,12 +66,13 @@ class Table
         }
     }
 
-    public function set_action($link, $icon, $label = '')
+    public function set_action($link, $icon, $label = '', $additional_parameter = [])
     {
         $this->action[] = [
             "link" => $link,
             "icon" => $icon,
-            "label" => $label
+            "label" => $label,
+            "additional_parameter" => $additional_parameter
         ];
     }
 
@@ -448,7 +449,13 @@ class Table
                     $body .= "<td class='icon_field'>";
                     if (!empty($this->id) && !empty($this->action)) {
                         foreach ($this->action as $action) {
-                            $body .= "<a href='" . $this->actual_link . "/" . $action['link'] . "?id=" . $data[$this->id] . "&type=" . $action['icon'] . "' label=''>";
+                            $additional_data = "";
+                            if (!empty($action['additional_parameter'])) {
+                                foreach ($action['additional_parameter'] as $additional_data_key => $additional_data_value) {
+                                    $additional_data .= "&" . $additional_data_key . "=" . $additional_data_value;
+                                }
+                            }
+                            $body .= "<a href='" . $this->actual_link . "/" . $action['link'] . "?id=" . $data[$this->id] . "&type=" . $action['icon'] . $additional_data . "' label=''>";
                             switch ($action['icon']) {
                                 case 'edit':
                                     $body .= file_get_contents(__DIR__ . "/../../panel-template/img/edit.svg");

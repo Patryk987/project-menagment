@@ -25,8 +25,10 @@ class FTP
     {
         try {
             ftp_mkdir($this->ftp, $name);
+            return true;
         } catch (\Throwable $th) {
             echo $th->__toString();
+            return false;
         }
     }
 
@@ -61,14 +63,11 @@ class FTP
 
             if ($list['type'] == 'catalogue') {
 
-                if (@$this->remove_catalogue_recursive($full)) {
-                    // echo "usunięto folder \n";
-                } else {
-                    // echo "Nie udało się usunąć folderu \n";
-                }
+                @$this->remove_catalogue_recursive($full);
+
             } else {
 
-                $this->remove_file($directory);
+                @$this->remove_file($full);
 
             }
         }
@@ -85,10 +84,16 @@ class FTP
     public function remove_file($directory)
     {
 
-        if (@ftp_delete($this->ftp, $directory)) {
-            // echo "usunięto plik \n";
-        } else {
-            // echo "Nie udało się usunąć pliku \n";
+        try {
+            if ($this->check_type_of_directory($directory) == "file" && @ftp_delete($this->ftp, $directory)) {
+                // echo "usunięto plik \n";
+                return true;
+            } else {
+                // echo "Nie udało się usunąć pliku \n";
+                return false;
+            }
+        } catch (\Throwable $th) {
+            return false;
         }
 
 
@@ -139,6 +144,27 @@ class FTP
             // echo "pobrano";
         } else {
             // echo "Wystąpił problem podczas pobierania pliku";
+        }
+    }
+
+    public function check_folder(string $folder_to_check): bool
+    {
+        $folder_exists = ftp_nlist($this->ftp, $folder_to_check);
+
+        if ($folder_exists === false) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public function check_type_of_directory(string $directory): string
+    {
+
+        if (ftp_size($this->ftp, $directory) > -1) {
+            return "file";
+        } else {
+            return "catalogue";
         }
     }
 

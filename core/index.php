@@ -9,6 +9,7 @@ define("NONCE", uniqid());
 require_once("./core/models/model-api.php");
 require_once("./core/models/model-projects.php");
 require_once("./core/models/model-dashboard.php");
+require_once("./core/models/model-keys.php");
 
 
 // Interface
@@ -22,6 +23,14 @@ require_once("./core/enums/enums-api-status.php");
 // Repository
 require_once("./core/repository/repository-projects.php");
 
+// Encrypt file 
+require_once("./core/encryption-system/eas-files.php");
+require_once("./core/encryption-system/eas.php");
+require_once("./core/encryption-system/rsa-key-management.php");
+require_once("./core/encryption-system/rsa.php");
+
+
+// Other
 require_once("core/class/class-projects.php");
 
 require_once("./core/class/class-read-env.php");
