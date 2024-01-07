@@ -25,3 +25,318 @@
 [2024-01-07 16:08:29] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
 [2024-01-07 16:11:19] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
 [2024-01-07 16:13:26] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-07 16:15:54] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2024-01-07 16:17:58] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-07 16:42:03] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-07 18:50:25] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$ftp must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,143
+[2024-01-07 18:52:51] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-07 18:53:00] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-07 18:53:38] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
+[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
+[2024-01-07 18:55:30] [ERROR] Load module: Not unique table/alias: 'RemoteFiles',1066,/var/www/html/core/class/class-sedjm.php,410
+[2024-01-07 18:55:31] [ERROR] Load module: Not unique table/alias: 'RemoteFiles',1066,/var/www/html/core/class/class-sedjm.php,410
+[2024-01-07 18:55:40] [ERROR] Load module: Not unique table/alias: 'RemoteFiles',1066,/var/www/html/core/class/class-sedjm.php,410
+[2024-01-07 19:00:30] [ERROR] Unexpected error: Undefined property: Files\Repository\FilesShareRepository::$project_id,/var/www/html/modules/encrypt-files/repository/repository-share-files.php,80

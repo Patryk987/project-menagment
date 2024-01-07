@@ -52,9 +52,24 @@ class FilesShareController
 
     public function shared_files_list()
     {
-
+        global $main;
         $this->project_id = \ModuleManager\Pages::$project->get_project_id();
         $this->repository = new Repository\FilesShareRepository($this->project_id);
+
+        if (!empty($_GET['type']) && $_GET['type'] == "delete" && !empty($_GET['id'])) {
+            if ($this->repository->connect_to_ftp()) {
+                if ($this->repository->delete_share_file($_GET['id'])) {
+                    $main->popups->add_popup("Poprawnie usunięto plik", "", "correct");
+                } else {
+                    $main->popups->add_popup("Nie udało się usunąć pliku", "spróbuj ponownie", "error");
+                }
+                $main->popups->show_popups();
+
+            }
+
+        }
+
+
 
         $header = [
             "Recipient" => ["recipient_email"],
@@ -63,11 +78,15 @@ class FilesShareController
             "File name" => ["file_name"]
         ];
 
+
+
         $table = new \ModuleManager\Table(50);
+        $table->set_converter("life_time", [$this, "unix_to_day"]);
+        $table->set_converter("upload_time", ["Helper", "time_to_data"]);
 
         $table->set_action("", 'delete', 'delete');
 
-        $table->set_id("file_id");
+        $table->set_id("share_file_id");
 
         return $table->generate_table($this->repository->list_share_files(), $header);
 
@@ -107,6 +126,16 @@ class FilesShareController
 
         return $form->get_form("Send file", "Send");
 
+    }
+
+    public function delete_share_file()
+    {
+
+    }
+
+    public function unix_to_day($value)
+    {
+        return ($value / 86400) . " days ";
     }
 
 

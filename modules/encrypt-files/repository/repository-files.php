@@ -11,7 +11,7 @@ class FilesRepository
     protected \RSA\EncryptDecryptRSA $rsa_encrypt_decrypt;
     protected \FTP $ftp;
     private $table = "";
-    private int $project_id;
+    protected int $project_id;
     public $ftp_connect_data_table = "FTP";
     public $files_table = "RemoteFiles";
     public $connect_data;
@@ -209,6 +209,7 @@ class FilesRepository
 
         $data = [
             "user_id" => \ModuleManager\Main::$token['payload']->user_id,
+            "project_id" => $this->project_id,
             "ftp_id" => $this->connect_data["ftp_id"],
             "file_name" => $filename,
             "encrypt_file_name" => $encrypt_file_name,

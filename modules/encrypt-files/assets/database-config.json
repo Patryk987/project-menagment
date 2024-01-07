@@ -23,6 +23,17 @@
                 "NULL": false,
                 "unique": false
             },
+            "project_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
             "ftp_id": {
                 "type": "int",
                 "length": "11",
