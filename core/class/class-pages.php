@@ -84,8 +84,10 @@ trait MenagePanel
 
         global $main;
 
-        $token_id = static::$token['payload']->token_id;
-        $main->accounts->logout($token_id);
+        if (!empty(static::$token['payload']->token_id)) {
+            $token_id = static::$token['payload']->token_id;
+            $main->accounts->logout($token_id);
+        }
 
         $this->redirect("/" . $this->config["pages"]->login);
 
@@ -139,27 +141,42 @@ trait MenagePanel
         global $main;
 
         try {
+            if (!empty(static::$token['payload']->permission)) {
 
-            $actual_module = $this->get_modules_data($last_page);
-            $module_permission = $actual_module['access_permission'];
-            $user_permission = static::$token['payload']->permission;
+                $actual_module = $this->get_modules_data($last_page);
+                $module_permission = $actual_module['access_permission'];
+                $user_permission = static::$token['payload']->permission;
 
-            if (isset($actual_module["belongs_to_project"]) && $actual_module["belongs_to_project"] == $project) {
+                if (isset($actual_module["belongs_to_project"]) && $actual_module["belongs_to_project"] == $project) {
 
-                if (static::$token["status"]) {
+                    if (static::$token["status"]) {
 
-                    if (
-                        empty($module_permission)
-                        && $last_page != $this->config["pages"]->panel
-                    ) {
-                        return $this->load_empty_panel_page();
-                    }
+                        if (
+                            empty($module_permission)
+                            && $last_page != $this->config["pages"]->panel
+                        ) {
+                            return $this->load_empty_panel_page();
+                        }
 
-                    if (
-                        (empty($module_permission) && $last_page == $this->config["pages"]->panel)
-                        || in_array($user_permission, $module_permission)
-                        || in_array(0, $module_permission)
-                    ) {
+                        if (
+                            (empty($module_permission) && $last_page == $this->config["pages"]->panel)
+                            || in_array($user_permission, $module_permission)
+                            || in_array(0, $module_permission)
+                        ) {
+                            static::$module = $this->get_module($last_page);
+
+                            if ($project) {
+                                return $this->load_project_page();
+                            } else {
+                                return $this->load_panel_page();
+                            }
+                        }
+
+                        $full_link = __DIR__ . "/../../panel-template/html/no-permission.html";
+                        return $this->get_page($full_link);
+
+                    } else if (in_array(0, $module_permission)) {
+
                         static::$module = $this->get_module($last_page);
 
                         if ($project) {
@@ -167,29 +184,19 @@ trait MenagePanel
                         } else {
                             return $this->load_panel_page();
                         }
-                    }
 
-                    $full_link = __DIR__ . "/../../panel-template/html/no-permission.html";
-                    return $this->get_page($full_link);
-
-                } else if (in_array(0, $module_permission)) {
-
-                    static::$module = $this->get_module($last_page);
-
-                    if ($project) {
-                        return $this->load_project_page();
                     } else {
-                        return $this->load_panel_page();
+
+                        $this->redirect("/" . $this->config["pages"]->login);
+
                     }
 
                 } else {
-
-                    $this->redirect("/" . $this->config["pages"]->login);
-
+                    return $this->load_lower_module($project);
                 }
 
             } else {
-                return $this->load_lower_module($project);
+                $this->load_logout();
             }
 
         } catch (\Throwable $th) {

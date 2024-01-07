@@ -4,3 +4,24 @@
 [2024-01-07 15:32:14] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
 [2024-01-07 15:32:17] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
 [2024-01-07 15:32:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
+[2024-01-07 15:51:55] [ERROR] Unexpected error: Undefined variable $errors,/var/www/html/core/function/function.php,238
+[2024-01-07 15:51:55] [ERROR] Incorrect function: ModuleManager\Forms\Forms::get_form(): Argument #3 ($errors) must be of type array, null given, called in /var/www/html/core/function/function.php on line 238,0,/var/www/html/core/class/class-forms.php,202
+[2024-01-07 15:54:41] [ERROR] Unexpected error: Undefined array key "access",/var/www/html/core/function/function.php,171
+[2024-01-07 15:55:18] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,114
+[2024-01-07 15:55:40] [ERROR] CSRF attack detected: 
+[2024-01-07 15:55:45] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,114
+[2024-01-07 16:00:29] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-forms.php,209
+[2024-01-07 16:00:29] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-forms.php,209
+[2024-01-07 16:00:29] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-forms.php,209
+[2024-01-07 16:00:29] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-forms.php,209
+[2024-01-07 16:01:50] [ERROR] Send e-mail: Class "TestMail" not found,0,/var/www/html/core/class/class-account.php,195
+[2024-01-07 16:01:50] [ERROR] Unexpected error: foreach() argument must be of type array|object, null given,/var/www/html/core/function/function.php,186
+[2024-01-07 16:06:14] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,147
+[2024-01-07 16:06:14] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,317
+[2024-01-07 16:06:14] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2024-01-07 16:08:07] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,148
+[2024-01-07 16:08:07] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,322
+[2024-01-07 16:08:07] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2024-01-07 16:08:29] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2024-01-07 16:11:19] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-07 16:13:26] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11

@@ -73,13 +73,6 @@ function login_form()
         "id" => "password"
     ]);
 
-    // $form->set_data([
-    //     "key" => "remember",
-    //     "name" => "remember box",
-    //     "type" => "checkbox",
-    //     "description" => "Zapamiętaj mnie "
-    // ]);
-
     return $form->get_form("Zaloguj się", "Zaloguj się", $errors);
 }
 
@@ -132,9 +125,76 @@ ModuleManager\DataBinder::set_binder(
     ]
 );
 
+function register_to_panel($nick, $email, $phone, $password, $repeat_password, $access, $name, $surname)
+{
+    global $main;
+    $data = [
+        "nick" => $nick,
+        "password" => $password,
+        "repeat_password" => $repeat_password,
+        "email" => $email,
+        "phone_number" => $phone,
+        "additional" => [
+            "name" => $name,
+            "surname" => $surname
+        ]
+    ];
+
+    $register_status = $main->accounts->create_account($data);
+
+    if ($register_status->get_status() == \ApiStatus::CORRECT) {
+        $login_status = login_to_panel($nick, $password);
+    }
+    return $register_status;
+}
+
 function registration_form()
 {
+    $errors = [];
     $form = new ModuleManager\Forms\Forms();
+
+    if (!empty($_POST['active'])) {
+        if (
+
+            !empty($_POST['nick'])
+            && !empty($_POST['email'])
+            && !empty($_POST['phone'])
+            && !empty($_POST['password'])
+            && !empty($_POST['repeat_password'])
+            && !empty($_POST['name'])
+            && !empty($_POST['surname'])
+        ) {
+
+            $login = register_to_panel(
+                $_POST['nick'],
+                $_POST['email'],
+                $_POST['phone'],
+                $_POST['password'],
+                $_POST['repeat_password'],
+                $_POST['access'],
+                $_POST['name'],
+                $_POST['surname']
+            );
+
+            foreach ($login->get_error() as $key => $value) {
+                $errors[] = $key;
+                // switch ($key) {
+                //     case 'password_is_incorrect':
+                //         $errors[] = "Podano niepoprawne hasło";
+                //         break;
+                //     case 'nick_not_exist':
+                //         $errors[] = "Podany nick jest niepoprawny";
+                //         break;
+                //     default:
+                //         # code...
+                //         break;
+                // }
+            }
+        } else {
+            $errors[] = "Uzupełnij wszystkie dane";
+        }
+
+    }
 
     $form->set_data([
         "key" => "nick",
@@ -155,6 +215,18 @@ function registration_form()
     ]);
 
     $form->set_data([
+        "key" => "name",
+        "name" => "Your name",
+        "type" => "text"
+    ]);
+
+    $form->set_data([
+        "key" => "surname",
+        "name" => "Your surname",
+        "type" => "text"
+    ]);
+
+    $form->set_data([
         "key" => "password",
         "name" => "Password",
         "type" => "password"
@@ -167,13 +239,13 @@ function registration_form()
     ]);
 
     $form->set_data([
-        "key" => "remember",
-        "name" => "remember box",
+        "key" => "access",
+        "name" => "access box",
         "type" => "checkbox",
         "description" => "Akceptuje politykę prywatności"
     ]);
 
-    return $form->get_form("Registration", "Registration");
+    return $form->get_form("Registration", "Registration", $errors);
 }
 
 ModuleManager\DataBinder::set_binder(
