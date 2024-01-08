@@ -2,37 +2,11 @@
 
 namespace Home;
 
-// TODO: ADD PARENT IMPLEMENTATION
-// TODO: ADD Cotnroller
+require_once(__DIR__ . "/controller/home-controller.php");
+require_once(__DIR__ . "/controller/dashboard-controller.php");
 
-class Home
-{
+// Dashboard
+$dashboard_controller = new DashboardController;
+$dashboard_controller->set_dashboard_blocks();
 
-
-    private $data;
-
-    function __construct()
-    {
-
-        $main_page = [
-            "name" => "Home",
-            "link" => "home",
-            "function" => [$this, "home"],
-            "permission" => [1, 11],
-            "status" => true,
-            "icon" => basename(__DIR__) . "/assets/img/icon.svg",
-            "position" => 1,
-            "belongs_to_project" => false
-        ];
-        \ModuleManager\Pages::set_modules($main_page);
-
-    }
-
-    public function home()
-    {
-        return "";
-    }
-
-}
-
-new Home;
+new HomeController;

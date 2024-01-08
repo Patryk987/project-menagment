@@ -1,6 +1,6 @@
 <?php
 
-namespace Home\Controller;
+namespace HomeProject\Controller;
 
 class HomeProjectController
 {
@@ -24,16 +24,8 @@ class HomeProjectController
 
     public function home()
     {
-        // Dashboard blocks
-        \Dashboard\Dashboard::set_new_block([$this, "test"], "project-home", 3, 2);
-
         return $this->get_page(__DIR__ . "/../view/main-page.html");
     }
 
-
-    public function test()
-    {
-        return "Example";
-    }
 
 }

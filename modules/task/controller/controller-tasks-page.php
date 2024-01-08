@@ -119,7 +119,18 @@ class TasksPageController
 
     public function task()
     {
-        return "";
+        $groups = $this->task_group_repository->get_all();
+        $header = [
+            "Name" => ["group_name"],
+            "Create date" => ["create_date"],
+            "Color" => ["color"]
+        ];
+
+        $table = new \ModuleManager\Table(50);
+        $table->set_converter("color", [$this, "color_show"]);
+        $table->set_id("task_group_id");
+
+        return $table->generate_table($groups, $header);
     }
 
     public function task_group()
@@ -179,6 +190,11 @@ class TasksPageController
     {
         $project_data = $this->task_group_repository->get_by_id($this->task_group_id);
         return $project_data[0]['group_name'];
+    }
+
+    public function color_show($color)
+    {
+        return "<div style='background-color: " . $color . "; border-radius: var(--radius); width: 40px; height: 15px'></div>";
     }
 
 }

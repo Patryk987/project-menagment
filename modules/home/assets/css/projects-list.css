@@ -1,0 +1,7 @@
+.projects_list h2 {
+    color: var(--selected)
+}
+
+.projects_list .page_number {
+    display: none;
+}

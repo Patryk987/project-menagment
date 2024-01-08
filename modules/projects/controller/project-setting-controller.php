@@ -26,7 +26,8 @@ class EditProjectsController
                 $main_page = [
                     "name" => "Edit project",
                     "link" => "project",
-                    "function" => [$this, "project_homepage"],
+                    "function" => [$this, "edit_project"],
+                    // "function" => [$this, "project_homepage"],
                     "permission" => [1, 11],
                     "status" => true,
                     "icon" => basename(__DIR__) . "/../projects/assets/img/icon.svg",
@@ -37,15 +38,15 @@ class EditProjectsController
 
 
                 // project setting 
-                $main_page = [
-                    "name" => "Edit project",
-                    "link" => "edit_project",
-                    "function" => [$this, "edit_project"],
-                    "parent_link" => "project",
-                    "show" => true
-                ];
+                // $main_page = [
+                //     "name" => "Edit project",
+                //     "link" => "edit_project",
+                //     "function" => [$this, "edit_project"],
+                //     "parent_link" => "project",
+                //     "show" => true
+                // ];
 
-                \ModuleManager\Pages::set_child_modules($main_page);
+                // \ModuleManager\Pages::set_child_modules($main_page);
 
                 // Collaborators
                 $main_page = [
@@ -63,7 +64,7 @@ class EditProjectsController
                     "link" => "add_collaborators",
                     "function" => [$this, "add_collaborators"],
                     "parent_link" => "project",
-                    "show" => false
+                    "show" => true
                 ];
 
                 \ModuleManager\Pages::set_child_modules($main_page);

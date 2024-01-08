@@ -340,3 +340,126 @@
 [2024-01-07 18:55:31] [ERROR] Load module: Not unique table/alias: 'RemoteFiles',1066,/var/www/html/core/class/class-sedjm.php,410
 [2024-01-07 18:55:40] [ERROR] Load module: Not unique table/alias: 'RemoteFiles',1066,/var/www/html/core/class/class-sedjm.php,410
 [2024-01-07 19:00:30] [ERROR] Unexpected error: Undefined property: Files\Repository\FilesShareRepository::$project_id,/var/www/html/modules/encrypt-files/repository/repository-share-files.php,80
+[2024-01-07 20:41:34] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/home/../view/main-page.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2024-01-07 20:41:40] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/home/../view/main-page.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2024-01-07 20:42:27] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\HomeController does not have a method "test",0,/var/www/html/core/class/class-dashboard.php,42
+[2024-01-07 20:42:48] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\HomeController does not have a method "test",0,/var/www/html/core/class/class-dashboard.php,42
+[2024-01-07 20:45:43] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-07 20:48:47] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-07 20:49:22] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 10:01:20] [ERROR] Include module: syntax error, unexpected token "(", expecting variable,0,/var/www/html/modules/home/controller/home-controller.php,36
+[2024-01-08 10:12:03] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
+[2024-01-08 10:12:14] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
+[2024-01-08 10:12:20] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
+[2024-01-08 10:12:20] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
+[2024-01-08 10:12:21] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
+[2024-01-08 10:12:21] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
+[2024-01-08 10:12:33] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
+[2024-01-08 10:27:06] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 10:27:29] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 10:30:21] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 10:31:50] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 10:33:33] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 11:00:49] [ERROR] Include module: syntax error, unexpected token "}", expecting ";",0,/var/www/html/modules/home/controller/dashboard-controller.php,97
+[2024-01-08 11:00:49] [ERROR] Include module: syntax error, unexpected token "}", expecting ";",0,/var/www/html/modules/home/controller/dashboard-controller.php,97
+[2024-01-08 11:00:51] [ERROR] Include module: syntax error, unexpected token "}", expecting ";",0,/var/www/html/modules/home/controller/dashboard-controller.php,97
+[2024-01-08 11:00:51] [ERROR] Include module: syntax error, unexpected token "}", expecting ";",0,/var/www/html/modules/home/controller/dashboard-controller.php,97
+[2024-01-08 11:07:26] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 11:07:56] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 11:13:11] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 11:13:43] [ERROR] Unexpected error: Undefined array key 0,/var/www/html/modules/issues/repository/repository-issues.php,196
+[2024-01-08 11:13:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-08 11:13:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-08 11:13:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-08 11:13:48] [ERROR] Unexpected error: Undefined array key 0,/var/www/html/modules/issues/repository/repository-issues.php,196
+[2024-01-08 11:13:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-08 11:13:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-08 11:13:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-08 11:13:51] [ERROR] Unexpected error: Undefined array key 0,/var/www/html/modules/issues/repository/repository-issues.php,196
+[2024-01-08 11:13:51] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-08 11:13:51] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-08 11:13:51] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-08 11:13:55] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 11:14:01] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 11:21:09] [ERROR] Load module: count(): Argument #1 ($value) must be of type Countable|array, Models\ApiModel given,0,/var/www/html/core/class/class-table.php,614
+[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,458
+[2024-01-08 11:21:48] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:21:48] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:21:48] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:35:41] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:35:41] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:35:41] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:02] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:02] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:02] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:08] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:08] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:37:08] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
+[2024-01-08 11:39:02] [ERROR] Include module: syntax error, unexpected token "}", expecting ";",0,/var/www/html/modules/task/controller/controller-tasks-page.php,199
+[2024-01-08 11:40:49] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 11:47:12] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/project-home/controller/../view/welcome-message.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
+[2024-01-08 12:02:35] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 12:10:09] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 12:14:53] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 12:15:06] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
