@@ -12,8 +12,8 @@ class DashboardController
 
         // Dashboard blocks
         \Dashboard\Dashboard::set_new_block([$this, "welcome_message"], "home", 2, 2);
-        \Dashboard\Dashboard::set_new_block([$this, "arability_projects"], "home", 2, 4);
-        \Dashboard\Dashboard::set_new_block([$this, "empty_block"], "home", 2, 2);
+        \Dashboard\Dashboard::set_new_block([$this, "arability_projects"], "home", 2, 2);
+
 
     }
 

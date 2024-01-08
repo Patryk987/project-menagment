@@ -463,3 +463,35 @@
 [2024-01-08 12:10:09] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
 [2024-01-08 12:14:53] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
 [2024-01-08 12:15:06] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 14:07:14] [ERROR] CSRF attack detected: 
+[2024-01-08 14:07:20] [ERROR] CSRF attack detected: 
+[2024-01-08 14:16:29] [ERROR] Unexpected error: foreach() argument must be of type array|object, null given,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,109
+[2024-01-08 14:17:44] [ERROR] Unexpected error: hex2bin(): Passing null to parameter #1 ($string) of type string is deprecated,/var/www/html/modules/encrypt-files/repository/repository-files.php,81
+[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,88
+[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,89
+[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,90
+[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,91
+[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,92
+[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,93
+[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,94
+[2024-01-08 14:17:48] [ERROR] Unexpected error: hex2bin(): Passing null to parameter #1 ($string) of type string is deprecated,/var/www/html/modules/encrypt-files/repository/repository-files.php,81
+[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,88
+[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,89
+[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,90
+[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,91
+[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,92
+[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,93
+[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,94
+[2024-01-08 14:38:06] [ERROR] Unexpected error: Undefined array key "",/var/www/html/core/class/class-sedjm.php,40
+[2024-01-08 14:38:06] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2024-01-08 14:38:06] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= '1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
+[2024-01-08 14:38:22] [ERROR] Unexpected error: Undefined array key "",/var/www/html/core/class/class-sedjm.php,40
+[2024-01-08 14:38:22] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
+[2024-01-08 14:38:22] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= '1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
+[2024-01-08 14:39:33] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$sedjm must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,169
+[2024-01-08 14:39:41] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$sedjm must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,169
+[2024-01-08 14:39:44] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$sedjm must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,169
+[2024-01-08 14:42:49] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$sedjm must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,169
+[2024-01-08 14:43:19] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-08 14:46:15] [ERROR] Include module: syntax error, unexpected token "}",0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,68
+[2024-01-08 16:52:30] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11

@@ -146,6 +146,17 @@
                 "NULL": false,
                 "unique": false
             },
+            "user_id": {
+                "type": "int",
+                "length": "11",
+                "PRIMARY_KEY": false,
+                "AUTO_INCREMENT": false,
+                "encrypt": false,
+                "encrypt_type": "NULL",
+                "valid_type": "NULL",
+                "NULL": false,
+                "unique": false
+            },
             "recipient_email": {
                 "type": "varchar",
                 "length": "255",

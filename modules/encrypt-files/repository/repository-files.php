@@ -16,15 +16,19 @@ class FilesRepository
     public $files_table = "RemoteFiles";
     public $connect_data;
 
-    public function __construct($project_id)
+    public function __construct($project_id = null)
     {
         global $main;
-        $this->project_id = $project_id;
         $this->sedjm = $main->sedjm;
-        $this->connect_data = $this->get_ftp_connect_data();
+
+        if (!empty($project_id)) {
+            $this->project_id = $project_id;
+            $this->connect_data = $this->get_ftp_connect_data();
+            $this->rsa_encrypt_decrypt = new \RSA\EncryptDecryptRSA($project_id, "project_");
+        }
+
         $this->eas_file = new \EAS\EncryptFile();
 
-        $this->rsa_encrypt_decrypt = new \RSA\EncryptDecryptRSA($project_id, "project");
     }
 
     public function connect_to_ftp(): bool
@@ -113,8 +117,12 @@ class FilesRepository
         die();
     }
 
-    public function upload_file($file, $destination, $filename, $type): array
+    public function upload_file($file, $destination, $filename, $type, $user_upload_id = null): array
     {
+        if ($user_upload_id != null) {
+            $this->rsa_encrypt_decrypt = new \RSA\EncryptDecryptRSA($user_upload_id, "user_");
+        }
+
         $checksum = $this->create_checksum($file);
         $key = $this->create_key();
         $encrypt_name = $this->create_encrypt_name();
