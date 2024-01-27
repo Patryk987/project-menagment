@@ -1,11 +1,11 @@
 <?php
-namespace EAS;
 
-class EncryptDecryptEAS
+namespace AES;
+
+class EncryptDecryptAES
 {
     private string $key;
     private string $ciphering = "AES-128-CTR";
-    protected $password_protected_method = PASSWORD_DEFAULT;
     private int $options = 0;
 
     public function __construct(string $key, $options = 0)

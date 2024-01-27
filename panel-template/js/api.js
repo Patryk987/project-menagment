@@ -42,8 +42,8 @@ class Api {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'api_key': Api.api_key,
-                'user_key': Api.user_key
+                'Api-Key': Api.api_key,
+                'User-Key': Api.user_key
             }
         };
 
@@ -72,8 +72,8 @@ class Api {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'api_key': Api.api_key,
-                'user_key': Api.user_key
+                'Api-Key': Api.api_key,
+                'User-Key': Api.user_key
             },
             body: JSON.stringify(data)
         };
@@ -98,8 +98,8 @@ class Api {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'api_key': Api.api_key,
-                'user_key': Api.user_key
+                'Api-Key': Api.api_key,
+                'User-Key': Api.user_key
             },
             body: JSON.stringify(data)
         };
@@ -127,8 +127,8 @@ class Api {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'api_key': Api.api_key,
-                'user_key': Api.user_key
+                'Api-Key': Api.api_key,
+                'User-Key': Api.user_key
             }
         };
 

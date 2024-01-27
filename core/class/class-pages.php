@@ -348,12 +348,12 @@ class Pages
             $project = new \Projects(static::$token['payload']->user_id, $this->sub_pages[1]);
             self::$project = $project->get_project_data();
 
-        } else {
-            if (empty(static::$token['payload']->user_id)) {
-                // $this->redirect("/" . $this->config["pages"]->login);
-            } else {
-                // self::$project = new \ProjectModel(\ProjectStatus::BLOCKED);
+        } else if (!empty($this->sub_pages) && $this->config["pages"]->project == $this->sub_pages[0]) {
+
+            if (empty(static::$token['payload']->user_id) && $last_sub_page != $this->config["pages"]->login) {
+                $this->redirect("/" . $this->config["pages"]->login);
             }
+
         }
 
         $this->map_modules();

@@ -24,7 +24,7 @@ class HomeProjectController
 
     public function home()
     {
-        return $this->get_page(__DIR__ . "/../view/main-page.html");
+        // return $this->get_page(__DIR__ . "/../view/main-page.html");
     }
 
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace EAS;
+namespace AES;
 
-class EncryptFile
+class EncryptDecryptFile
 {
     private int $encrypt_blocks = 10000;
 
-    public function encryptFile($source, $key, $dest)
+    public function encrypt_file($source, $key, $dest)
     {
 
         $key = substr(sha1($key, true), 0, 16);

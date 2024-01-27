@@ -223,11 +223,11 @@ trait API
         // TODO: add additional api keys
         if (
             (
-                empty(getallheaders()['api_key'])
-                || getallheaders()['api_key'] != $_ENV['API_SECRET']
+                empty(getallheaders()['Api-Key'])
+                || getallheaders()['Api-Key'] != $_ENV['API_SECRET']
             ) && (
                 empty($_SESSION['tmp_key']) ||
-                getallheaders()['api_key'] != $_SESSION['tmp_key']
+                getallheaders()['Api-Key'] != $_SESSION['tmp_key']
             )
         ) {
 
@@ -313,7 +313,7 @@ trait API
 
     private function get_token_data(): array
     {
-        $token = !empty(getallheaders()['user_key']) ? getallheaders()['user_key'] : "";
+        $token = !empty(getallheaders()['User-Key']) ? getallheaders()['User-Key'] : "";
         $token_data = Main::$jwt->check_token($token);
         return $token_data;
 

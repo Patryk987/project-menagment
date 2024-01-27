@@ -18,7 +18,7 @@ class Forms
 
             if ($_SESSION['CSRF_token'] != $_POST['CSRF_token']) {
                 \ModuleManager\Main::set_error('CSRF attack detected', 'ERROR');
-                die("Redirect failed. Please click on this link: <a href='/'>home</a>");
+                die("Redirect failed. Plaese click on this link: <a href='/'>home</a>");
             }
 
         } else {

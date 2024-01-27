@@ -7,7 +7,7 @@ class FilesRepository
 {
 
     protected \ModuleManager\SEDJM $sedjm;
-    protected \EAS\EncryptFile $eas_file;
+    protected \AES\EncryptDecryptFile $aes_file;
     protected \RSA\EncryptDecryptRSA $rsa_encrypt_decrypt;
     protected \FTP $ftp;
     private $table = "";
@@ -27,7 +27,7 @@ class FilesRepository
             $this->rsa_encrypt_decrypt = new \RSA\EncryptDecryptRSA($project_id, "project_");
         }
 
-        $this->eas_file = new \EAS\EncryptFile();
+        $this->aes_file = new \AES\EncryptDecryptFile();
 
     }
 
@@ -87,7 +87,7 @@ class FilesRepository
             $this->ftp->get_file($source, $file);
             // decryptFile($source, $key, __DIR__ . "/temp/" . $local_file);
             $destination = __DIR__ . "/temp/" . $local_file;
-            $this->eas_file->decryptFile($source, $key, $destination);
+            $this->aes_file->decryptFile($source, $key, $destination);
 
             header('Content-Description: File Transfer');
             header('Content-Type: application/octet-stream');
@@ -132,8 +132,8 @@ class FilesRepository
         if ($save_info['status']) {
 
             $source = __DIR__ . "/temp/" . $encrypt_name;
-            $this->eas_file->encryptFile($file, $key, $source);
-            // encryptFile($file, $key, __DIR__ . "/temp/" . $encrypt_name);
+            $this->aes_file->encrypt_file($file, $key, $source);
+            // encrypt_file($file, $key, __DIR__ . "/temp/" . $encrypt_name);
             $fp = fopen($source, 'r');
             $this->ftp->send_file($fp, $destination, $encrypt_name);
             unlink($source);

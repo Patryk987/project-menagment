@@ -22,9 +22,9 @@ class AsyncSelect
                         cache: 'no-cache',
                         credentials: 'same-origin',
                         headers: {
-                            'user_key': '" . $_SESSION['token'] . "',
+                            'User-Key': '" . $_SESSION['token'] . "',
                             'Content-Type': 'application/json',
-                            'api_key': '481AF261E34647FE963E735F93871BD9'
+                            'Api-Key': '481AF261E34647FE963E735F93871BD9'
                         },
                         redirect: 'follow',
                         referrerPolicy: 'no-referrer'

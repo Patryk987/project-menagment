@@ -1,16 +1,12 @@
 <?php
 namespace RSA;
 
-interface KeyManagementInterface
-{
-
-}
 
 class RSAKeyManagement
 {
     private int $key_size = 2048;
     protected string $url;
-    private \EAS\EncryptDecryptEAS $eas;
+    private \AES\EncryptDecryptAES $aes;
     private string $symmetric_algorithm_password;
 
     protected string $public_key_destination, $private_key_destination;
@@ -22,9 +18,9 @@ class RSAKeyManagement
         $this->private_key_destination = $url . $prefix . $id . '_private_key.pem';
 
         if ($access_key == null) {
-            $this->eas = new \EAS\EncryptDecryptEAS($_ENV["SECRET"]);
+            $this->aes = new \AES\EncryptDecryptAES($_ENV["SECRET"]);
         } else {
-            $this->eas = new \EAS\EncryptDecryptEAS($access_key);
+            $this->aes = new \AES\EncryptDecryptAES($access_key);
 
         }
     }
@@ -62,7 +58,7 @@ class RSAKeyManagement
 
         // private
         $private_key = file_get_contents($this->private_key_destination);
-        $private_key = $this->eas->decrypt($private_key);
+        $private_key = $this->aes->decrypt($private_key);
 
         // public
         $public_key = file_get_contents($this->public_key_destination);
@@ -82,7 +78,7 @@ class RSAKeyManagement
     private function save_private_key($private_key)
     {
 
-        $private_key = $this->eas->encrypt($private_key);
+        $private_key = $this->aes->encrypt($private_key);
         file_put_contents($this->private_key_destination, $private_key);
 
     }
@@ -93,7 +89,6 @@ class RSAKeyManagement
         file_put_contents($this->public_key_destination, $public_key);
 
     }
-
 
     private function create_keys_if_not_exist()
     {

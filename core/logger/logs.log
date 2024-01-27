@@ -1,497 +1,77 @@
-[2024-01-07 14:46:53] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-07 15:09:28] [ERROR] Unexpected error: ftp_chdir(): /domains/uwwzzxyvuj.cfolks.pl/public_html/12f20cfeb52ff327a6024419000bfc07: No such file or directory,/var/www/html/modules/encrypt-files/helper/ftp.php,49
-[2024-01-07 15:32:14] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
-[2024-01-07 15:32:14] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
-[2024-01-07 15:32:17] [ERROR] Unexpected error: Attempt to read property "token_id" on array,/var/www/html/core/class/class-pages.php,87
-[2024-01-07 15:32:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,315
-[2024-01-07 15:51:55] [ERROR] Unexpected error: Undefined variable $errors,/var/www/html/core/function/function.php,238
-[2024-01-07 15:51:55] [ERROR] Incorrect function: ModuleManager\Forms\Forms::get_form(): Argument #3 ($errors) must be of type array, null given, called in /var/www/html/core/function/function.php on line 238,0,/var/www/html/core/class/class-forms.php,202
-[2024-01-07 15:54:41] [ERROR] Unexpected error: Undefined array key "access",/var/www/html/core/function/function.php,171
-[2024-01-07 15:55:18] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,114
-[2024-01-07 15:55:40] [ERROR] CSRF attack detected: 
-[2024-01-07 15:55:45] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,114
-[2024-01-07 16:00:29] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-forms.php,209
-[2024-01-07 16:00:29] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-forms.php,209
-[2024-01-07 16:00:29] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-forms.php,209
-[2024-01-07 16:00:29] [ERROR] Unexpected error: Array to string conversion,/var/www/html/core/class/class-forms.php,209
-[2024-01-07 16:01:50] [ERROR] Send e-mail: Class "TestMail" not found,0,/var/www/html/core/class/class-account.php,195
-[2024-01-07 16:01:50] [ERROR] Unexpected error: foreach() argument must be of type array|object, null given,/var/www/html/core/function/function.php,186
-[2024-01-07 16:06:14] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,147
-[2024-01-07 16:06:14] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,317
-[2024-01-07 16:06:14] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
-[2024-01-07 16:08:07] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,148
-[2024-01-07 16:08:07] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,322
-[2024-01-07 16:08:07] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
-[2024-01-07 16:08:29] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
-[2024-01-07 16:11:19] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-07 16:13:26] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-07 16:15:54] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
-[2024-01-07 16:17:58] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-07 16:42:03] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-07 18:50:25] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$ftp must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,143
-[2024-01-07 18:52:51] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-07 18:53:00] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-07 18:53:38] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:23] [WARING] Include module: date(): Argument #2 ($timestamp) must be of type ?int, string given,0,/var/www/html/core/class/class-helper.php,24
-[2024-01-07 18:55:23] [WARING] Include module: Unsupported operand types: string / int,0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,131
-[2024-01-07 18:55:30] [ERROR] Load module: Not unique table/alias: 'RemoteFiles',1066,/var/www/html/core/class/class-sedjm.php,410
-[2024-01-07 18:55:31] [ERROR] Load module: Not unique table/alias: 'RemoteFiles',1066,/var/www/html/core/class/class-sedjm.php,410
-[2024-01-07 18:55:40] [ERROR] Load module: Not unique table/alias: 'RemoteFiles',1066,/var/www/html/core/class/class-sedjm.php,410
-[2024-01-07 19:00:30] [ERROR] Unexpected error: Undefined property: Files\Repository\FilesShareRepository::$project_id,/var/www/html/modules/encrypt-files/repository/repository-share-files.php,80
-[2024-01-07 20:41:34] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/home/../view/main-page.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
-[2024-01-07 20:41:40] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/home/../view/main-page.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
-[2024-01-07 20:42:27] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\HomeController does not have a method "test",0,/var/www/html/core/class/class-dashboard.php,42
-[2024-01-07 20:42:48] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\HomeController does not have a method "test",0,/var/www/html/core/class/class-dashboard.php,42
-[2024-01-07 20:45:43] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-07 20:48:47] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-07 20:49:22] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 10:01:20] [ERROR] Include module: syntax error, unexpected token "(", expecting variable,0,/var/www/html/modules/home/controller/home-controller.php,36
-[2024-01-08 10:12:03] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
-[2024-01-08 10:12:14] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
-[2024-01-08 10:12:20] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
-[2024-01-08 10:12:20] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
-[2024-01-08 10:12:21] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
-[2024-01-08 10:12:21] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
-[2024-01-08 10:12:33] [ERROR] Incorrect function: call_user_func(): Argument #1 ($callback) must be a valid callback, class Home\DashboardController does not have a method "project_list",0,/var/www/html/core/class/class-dashboard.php,42
-[2024-01-08 10:27:06] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 10:27:29] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 10:30:21] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 10:31:50] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 10:33:33] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:19] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:36] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:39] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 10:58:53] [ERROR] Unexpected error: Undefined array key "share_file_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 11:00:49] [ERROR] Include module: syntax error, unexpected token "}", expecting ";",0,/var/www/html/modules/home/controller/dashboard-controller.php,97
-[2024-01-08 11:00:49] [ERROR] Include module: syntax error, unexpected token "}", expecting ";",0,/var/www/html/modules/home/controller/dashboard-controller.php,97
-[2024-01-08 11:00:51] [ERROR] Include module: syntax error, unexpected token "}", expecting ";",0,/var/www/html/modules/home/controller/dashboard-controller.php,97
-[2024-01-08 11:00:51] [ERROR] Include module: syntax error, unexpected token "}", expecting ";",0,/var/www/html/modules/home/controller/dashboard-controller.php,97
-[2024-01-08 11:07:26] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 11:07:56] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 11:13:11] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 11:13:43] [ERROR] Unexpected error: Undefined array key 0,/var/www/html/modules/issues/repository/repository-issues.php,196
-[2024-01-08 11:13:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2024-01-08 11:13:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2024-01-08 11:13:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2024-01-08 11:13:48] [ERROR] Unexpected error: Undefined array key 0,/var/www/html/modules/issues/repository/repository-issues.php,196
-[2024-01-08 11:13:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2024-01-08 11:13:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2024-01-08 11:13:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2024-01-08 11:13:51] [ERROR] Unexpected error: Undefined array key 0,/var/www/html/modules/issues/repository/repository-issues.php,196
-[2024-01-08 11:13:51] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2024-01-08 11:13:51] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2024-01-08 11:13:51] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2024-01-08 11:13:55] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 11:14:01] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 11:21:09] [ERROR] Load module: count(): Argument #1 ($value) must be of type Countable|array, Models\ApiModel given,0,/var/www/html/core/class/class-table.php,614
-[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:21:32] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,458
-[2024-01-08 11:21:48] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:21:48] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:21:48] [ERROR] Unexpected error: Undefined array key "user_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:35:41] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:35:41] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:35:41] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:02] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:02] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:02] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:03] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:08] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:08] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:37:08] [ERROR] Unexpected error: Undefined array key "notepad_id",/var/www/html/core/class/class-table.php,424
-[2024-01-08 11:39:02] [ERROR] Include module: syntax error, unexpected token "}", expecting ";",0,/var/www/html/modules/task/controller/controller-tasks-page.php,199
-[2024-01-08 11:40:49] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 11:47:12] [ERROR] Unexpected error: file_get_contents(/var/www/html/modules/project-home/controller/../view/welcome-message.html): Failed to open stream: No such file or directory,/var/www/html/core/class/load-file.php,96
-[2024-01-08 12:02:35] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 12:10:09] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 12:14:53] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 12:15:06] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 14:07:14] [ERROR] CSRF attack detected: 
-[2024-01-08 14:07:20] [ERROR] CSRF attack detected: 
-[2024-01-08 14:16:29] [ERROR] Unexpected error: foreach() argument must be of type array|object, null given,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,109
-[2024-01-08 14:17:44] [ERROR] Unexpected error: hex2bin(): Passing null to parameter #1 ($string) of type string is deprecated,/var/www/html/modules/encrypt-files/repository/repository-files.php,81
-[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,88
-[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,89
-[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,90
-[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,91
-[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,92
-[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,93
-[2024-01-08 14:17:44] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,94
-[2024-01-08 14:17:48] [ERROR] Unexpected error: hex2bin(): Passing null to parameter #1 ($string) of type string is deprecated,/var/www/html/modules/encrypt-files/repository/repository-files.php,81
-[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,88
-[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,89
-[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,90
-[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,91
-[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,92
-[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,93
-[2024-01-08 14:17:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/modules/encrypt-files/repository/repository-files.php,94
-[2024-01-08 14:38:06] [ERROR] Unexpected error: Undefined array key "",/var/www/html/core/class/class-sedjm.php,40
-[2024-01-08 14:38:06] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
-[2024-01-08 14:38:06] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= '1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
-[2024-01-08 14:38:22] [ERROR] Unexpected error: Undefined array key "",/var/www/html/core/class/class-sedjm.php,40
-[2024-01-08 14:38:22] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/core/class/class-sedjm.php,42
-[2024-01-08 14:38:22] [ERROR] Incorrect function: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= '1'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,410
-[2024-01-08 14:39:33] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$sedjm must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,169
-[2024-01-08 14:39:41] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$sedjm must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,169
-[2024-01-08 14:39:44] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$sedjm must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,169
-[2024-01-08 14:42:49] [ERROR] Load module: Typed property Files\Repository\FilesRepository::$sedjm must not be accessed before initialization,0,/var/www/html/modules/encrypt-files/repository/repository-files.php,169
-[2024-01-08 14:43:19] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-08 14:46:15] [ERROR] Include module: syntax error, unexpected token "}",0,/var/www/html/modules/encrypt-files/controller/share-file-controller.php,68
-[2024-01-08 16:52:30] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-25 19:07:43] [ERROR] Unexpected error: Undefined array key "nick",/var/www/html/core/class/class-account.php,362
+[2024-01-25 19:07:43] [ERROR] Unexpected error: trim(): Passing null to parameter #1 ($string) of type string is deprecated,/var/www/html/core/class/class-account.php,362
+[2024-01-25 19:07:43] [ERROR] Unexpected error: Undefined array key "password",/var/www/html/core/class/class-account.php,363
+[2024-01-25 19:07:43] [ERROR] Unexpected error: trim(): Passing null to parameter #1 ($string) of type string is deprecated,/var/www/html/core/class/class-account.php,363
+[2024-01-25 19:07:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-25 19:07:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:07:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:11:25] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/trait-api.php,267
+[2024-01-25 19:11:25] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-25 19:11:25] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:11:25] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:11:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,333
+[2024-01-25 19:11:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:11:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:12:50] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,333
+[2024-01-25 19:12:50] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:12:50] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:13:46] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:316),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:13:46] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:316),/var/www/html/core/class/trait-api.php,335
+[2024-01-25 19:13:46] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:316),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:14:03] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:14:03] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,335
+[2024-01-25 19:14:03] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:14:31] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:14:31] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,335
+[2024-01-25 19:14:31] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:14:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:14:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,335
+[2024-01-25 19:14:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:17:28] [ERROR] API: array_merge(): Argument #1 must be of type array, null given,0,/var/www/html/core/class/trait-api.php,208
+[2024-01-25 19:17:52] [ERROR] API: array_merge(): Argument #1 must be of type array, null given,0,/var/www/html/core/class/trait-api.php,208
+[2024-01-25 19:28:11] [ERROR] Load module: Field 'start_folder' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
+[2024-01-25 19:28:11] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "title",/var/www/html/modules/notes/controller/notes-api-controller.php,88
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,89
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "background",/var/www/html/modules/notes/controller/notes-api-controller.php,90
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "title",/var/www/html/modules/notes/controller/notes-api-controller.php,88
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,89
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "background",/var/www/html/modules/notes/controller/notes-api-controller.php,90
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "title",/var/www/html/modules/notes/controller/notes-api-controller.php,88
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,89
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "background",/var/www/html/modules/notes/controller/notes-api-controller.php,90
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "title",/var/www/html/modules/notes/controller/notes-api-controller.php,88
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,89
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "background",/var/www/html/modules/notes/controller/notes-api-controller.php,90
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "title",/var/www/html/modules/notes/controller/notes-api-controller.php,88
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,89
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "background",/var/www/html/modules/notes/controller/notes-api-controller.php,90
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:33:23] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:123),/var/www/html/core/class/trait-api.php,333
+[2024-01-25 19:33:23] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:123),/var/www/html/core/class/trait-api.php,334
+[2024-01-25 19:33:23] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:123),/var/www/html/core/class/trait-api.php,162
+[2024-01-25 19:41:18] [ERROR] Load module: Field 'start_folder' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
+[2024-01-25 19:41:18] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2024-01-25 20:09:03] [WARNING] Unexpected warning: Typed static property ModuleManager\Pages::$project must not be accessed before initialization
+[2024-01-25 20:09:29] [ERROR] Load module: Field 'start_folder' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
+[2024-01-25 20:09:29] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2024-01-27 19:57:56] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,114
+[2024-01-27 20:07:32] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-translate.php:11),/var/www/html/core/index.php,120
+[2024-01-27 20:09:08] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120
+[2024-01-27 20:09:10] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120
+[2024-01-27 20:09:10] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120
+[2024-01-27 20:09:10] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120

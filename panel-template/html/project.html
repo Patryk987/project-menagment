@@ -100,12 +100,7 @@
 
     <script nonce="{{nonce}}" src="/panel-template/js/toggle.js"></script>
     <script nonce="{{nonce}}" src="/panel-template/js/form.js"></script>
-
-    <script nonce="{{nonce}}">
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/panel-template/js/sw.js', { scope: '/' });
-        }
-    </script>
+    <script nonce="{{nonce}}" src="/panel-template/js/register-sw.js"></script>
 
     {{inject_javascript}}
 

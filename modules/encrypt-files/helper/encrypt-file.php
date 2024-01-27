@@ -9,7 +9,7 @@
  * @return string|false  Returns the file name that has been created or FALSE if an error occured
  */
 // define('FILE_ENCRYPTION_BLOCKS', 10000);
-function encryptFile($source, $key, $dest)
+function encrypt_file($source, $key, $dest)
 {
     $key = substr(sha1($key, true), 0, 16);
     $iv = openssl_random_pseudo_bytes(16);
