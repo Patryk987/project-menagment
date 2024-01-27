@@ -12,7 +12,7 @@ class UsersController
     {
 
         $main_page = [
-            "name" => "Edit profile",
+            "name" => \ModuleManager\Main::$translate->get_text("Edit profile"),
             "link" => "edit_your_account",
             "function" => [$this, "edit_your_account"],
             "permission" => [1, 11],
@@ -58,40 +58,40 @@ class UsersController
 
         $form->set_data([
             "key" => "nick",
-            "name" => "Nick",
+            "name" => \ModuleManager\Main::$translate->get_text("Nick"),
             "type" => "text",
             "value" => !empty($user_data["nick"]) ? $user_data["nick"] : ""
         ]);
 
         $form->set_data([
             "key" => "email",
-            "name" => "Adres e-mail",
+            "name" => \ModuleManager\Main::$translate->get_text("E-mail address"),
             "type" => "email",
             "value" => !empty($user_data["email"]) ? $user_data["email"] : ""
         ]);
 
         $form->set_data([
             "key" => "phone_number",
-            "name" => "Numer telefonu",
+            "name" => \ModuleManager\Main::$translate->get_text("Phone number"),
             "type" => "telephone",
             "value" => !empty($user_data["phone_number"]) ? $user_data["phone_number"] : ""
         ]);
 
         $form->set_data([
             "key" => "name",
-            "name" => "Imię",
+            "name" => \ModuleManager\Main::$translate->get_text("First name"),
             "type" => "text",
             "value" => !empty($user_additional_data["name"]) ? $user_additional_data["name"] : ""
         ]);
 
         $form->set_data([
             "key" => "surname",
-            "name" => "Nazwisko",
+            "name" => \ModuleManager\Main::$translate->get_text("Surname"),
             "type" => "text",
             "value" => !empty($user_additional_data["surname"]) ? $user_additional_data["surname"] : ""
         ]);
 
-        return $form->get_form("Edit profile", "update", $errors);
+        return $form->get_form(\ModuleManager\Main::$translate->get_text("Edit profile"), \ModuleManager\Main::$translate->get_text("Update"), $errors);
     }
 
 }

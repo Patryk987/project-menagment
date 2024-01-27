@@ -75,3 +75,16 @@
 [2024-01-27 20:09:10] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120
 [2024-01-27 20:09:10] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120
 [2024-01-27 20:09:10] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120
+[2024-01-27 20:26:40] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 20:28:18] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 20:36:18] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 20:51:28] [ERROR] Unexpected error: Undefined variable $data,/var/www/html/modules/projects/controller/project-controller.php,131
+[2024-01-27 20:51:28] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/modules/projects/controller/project-controller.php,131
+[2024-01-27 20:56:07] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 21:01:00] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 21:02:15] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 21:02:30] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 21:03:51] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 21:04:07] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 21:37:16] [WARNING] Unexpected warning: Typed static property ModuleManager\Pages::$project must not be accessed before initialization
+[2024-01-27 21:37:25] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,114

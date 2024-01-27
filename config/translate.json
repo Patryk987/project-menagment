@@ -1,0 +1,186 @@
+{
+    "Tasks": {
+        "en": "Tasks",
+        "pl": "Zadania"
+    },
+    "+ Add group": {
+        "en": "+ Add group",
+        "pl": "+ Dodaj grupe"
+    },
+    "Files": {
+        "en": "Files",
+        "pl": "Pliki"
+    },
+    "Shared files": {
+        "en": "Shared files",
+        "pl": "Udostępnione pliki"
+    },
+    "Share file": {
+        "en": "Share file",
+        "pl": "udostępnij plik"
+    },
+    "Home": {
+        "en": "Home",
+        "pl": "Home"
+    },
+    "Issues": {
+        "en": "Issues",
+        "pl": "Błedy"
+    },
+    "Add issues": {
+        "en": "Add issues",
+        "pl": "+ zgłoś błąd"
+    },
+    "+ Add notepads": {
+        "en": "+ Add notepads",
+        "pl": "+ Dodaj notatnik"
+    },
+    "Notes": {
+        "en": "Notes",
+        "pl": "Notatnik"
+    },
+    "Add project": {
+        "en": "Add project",
+        "pl": "Dodaj projekt"
+    },
+    "Edit project": {
+        "en": "Edit project",
+        "pl": "Edytuj projekt"
+    },
+    "Collaborators list": {
+        "en": "Collaborators list",
+        "pl": "Lista współpracowników"
+    },
+    "Add collaborators": {
+        "en": "Add collaborators",
+        "pl": "Dodaj współpracownika"
+    },
+    "Edit profile": {
+        "en": "Edit profile",
+        "pl": "Edytuj profil"
+    },
+    "Create date": {
+        "en": "Create date",
+        "pl": "Data utworzenia"
+    },
+    "Update date": {
+        "en": "Update date",
+        "pl": "Data aktualizacji"
+    },
+    "Name": {
+        "en": "Name",
+        "pl": "Nazwa"
+    },
+    "Description": {
+        "en": "Description",
+        "pl": "Opis"
+    },
+    "Photo": {
+        "en": "Photo",
+        "pl": "Zdjęcia"
+    },
+    "Add tasks group": {
+        "en": "Add tasks group",
+        "pl": "Dodaj grupe zadań"
+    },
+    "Add": {
+        "en": "Add",
+        "pl": "Dodaj"
+    },
+    "Notepads name": {
+        "en": "Notepads name",
+        "pl": "Nazwa notatnika"
+    },
+    "Recipient": {
+        "en": "Recipient",
+        "pl": "Odbiorca"
+    },
+    "Upload time": {
+        "en": "Upload time",
+        "pl": "Data wgrania"
+    },
+    "Life time": {
+        "en": "Life time",
+        "pl": "Czas do wygaśnięcia"
+    },
+    "File name": {
+        "en": "File name",
+        "pl": "Nazwa pliku"
+    },
+    "Recipient e-mail": {
+        "en": "Recipient e-mail",
+        "pl": "E-mail odbiorcy"
+    },
+    "Life time (days)": {
+        "en": "Life time (days)",
+        "pl": "Czas do wygaśnięcia (dni)"
+    },
+    "Color": {
+        "en": "Color",
+        "pl": "Kolor"
+    },
+    "Project details": {
+        "en": "Project details",
+        "pl": "Szczegóły projektu"
+    },
+    "Serwer FTP": {
+        "en": "Serwer FTP",
+        "pl": "Serwer FTP"
+    },
+    "Serwer": {
+        "en": "Serwer",
+        "pl": "Serwer"
+    },
+    "Port": {
+        "en": "Port",
+        "pl": "Port"
+    },
+    "User": {
+        "en": "User",
+        "pl": "Użytkownik"
+    },
+    "Password": {
+        "en": "Password",
+        "pl": "Hasło"
+    },
+    "Project status": {
+        "en": "Project status",
+        "pl": "Status projektu"
+    },
+    "Save": {
+        "en": "Save",
+        "pl": "Zapisz"
+    },
+    "Update": {
+        "en": "Update",
+        "pl": "Aktualizuj"
+    },
+    "Nick": {
+        "en": "Nick",
+        "pl": "Nick"
+    },
+    "E-mail address": {
+        "en": "E-mail address",
+        "pl": "Adres e-mail"
+    },
+    "Phone number": {
+        "en": "Phone number",
+        "pl": "Numer telefonu"
+    },
+    "First name": {
+        "en": "First name",
+        "pl": "Imię"
+    },
+    "Surname": {
+        "en": "Surname",
+        "pl": "Nazwisko"
+    },
+    "Send file": {
+        "en": "Send file",
+        "pl": "Wyślij plik"
+    },
+    "Send": {
+        "en": "Send",
+        "pl": "Wyślij"
+    }
+}

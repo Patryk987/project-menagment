@@ -24,7 +24,7 @@ class EditProjectsController
                 $this->sedjm = $main->sedjm;
 
                 $main_page = [
-                    "name" => "Edit project",
+                    "name" => \ModuleManager\Main::$translate->get_text("Edit project"),
                     "link" => "project",
                     "function" => [$this, "edit_project"],
                     // "function" => [$this, "project_homepage"],
@@ -50,7 +50,7 @@ class EditProjectsController
 
                 // Collaborators
                 $main_page = [
-                    "name" => "Collaborators list",
+                    "name" => \ModuleManager\Main::$translate->get_text("Collaborators list"),
                     "link" => "collaborators_list",
                     "function" => [$this, "collaborators_list"],
                     "parent_link" => "project",
@@ -60,7 +60,7 @@ class EditProjectsController
                 \ModuleManager\Pages::set_child_modules($main_page);
 
                 $main_page = [
-                    "name" => "Add collaborators",
+                    "name" => \ModuleManager\Main::$translate->get_text("Add collaborators"),
                     "link" => "add_collaborators",
                     "function" => [$this, "add_collaborators"],
                     "parent_link" => "project",
@@ -107,27 +107,27 @@ class EditProjectsController
 
         $form->set_data([
             "key" => "only_title",
-            "name" => "Project details",
+            "name" => \ModuleManager\Main::$translate->get_text("Project details"),
             "type" => "title"
         ]);
 
         $form->set_data([
             "key" => "name",
-            "name" => "Name",
+            "name" => \ModuleManager\Main::$translate->get_text("Name"),
             "type" => "input",
             "value" => $data['name']
         ]);
 
         $form->set_data([
             "key" => "photo",
-            "name" => "Photo",
+            "name" => \ModuleManager\Main::$translate->get_text("Photo"),
             "type" => "file",
             "value" => $data['photo_url']
         ]);
 
         $form->set_data([
             "key" => "description",
-            "name" => "Description",
+            "name" => \ModuleManager\Main::$translate->get_text("Description"),
             "type" => "text",
             "value" => $data['description']
         ]);
@@ -136,34 +136,34 @@ class EditProjectsController
 
         $form->set_data([
             "key" => "only_title",
-            "name" => "serwer FTP",
+            "name" => \ModuleManager\Main::$translate->get_text("Serwer FTP"),
             "type" => "title",
         ]);
 
         $form->set_data([
             "key" => "serwer",
-            "name" => "serwer",
+            "name" => \ModuleManager\Main::$translate->get_text("Serwer"),
             "type" => "text",
             "value" => $data['serwer']
         ]);
 
         $form->set_data([
             "key" => "port",
-            "name" => "Port",
+            "name" => \ModuleManager\Main::$translate->get_text("Port"),
             "type" => "number",
             "value" => $data['port']
         ]);
 
         $form->set_data([
             "key" => "user",
-            "name" => "user",
+            "name" => \ModuleManager\Main::$translate->get_text("User"),
             "type" => "text",
             "value" => $data['user']
         ]);
 
         $form->set_data([
             "key" => "password",
-            "name" => "password",
+            "name" => \ModuleManager\Main::$translate->get_text("Password"),
             "type" => "text",
             "value" => $data['password']
         ]);
@@ -172,13 +172,13 @@ class EditProjectsController
 
         $form->set_data([
             "key" => "only_title",
-            "name" => "Project status ",
+            "name" => \ModuleManager\Main::$translate->get_text("Project status"),
             "type" => "title",
         ]);
 
         $form->set_data([
             "key" => "status",
-            "name" => "Project status",
+            "name" => \ModuleManager\Main::$translate->get_text("Project status"),
             "type" => "select",
             "options" => [
                 1 => "Active",
@@ -188,7 +188,7 @@ class EditProjectsController
         ]);
 
 
-        return $form->get_form("Edit project", "save");
+        return $form->get_form(\ModuleManager\Main::$translate->get_text("Edit project"), "save");
     }
 
     public function collaborators_list()

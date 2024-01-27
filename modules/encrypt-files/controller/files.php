@@ -18,7 +18,7 @@ class FilesNotepadsController
             $this->project_id = \ModuleManager\Pages::$project->get_project_id();
 
             $main_page = [
-                "name" => "Files",
+                "name" => \ModuleManager\Main::$translate->get_text("Files"),
                 "link" => "files",
                 "function" => [$this, "files"],
                 "permission" => [1, 11],

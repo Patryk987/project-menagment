@@ -17,7 +17,7 @@ class NotesController
             $this->repository = new \Notes\Repository\NotepadRepository();
 
             $main_page = [
-                "name" => "Notes",
+                "name" => \ModuleManager\Main::$translate->get_text("Notes"),
                 "link" => "notes",
                 "function" => [$this, "notes"],
                 "permission" => [1, 11],
@@ -36,9 +36,9 @@ class NotesController
         $all_notepads = $this->repository->get_all($this->project_id);
 
         $header = [
-            "Name" => ["name"],
-            "Create date" => ["create_time"],
-            "Update date" => ["update_time"]
+            \ModuleManager\Main::$translate->get_text("Name") => ["name"],
+            \ModuleManager\Main::$translate->get_text("Create date") => ["create_time"],
+            \ModuleManager\Main::$translate->get_text("Update date") => ["update_time"]
         ];
 
         $table = new \ModuleManager\Table(50);

@@ -47,9 +47,9 @@ class DashboardController
 
 
         $header = [
-            "Zdjęcia" => ["photo_url"],
-            "Nazwa" => ["name"],
-            "Opis" => ["description"],
+            \ModuleManager\Main::$translate->get_text("Photo") => ["photo_url"],
+            \ModuleManager\Main::$translate->get_text("Name") => ["name"],
+            \ModuleManager\Main::$translate->get_text("Description") => ["description"],
         ];
 
         $table = new \ModuleManager\Table(50);

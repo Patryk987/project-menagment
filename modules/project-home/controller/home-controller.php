@@ -10,7 +10,7 @@ class HomeProjectController
     public function init_page()
     {
         $main_page = [
-            "name" => "Home",
+            "name" => \ModuleManager\Main::$translate->get_text("Home"),
             "link" => "project-home",
             "function" => [$this, "home"],
             "permission" => [1, 11],

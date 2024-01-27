@@ -24,13 +24,15 @@ require_once("./core/enums/enums-api-status.php");
 require_once("./core/repository/repository-projects.php");
 
 // Encrypt file 
-require_once("./core/encryption-system/eas-files.php");
-require_once("./core/encryption-system/eas.php");
+require_once("./core/encryption-system/aes-files.php");
+require_once("./core/encryption-system/aes.php");
 require_once("./core/encryption-system/rsa-key-management.php");
 require_once("./core/encryption-system/rsa.php");
 
 
 // Other
+require_once("core/class/class-translate.php");
+
 require_once("core/class/class-projects.php");
 
 require_once("./core/class/class-read-env.php");
@@ -83,6 +85,7 @@ class Main
     public string $page_name;
     public static $token;
     public static $jwt;
+    public static $translate;
 
     public DatabaseConnect $db_connect;
 
@@ -92,6 +95,8 @@ class Main
         if (empty($_SESSION['tmp_key'])) {
             $_SESSION['tmp_key'] = uniqid();
         }
+
+        static::$translate = new Translate("pl");
 
         $database_core_table = file_get_contents('./config/database.json');
         $database_core_table = html_entity_decode($database_core_table);

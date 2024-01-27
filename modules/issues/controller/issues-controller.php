@@ -20,7 +20,7 @@ class IssuesController
             $this->repository = new \Issues\Repository\IssuesRepository($this->project_id);
 
             $main_page = [
-                "name" => "Issues",
+                "name" => \ModuleManager\Main::$translate->get_text("Issues"),
                 "link" => "issues",
                 "function" => [$this, "list_issues"],
                 "permission" => [1, 11],
@@ -35,7 +35,7 @@ class IssuesController
             // Child 
 
             $main_page = [
-                "name" => "Add issues",
+                "name" => \ModuleManager\Main::$translate->get_text("Add issues"),
                 "link" => "add_issues",
                 "function" => [$this, "add_issues"],
                 "parent_link" => "issues",
@@ -90,7 +90,7 @@ class IssuesController
             "type" => "textarea"
         ]);
 
-        return $form->get_form("Edit project", "save");
+        return $form->get_form(\ModuleManager\Main::$translate->get_text("Edit project"), "save");
     }
 
     public function list_issues()
@@ -140,7 +140,7 @@ class IssuesController
         $issues = $this->repository->get_all();
         $header = [
             "Tytuł" => ["title"],
-            "Create date" => ["create_date"],
+            \ModuleManager\Main::$translate->get_text("Create date") => ["create_date"],
             "Status" => ["status"]
         ];
         $table = new \ModuleManager\Table(50);

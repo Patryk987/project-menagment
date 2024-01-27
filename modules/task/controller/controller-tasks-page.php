@@ -26,7 +26,7 @@ class TasksPageController
             $this->task_group_repository = new Repository\TasksGroupRepository($this->project_id);
 
             $main_page = [
-                "name" => "Tasks",
+                "name" => \ModuleManager\Main::$translate->get_text("Tasks"),
                 "link" => "task",
                 "function" => [$this, "task"],
                 "permission" => [1, 11],
@@ -38,7 +38,7 @@ class TasksPageController
             \ModuleManager\Pages::set_modules($main_page);
 
             $main_page = [
-                "name" => "+ Add group",
+                "name" => \ModuleManager\Main::$translate->get_text("+ Add group"),
                 "link" => "add_task_group",
                 "function" => [$this, "add_group"],
                 "parent_link" => "task",
@@ -113,7 +113,7 @@ class TasksPageController
             "type" => "color"
         ]);
 
-        return $form->get_form("Add tasks group", "Add");
+        return $form->get_form(\ModuleManager\Main::$translate->get_text("Add tasks group"), \ModuleManager\Main::$translate->get_text("Add"));
 
     }
 
@@ -121,9 +121,9 @@ class TasksPageController
     {
         $groups = $this->task_group_repository->get_all();
         $header = [
-            "Name" => ["group_name"],
-            "Create date" => ["create_date"],
-            "Color" => ["color"]
+            \ModuleManager\Main::$translate->get_text("Name") => ["group_name"],
+            \ModuleManager\Main::$translate->get_text("Create date") => ["create_date"],
+            \ModuleManager\Main::$translate->get_text("Color") => ["color"]
         ];
 
         $table = new \ModuleManager\Table(50);

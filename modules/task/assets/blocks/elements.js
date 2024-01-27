@@ -276,15 +276,15 @@ class NoteDetailsElement extends HTMLElement {
                 <div class="params">
                     <table>
                         <tr>
-                            <th>Author</th>
+                            <th>Autor</th>
                             <td>${author}</td>
                         </tr>
                         <tr>
-                            <th>Last modify</th>
+                            <th>Ostatnia modyfikacja</th>
                             <td>${last_modify}</td>
                         </tr>
                         <tr>
-                            <th>Deadline</th>
+                            <th>Termin</th>
                             <td>
                                 <input type='datetime-local' name='deadline' id='deadline' value='${deadline}'>
                             </td>

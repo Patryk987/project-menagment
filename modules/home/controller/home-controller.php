@@ -12,7 +12,7 @@ class HomeController
     {
 
         $main_page = [
-            "name" => "Home",
+            "name" => \ModuleManager\Main::$translate->get_text("Home"),
             "link" => "home",
             "function" => [$this, "home"],
             "permission" => [1, 11],

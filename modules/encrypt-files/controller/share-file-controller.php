@@ -48,7 +48,7 @@ class FilesShareController
         if (!empty(\ModuleManager\Pages::$project) && \ModuleManager\Pages::$project->get_status() != \ProjectStatus::BLOCKED) {
 
             $main_page = [
-                "name" => "Shared files",
+                "name" => \ModuleManager\Main::$translate->get_text("Shared files"),
                 "link" => "shared_files",
                 "function" => [$this, "shared_files_list"],
                 "permission" => [1, 11],
@@ -60,7 +60,7 @@ class FilesShareController
             \ModuleManager\Pages::set_modules($main_page);
 
             $main_page = [
-                "name" => "Share file",
+                "name" => \ModuleManager\Main::$translate->get_text("Share file"),
                 "link" => "share_file",
                 "function" => [$this, "share_file"],
                 "parent_link" => "shared_files",
@@ -96,10 +96,10 @@ class FilesShareController
 
 
         $header = [
-            "Recipient" => ["recipient_email"],
-            "Upload time" => ["upload_time"],
-            "Life time" => ["life_time"],
-            "File name" => ["file_name"]
+            \ModuleManager\Main::$translate->get_text("Recipient") => ["recipient_email"],
+            \ModuleManager\Main::$translate->get_text("Upload time") => ["upload_time"],
+            \ModuleManager\Main::$translate->get_text("Life time") => ["life_time"],
+            \ModuleManager\Main::$translate->get_text("File name") => ["file_name"]
         ];
 
 
@@ -152,24 +152,24 @@ class FilesShareController
 
         $form->set_data([
             "key" => "life_time",
-            "name" => "Life time (days)",
+            "name" => \ModuleManager\Main::$translate->get_text("Life time (days)"),
             "type" => "number"
         ]);
 
         $form->set_data([
             "key" => "email",
-            "name" => "Recipient e-mail",
+            "name" => \ModuleManager\Main::$translate->get_text("Recipient e-mail"),
             "type" => "email"
         ]);
 
         $form->set_data([
             "key" => "file",
-            "name" => "file",
+            "name" => \ModuleManager\Main::$translate->get_text("File name"),
             "type" => "file"
         ]);
 
 
-        return $form->get_form("Send file", "Send");
+        return $form->get_form(\ModuleManager\Main::$translate->get_text("Send file"), \ModuleManager\Main::$translate->get_text("Send"));
 
     }
 
