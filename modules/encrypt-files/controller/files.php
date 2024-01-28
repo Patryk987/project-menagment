@@ -53,7 +53,8 @@ class FilesNotepadsController
             // send_file
             if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['type']) && $_POST['type'] == "send_file") {
 
-                $this->repository->upload_file($_FILES['file']['tmp_name'], $_GET['pwd'], $_FILES['file']['name'], $_FILES['file']['type']);
+                $pwd = !empty($_GET['pwd']) ? $_GET['pwd'] : ".";
+                $this->repository->upload_file($_FILES['file']['tmp_name'], $pwd, $_FILES['file']['name'], $_FILES['file']['type']);
 
             }
 
@@ -82,19 +83,24 @@ class FilesNotepadsController
             ];
 
             $form = '
-            <form method="post" enctype="multipart/form-data">
-                <input type="hidden" name="type" value="send_file" />
-                <input type="file" name="file" value="add file" />
-                <input type="submit" />
-            </form>
-            ';
-
-            $form .= '
-            <form method="post">
-                <input type="hidden" name="type" value="add_folder" />
-                <input type="text" name="catalogue_name" value="Catalogue name" />
-                <input type="submit" />
-            </form>
+            <div style="display: flex">
+                <div class="form" style="border: 1px solid var(--selected); border-radius: var(--radius); padding: 10px; width: calc(50% - 10px); margin: 5px">
+                    <p style="font-size: 1rem; font-weight: bold; color: var(--selected)">Dodaj plik</p>
+                    <form method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="type" value="send_file" />
+                        <input type="file" name="file" value="add file" />
+                        <input type="submit" />
+                    </form>
+                </div>
+                <div class="form" style="border: 1px solid var(--selected); border-radius: var(--radius); padding: 10px; width: calc(50% - 10px); margin: 5px">
+                    <p style="font-size: 1rem; font-weight: bold; color: var(--selected)">Dodaj Katalog</p>
+                    <form method="post">
+                        <input type="hidden" name="type" value="add_folder" />
+                        <input type="text" name="catalogue_name" placeholder="Nazwa katalogu" />
+                        <input type="submit" />
+                    </form>
+                </div>
+            </div>
             ';
 
             $table = new \ModuleManager\Table(500);

@@ -74,12 +74,15 @@ class ProjectsRepository
         return $this->get_project_list($user_id);
     }
 
-    public function create($data)
+    public function create($data): bool
     {
         $project = $this->create_new_project($data);
         if ($project->get_status()) {
             $this->create_new_ftp_connect($data, $project->get_id());
+            return true;
         }
+
+        return false;
     }
 
     public function update($id, $data)

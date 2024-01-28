@@ -48,7 +48,6 @@ class UsersController
             ];
 
             $results = $account->update_user_data($data);
-            var_dump($results);
         }
 
         $user_data = $account->get_account_data(["user_id" => $user_id]);

@@ -37,20 +37,28 @@ class AddProjects
         // script
         \InjectJavaScript::set_script(["name" => "auto_reload", "src" => "/modules/projects/assets/js/script.js"]);
 
-        // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        //     $data = [
-        //         "owner_id" => $main::$token['payload']->user_id,
-        //         "name" => $_POST['name'],
-        //         "description" => $_POST['description'],
-        //         "photo" => $_FILES['photo'],
-        //         "serwer" => $_POST['serwer'],
-        //         "user" => $_POST['user'],
-        //         "password" => $_POST['password'],
-        //         "port" => $_POST['port'],
-        //     ];
-        //     $project_repository = new ProjectsRepository();
-        //     $project_repository->create($data);
-        // }
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $data = [
+                "owner_id" => $main::$token['payload']->user_id,
+                "name" => $_POST['name'],
+                "description" => $_POST['description'],
+                "photo" => $_FILES['photo'],
+                "serwer" => $_POST['serwer'],
+                "user" => $_POST['user'],
+                "password" => $_POST['password'],
+                "port" => $_POST['port'],
+            ];
+            $project_repository = new ProjectsRepository();
+            $results = $project_repository->create($data);
+
+            if ($results) {
+                $main->popups->add_popup("Poprawnie dodano projekt", "", "correct");
+            } else {
+                $main->popups->add_popup("Nie udało się dodać projektu", "spróbuj ponownie", "error");
+            }
+
+            $main->popups->show_popups();
+        }
 
         // return $this->get_page(__DIR__ . "/../view/add-project.html");
 

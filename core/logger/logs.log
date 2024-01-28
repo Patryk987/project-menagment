@@ -1,90 +1,16 @@
-[2024-01-25 19:07:43] [ERROR] Unexpected error: Undefined array key "nick",/var/www/html/core/class/class-account.php,362
-[2024-01-25 19:07:43] [ERROR] Unexpected error: trim(): Passing null to parameter #1 ($string) of type string is deprecated,/var/www/html/core/class/class-account.php,362
-[2024-01-25 19:07:43] [ERROR] Unexpected error: Undefined array key "password",/var/www/html/core/class/class-account.php,363
-[2024-01-25 19:07:43] [ERROR] Unexpected error: trim(): Passing null to parameter #1 ($string) of type string is deprecated,/var/www/html/core/class/class-account.php,363
-[2024-01-25 19:07:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2024-01-25 19:07:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:07:43] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:11:25] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/trait-api.php,267
-[2024-01-25 19:11:25] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2024-01-25 19:11:25] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:11:25] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:11:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,333
-[2024-01-25 19:11:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:11:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:12:50] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,333
-[2024-01-25 19:12:50] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:12:50] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:267),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:13:46] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:316),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:13:46] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:316),/var/www/html/core/class/trait-api.php,335
-[2024-01-25 19:13:46] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:316),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:14:03] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:14:03] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,335
-[2024-01-25 19:14:03] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:14:31] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:14:31] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,335
-[2024-01-25 19:14:31] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:14:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:14:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,335
-[2024-01-25 19:14:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-api.php:317),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:17:28] [ERROR] API: array_merge(): Argument #1 must be of type array, null given,0,/var/www/html/core/class/trait-api.php,208
-[2024-01-25 19:17:52] [ERROR] API: array_merge(): Argument #1 must be of type array, null given,0,/var/www/html/core/class/trait-api.php,208
-[2024-01-25 19:28:11] [ERROR] Load module: Field 'start_folder' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
-[2024-01-25 19:28:11] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "title",/var/www/html/modules/notes/controller/notes-api-controller.php,88
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,89
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "background",/var/www/html/modules/notes/controller/notes-api-controller.php,90
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "title",/var/www/html/modules/notes/controller/notes-api-controller.php,88
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,89
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Undefined array key "background",/var/www/html/modules/notes/controller/notes-api-controller.php,90
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:32:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "title",/var/www/html/modules/notes/controller/notes-api-controller.php,88
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,89
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "background",/var/www/html/modules/notes/controller/notes-api-controller.php,90
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "title",/var/www/html/modules/notes/controller/notes-api-controller.php,88
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,89
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "background",/var/www/html/modules/notes/controller/notes-api-controller.php,90
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "title",/var/www/html/modules/notes/controller/notes-api-controller.php,88
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "note",/var/www/html/modules/notes/controller/notes-api-controller.php,89
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Undefined array key "background",/var/www/html/modules/notes/controller/notes-api-controller.php,90
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,333
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:32:53] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:33:23] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:123),/var/www/html/core/class/trait-api.php,333
-[2024-01-25 19:33:23] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:123),/var/www/html/core/class/trait-api.php,334
-[2024-01-25 19:33:23] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/notes/controller/notes-api-controller.php:123),/var/www/html/core/class/trait-api.php,162
-[2024-01-25 19:41:18] [ERROR] Load module: Field 'start_folder' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
-[2024-01-25 19:41:18] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
-[2024-01-25 20:09:03] [WARNING] Unexpected warning: Typed static property ModuleManager\Pages::$project must not be accessed before initialization
-[2024-01-25 20:09:29] [ERROR] Load module: Field 'start_folder' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
-[2024-01-25 20:09:29] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
-[2024-01-27 19:57:56] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,114
-[2024-01-27 20:07:32] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-translate.php:11),/var/www/html/core/index.php,120
-[2024-01-27 20:09:08] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120
-[2024-01-27 20:09:10] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120
-[2024-01-27 20:09:10] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120
-[2024-01-27 20:09:10] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/index.php:99),/var/www/html/core/index.php,120
-[2024-01-27 20:26:40] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-27 20:28:18] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-27 20:36:18] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-27 20:51:28] [ERROR] Unexpected error: Undefined variable $data,/var/www/html/modules/projects/controller/project-controller.php,131
-[2024-01-27 20:51:28] [ERROR] Unexpected error: Trying to access array offset on value of type null,/var/www/html/modules/projects/controller/project-controller.php,131
-[2024-01-27 20:56:07] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-27 21:01:00] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-27 21:02:15] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-27 21:02:30] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-27 21:03:51] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-27 21:04:07] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
-[2024-01-27 21:37:16] [WARNING] Unexpected warning: Typed static property ModuleManager\Pages::$project must not be accessed before initialization
-[2024-01-27 21:37:25] [ERROR] Unexpected error: Attempt to read property "permission" on array,/var/www/html/core/class/class-pages.php,114
+[2024-01-27 22:04:56] [ERROR] Load module: Field 'start_folder' doesn't have a default value,1364,/var/www/html/core/class/class-sedjm.php,536
+[2024-01-27 22:04:56] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2024-01-27 22:11:54] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 22:11:54] [ERROR] Incorrect function: MySQL server has gone away,2006,/var/www/html/core/class/class-sedjm.php,410
+[2024-01-27 22:13:25] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 22:13:25] [ERROR] Incorrect function: MySQL server has gone away,2006,/var/www/html/core/class/class-sedjm.php,410
+[2024-01-27 22:14:42] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 22:16:44] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 22:16:44] [WARNING] Unexpected warning: Connection refused
+[2024-01-27 22:18:28] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 22:20:10] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-27 22:29:52] [WARNING] Unexpected warning: Typed static property ModuleManager\Pages::$project must not be accessed before initialization
+[2024-01-27 22:30:28] [ERROR] Unexpected error: Undefined array key "pwd",/var/www/html/modules/encrypt-files/controller/files.php,56
+[2024-01-27 22:34:24] [ERROR] Unexpected error: ftp_chdir(): //f43c1fb012a7af94ee27285ef0ff6366: No such file or directory,/var/www/html/modules/encrypt-files/helper/ftp.php,49
+[2024-01-27 22:34:47] [ERROR] Unexpected error: ftp_chdir(): //f43c1fb012a7af94ee27285ef0ff6366: No such file or directory,/var/www/html/modules/encrypt-files/helper/ftp.php,49
+[2024-01-27 22:48:49] [ERROR] Taks API: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE  TaskTags.task_tags_id = '81' AND TaskTags.task_group_id = '12'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,500

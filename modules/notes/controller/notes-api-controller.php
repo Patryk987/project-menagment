@@ -2,12 +2,14 @@
 
 namespace Notes\Controller;
 
-class NotesApiController {
+class NotesApiController
+{
 
     use \ModuleManager\LoadFile;
     private $repository;
 
-    public function __construct() {
+    public function __construct()
+    {
 
         $this->repository = new \Notes\Repository\NotesRepository();
 
@@ -81,7 +83,8 @@ class NotesApiController {
      * @param array $note
      * @return \Models\ApiModel $output
      */
-    public function add_note($input): \Models\ApiModel {
+    public function add_note($input): \Models\ApiModel
+    {
         $data = [
             "notepad_id" => $input['notepad_id'],
             "author_id" => $input['user_id'],
@@ -93,9 +96,10 @@ class NotesApiController {
 
         return $this->repository->create($data);
     }
-    private function sava_photo($user_id, $photo) {
+    private function sava_photo($user_id, $photo)
+    {
         $photo = preg_replace('/^data:image\/(png|jpg|jpeg);base64,/', '', $photo);
-        $name = uniqid().".jpg";
+        $name = uniqid() . ".jpg";
 
         $file_upload = new \ModuleManager\FileUpload\FileUploader(["png", "jpg"]);
         $file_upload = $file_upload->upload_base64($user_id, $photo, $name);
@@ -108,19 +112,19 @@ class NotesApiController {
      * @param array $note
      * @return array
      */
-    public function update_note($input): \Models\ApiModel {
+    public function update_note($input): \Models\ApiModel
+    {
 
         $data = [];
 
-        if(!empty($input['title']))
+        if (!empty($input['title']))
             $data["title"] = $input['title'];
 
-        if(!empty($input['note']))
+        if (!empty($input['note']))
             $data["note"] = $input['note'];
 
-        if(!empty($input['background'])) {
+        if (!empty($input['background'])) {
             $file_name = $this->sava_photo($input['user_id'], $input['background']);
-            var_dump($file_name);
             $data["background"] = $file_name;
         }
 
@@ -129,15 +133,18 @@ class NotesApiController {
     }
 
 
-    public function get_notes($input): \Models\ApiModel {
+    public function get_notes($input): \Models\ApiModel
+    {
         return $this->repository->get_all_notepads_notes($input['notepad_id']);
     }
 
-    public function get_note($input): \Models\ApiModel {
+    public function get_note($input): \Models\ApiModel
+    {
         return $this->repository->get_by_id($input['note_id']);
     }
 
-    public function delete_note($input): \Models\ApiModel {
+    public function delete_note($input): \Models\ApiModel
+    {
         return $this->repository->delete($input['note_id']);
     }
 

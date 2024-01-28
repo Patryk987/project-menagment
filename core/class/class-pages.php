@@ -111,28 +111,34 @@ trait MenagePanel
 
     private function load_lower_module($project): string
     {
-        $user_permission = static::$token['payload']->permission;
+        if (!empty(static::$token['payload'])) {
 
-        $lower = "";
-        foreach (static::$modules as $key => $value) {
+            $user_permission = static::$token['payload']->permission;
 
-            if (
-                in_array($user_permission, $value['access_permission'])
-                && (isset($value["belongs_to_project"]) && $value["belongs_to_project"] == $project)
-            ) {
-                if ($value['type'] == "parent" && (!isset($lower_position) || $value['position'] < $lower_position)) {
-                    $lower = $key;
-                    $lower_position = $value['position'];
+            $lower = "";
+            foreach (static::$modules as $key => $value) {
+
+                if (
+                    in_array($user_permission, $value['access_permission'])
+                    && (isset($value["belongs_to_project"]) && $value["belongs_to_project"] == $project)
+                ) {
+                    if ($value['type'] == "parent" && (!isset($lower_position) || $value['position'] < $lower_position)) {
+                        $lower = $key;
+                        $lower_position = $value['position'];
+                    }
+
                 }
 
             }
 
-        }
+            if (!empty($lower)) {
+                return $this->load_module($lower, $project);
+            } else {
+                return $this->load_empty_panel_page();
+            }
 
-        if (!empty($lower)) {
-            return $this->load_module($lower, $project);
         } else {
-            return $this->load_empty_panel_page();
+            $this->redirect("/" . $this->config["pages"]->login);
         }
     }
 
