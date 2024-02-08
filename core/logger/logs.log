@@ -14,3 +14,85 @@
 [2024-01-27 22:34:24] [ERROR] Unexpected error: ftp_chdir(): //f43c1fb012a7af94ee27285ef0ff6366: No such file or directory,/var/www/html/modules/encrypt-files/helper/ftp.php,49
 [2024-01-27 22:34:47] [ERROR] Unexpected error: ftp_chdir(): //f43c1fb012a7af94ee27285ef0ff6366: No such file or directory,/var/www/html/modules/encrypt-files/helper/ftp.php,49
 [2024-01-27 22:48:49] [ERROR] Taks API: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE  TaskTags.task_tags_id = '81' AND TaskTags.task_group_id = '12'' at line 1,1064,/var/www/html/core/class/class-sedjm.php,500
+[2024-01-31 19:49:39] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-31 20:19:12] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,21
+[2024-01-31 20:20:52] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,21
+[2024-01-31 20:21:33] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,21
+[2024-01-31 20:22:50] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,21
+[2024-01-31 20:23:04] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,21
+[2024-01-31 20:23:13] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,21
+[2024-01-31 20:23:40] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,21
+[2024-01-31 20:24:17] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,30
+[2024-01-31 20:24:30] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,30
+[2024-01-31 20:24:45] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,30
+[2024-01-31 20:26:04] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,30
+[2024-01-31 20:26:24] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,30
+[2024-01-31 20:26:24] [ERROR] Unexpected error: Undefined array key "project_13_password",/var/www/html/core/class/class-local-storage.php,31
+[2024-01-31 20:27:26] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,30
+[2024-01-31 20:27:26] [ERROR] Unexpected error: Undefined array key "user",/var/www/html/core/class/class-local-storage.php,31
+[2024-01-31 20:28:25] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,30
+[2024-01-31 20:28:25] [ERROR] Unexpected error: Undefined array key "user",/var/www/html/core/class/class-local-storage.php,31
+[2024-01-31 20:32:11] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,22
+[2024-01-31 20:32:48] [ERROR] Unexpected error: ob_clean(): Failed to delete buffer. No buffer to delete,/var/www/html/core/class/class-local-storage.php,21
+[2024-01-31 20:32:48] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,22
+[2024-01-31 20:34:35] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/modules/projects/controller/project-setting-controller.php:210),/var/www/html/core/class/class-local-storage.php,24
+[2024-01-31 20:48:42] [WARNING] Unexpected warning: ProjectModel::get_project_id(): Return value must be of type int, null returned
+[2024-01-31 20:48:43] [WARNING] Unexpected warning: ProjectModel::get_project_id(): Return value must be of type int, null returned
+[2024-01-31 20:48:49] [WARNING] Unexpected warning: ProjectModel::get_project_id(): Return value must be of type int, null returned
+[2024-01-31 20:48:55] [WARNING] Unexpected warning: ProjectModel::get_project_id(): Return value must be of type int, null returned
+[2024-01-31 20:49:19] [WARNING] Unexpected warning: ProjectModel::get_project_id(): Return value must be of type int, null returned
+[2024-01-31 20:49:29] [WARNING] Unexpected warning: ProjectModel::get_project_id(): Return value must be of type int, null returned
+[2024-01-31 20:49:33] [WARNING] Unexpected warning: ProjectModel::get_project_id(): Return value must be of type int, null returned
+[2024-01-31 20:50:12] [WARNING] Unexpected warning: ProjectModel::get_project_id(): Return value must be of type int, null returned
+[2024-01-31 20:52:13] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-31 20:56:28] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/function/function.php,286
+[2024-01-31 20:56:30] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/function/function.php,286
+[2024-01-31 20:59:24] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-module.php:18),/var/www/html/core/class/class-pages.php,39
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Undefined array key "show",/var/www/html/core/class/trait-module.php,18
+[2024-01-31 21:00:02] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/trait-debug.php:70),/var/www/html/core/class/class-pages.php,39
+[2024-01-31 21:01:42] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-01-31 21:03:19] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:42:22] [WARNING] Unexpected warning: ModuleManager\Pages::load_lower_module(): Return value must be of type string, none returned
+[2024-02-04 19:42:44] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:45:07] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:45:10] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:45:39] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:45:55] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:46:00] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:46:57] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:47:02] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:47:15] [ERROR] FTP connect: Cannot assign bool to property FTP::$ftp of type FTP\Connection,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:54:46] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-04 19:56:02] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-08 19:24:14] [WARNING] Unexpected warning: Typed static property ModuleManager\Pages::$project must not be accessed before initialization
+[2024-02-08 19:25:11] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-08 19:49:57] [ERROR] Unexpected error: foreach() argument must be of type array|object, null given,/var/www/html/core/function/function.php,183
+[2024-02-08 19:51:33] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-08 19:52:41] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-08 19:53:55] [WARNING] Unexpected warning: ModuleManager\Pages::get_panel(): Return value must be of type string, null returned
+[2024-02-08 19:57:25] [ERROR] Incorrect function: Too few arguments to function login_to_panel(), 2 passed in /var/www/html/core/function/function.php on line 47 and exactly 3 expected,0,/var/www/html/core/function/function.php,5
+[2024-02-08 19:57:29] [ERROR] Incorrect function: Too few arguments to function login_to_panel(), 2 passed in /var/www/html/core/function/function.php on line 47 and exactly 3 expected,0,/var/www/html/core/function/function.php,5
+[2024-02-08 19:57:38] [ERROR] Incorrect function: Too few arguments to function login_to_panel(), 2 passed in /var/www/html/core/function/function.php on line 47 and exactly 3 expected,0,/var/www/html/core/function/function.php,5
+[2024-02-08 20:00:22] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-08 20:00:30] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-08 20:00:32] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-08 20:02:20] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-08 20:03:13] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-08 20:05:37] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11
+[2024-02-08 20:12:30] [WARNING] Unexpected warning: ModuleManager\LocalStorage::remove_session(): Argument #1 ($key) must be of type string, null given, called in /var/www/html/core/class/class-local-storage.php on line 198
+[2024-02-08 20:12:45] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-local-storage.php:111),/var/www/html/core/class/class-pages.php,329
+[2024-02-08 20:12:56] [ERROR] Unexpected error: Cannot modify header information - headers already sent by (output started at /var/www/html/core/class/class-local-storage.php:111),/var/www/html/core/class/class-pages.php,329
+[2024-02-08 20:13:34] [ERROR] FTP connect: ftp_connect(): Argument #2 ($port) must be of type int, string given,0,/var/www/html/modules/encrypt-files/helper/ftp.php,11

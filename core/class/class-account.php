@@ -110,6 +110,7 @@ class Accounts
         $input_nick = !empty($input['nick']) ? trim($input['nick']) : "";
         $input_password = !empty($input['password']) ? trim($input['password']) : "";
         $input_repeat_password = !empty($input['repeat_password']) ? trim($input['repeat_password']) : "";
+        $input_key_password = !empty($input['encrypt_password']) ? trim($input['encrypt_password']) : "";
         $input_email = !empty($input['email']) ? trim($input['email']) : "";
         $input_phone_number = !empty($input['phone_number']) ? trim($input['phone_number']) : "";
         $permission = !empty($input['permission']) ? trim($input['permission']) : 1;
@@ -134,6 +135,15 @@ class Accounts
             $errors = true;
         } else {
             $error_details['password_error'] = [];
+        }
+
+        $check_keys_password = $this->is_password_valid($input_key_password);
+
+        if (!$check_keys_password['status']) {
+            $error_details['encrypt_password_error'] = $check_keys_password['errors'];
+            $errors = true;
+        } else {
+            $error_details['encrypt_password_error'] = [];
         }
 
         $check_password_integrity = $this->password_are_identical($input_password, $input_repeat_password);
@@ -191,18 +201,6 @@ class Accounts
 
             if ($registration_state["status"]) {
 
-                try {
-                    \TestMail::send_welcome_mail($input_email);
-                } catch (\Throwable $th) {
-                    $details = [
-                        "message" => $th->getMessage(),
-                        "code" => $th->getCode(),
-                        "file" => $th->getFile(),
-                        "line" => $th->getLine()
-                    ];
-                    \ModuleManager\Main::set_error('Send e-mail', 'ERROR', $details);
-                }
-
                 foreach ($input['additional'] as $key => $value) {
 
                     $additional_table = 'UserData';
@@ -218,19 +216,16 @@ class Accounts
 
             }
 
-            // $return["status"] = $registration_state["status"];
+            $rsa = new \RSA\RSAKeyManagement($registration_state["id"], "user_", $input_key_password);
+            $rsa->generate_key();
+
             $return->set_status(\ApiStatus::from($registration_state["status"]));
-            // $return["data"]["id"] = $registration_state["id"];
             $return->set_message(["id" => $registration_state["id"]]);
-            // $return["errors"] = null;
 
         } else {
 
-            // $return["status"] = false;
             $return->set_status(\ApiStatus::ERROR);
-            // $return["data"]["id"] = null;
             $return->set_error($error_details);
-            // $return["errors"] = $error_details;
 
         }
 
@@ -353,6 +348,7 @@ class Accounts
      */
     public function login_to_account($input): \Models\ApiModel
     {
+        global $main;
 
         $errors = [];
         $status = \ApiStatus::ERROR;
@@ -361,6 +357,7 @@ class Accounts
 
         $nick = trim($input['nick']);
         $password = trim($input['password']);
+        $key_password = trim($input['key_password']);
 
         if (
             !empty($nick)
@@ -374,13 +371,17 @@ class Accounts
             $this->sedjm->set_where('status', 1, '=');
             $nick_in_db = $this->sedjm->get(['user_id', 'nick', 'password', 'permission'], $table);
 
+
             if (count($nick_in_db) > 0) {
 
                 $user_id = $nick_in_db[0]['user_id'];
                 $hash = $nick_in_db[0]['password'];
 
+                $rsa = new \RSA\RSAKeyManagement($user_id, "user_", $key_password);
+                $key = $rsa->get_keys();
+
                 $password_is_correct = EncryptData::password_hash_verify($password, $hash);
-                if ($password_is_correct) {
+                if ($password_is_correct && str_contains($key->get_private_key(), "-----BEGIN PRIVATE KEY-----")) {
 
                     $expire_time = strtotime("+30 day");
 
@@ -392,7 +393,8 @@ class Accounts
                         "permission" => $nick_in_db[0]['permission'],
                         "token_id" => $token_id['id'],
                         "create_time" => time(),
-                        "expire_time" => $expire_time
+                        "expire_time" => $expire_time,
+                        "key_password" => $key_password
                     ];
 
                     $token = \ModuleManager\Main::$jwt->get_token($payload);
@@ -456,8 +458,8 @@ class Accounts
         $this->sedjm->set_where("token_id", $token_id, "=");
         $token = $this->sedjm->update($data, $table);
 
-        LocalStorage::remove_data("token", "session");
-        LocalStorage::remove_data("token", "cookie");
+        LocalStorage::remove_data("session");
+        LocalStorage::remove_data("cookie", "token");
 
         return ["status" => $token['status']];
 

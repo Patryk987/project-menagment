@@ -36,6 +36,20 @@ class EditProjectsController
                 ];
                 \ModuleManager\Pages::set_modules($main_page);
 
+                $main_page = [
+                    "name" => \ModuleManager\Main::$translate->get_text("Enter password"),
+                    "link" => "enter_password",
+                    "function" => [$this, "enter_password"],
+                    // "function" => [$this, "project_homepage"],
+                    "permission" => [1, 11],
+                    "status" => true,
+                    "icon" => basename(__DIR__) . "/../projects/assets/img/icon.svg",
+                    "position" => 999,
+                    "belongs_to_project" => true,
+                    "show" => false
+                ];
+                \ModuleManager\Pages::set_modules($main_page);
+
 
                 // project setting 
                 // $main_page = [
@@ -189,6 +203,43 @@ class EditProjectsController
 
 
         return $form->get_form(\ModuleManager\Main::$translate->get_text("Edit project"), "save");
+    }
+
+    public function enter_password()
+    {
+        global $main;
+        // var_dump(\ModuleManager\LocalStorage::get_data("project_" . $this->project_id . "_password", 'session', true));
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $rsa = new \RSA\RSAKeyManagement($this->project_id, "project_", $_POST['password']);
+            $key = $rsa->get_keys();
+            if (str_contains($key->get_private_key(), "-----BEGIN PRIVATE KEY-----")) {
+                $main->popups->add_popup("Poprawne hasło", "", "correct");
+                \ModuleManager\LocalStorage::set_data("project_" . $this->project_id . "_password", $_POST['password'], 'session', true);
+            } else {
+                $main->popups->add_popup("Hasło jest nie poprawne", "spróbuj ponownie", "error");
+            }
+            $main->popups->show_popups();
+        }
+
+        $form = new \ModuleManager\Forms\Forms("multipart/form-data");
+
+        $form->set_data([
+            "key" => "only_title",
+            "name" => \ModuleManager\Main::$translate->get_text("Enter the password obtained from the server administrator"),
+            "type" => "title",
+        ]);
+
+        $form->set_data([
+            "key" => "password",
+            "name" => \ModuleManager\Main::$translate->get_text("Project password"),
+            "type" => "text"
+        ]);
+
+
+        return $form->get_form(
+            \ModuleManager\Main::$translate->get_text("Project password"),
+            \ModuleManager\Main::$translate->get_text("Save")
+        );
     }
 
     public function collaborators_list()

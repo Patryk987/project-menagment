@@ -24,7 +24,11 @@ class FilesRepository
         if (!empty($project_id)) {
             $this->project_id = $project_id;
             $this->connect_data = $this->get_ftp_connect_data();
-            $this->rsa_encrypt_decrypt = new \RSA\EncryptDecryptRSA($project_id, "project_");
+            $this->rsa_encrypt_decrypt = new \RSA\EncryptDecryptRSA(
+                $project_id,
+                "project_",
+                \ModuleManager\LocalStorage::get_data("project_" . $project_id . "_password", 'session', true)
+            );
         }
 
         $this->aes_file = new \AES\EncryptDecryptFile();

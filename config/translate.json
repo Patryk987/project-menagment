@@ -182,5 +182,37 @@
     "Send": {
         "en": "Send",
         "pl": "Wyślij"
+    },
+    "Project password": {
+        "en": "Project password",
+        "pl": "Hasło projektu"
+    },
+    "password is to short": {
+        "en": "password is to short",
+        "pl": "Hasło jest za krótkie"
+    },
+    "password has no number": {
+        "en": "password has no number",
+        "pl": "Hasło nie zawiera liczb"
+    },
+    "password does  not contain capital letters": {
+        "en": "password does  not contain capital letters",
+        "pl": "Hasło nie zawiera wielkich liter"
+    },
+    "password does not contain lower case letters": {
+        "en": "password does not contain lower case letters",
+        "pl": "Hasło nie zawiera małych liter"
+    },
+    "password has no special characters": {
+        "en": "password has no special characters",
+        "pl": "Hasło nie zawiera znaków specjalnych"
+    },
+    "Enter password": {
+        "en": "Enter password",
+        "pl": "Wprowadź hasło"
+    },
+    "Enter the password obtained from the server administrator": {
+        "en": "Enter the password obtained from the server administrator",
+        "pl": "Wprowadź hasło uzyskane od administratora serwera"
     }
 }

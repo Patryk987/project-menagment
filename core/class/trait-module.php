@@ -26,7 +26,8 @@ trait Modules
                 "icon" => $module["icon"],
                 "position" => !empty($module["position"]) ? $module["position"] : 99,
                 "type" => "parent",
-                "belongs_to_project" => isset($module["belongs_to_project"]) ? $module["belongs_to_project"] : false
+                "belongs_to_project" => isset($module["belongs_to_project"]) ? $module["belongs_to_project"] : false,
+                "show" => isset($module["show"]) ? $module["show"] : true,
             ];
 
         }
@@ -129,6 +130,7 @@ trait Modules
                         "link" => $value['link'],
                         "icon" => $value['icon'],
                         "position" => $value['position'],
+                        "show" => $value['show']
                     ];
 
                     $list[$value['link']] = $data;

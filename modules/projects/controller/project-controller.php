@@ -38,23 +38,33 @@ class AddProjects
         \InjectJavaScript::set_script(["name" => "auto_reload", "src" => "/modules/projects/assets/js/script.js"]);
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $data = [
-                "owner_id" => $main::$token['payload']->user_id,
-                "name" => $_POST['name'],
-                "description" => $_POST['description'],
-                "photo" => $_FILES['photo'],
-                "serwer" => $_POST['serwer'],
-                "user" => $_POST['user'],
-                "password" => $_POST['password'],
-                "port" => $_POST['port'],
-            ];
-            $project_repository = new ProjectsRepository();
-            $results = $project_repository->create($data);
+            $password_verify = $this->verify_password($_POST['project_password']);
+            if ($password_verify['status']) {
 
-            if ($results) {
-                $main->popups->add_popup("Poprawnie dodano projekt", "", "correct");
+                $data = [
+                    "owner_id" => $main::$token['payload']->user_id,
+                    "name" => $_POST['name'],
+                    "description" => $_POST['description'],
+                    "project_password" => $_POST['project_password'],
+                    "photo" => $_FILES['photo'],
+                    "serwer" => $_POST['serwer'],
+                    "user" => $_POST['user'],
+                    "password" => $_POST['password'],
+                    "port" => $_POST['port'],
+                ];
+                $project_repository = new ProjectsRepository();
+                $results = $project_repository->create($data);
+
+                if ($results) {
+                    $main->popups->add_popup("Poprawnie dodano projekt", "", "correct");
+                } else {
+                    $main->popups->add_popup("Nie udało się dodać projektu", "spróbuj ponownie", "error");
+                }
+
             } else {
-                $main->popups->add_popup("Nie udało się dodać projektu", "spróbuj ponownie", "error");
+                foreach ($password_verify['errors'] as $value) {
+                    $main->popups->add_popup(\ModuleManager\Main::$translate->get_text($value), "", "error");
+                }
             }
 
             $main->popups->show_popups();
@@ -85,6 +95,12 @@ class AddProjects
         $form->set_data([
             "key" => "description",
             "name" => \ModuleManager\Main::$translate->get_text("Description"),
+            "type" => "text"
+        ]);
+
+        $form->set_data([
+            "key" => "project_password",
+            "name" => \ModuleManager\Main::$translate->get_text("Project password"),
             "type" => "text"
         ]);
 
@@ -128,6 +144,41 @@ class AddProjects
     private function insert_new()
     {
 
+    }
+
+    private function verify_password($password)
+    {
+        $status = true;
+        $errors = [];
+
+        $min_length = 8;
+
+        if (strlen($password) < $min_length) {
+            $status = false;
+            $errors[] = 'password is to short';
+        }
+
+        if (!preg_match('/\d/', $password)) {
+            $status = false;
+            $errors[] = 'password has no number';
+        }
+
+        if (!preg_match('/[A-Z]/', $password)) {
+            $status = false;
+            $errors[] = 'password does  not contain capital letters';
+        }
+
+        if (!preg_match('/[a-z]/', $password)) {
+            $status = false;
+            $errors[] = 'password does not contain lower case letters';
+        }
+
+        if (!preg_match('/[^\w\s]/', $password)) {
+            $status = false;
+            $errors[] = 'password has no special characters';
+        }
+
+        return ["status" => $status, "errors" => $errors];
     }
 
 

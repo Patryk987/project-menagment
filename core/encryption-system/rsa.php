@@ -6,9 +6,9 @@ class EncryptDecryptRSA
 
     private RsaKeyModel $keys;
 
-    public function __construct($id, $prefix = "")
+    public function __construct($id, $prefix = "", $access_key = null)
     {
-        $key_management = new RSAKeyManagement($id, $prefix);
+        $key_management = new RSAKeyManagement($id, $prefix, $access_key);
         $this->keys = $key_management->get_keys();
     }
 

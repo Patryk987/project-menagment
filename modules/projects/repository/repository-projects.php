@@ -79,6 +79,14 @@ class ProjectsRepository
         $project = $this->create_new_project($data);
         if ($project->get_status()) {
             $this->create_new_ftp_connect($data, $project->get_id());
+            if (!empty($data)) {
+                $project_password = $data['project_password'];
+            } else {
+                $project_password = null;
+            }
+            $rsa = new \RSA\RSAKeyManagement($project->get_id(), "project_", $project_password);
+            $rsa->generate_key();
+
             return true;
         }
 

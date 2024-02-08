@@ -2,12 +2,13 @@
 
 require_once("./core/class/class-forms.php");
 
-function login_to_panel($nick, $password)
+function login_to_panel($nick, $password, $key_password)
 {
     global $main;
     $data = [
         "nick" => htmlspecialchars($nick),
-        "password" => htmlspecialchars($password)
+        "password" => htmlspecialchars($password),
+        "key_password" => htmlspecialchars($key_password)
     ];
 
     $login_status = $main->accounts->login_to_account($data);
@@ -43,7 +44,7 @@ function login_form()
 
     if (!empty($_POST['active'])) {
 
-        $login = login_to_panel($_POST["nick"], $_POST["password"]);
+        $login = login_to_panel($_POST["nick"], $_POST["password"], $_POST['key_password']);
         foreach ($login->get_error() as $key => $value) {
             switch ($key) {
                 case 'password_is_incorrect':
@@ -71,6 +72,13 @@ function login_form()
         "name" => "Wpisz hasło",
         "type" => "password",
         "id" => "password"
+    ]);
+
+    $form->set_data([
+        "key" => "key_password",
+        "name" => "Hasło klucza",
+        "type" => "password",
+        "id" => "key_password"
     ]);
 
     return $form->get_form("Zaloguj się", "Zaloguj się", $errors);
@@ -125,13 +133,15 @@ ModuleManager\DataBinder::set_binder(
     ]
 );
 
-function register_to_panel($nick, $email, $phone, $password, $repeat_password, $access, $name, $surname)
+function register_to_panel($nick, $email, $phone, $password, $repeat_password, $access, $name, $surname, $key_password)
 {
     global $main;
+
     $data = [
         "nick" => $nick,
         "password" => $password,
         "repeat_password" => $repeat_password,
+        "encrypt_password" => $key_password,
         "email" => $email,
         "phone_number" => $phone,
         "additional" => [
@@ -143,7 +153,7 @@ function register_to_panel($nick, $email, $phone, $password, $repeat_password, $
     $register_status = $main->accounts->create_account($data);
 
     if ($register_status->get_status() == \ApiStatus::CORRECT) {
-        $login_status = login_to_panel($nick, $password);
+        $login_status = login_to_panel($nick, $password, $key_password);
     }
     return $register_status;
 }
@@ -163,6 +173,7 @@ function registration_form()
             && !empty($_POST['repeat_password'])
             && !empty($_POST['name'])
             && !empty($_POST['surname'])
+            && !empty($_POST['encrypt_data_password'])
         ) {
 
             $login = register_to_panel(
@@ -173,7 +184,8 @@ function registration_form()
                 $_POST['repeat_password'],
                 $_POST['access'],
                 $_POST['name'],
-                $_POST['surname']
+                $_POST['surname'],
+                $_POST['encrypt_data_password']
             );
 
             foreach ($login->get_error() as $key => $value) {
@@ -228,13 +240,19 @@ function registration_form()
 
     $form->set_data([
         "key" => "password",
-        "name" => "Password",
+        "name" => "account Password",
         "type" => "password"
     ]);
 
     $form->set_data([
         "key" => "repeat_password",
-        "name" => "Repet password",
+        "name" => "Repet account password",
+        "type" => "password"
+    ]);
+
+    $form->set_data([
+        "key" => "encrypt_data_password",
+        "name" => "Hasło klucza",
         "type" => "password"
     ]);
 
@@ -282,75 +300,77 @@ function module_list()
         $toggle_icon = file_get_contents(__DIR__ . "/../../panel-template/img/toggle_icon.svg");
         $html = "<ul>";
         foreach ($module_list as $value) {
+            if ($value['show']) {
 
-            if ($main->page_name == $value['link'])
-                $active = "active";
-            else
-                $active = "";
+                if ($main->page_name == $value['link'])
+                    $active = "active";
+                else
+                    $active = "";
 
-            if (!empty($value['icon'])) {
-                $icon = file_get_contents(__DIR__ . "/../../modules/" . $value['icon']);
-            } else {
-                $icon = "";
-            }
-
-            $child = "";
-            if (!empty($value['child'])) {
-
-                $visible_child = false;
-
-                foreach ($value['child'] as $key => $child_value) {
-                    if ($child_value['show'] == true)
-                        $visible_child = true;
+                if (!empty($value['icon'])) {
+                    $icon = file_get_contents(__DIR__ . "/../../modules/" . $value['icon']);
+                } else {
+                    $icon = "";
                 }
 
-                if ($visible_child) {
-                    $child .= "<ul>";
+                $child = "";
+                if (!empty($value['child'])) {
+
+                    $visible_child = false;
+
                     foreach ($value['child'] as $key => $child_value) {
-                        if ($main->page_name == $child_value['link']) {
-                            $sub_active = "active";
-                            $active = "active";
-                        } else {
-                            $sub_active = "";
-                        }
-
-                        if (!empty($child_value['show']) || $child_value['show'] == true) {
-
-                            $child .= "<li class='" . $sub_active . "'>";
-                            $child .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->project . "/" . \ModuleManager\Pages::$project->get_project_id() . "/" . $value['link'] . "/" . $child_value['link'] . "'>";
-                            $child .= "<span class='icon'></span>";
-                            $child .= "<span>" . $child_value['name'] . "</span>";
-
-                            $child .= "</a>";
-                            $child .= "</li>";
-
-                        }
-
+                        if ($child_value['show'] == true)
+                            $visible_child = true;
                     }
-                    $child .= "</ul>";
+
+                    if ($visible_child) {
+                        $child .= "<ul>";
+                        foreach ($value['child'] as $key => $child_value) {
+                            if ($main->page_name == $child_value['link']) {
+                                $sub_active = "active";
+                                $active = "active";
+                            } else {
+                                $sub_active = "";
+                            }
+
+                            if (!empty($child_value['show']) || $child_value['show'] == true) {
+
+                                $child .= "<li class='" . $sub_active . "'>";
+                                $child .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->project . "/" . \ModuleManager\Pages::$project->get_project_id() . "/" . $value['link'] . "/" . $child_value['link'] . "'>";
+                                $child .= "<span class='icon'></span>";
+                                $child .= "<span>" . $child_value['name'] . "</span>";
+
+                                $child .= "</a>";
+                                $child .= "</li>";
+
+                            }
+
+                        }
+                        $child .= "</ul>";
+                    }
                 }
+
+                $html .= "<li class='" . $active . "'>";
+                $html .= "<div class='parent'>";
+                $html .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->project . "/" . \ModuleManager\Pages::$project->get_project_id() . "/" . $value['link'] . "'>";
+                $html .= "<span class='border'></span>";
+                $html .= "<span class='icon'>" . $icon . "</span>";
+                $html .= "<span class='name'>" . $value['name'] . "</span>";
+                $html .= "</a>";
+                $html .= "<span class='toggle'>";
+                if (!empty($child))
+                    $html .= $toggle_icon;
+                $html .= "</span>";
+                $html .= "</div>";
+                $html .= "<div class='toggle_nav'>";
+
+                if (!empty($child)) {
+                    $html .= $child;
+                }
+
+                $html .= "</div>";
+                $html .= "</li>";
             }
-
-            $html .= "<li class='" . $active . "'>";
-            $html .= "<div class='parent'>";
-            $html .= "<a href='/" . ModuleManager\Config::get_config()["pages"]->project . "/" . \ModuleManager\Pages::$project->get_project_id() . "/" . $value['link'] . "'>";
-            $html .= "<span class='border'></span>";
-            $html .= "<span class='icon'>" . $icon . "</span>";
-            $html .= "<span class='name'>" . $value['name'] . "</span>";
-            $html .= "</a>";
-            $html .= "<span class='toggle'>";
-            if (!empty($child))
-                $html .= $toggle_icon;
-            $html .= "</span>";
-            $html .= "</div>";
-            $html .= "<div class='toggle_nav'>";
-
-            if (!empty($child)) {
-                $html .= $child;
-            }
-
-            $html .= "</div>";
-            $html .= "</li>";
         }
         $html .= "</ul>";
 

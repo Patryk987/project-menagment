@@ -102,8 +102,14 @@ trait Session
      * remove session
      * @param string $key 
      */
-    private static function remove_session(string $key): bool
+    private static function remove_session(string $key = null): bool
     {
+
+        if (!isset($key)) {
+            session_destroy();
+            $_SESSION = [];
+            return true;
+        }
 
         if (isset($_SESSION[$key])) {
             $_SESSION[$key] = "";
@@ -178,7 +184,7 @@ class LocalStorage
 
     }
 
-    public static function remove_data(string $key, string $type)
+    public static function remove_data(string $type, string $key = null)
     {
 
         switch ($type) {

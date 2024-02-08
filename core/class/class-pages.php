@@ -323,9 +323,16 @@ class Pages
 
     }
 
-    private function redirect(string $url = ""): void
+    private function redirect(string $url = "", $type = "page"): void
     {
-        header("Location: " . $this->base_link . $this->config["pages"]->panel . $url);
+        if ($type == "page") {
+            header("Location: " . $this->base_link . $this->config["pages"]->panel . $url);
+        } else {
+
+            if ($this->actual_link != $this->base_link . $this->config["pages"]->project . $url) {
+                header("Location: " . $this->base_link . $this->config["pages"]->project . $url);
+            }
+        }
     }
 
 
@@ -353,6 +360,10 @@ class Pages
 
             $project = new \Projects(static::$token['payload']->user_id, $this->sub_pages[1]);
             self::$project = $project->get_project_data();
+
+            if (empty(\ModuleManager\LocalStorage::get_data("project_" . self::$project->get_project_id() . "_password", 'session', true))) {
+                $this->redirect("/" . self::$project->get_project_id() . "/enter_password", "project");
+            }
 
         } else if (!empty($this->sub_pages) && $this->config["pages"]->project == $this->sub_pages[0]) {
 
