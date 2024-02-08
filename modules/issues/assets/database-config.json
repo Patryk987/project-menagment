@@ -61,8 +61,8 @@
                 "length": "255",
                 "PRIMARY_KEY": false,
                 "AUTO_INCREMENT": false,
-                "encrypt": false,
-                "encrypt_type": "NULL",
+                "encrypt": true,
+                "encrypt_type": "hybrid",
                 "valid_type": "NULL",
                 "NULL": false,
                 "unique": false

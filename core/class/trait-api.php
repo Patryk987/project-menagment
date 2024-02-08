@@ -220,6 +220,7 @@ trait API
 
     public function get_endpoint($name): void
     {
+
         // TODO: add additional api keys
         if (
             (
@@ -268,8 +269,14 @@ trait API
         if ($api_permission || in_array(0, static::$endpoints[$method][$name]['access_permission'])) {
 
             try {
+                $input_data = $this->inputData();
+                if (!empty($input_data['project_id'])) {
+                    $project = new \Projects($token_data['payload']->user_id, $input_data['project_id']);
+                    self::$project = $project->get_project_data();
+                }
 
-                $output = call_user_func(static::$endpoints[$method][$name]["function"], $this->inputData());
+
+                $output = call_user_func(static::$endpoints[$method][$name]["function"], $input_data);
                 if ($output->get_code() == null)
                     $output->set_code(200);
 

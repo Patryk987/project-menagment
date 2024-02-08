@@ -50,6 +50,12 @@ class SEDJM
                         $prepare_data = EncryptData::encrypt($data, $key);
                         break;
 
+                    case 'hybrid':
+                        $data = htmlspecialchars($data, ENT_QUOTES);
+                        $data = addslashes($data);
+                        $prepare_data = EncryptData::encrypt_hybrid($data, $key);
+                        break;
+
                     case 'password':
                         $prepare_data = EncryptData::password_hash($data);
                         break;
@@ -69,6 +75,11 @@ class SEDJM
                         $data = htmlspecialchars($data, ENT_QUOTES);
                         $data = addslashes($data);
                         $prepare_data = EncryptData::decrypt($data, $key);
+                        break;
+                    case 'hybrid':
+                        $data = htmlspecialchars($data, ENT_QUOTES);
+                        $data = addslashes($data);
+                        $prepare_data = EncryptData::decrypt_hybrid($data, $key);
                         break;
                     case 'password':
                         $prepare_data = $data;
