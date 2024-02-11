@@ -43,6 +43,15 @@ class FilesShareRepository extends FilesRepository
         return $return;
     }
 
+    public function download_share_file($file)
+    {
+        $file_data = $this->get_user_shared_file_by_file_name($file);
+        $this->innit_ftp_connect($file_data[0]['project_id']);
+        $this->set_user_key(\ModuleManager\Main::$token['payload']->user_id, \ModuleManager\Main::$token['payload']->key_password);
+        $this->connect_to_ftp();
+        $this->download_file('.' . $file_data[0]['directory'] . '/' . $file_data[0]['encrypt_file_name'], $file_data[0]['encrypt_file_name']);
+    }
+
     private function check_share_folder_if_not_exist_create_him()
     {
         if (!$this->ftp->check_folder($this->share_folder)) {
@@ -262,6 +271,40 @@ class FilesShareRepository extends FilesRepository
         ];
 
         $results = $this->sedjm->get($data, $this->files_share_table);
+
+        return $results;
+
+    }
+
+    public function get_user_shared_file_by_file_name($encrypt_file_name)
+    {
+        $this->sedjm->clear_all();
+        $this->sedjm->set_where("encrypt_file_name", $encrypt_file_name, "=");
+
+        $data = [
+            [
+                "column" => "file_name",
+                "alias" => "file_name",
+                "table" => $this->files_table
+            ],
+            [
+                "column" => "encrypt_file_name",
+                "alias" => "encrypt_file_name",
+                "table" => $this->files_table
+            ],
+            [
+                "column" => "project_id",
+                "alias" => "project_id",
+                "table" => $this->files_table
+            ],
+            [
+                "column" => "directory",
+                "alias" => "directory",
+                "table" => $this->files_table
+            ]
+        ];
+
+        $results = $this->sedjm->get($data, $this->files_table);
 
         return $results;
 

@@ -24,11 +24,14 @@ class FilesShareController
     {
         \InjectStyles::set_style(["name" => "shared_file_style", "style" => "/modules/home/assets/css/shared_file.css"]);
 
+
         $this->repository = new Repository\FilesShareRepository();
         $file_list = $this->repository->get_user_shared_file(\ModuleManager\Main::$token['payload']->user_id);
 
+        $this->download_file();
+
         $header = [
-            "File name" => ["file_name"],
+            "File name" => ["encrypt_file_name"],
             "Upload time" => ["upload_time"],
             "Life time" => ["life_time"],
         ];
@@ -36,11 +39,26 @@ class FilesShareController
         $table = new \ModuleManager\Table(50);
         $table->set_converter("life_time", [$this, "unix_to_day"]);
         $table->set_converter("upload_time", ["Helper", "time_to_data"]);
+        $table->set_converter('encrypt_file_name', [$this, "get_file_link"]);
+
 
         $table->set_id("share_file_id");
         $data = $table->generate_table($file_list, $header);
         $html = "<div class='shared_file'><h2>Pliki udostępnione dla ciebie</h2>" . $data . "</div>";
         return $html;
+    }
+
+    public function download_file()
+    {
+        if (!empty($_GET["download"]) && $_GET["download"] == "true" && !empty($_GET["file"])) {
+            try {
+                //code...
+                $this->repository->download_share_file($_GET["file"]);
+            } catch (\Throwable $th) {
+                //throw $th;
+                var_dump($th->__toString());
+            }
+        }
     }
 
     public function init_page()
@@ -176,6 +194,12 @@ class FilesShareController
     public function unix_to_day($value)
     {
         return ($value / 86400) . " days ";
+    }
+
+    public function get_file_link($value)
+    {
+        $results = $this->repository->get_user_shared_file_by_file_name($value);
+        return "<a href='?download=true&file=" . $results[0]['encrypt_file_name'] . "'>" . $results[0]['file_name'] . "</a>";
     }
 
 

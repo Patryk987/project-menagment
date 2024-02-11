@@ -9,6 +9,9 @@ class EncryptData
 {
 
     protected static $password_protected_method = PASSWORD_DEFAULT;
+    private static string $ciphering = "AES-128-CTR";
+    private static int $options = 0;
+    private static string $iv = '294721420234393W';
 
     public static function encrypt($text, $temp_key = NULL)
     {
@@ -17,8 +20,8 @@ class EncryptData
         else
             $local_key = $_ENV["SECRET"];
 
-        $aes = new \AES\EncryptDecryptAES($local_key);
-        $encrypt_text = $aes->encrypt($text);
+        $iv_length = openssl_cipher_iv_length(static::$ciphering);
+        $encrypt_text = openssl_encrypt($text, static::$ciphering, $local_key, static::$options, static::$iv);
 
         return $encrypt_text;
     }
@@ -30,12 +33,11 @@ class EncryptData
         else
             $local_key = $_ENV["SECRET"];
 
-        $aes = new \AES\EncryptDecryptAES($local_key);
-        $decrypt_text = $aes->decrypt($text);
+        $iv_length = openssl_cipher_iv_length(static::$ciphering);
+        $decrypt_text = openssl_decrypt($text, static::$ciphering, $local_key, static::$options, static::$iv);
 
         return $decrypt_text;
     }
-
     public static function encrypt_hybrid($text)
     {
 

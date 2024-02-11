@@ -7,11 +7,17 @@ class EncryptDecryptAES
     private string $key;
     private string $ciphering = "AES-128-CTR";
     private int $options = 0;
+    private ?string $iv = null;
 
     public function __construct(string $key, $options = 0)
     {
         $this->key = $key;
         $this->options = $options;
+    }
+
+    public function set_iv($iv)
+    {
+        $this->iv = $iv;
     }
 
     public function create_iv()
@@ -24,9 +30,12 @@ class EncryptDecryptAES
 
     public function encrypt($text)
     {
-
-        $iv = $this->create_iv();
-        $iv = base64_decode($iv);
+        if (is_null($this->iv)) {
+            $iv = $this->create_iv();
+            $iv = base64_decode($iv);
+        } else {
+            $iv = $this->iv;
+        }
 
         $encrypt_text = openssl_encrypt(
             $text,

@@ -22,17 +22,31 @@ class FilesRepository
         $this->sedjm = $main->sedjm;
 
         if (!empty($project_id)) {
-            $this->project_id = $project_id;
-            $this->connect_data = $this->get_ftp_connect_data();
-            $this->rsa_encrypt_decrypt = new \RSA\EncryptDecryptRSA(
-                $project_id,
-                "project_",
-                \ModuleManager\LocalStorage::get_data("project_" . $project_id . "_password", 'session', true)
-            );
+            $this->innit_ftp_connect($project_id);
         }
 
         $this->aes_file = new \AES\EncryptDecryptFile();
 
+    }
+
+    public function innit_ftp_connect($project_id)
+    {
+        $this->project_id = $project_id;
+        $this->connect_data = $this->get_ftp_connect_data();
+        $this->rsa_encrypt_decrypt = new \RSA\EncryptDecryptRSA(
+            $project_id,
+            "project_",
+            \ModuleManager\LocalStorage::get_data("project_" . $project_id . "_password", 'session', true)
+        );
+    }
+
+    public function set_user_key($user_id, $key)
+    {
+        $this->rsa_encrypt_decrypt = new \RSA\EncryptDecryptRSA(
+            $user_id,
+            "user_",
+            $key
+        );
     }
 
     public function connect_to_ftp(): bool
@@ -83,6 +97,7 @@ class FilesRepository
 
         $source = __DIR__ . "/" . $name;
         $data = $this->get_file_info($name);
+
         if ($data['status']) {
 
             $key = $this->rsa_encrypt_decrypt->decrypt($data["data"]['access_key']);

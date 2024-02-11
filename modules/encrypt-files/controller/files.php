@@ -13,6 +13,7 @@ class FilesNotepadsController
 
     public function __construct()
     {
+
         if (!empty(\ModuleManager\Pages::$project) && \ModuleManager\Pages::$project->get_status() != \ProjectStatus::BLOCKED) {
 
             $this->project_id = \ModuleManager\Pages::$project->get_project_id();
@@ -30,9 +31,6 @@ class FilesNotepadsController
             \ModuleManager\Pages::set_modules($main_page);
 
         }
-
-
-
 
     }
 
@@ -171,7 +169,6 @@ class FilesNotepadsController
                 "encrypt_icon" => $encrypt_icon
             ];
         }
-
         return $data;
 
     }

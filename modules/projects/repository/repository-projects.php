@@ -205,7 +205,13 @@ class ProjectsRepository
         if (!empty($data)) {
             $main->sedjm->clear_all();
             $main->sedjm->set_where("project_id", $project_id, '=');
-            $results = $main->sedjm->update($data, $this->ftp_table);
+            $get = $main->sedjm->get(['ftp_id'], $this->ftp_table);
+            if (!empty($get)) {
+                $results = $main->sedjm->update($data, $this->ftp_table);
+            } else {
+                $data['project_id'] = $project_id;
+                $results = $main->sedjm->insert($data, $this->ftp_table);
+            }
 
             $output = new Model\InsertModel($results['status']);
 

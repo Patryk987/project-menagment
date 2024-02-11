@@ -53,7 +53,7 @@ class SEDJM
                     case 'hybrid':
                         $data = htmlspecialchars($data, ENT_QUOTES);
                         $data = addslashes($data);
-                        $prepare_data = EncryptData::encrypt_hybrid($data, $key);
+                        $prepare_data = EncryptData::encrypt_hybrid($data);
                         break;
 
                     case 'password':
